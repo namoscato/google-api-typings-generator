@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.androidpublisher.v1_1 {
+declare module gapi.client.androidpublisher {
     
     interface InappPurchase {
         // The consumption state of the inapp product. Possible values are:  
@@ -74,8 +74,8 @@ declare module gapi.client.androidpublisher.v1_1 {
 }
 
 declare module gapi.client.androidpublisher {
-    var inapppurchases: gapi.client.androidpublisher.v1_1.InapppurchasesResource; 
+    var inapppurchases: gapi.client.androidpublisher.InapppurchasesResource; 
     
-    var purchases: gapi.client.androidpublisher.v1_1.PurchasesResource; 
+    var purchases: gapi.client.androidpublisher.PurchasesResource; 
     
 }

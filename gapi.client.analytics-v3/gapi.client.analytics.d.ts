@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.analytics.v3 {
+declare module gapi.client.analytics {
     
     interface Account {
         // Child link for an account entry. Points to the list of web properties for this account.
@@ -2442,12 +2442,12 @@ declare module gapi.client.analytics.v3 {
 }
 
 declare module gapi.client.analytics {
-    var data: gapi.client.analytics.v3.DataResource; 
+    var data: gapi.client.analytics.DataResource; 
     
-    var management: gapi.client.analytics.v3.ManagementResource; 
+    var management: gapi.client.analytics.ManagementResource; 
     
-    var metadata: gapi.client.analytics.v3.MetadataResource; 
+    var metadata: gapi.client.analytics.MetadataResource; 
     
-    var provisioning: gapi.client.analytics.v3.ProvisioningResource; 
+    var provisioning: gapi.client.analytics.ProvisioningResource; 
     
 }

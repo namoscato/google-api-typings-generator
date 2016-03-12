@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.licensing.v1 {
+declare module gapi.client.licensing {
     
     interface LicenseAssignment {
         // ETag of the resource.
@@ -117,6 +117,6 @@ declare module gapi.client.licensing.v1 {
 }
 
 declare module gapi.client.licensing {
-    var licenseAssignments: gapi.client.licensing.v1.LicenseAssignmentsResource; 
+    var licenseAssignments: gapi.client.licensing.LicenseAssignmentsResource; 
     
 }

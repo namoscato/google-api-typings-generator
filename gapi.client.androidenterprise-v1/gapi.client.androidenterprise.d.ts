@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.androidenterprise.v1 {
+declare module gapi.client.androidenterprise {
     
     interface AppRestrictionsSchema {
         // Identifies what kind of resource this is. Value: the fixed string "androidenterprise#appRestrictionsSchema".
@@ -950,30 +950,30 @@ declare module gapi.client.androidenterprise.v1 {
 }
 
 declare module gapi.client.androidenterprise {
-    var collections: gapi.client.androidenterprise.v1.CollectionsResource; 
+    var collections: gapi.client.androidenterprise.CollectionsResource; 
     
-    var collectionviewers: gapi.client.androidenterprise.v1.CollectionviewersResource; 
+    var collectionviewers: gapi.client.androidenterprise.CollectionviewersResource; 
     
-    var devices: gapi.client.androidenterprise.v1.DevicesResource; 
+    var devices: gapi.client.androidenterprise.DevicesResource; 
     
-    var enterprises: gapi.client.androidenterprise.v1.EnterprisesResource; 
+    var enterprises: gapi.client.androidenterprise.EnterprisesResource; 
     
-    var entitlements: gapi.client.androidenterprise.v1.EntitlementsResource; 
+    var entitlements: gapi.client.androidenterprise.EntitlementsResource; 
     
-    var grouplicenses: gapi.client.androidenterprise.v1.GrouplicensesResource; 
+    var grouplicenses: gapi.client.androidenterprise.GrouplicensesResource; 
     
-    var grouplicenseusers: gapi.client.androidenterprise.v1.GrouplicenseusersResource; 
+    var grouplicenseusers: gapi.client.androidenterprise.GrouplicenseusersResource; 
     
-    var installs: gapi.client.androidenterprise.v1.InstallsResource; 
+    var installs: gapi.client.androidenterprise.InstallsResource; 
     
-    var permissions: gapi.client.androidenterprise.v1.PermissionsResource; 
+    var permissions: gapi.client.androidenterprise.PermissionsResource; 
     
-    var products: gapi.client.androidenterprise.v1.ProductsResource; 
+    var products: gapi.client.androidenterprise.ProductsResource; 
     
-    var storelayoutclusters: gapi.client.androidenterprise.v1.StorelayoutclustersResource; 
+    var storelayoutclusters: gapi.client.androidenterprise.StorelayoutclustersResource; 
     
-    var storelayoutpages: gapi.client.androidenterprise.v1.StorelayoutpagesResource; 
+    var storelayoutpages: gapi.client.androidenterprise.StorelayoutpagesResource; 
     
-    var users: gapi.client.androidenterprise.v1.UsersResource; 
+    var users: gapi.client.androidenterprise.UsersResource; 
     
 }

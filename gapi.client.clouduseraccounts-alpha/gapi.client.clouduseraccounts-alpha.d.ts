@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.clouduseraccounts.alpha {
+declare module gapi.client.clouduseraccounts {
     
     interface AuditConfig {
         // Specifies the identities that are exempted from "data access" audit logging for the `service` specified above. Follows the same format of Binding.members.
@@ -609,12 +609,12 @@ declare module gapi.client.clouduseraccounts.alpha {
 }
 
 declare module gapi.client.clouduseraccounts {
-    var globalAccountsOperations: gapi.client.clouduseraccounts.alpha.GlobalAccountsOperationsResource; 
+    var globalAccountsOperations: gapi.client.clouduseraccounts.GlobalAccountsOperationsResource; 
     
-    var groups: gapi.client.clouduseraccounts.alpha.GroupsResource; 
+    var groups: gapi.client.clouduseraccounts.GroupsResource; 
     
-    var linux: gapi.client.clouduseraccounts.alpha.LinuxResource; 
+    var linux: gapi.client.clouduseraccounts.LinuxResource; 
     
-    var users: gapi.client.clouduseraccounts.alpha.UsersResource; 
+    var users: gapi.client.clouduseraccounts.UsersResource; 
     
 }

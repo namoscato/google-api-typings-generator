@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.dataproc.v1 {
+declare module gapi.client.dataproc {
     
     interface Media {
         // Name of the media resource.
@@ -595,8 +595,8 @@ declare module gapi.client.dataproc.v1 {
 }
 
 declare module gapi.client.dataproc {
-    var media: gapi.client.dataproc.v1.MediaResource; 
+    var media: gapi.client.dataproc.MediaResource; 
     
-    var projects: gapi.client.dataproc.v1.ProjectsResource; 
+    var projects: gapi.client.dataproc.ProjectsResource; 
     
 }

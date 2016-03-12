@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.script.v1 {
+declare module gapi.client.script {
     
     interface ExecutionRequest {
         // The name of the function to execute in the given script. The name does not include parentheses or parameters.
@@ -72,6 +72,6 @@ declare module gapi.client.script.v1 {
 }
 
 declare module gapi.client.script {
-    var scripts: gapi.client.script.v1.ScriptsResource; 
+    var scripts: gapi.client.script.ScriptsResource; 
     
 }

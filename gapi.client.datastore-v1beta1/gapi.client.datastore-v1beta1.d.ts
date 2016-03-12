@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.datastore.v1beta1 {
+declare module gapi.client.datastore {
     
     interface AllocateIdsRequest {
         // A list of keys with incomplete key paths to allocate IDs for. No key may be reserved/read-only.
@@ -358,6 +358,6 @@ declare module gapi.client.datastore.v1beta1 {
 }
 
 declare module gapi.client.datastore {
-    var datasets: gapi.client.datastore.v1beta1.DatasetsResource; 
+    var datasets: gapi.client.datastore.DatasetsResource; 
     
 }

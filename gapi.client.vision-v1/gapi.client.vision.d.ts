@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.vision.v1 {
+declare module gapi.client.vision {
     
     interface ImageSource {
         // Google Cloud Storage image URI. It must be in the following form:
@@ -302,6 +302,6 @@ declare module gapi.client.vision.v1 {
 }
 
 declare module gapi.client.vision {
-    var images: gapi.client.vision.v1.ImagesResource; 
+    var images: gapi.client.vision.ImagesResource; 
     
 }

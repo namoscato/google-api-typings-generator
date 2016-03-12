@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.replicapool.v1beta1 {
+declare module gapi.client.replicapool {
     
     interface AccessConfig {
         // Name of this access configuration.
@@ -372,8 +372,8 @@ declare module gapi.client.replicapool.v1beta1 {
 }
 
 declare module gapi.client.replicapool {
-    var pools: gapi.client.replicapool.v1beta1.PoolsResource; 
+    var pools: gapi.client.replicapool.PoolsResource; 
     
-    var replicas: gapi.client.replicapool.v1beta1.ReplicasResource; 
+    var replicas: gapi.client.replicapool.ReplicasResource; 
     
 }

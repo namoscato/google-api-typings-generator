@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.admin.datatransfer_v1 {
+declare module gapi.client.admin {
     
     interface Application {
         // Etag of the resource.
@@ -128,8 +128,8 @@ declare module gapi.client.admin.datatransfer_v1 {
 }
 
 declare module gapi.client.admin {
-    var applications: gapi.client.admin.datatransfer_v1.ApplicationsResource; 
+    var applications: gapi.client.admin.ApplicationsResource; 
     
-    var transfers: gapi.client.admin.datatransfer_v1.TransfersResource; 
+    var transfers: gapi.client.admin.TransfersResource; 
     
 }

@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.customsearch.v1 {
+declare module gapi.client.customsearch {
     
     interface Context {
         // 
@@ -295,6 +295,6 @@ declare module gapi.client.customsearch.v1 {
 }
 
 declare module gapi.client.customsearch {
-    var cse: gapi.client.customsearch.v1.CseResource; 
+    var cse: gapi.client.customsearch.CseResource; 
     
 }

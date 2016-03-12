@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.cloudtrace.v1 {
+declare module gapi.client.cloudtrace {
     
     interface ListTracesResponse {
         // List of trace records returned.
@@ -92,6 +92,6 @@ declare module gapi.client.cloudtrace.v1 {
 }
 
 declare module gapi.client.cloudtrace {
-    var projects: gapi.client.cloudtrace.v1.ProjectsResource; 
+    var projects: gapi.client.cloudtrace.ProjectsResource; 
     
 }

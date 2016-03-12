@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.oauth2.v2 {
+declare module gapi.client.oauth2 {
     
     interface Jwk {
         // 
@@ -94,6 +94,6 @@ declare module gapi.client.oauth2.v2 {
 }
 
 declare module gapi.client.oauth2 {
-    var userinfo: gapi.client.oauth2.v2.UserinfoResource; 
+    var userinfo: gapi.client.oauth2.UserinfoResource; 
     
 }

@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.dfareporting.v2_4 {
+declare module gapi.client.dfareporting {
     
     interface Account {
         // Account permissions assigned to this account.
@@ -5480,114 +5480,114 @@ declare module gapi.client.dfareporting.v2_4 {
 }
 
 declare module gapi.client.dfareporting {
-    var accountActiveAdSummaries: gapi.client.dfareporting.v2_4.AccountActiveAdSummariesResource; 
+    var accountActiveAdSummaries: gapi.client.dfareporting.AccountActiveAdSummariesResource; 
     
-    var accountPermissionGroups: gapi.client.dfareporting.v2_4.AccountPermissionGroupsResource; 
+    var accountPermissionGroups: gapi.client.dfareporting.AccountPermissionGroupsResource; 
     
-    var accountPermissions: gapi.client.dfareporting.v2_4.AccountPermissionsResource; 
+    var accountPermissions: gapi.client.dfareporting.AccountPermissionsResource; 
     
-    var accountUserProfiles: gapi.client.dfareporting.v2_4.AccountUserProfilesResource; 
+    var accountUserProfiles: gapi.client.dfareporting.AccountUserProfilesResource; 
     
-    var accounts: gapi.client.dfareporting.v2_4.AccountsResource; 
+    var accounts: gapi.client.dfareporting.AccountsResource; 
     
-    var ads: gapi.client.dfareporting.v2_4.AdsResource; 
+    var ads: gapi.client.dfareporting.AdsResource; 
     
-    var advertiserGroups: gapi.client.dfareporting.v2_4.AdvertiserGroupsResource; 
+    var advertiserGroups: gapi.client.dfareporting.AdvertiserGroupsResource; 
     
-    var advertisers: gapi.client.dfareporting.v2_4.AdvertisersResource; 
+    var advertisers: gapi.client.dfareporting.AdvertisersResource; 
     
-    var browsers: gapi.client.dfareporting.v2_4.BrowsersResource; 
+    var browsers: gapi.client.dfareporting.BrowsersResource; 
     
-    var campaignCreativeAssociations: gapi.client.dfareporting.v2_4.CampaignCreativeAssociationsResource; 
+    var campaignCreativeAssociations: gapi.client.dfareporting.CampaignCreativeAssociationsResource; 
     
-    var campaigns: gapi.client.dfareporting.v2_4.CampaignsResource; 
+    var campaigns: gapi.client.dfareporting.CampaignsResource; 
     
-    var changeLogs: gapi.client.dfareporting.v2_4.ChangeLogsResource; 
+    var changeLogs: gapi.client.dfareporting.ChangeLogsResource; 
     
-    var cities: gapi.client.dfareporting.v2_4.CitiesResource; 
+    var cities: gapi.client.dfareporting.CitiesResource; 
     
-    var connectionTypes: gapi.client.dfareporting.v2_4.ConnectionTypesResource; 
+    var connectionTypes: gapi.client.dfareporting.ConnectionTypesResource; 
     
-    var contentCategories: gapi.client.dfareporting.v2_4.ContentCategoriesResource; 
+    var contentCategories: gapi.client.dfareporting.ContentCategoriesResource; 
     
-    var countries: gapi.client.dfareporting.v2_4.CountriesResource; 
+    var countries: gapi.client.dfareporting.CountriesResource; 
     
-    var creativeAssets: gapi.client.dfareporting.v2_4.CreativeAssetsResource; 
+    var creativeAssets: gapi.client.dfareporting.CreativeAssetsResource; 
     
-    var creativeFieldValues: gapi.client.dfareporting.v2_4.CreativeFieldValuesResource; 
+    var creativeFieldValues: gapi.client.dfareporting.CreativeFieldValuesResource; 
     
-    var creativeFields: gapi.client.dfareporting.v2_4.CreativeFieldsResource; 
+    var creativeFields: gapi.client.dfareporting.CreativeFieldsResource; 
     
-    var creativeGroups: gapi.client.dfareporting.v2_4.CreativeGroupsResource; 
+    var creativeGroups: gapi.client.dfareporting.CreativeGroupsResource; 
     
-    var creatives: gapi.client.dfareporting.v2_4.CreativesResource; 
+    var creatives: gapi.client.dfareporting.CreativesResource; 
     
-    var dimensionValues: gapi.client.dfareporting.v2_4.DimensionValuesResource; 
+    var dimensionValues: gapi.client.dfareporting.DimensionValuesResource; 
     
-    var directorySiteContacts: gapi.client.dfareporting.v2_4.DirectorySiteContactsResource; 
+    var directorySiteContacts: gapi.client.dfareporting.DirectorySiteContactsResource; 
     
-    var directorySites: gapi.client.dfareporting.v2_4.DirectorySitesResource; 
+    var directorySites: gapi.client.dfareporting.DirectorySitesResource; 
     
-    var eventTags: gapi.client.dfareporting.v2_4.EventTagsResource; 
+    var eventTags: gapi.client.dfareporting.EventTagsResource; 
     
-    var files: gapi.client.dfareporting.v2_4.FilesResource; 
+    var files: gapi.client.dfareporting.FilesResource; 
     
-    var floodlightActivities: gapi.client.dfareporting.v2_4.FloodlightActivitiesResource; 
+    var floodlightActivities: gapi.client.dfareporting.FloodlightActivitiesResource; 
     
-    var floodlightActivityGroups: gapi.client.dfareporting.v2_4.FloodlightActivityGroupsResource; 
+    var floodlightActivityGroups: gapi.client.dfareporting.FloodlightActivityGroupsResource; 
     
-    var floodlightConfigurations: gapi.client.dfareporting.v2_4.FloodlightConfigurationsResource; 
+    var floodlightConfigurations: gapi.client.dfareporting.FloodlightConfigurationsResource; 
     
-    var inventoryItems: gapi.client.dfareporting.v2_4.InventoryItemsResource; 
+    var inventoryItems: gapi.client.dfareporting.InventoryItemsResource; 
     
-    var landingPages: gapi.client.dfareporting.v2_4.LandingPagesResource; 
+    var landingPages: gapi.client.dfareporting.LandingPagesResource; 
     
-    var metros: gapi.client.dfareporting.v2_4.MetrosResource; 
+    var metros: gapi.client.dfareporting.MetrosResource; 
     
-    var mobileCarriers: gapi.client.dfareporting.v2_4.MobileCarriersResource; 
+    var mobileCarriers: gapi.client.dfareporting.MobileCarriersResource; 
     
-    var operatingSystemVersions: gapi.client.dfareporting.v2_4.OperatingSystemVersionsResource; 
+    var operatingSystemVersions: gapi.client.dfareporting.OperatingSystemVersionsResource; 
     
-    var operatingSystems: gapi.client.dfareporting.v2_4.OperatingSystemsResource; 
+    var operatingSystems: gapi.client.dfareporting.OperatingSystemsResource; 
     
-    var orderDocuments: gapi.client.dfareporting.v2_4.OrderDocumentsResource; 
+    var orderDocuments: gapi.client.dfareporting.OrderDocumentsResource; 
     
-    var orders: gapi.client.dfareporting.v2_4.OrdersResource; 
+    var orders: gapi.client.dfareporting.OrdersResource; 
     
-    var placementGroups: gapi.client.dfareporting.v2_4.PlacementGroupsResource; 
+    var placementGroups: gapi.client.dfareporting.PlacementGroupsResource; 
     
-    var placementStrategies: gapi.client.dfareporting.v2_4.PlacementStrategiesResource; 
+    var placementStrategies: gapi.client.dfareporting.PlacementStrategiesResource; 
     
-    var placements: gapi.client.dfareporting.v2_4.PlacementsResource; 
+    var placements: gapi.client.dfareporting.PlacementsResource; 
     
-    var platformTypes: gapi.client.dfareporting.v2_4.PlatformTypesResource; 
+    var platformTypes: gapi.client.dfareporting.PlatformTypesResource; 
     
-    var postalCodes: gapi.client.dfareporting.v2_4.PostalCodesResource; 
+    var postalCodes: gapi.client.dfareporting.PostalCodesResource; 
     
-    var projects: gapi.client.dfareporting.v2_4.ProjectsResource; 
+    var projects: gapi.client.dfareporting.ProjectsResource; 
     
-    var regions: gapi.client.dfareporting.v2_4.RegionsResource; 
+    var regions: gapi.client.dfareporting.RegionsResource; 
     
-    var remarketingListShares: gapi.client.dfareporting.v2_4.RemarketingListSharesResource; 
+    var remarketingListShares: gapi.client.dfareporting.RemarketingListSharesResource; 
     
-    var remarketingLists: gapi.client.dfareporting.v2_4.RemarketingListsResource; 
+    var remarketingLists: gapi.client.dfareporting.RemarketingListsResource; 
     
-    var reports: gapi.client.dfareporting.v2_4.ReportsResource; 
+    var reports: gapi.client.dfareporting.ReportsResource; 
     
-    var sites: gapi.client.dfareporting.v2_4.SitesResource; 
+    var sites: gapi.client.dfareporting.SitesResource; 
     
-    var sizes: gapi.client.dfareporting.v2_4.SizesResource; 
+    var sizes: gapi.client.dfareporting.SizesResource; 
     
-    var subaccounts: gapi.client.dfareporting.v2_4.SubaccountsResource; 
+    var subaccounts: gapi.client.dfareporting.SubaccountsResource; 
     
-    var targetableRemarketingLists: gapi.client.dfareporting.v2_4.TargetableRemarketingListsResource; 
+    var targetableRemarketingLists: gapi.client.dfareporting.TargetableRemarketingListsResource; 
     
-    var userProfiles: gapi.client.dfareporting.v2_4.UserProfilesResource; 
+    var userProfiles: gapi.client.dfareporting.UserProfilesResource; 
     
-    var userRolePermissionGroups: gapi.client.dfareporting.v2_4.UserRolePermissionGroupsResource; 
+    var userRolePermissionGroups: gapi.client.dfareporting.UserRolePermissionGroupsResource; 
     
-    var userRolePermissions: gapi.client.dfareporting.v2_4.UserRolePermissionsResource; 
+    var userRolePermissions: gapi.client.dfareporting.UserRolePermissionsResource; 
     
-    var userRoles: gapi.client.dfareporting.v2_4.UserRolesResource; 
+    var userRoles: gapi.client.dfareporting.UserRolesResource; 
     
 }

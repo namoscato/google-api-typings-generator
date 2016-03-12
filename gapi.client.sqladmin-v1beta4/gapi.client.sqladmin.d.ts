@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.sqladmin.v1beta4 {
+declare module gapi.client.sqladmin {
     
     interface AclEntry {
         // The time when this access control entry expires in RFC 3339 format, for example 2012-11-15T16:19:00.094Z.
@@ -935,20 +935,20 @@ declare module gapi.client.sqladmin.v1beta4 {
 }
 
 declare module gapi.client.sqladmin {
-    var backupRuns: gapi.client.sqladmin.v1beta4.BackupRunsResource; 
+    var backupRuns: gapi.client.sqladmin.BackupRunsResource; 
     
-    var databases: gapi.client.sqladmin.v1beta4.DatabasesResource; 
+    var databases: gapi.client.sqladmin.DatabasesResource; 
     
-    var flags: gapi.client.sqladmin.v1beta4.FlagsResource; 
+    var flags: gapi.client.sqladmin.FlagsResource; 
     
-    var instances: gapi.client.sqladmin.v1beta4.InstancesResource; 
+    var instances: gapi.client.sqladmin.InstancesResource; 
     
-    var operations: gapi.client.sqladmin.v1beta4.OperationsResource; 
+    var operations: gapi.client.sqladmin.OperationsResource; 
     
-    var sslCerts: gapi.client.sqladmin.v1beta4.SslCertsResource; 
+    var sslCerts: gapi.client.sqladmin.SslCertsResource; 
     
-    var tiers: gapi.client.sqladmin.v1beta4.TiersResource; 
+    var tiers: gapi.client.sqladmin.TiersResource; 
     
-    var users: gapi.client.sqladmin.v1beta4.UsersResource; 
+    var users: gapi.client.sqladmin.UsersResource; 
     
 }

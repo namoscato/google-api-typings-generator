@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.dataflow.v1b3 {
+declare module gapi.client.dataflow {
     
     interface Job {
         // The unique ID of this job. This field is set by the Dataflow service when the Job is created, and is immutable for the life of the Job.
@@ -974,6 +974,6 @@ declare module gapi.client.dataflow.v1b3 {
 }
 
 declare module gapi.client.dataflow {
-    var projects: gapi.client.dataflow.v1b3.ProjectsResource; 
+    var projects: gapi.client.dataflow.ProjectsResource; 
     
 }

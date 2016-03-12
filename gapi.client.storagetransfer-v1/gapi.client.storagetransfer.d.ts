@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.storagetransfer.v1 {
+declare module gapi.client.storagetransfer {
     
     interface GoogleServiceAccount {
         // Required.
@@ -346,12 +346,12 @@ declare module gapi.client.storagetransfer.v1 {
 }
 
 declare module gapi.client.storagetransfer {
-    var googleServiceAccounts: gapi.client.storagetransfer.v1.GoogleServiceAccountsResource; 
+    var googleServiceAccounts: gapi.client.storagetransfer.GoogleServiceAccountsResource; 
     
-    var v1: gapi.client.storagetransfer.v1.V1Resource; 
+    var v1: gapi.client.storagetransfer.V1Resource; 
     
-    var transferJobs: gapi.client.storagetransfer.v1.TransferJobsResource; 
+    var transferJobs: gapi.client.storagetransfer.TransferJobsResource; 
     
-    var transferOperations: gapi.client.storagetransfer.v1.TransferOperationsResource; 
+    var transferOperations: gapi.client.storagetransfer.TransferOperationsResource; 
     
 }

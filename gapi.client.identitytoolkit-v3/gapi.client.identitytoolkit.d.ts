@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.identitytoolkit.v3 {
+declare module gapi.client.identitytoolkit {
     
     interface CreateAuthUriResponse {
         // all providers the user has once used to do federated login
@@ -651,6 +651,6 @@ declare module gapi.client.identitytoolkit.v3 {
 }
 
 declare module gapi.client.identitytoolkit {
-    var relyingparty: gapi.client.identitytoolkit.v3.RelyingpartyResource; 
+    var relyingparty: gapi.client.identitytoolkit.RelyingpartyResource; 
     
 }

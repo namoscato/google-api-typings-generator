@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.groupssettings.v1 {
+declare module gapi.client.groupssettings {
     
     interface Groups {
         // Are external members allowed to join the group.
@@ -89,6 +89,6 @@ declare module gapi.client.groupssettings.v1 {
 }
 
 declare module gapi.client.groupssettings {
-    var groups: gapi.client.groupssettings.v1.GroupsResource; 
+    var groups: gapi.client.groupssettings.GroupsResource; 
     
 }

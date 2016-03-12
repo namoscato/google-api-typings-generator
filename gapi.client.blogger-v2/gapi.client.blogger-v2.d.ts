@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.blogger.v2 {
+declare module gapi.client.blogger {
     
     interface Blog {
         // The description of this blog. This is displayed underneath the title.
@@ -353,14 +353,14 @@ declare module gapi.client.blogger.v2 {
 }
 
 declare module gapi.client.blogger {
-    var blogs: gapi.client.blogger.v2.BlogsResource; 
+    var blogs: gapi.client.blogger.BlogsResource; 
     
-    var comments: gapi.client.blogger.v2.CommentsResource; 
+    var comments: gapi.client.blogger.CommentsResource; 
     
-    var pages: gapi.client.blogger.v2.PagesResource; 
+    var pages: gapi.client.blogger.PagesResource; 
     
-    var posts: gapi.client.blogger.v2.PostsResource; 
+    var posts: gapi.client.blogger.PostsResource; 
     
-    var users: gapi.client.blogger.v2.UsersResource; 
+    var users: gapi.client.blogger.UsersResource; 
     
 }

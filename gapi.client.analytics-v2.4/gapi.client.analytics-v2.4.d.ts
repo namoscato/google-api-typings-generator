@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.analytics.v2_4 {
+declare module gapi.client.analytics {
     
     interface DataResource {
         // Returns Analytics report data for a view (profile).
@@ -117,8 +117,8 @@ declare module gapi.client.analytics.v2_4 {
 }
 
 declare module gapi.client.analytics {
-    var data: gapi.client.analytics.v2_4.DataResource; 
+    var data: gapi.client.analytics.DataResource; 
     
-    var management: gapi.client.analytics.v2_4.ManagementResource; 
+    var management: gapi.client.analytics.ManagementResource; 
     
 }

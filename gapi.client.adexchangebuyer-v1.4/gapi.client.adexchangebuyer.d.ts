@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.adexchangebuyer.v1_4 {
+declare module gapi.client.adexchangebuyer {
     
     interface Account {
         // Your bidder locations that have distinct URLs.
@@ -1136,26 +1136,26 @@ declare module gapi.client.adexchangebuyer.v1_4 {
 }
 
 declare module gapi.client.adexchangebuyer {
-    var accounts: gapi.client.adexchangebuyer.v1_4.AccountsResource; 
+    var accounts: gapi.client.adexchangebuyer.AccountsResource; 
     
-    var billingInfo: gapi.client.adexchangebuyer.v1_4.BillingInfoResource; 
+    var billingInfo: gapi.client.adexchangebuyer.BillingInfoResource; 
     
-    var budget: gapi.client.adexchangebuyer.v1_4.BudgetResource; 
+    var budget: gapi.client.adexchangebuyer.BudgetResource; 
     
-    var creatives: gapi.client.adexchangebuyer.v1_4.CreativesResource; 
+    var creatives: gapi.client.adexchangebuyer.CreativesResource; 
     
-    var marketplacedeals: gapi.client.adexchangebuyer.v1_4.MarketplacedealsResource; 
+    var marketplacedeals: gapi.client.adexchangebuyer.MarketplacedealsResource; 
     
-    var marketplacenotes: gapi.client.adexchangebuyer.v1_4.MarketplacenotesResource; 
+    var marketplacenotes: gapi.client.adexchangebuyer.MarketplacenotesResource; 
     
-    var performanceReport: gapi.client.adexchangebuyer.v1_4.PerformanceReportResource; 
+    var performanceReport: gapi.client.adexchangebuyer.PerformanceReportResource; 
     
-    var pretargetingConfig: gapi.client.adexchangebuyer.v1_4.PretargetingConfigResource; 
+    var pretargetingConfig: gapi.client.adexchangebuyer.PretargetingConfigResource; 
     
-    var products: gapi.client.adexchangebuyer.v1_4.ProductsResource; 
+    var products: gapi.client.adexchangebuyer.ProductsResource; 
     
-    var proposals: gapi.client.adexchangebuyer.v1_4.ProposalsResource; 
+    var proposals: gapi.client.adexchangebuyer.ProposalsResource; 
     
-    var pubprofiles: gapi.client.adexchangebuyer.v1_4.PubprofilesResource; 
+    var pubprofiles: gapi.client.adexchangebuyer.PubprofilesResource; 
     
 }

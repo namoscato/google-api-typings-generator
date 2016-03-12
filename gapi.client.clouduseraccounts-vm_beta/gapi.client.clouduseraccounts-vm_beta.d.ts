@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.clouduseraccounts.vm_beta {
+declare module gapi.client.clouduseraccounts {
     
     interface AuthorizedKeysView {
         // [Output Only] The list of authorized public keys in SSH format.
@@ -462,12 +462,12 @@ declare module gapi.client.clouduseraccounts.vm_beta {
 }
 
 declare module gapi.client.clouduseraccounts {
-    var globalAccountsOperations: gapi.client.clouduseraccounts.vm_beta.GlobalAccountsOperationsResource; 
+    var globalAccountsOperations: gapi.client.clouduseraccounts.GlobalAccountsOperationsResource; 
     
-    var groups: gapi.client.clouduseraccounts.vm_beta.GroupsResource; 
+    var groups: gapi.client.clouduseraccounts.GroupsResource; 
     
-    var linux: gapi.client.clouduseraccounts.vm_beta.LinuxResource; 
+    var linux: gapi.client.clouduseraccounts.LinuxResource; 
     
-    var users: gapi.client.clouduseraccounts.vm_beta.UsersResource; 
+    var users: gapi.client.clouduseraccounts.UsersResource; 
     
 }

@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.webfonts.v1 {
+declare module gapi.client.webfonts {
     
     interface Webfont {
         // The category of the font.
@@ -44,6 +44,6 @@ declare module gapi.client.webfonts.v1 {
 }
 
 declare module gapi.client.webfonts {
-    var webfonts: gapi.client.webfonts.v1.WebfontsResource; 
+    var webfonts: gapi.client.webfonts.WebfontsResource; 
     
 }

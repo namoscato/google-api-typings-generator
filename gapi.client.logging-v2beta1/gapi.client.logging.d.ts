@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.logging.v2beta1 {
+declare module gapi.client.logging {
     
     interface Empty {
     }
@@ -381,10 +381,10 @@ declare module gapi.client.logging.v2beta1 {
 }
 
 declare module gapi.client.logging {
-    var projects: gapi.client.logging.v2beta1.ProjectsResource; 
+    var projects: gapi.client.logging.ProjectsResource; 
     
-    var entries: gapi.client.logging.v2beta1.EntriesResource; 
+    var entries: gapi.client.logging.EntriesResource; 
     
-    var monitoredResourceDescriptors: gapi.client.logging.v2beta1.MonitoredResourceDescriptorsResource; 
+    var monitoredResourceDescriptors: gapi.client.logging.MonitoredResourceDescriptorsResource; 
     
 }

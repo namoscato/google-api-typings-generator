@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.gmail.v1 {
+declare module gapi.client.gmail {
     
     interface BatchDeleteMessagesRequest {
         // The IDs of the messages to delete.
@@ -556,6 +556,6 @@ declare module gapi.client.gmail.v1 {
 }
 
 declare module gapi.client.gmail {
-    var users: gapi.client.gmail.v1.UsersResource; 
+    var users: gapi.client.gmail.UsersResource; 
     
 }

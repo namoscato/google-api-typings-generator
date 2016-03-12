@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.youtubeAnalytics.v1 {
+declare module gapi.client.youtubeAnalytics {
     
     interface BatchReport {
         // The ID that YouTube assigns and uses to uniquely identify the report.
@@ -267,14 +267,14 @@ declare module gapi.client.youtubeAnalytics.v1 {
 }
 
 declare module gapi.client.youtubeAnalytics {
-    var batchReportDefinitions: gapi.client.youtubeAnalytics.v1.BatchReportDefinitionsResource; 
+    var batchReportDefinitions: gapi.client.youtubeAnalytics.BatchReportDefinitionsResource; 
     
-    var batchReports: gapi.client.youtubeAnalytics.v1.BatchReportsResource; 
+    var batchReports: gapi.client.youtubeAnalytics.BatchReportsResource; 
     
-    var groupItems: gapi.client.youtubeAnalytics.v1.GroupItemsResource; 
+    var groupItems: gapi.client.youtubeAnalytics.GroupItemsResource; 
     
-    var groups: gapi.client.youtubeAnalytics.v1.GroupsResource; 
+    var groups: gapi.client.youtubeAnalytics.GroupsResource; 
     
-    var reports: gapi.client.youtubeAnalytics.v1.ReportsResource; 
+    var reports: gapi.client.youtubeAnalytics.ReportsResource; 
     
 }

@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.blogger.v3 {
+declare module gapi.client.blogger {
     
     interface Blog {
         // The JSON custom meta-data for the Blog
@@ -803,20 +803,20 @@ declare module gapi.client.blogger.v3 {
 }
 
 declare module gapi.client.blogger {
-    var blogUserInfos: gapi.client.blogger.v3.BlogUserInfosResource; 
+    var blogUserInfos: gapi.client.blogger.BlogUserInfosResource; 
     
-    var blogs: gapi.client.blogger.v3.BlogsResource; 
+    var blogs: gapi.client.blogger.BlogsResource; 
     
-    var comments: gapi.client.blogger.v3.CommentsResource; 
+    var comments: gapi.client.blogger.CommentsResource; 
     
-    var pageViews: gapi.client.blogger.v3.PageViewsResource; 
+    var pageViews: gapi.client.blogger.PageViewsResource; 
     
-    var pages: gapi.client.blogger.v3.PagesResource; 
+    var pages: gapi.client.blogger.PagesResource; 
     
-    var postUserInfos: gapi.client.blogger.v3.PostUserInfosResource; 
+    var postUserInfos: gapi.client.blogger.PostUserInfosResource; 
     
-    var posts: gapi.client.blogger.v3.PostsResource; 
+    var posts: gapi.client.blogger.PostsResource; 
     
-    var users: gapi.client.blogger.v3.UsersResource; 
+    var users: gapi.client.blogger.UsersResource; 
     
 }

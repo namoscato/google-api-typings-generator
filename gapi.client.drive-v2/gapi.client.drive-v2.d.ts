@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.drive.v2 {
+declare module gapi.client.drive {
     
     interface About {
         // Information about supported additional roles per file type. The most specific type takes precedence.
@@ -1398,30 +1398,30 @@ declare module gapi.client.drive.v2 {
 }
 
 declare module gapi.client.drive {
-    var about: gapi.client.drive.v2.AboutResource; 
+    var about: gapi.client.drive.AboutResource; 
     
-    var apps: gapi.client.drive.v2.AppsResource; 
+    var apps: gapi.client.drive.AppsResource; 
     
-    var changes: gapi.client.drive.v2.ChangesResource; 
+    var changes: gapi.client.drive.ChangesResource; 
     
-    var channels: gapi.client.drive.v2.ChannelsResource; 
+    var channels: gapi.client.drive.ChannelsResource; 
     
-    var children: gapi.client.drive.v2.ChildrenResource; 
+    var children: gapi.client.drive.ChildrenResource; 
     
-    var comments: gapi.client.drive.v2.CommentsResource; 
+    var comments: gapi.client.drive.CommentsResource; 
     
-    var files: gapi.client.drive.v2.FilesResource; 
+    var files: gapi.client.drive.FilesResource; 
     
-    var parents: gapi.client.drive.v2.ParentsResource; 
+    var parents: gapi.client.drive.ParentsResource; 
     
-    var permissions: gapi.client.drive.v2.PermissionsResource; 
+    var permissions: gapi.client.drive.PermissionsResource; 
     
-    var properties: gapi.client.drive.v2.PropertiesResource; 
+    var properties: gapi.client.drive.PropertiesResource; 
     
-    var realtime: gapi.client.drive.v2.RealtimeResource; 
+    var realtime: gapi.client.drive.RealtimeResource; 
     
-    var replies: gapi.client.drive.v2.RepliesResource; 
+    var replies: gapi.client.drive.RepliesResource; 
     
-    var revisions: gapi.client.drive.v2.RevisionsResource; 
+    var revisions: gapi.client.drive.RevisionsResource; 
     
 }

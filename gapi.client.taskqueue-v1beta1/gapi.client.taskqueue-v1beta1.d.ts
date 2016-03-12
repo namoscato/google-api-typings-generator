@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.taskqueue.v1beta1 {
+declare module gapi.client.taskqueue {
     
     interface Task {
         // Time (in seconds since the epoch) at which the task was enqueued.
@@ -124,8 +124,8 @@ declare module gapi.client.taskqueue.v1beta1 {
 }
 
 declare module gapi.client.taskqueue {
-    var taskqueues: gapi.client.taskqueue.v1beta1.TaskqueuesResource; 
+    var taskqueues: gapi.client.taskqueue.TaskqueuesResource; 
     
-    var tasks: gapi.client.taskqueue.v1beta1.TasksResource; 
+    var tasks: gapi.client.taskqueue.TasksResource; 
     
 }

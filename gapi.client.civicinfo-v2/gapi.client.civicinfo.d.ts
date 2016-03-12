@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.civicinfo.v2 {
+declare module gapi.client.civicinfo {
     
     interface AdministrationRegion {
         // The election administration body for this area.
@@ -378,10 +378,10 @@ declare module gapi.client.civicinfo.v2 {
 }
 
 declare module gapi.client.civicinfo {
-    var divisions: gapi.client.civicinfo.v2.DivisionsResource; 
+    var divisions: gapi.client.civicinfo.DivisionsResource; 
     
-    var elections: gapi.client.civicinfo.v2.ElectionsResource; 
+    var elections: gapi.client.civicinfo.ElectionsResource; 
     
-    var representatives: gapi.client.civicinfo.v2.RepresentativesResource; 
+    var representatives: gapi.client.civicinfo.RepresentativesResource; 
     
 }

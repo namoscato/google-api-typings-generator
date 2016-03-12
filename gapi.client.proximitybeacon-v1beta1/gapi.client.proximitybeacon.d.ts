@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.proximitybeacon.v1beta1 {
+declare module gapi.client.proximitybeacon {
     
     interface Beacon {
         // Resource name of this beacon. A beacon name has the format "beacons/N!beaconId" where the beaconId is the base16 ID broadcast by the beacon and N is a code for the beacon's type. Possible values are `3` for Eddystone, `1` for iBeacon, or `5` for AltBeacon. This field must be left empty when registering. After reading a beacon, clients can use the name for future operations.
@@ -271,10 +271,10 @@ declare module gapi.client.proximitybeacon.v1beta1 {
 }
 
 declare module gapi.client.proximitybeacon {
-    var beacons: gapi.client.proximitybeacon.v1beta1.BeaconsResource; 
+    var beacons: gapi.client.proximitybeacon.BeaconsResource; 
     
-    var namespaces: gapi.client.proximitybeacon.v1beta1.NamespacesResource; 
+    var namespaces: gapi.client.proximitybeacon.NamespacesResource; 
     
-    var beaconinfo: gapi.client.proximitybeacon.v1beta1.BeaconinfoResource; 
+    var beaconinfo: gapi.client.proximitybeacon.BeaconinfoResource; 
     
 }

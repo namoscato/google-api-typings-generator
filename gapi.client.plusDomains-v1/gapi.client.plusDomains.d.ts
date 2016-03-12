@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.plusDomains.v1 {
+declare module gapi.client.plusDomains {
     
     interface Acl {
         // Description of the access granted, suitable for display.
@@ -891,16 +891,16 @@ declare module gapi.client.plusDomains.v1 {
 }
 
 declare module gapi.client.plusDomains {
-    var activities: gapi.client.plusDomains.v1.ActivitiesResource; 
+    var activities: gapi.client.plusDomains.ActivitiesResource; 
     
-    var audiences: gapi.client.plusDomains.v1.AudiencesResource; 
+    var audiences: gapi.client.plusDomains.AudiencesResource; 
     
-    var circles: gapi.client.plusDomains.v1.CirclesResource; 
+    var circles: gapi.client.plusDomains.CirclesResource; 
     
-    var comments: gapi.client.plusDomains.v1.CommentsResource; 
+    var comments: gapi.client.plusDomains.CommentsResource; 
     
-    var media: gapi.client.plusDomains.v1.MediaResource; 
+    var media: gapi.client.plusDomains.MediaResource; 
     
-    var people: gapi.client.plusDomains.v1.PeopleResource; 
+    var people: gapi.client.plusDomains.PeopleResource; 
     
 }

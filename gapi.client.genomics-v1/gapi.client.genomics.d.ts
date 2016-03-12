@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.genomics.v1 {
+declare module gapi.client.genomics {
     
     interface ListDatasetsResponse {
         // The list of matching Datasets.
@@ -979,22 +979,22 @@ declare module gapi.client.genomics.v1 {
 }
 
 declare module gapi.client.genomics {
-    var datasets: gapi.client.genomics.v1.DatasetsResource; 
+    var datasets: gapi.client.genomics.DatasetsResource; 
     
-    var operations: gapi.client.genomics.v1.OperationsResource; 
+    var operations: gapi.client.genomics.OperationsResource; 
     
-    var readgroupsets: gapi.client.genomics.v1.ReadgroupsetsResource; 
+    var readgroupsets: gapi.client.genomics.ReadgroupsetsResource; 
     
-    var reads: gapi.client.genomics.v1.ReadsResource; 
+    var reads: gapi.client.genomics.ReadsResource; 
     
-    var referencesets: gapi.client.genomics.v1.ReferencesetsResource; 
+    var referencesets: gapi.client.genomics.ReferencesetsResource; 
     
-    var references: gapi.client.genomics.v1.ReferencesResource; 
+    var references: gapi.client.genomics.ReferencesResource; 
     
-    var variants: gapi.client.genomics.v1.VariantsResource; 
+    var variants: gapi.client.genomics.VariantsResource; 
     
-    var variantsets: gapi.client.genomics.v1.VariantsetsResource; 
+    var variantsets: gapi.client.genomics.VariantsetsResource; 
     
-    var callsets: gapi.client.genomics.v1.CallsetsResource; 
+    var callsets: gapi.client.genomics.CallsetsResource; 
     
 }

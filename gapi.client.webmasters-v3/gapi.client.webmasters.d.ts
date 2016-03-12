@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.webmasters.v3 {
+declare module gapi.client.webmasters {
     
     interface ApiDataRow {
         // 
@@ -286,14 +286,14 @@ declare module gapi.client.webmasters.v3 {
 }
 
 declare module gapi.client.webmasters {
-    var searchanalytics: gapi.client.webmasters.v3.SearchanalyticsResource; 
+    var searchanalytics: gapi.client.webmasters.SearchanalyticsResource; 
     
-    var sitemaps: gapi.client.webmasters.v3.SitemapsResource; 
+    var sitemaps: gapi.client.webmasters.SitemapsResource; 
     
-    var sites: gapi.client.webmasters.v3.SitesResource; 
+    var sites: gapi.client.webmasters.SitesResource; 
     
-    var urlcrawlerrorscounts: gapi.client.webmasters.v3.UrlcrawlerrorscountsResource; 
+    var urlcrawlerrorscounts: gapi.client.webmasters.UrlcrawlerrorscountsResource; 
     
-    var urlcrawlerrorssamples: gapi.client.webmasters.v3.UrlcrawlerrorssamplesResource; 
+    var urlcrawlerrorssamples: gapi.client.webmasters.UrlcrawlerrorssamplesResource; 
     
 }

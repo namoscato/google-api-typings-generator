@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.genomics.v1alpha2 {
+declare module gapi.client.genomics {
     
     interface Operation {
         // The server-assigned name, which is only unique within the same service that originally returns it. For example: `operations/CJHU7Oi_ChDrveSpBRjfuL-qzoWAgEw`
@@ -308,8 +308,8 @@ declare module gapi.client.genomics.v1alpha2 {
 }
 
 declare module gapi.client.genomics {
-    var operations: gapi.client.genomics.v1alpha2.OperationsResource; 
+    var operations: gapi.client.genomics.OperationsResource; 
     
-    var pipelines: gapi.client.genomics.v1alpha2.PipelinesResource; 
+    var pipelines: gapi.client.genomics.PipelinesResource; 
     
 }

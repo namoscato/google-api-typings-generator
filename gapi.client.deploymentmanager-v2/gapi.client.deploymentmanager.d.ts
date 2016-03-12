@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.deploymentmanager.v2 {
+declare module gapi.client.deploymentmanager {
     
     interface ConfigFile {
         // The contents of the file.
@@ -522,14 +522,14 @@ declare module gapi.client.deploymentmanager.v2 {
 }
 
 declare module gapi.client.deploymentmanager {
-    var deployments: gapi.client.deploymentmanager.v2.DeploymentsResource; 
+    var deployments: gapi.client.deploymentmanager.DeploymentsResource; 
     
-    var manifests: gapi.client.deploymentmanager.v2.ManifestsResource; 
+    var manifests: gapi.client.deploymentmanager.ManifestsResource; 
     
-    var operations: gapi.client.deploymentmanager.v2.OperationsResource; 
+    var operations: gapi.client.deploymentmanager.OperationsResource; 
     
-    var resources: gapi.client.deploymentmanager.v2.ResourcesResource; 
+    var resources: gapi.client.deploymentmanager.ResourcesResource; 
     
-    var types: gapi.client.deploymentmanager.v2.TypesResource; 
+    var types: gapi.client.deploymentmanager.TypesResource; 
     
 }

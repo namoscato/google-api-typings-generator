@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.youtube.v3 {
+declare module gapi.client.youtube {
     
     interface AccessPolicy {
         // The value of allowed indicates whether the access to the policy is allowed or denied by default.
@@ -3469,56 +3469,56 @@ declare module gapi.client.youtube.v3 {
 }
 
 declare module gapi.client.youtube {
-    var activities: gapi.client.youtube.v3.ActivitiesResource; 
+    var activities: gapi.client.youtube.ActivitiesResource; 
     
-    var captions: gapi.client.youtube.v3.CaptionsResource; 
+    var captions: gapi.client.youtube.CaptionsResource; 
     
-    var channelBanners: gapi.client.youtube.v3.ChannelBannersResource; 
+    var channelBanners: gapi.client.youtube.ChannelBannersResource; 
     
-    var channelSections: gapi.client.youtube.v3.ChannelSectionsResource; 
+    var channelSections: gapi.client.youtube.ChannelSectionsResource; 
     
-    var channels: gapi.client.youtube.v3.ChannelsResource; 
+    var channels: gapi.client.youtube.ChannelsResource; 
     
-    var commentThreads: gapi.client.youtube.v3.CommentThreadsResource; 
+    var commentThreads: gapi.client.youtube.CommentThreadsResource; 
     
-    var comments: gapi.client.youtube.v3.CommentsResource; 
+    var comments: gapi.client.youtube.CommentsResource; 
     
-    var fanFundingEvents: gapi.client.youtube.v3.FanFundingEventsResource; 
+    var fanFundingEvents: gapi.client.youtube.FanFundingEventsResource; 
     
-    var guideCategories: gapi.client.youtube.v3.GuideCategoriesResource; 
+    var guideCategories: gapi.client.youtube.GuideCategoriesResource; 
     
-    var i18nLanguages: gapi.client.youtube.v3.I18nLanguagesResource; 
+    var i18nLanguages: gapi.client.youtube.I18nLanguagesResource; 
     
-    var i18nRegions: gapi.client.youtube.v3.I18nRegionsResource; 
+    var i18nRegions: gapi.client.youtube.I18nRegionsResource; 
     
-    var liveBroadcasts: gapi.client.youtube.v3.LiveBroadcastsResource; 
+    var liveBroadcasts: gapi.client.youtube.LiveBroadcastsResource; 
     
-    var liveChatBans: gapi.client.youtube.v3.LiveChatBansResource; 
+    var liveChatBans: gapi.client.youtube.LiveChatBansResource; 
     
-    var liveChatMessages: gapi.client.youtube.v3.LiveChatMessagesResource; 
+    var liveChatMessages: gapi.client.youtube.LiveChatMessagesResource; 
     
-    var liveChatModerators: gapi.client.youtube.v3.LiveChatModeratorsResource; 
+    var liveChatModerators: gapi.client.youtube.LiveChatModeratorsResource; 
     
-    var liveStreams: gapi.client.youtube.v3.LiveStreamsResource; 
+    var liveStreams: gapi.client.youtube.LiveStreamsResource; 
     
-    var playlistItems: gapi.client.youtube.v3.PlaylistItemsResource; 
+    var playlistItems: gapi.client.youtube.PlaylistItemsResource; 
     
-    var playlists: gapi.client.youtube.v3.PlaylistsResource; 
+    var playlists: gapi.client.youtube.PlaylistsResource; 
     
-    var search: gapi.client.youtube.v3.SearchResource; 
+    var search: gapi.client.youtube.SearchResource; 
     
-    var sponsors: gapi.client.youtube.v3.SponsorsResource; 
+    var sponsors: gapi.client.youtube.SponsorsResource; 
     
-    var subscriptions: gapi.client.youtube.v3.SubscriptionsResource; 
+    var subscriptions: gapi.client.youtube.SubscriptionsResource; 
     
-    var thumbnails: gapi.client.youtube.v3.ThumbnailsResource; 
+    var thumbnails: gapi.client.youtube.ThumbnailsResource; 
     
-    var videoAbuseReportReasons: gapi.client.youtube.v3.VideoAbuseReportReasonsResource; 
+    var videoAbuseReportReasons: gapi.client.youtube.VideoAbuseReportReasonsResource; 
     
-    var videoCategories: gapi.client.youtube.v3.VideoCategoriesResource; 
+    var videoCategories: gapi.client.youtube.VideoCategoriesResource; 
     
-    var videos: gapi.client.youtube.v3.VideosResource; 
+    var videos: gapi.client.youtube.VideosResource; 
     
-    var watermarks: gapi.client.youtube.v3.WatermarksResource; 
+    var watermarks: gapi.client.youtube.WatermarksResource; 
     
 }

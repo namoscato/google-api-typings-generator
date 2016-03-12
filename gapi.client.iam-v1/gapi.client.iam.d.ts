@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.iam.v1 {
+declare module gapi.client.iam {
     
     interface ListServiceAccountsResponse {
         // The list of matching service accounts.
@@ -262,6 +262,6 @@ declare module gapi.client.iam.v1 {
 }
 
 declare module gapi.client.iam {
-    var projects: gapi.client.iam.v1.ProjectsResource; 
+    var projects: gapi.client.iam.ProjectsResource; 
     
 }

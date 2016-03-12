@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.siteVerification.v1 {
+declare module gapi.client.siteVerification {
     
     interface SiteVerificationWebResourceGettokenRequest {
         // The site for which a verification token will be generated.
@@ -88,6 +88,6 @@ declare module gapi.client.siteVerification.v1 {
 }
 
 declare module gapi.client.siteVerification {
-    var webResource: gapi.client.siteVerification.v1.WebResourceResource; 
+    var webResource: gapi.client.siteVerification.WebResourceResource; 
     
 }

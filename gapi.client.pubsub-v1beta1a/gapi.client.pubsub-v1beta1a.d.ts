@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.pubsub.v1beta1a {
+declare module gapi.client.pubsub {
     
     interface Topic {
         // Name of the topic.
@@ -237,8 +237,8 @@ declare module gapi.client.pubsub.v1beta1a {
 }
 
 declare module gapi.client.pubsub {
-    var topics: gapi.client.pubsub.v1beta1a.TopicsResource; 
+    var topics: gapi.client.pubsub.TopicsResource; 
     
-    var subscriptions: gapi.client.pubsub.v1beta1a.SubscriptionsResource; 
+    var subscriptions: gapi.client.pubsub.SubscriptionsResource; 
     
 }

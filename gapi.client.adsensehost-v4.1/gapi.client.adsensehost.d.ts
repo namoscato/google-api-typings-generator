@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.adsensehost.v4_1 {
+declare module gapi.client.adsensehost {
     
     interface Account {
         // Unique identifier of this account.
@@ -520,16 +520,16 @@ declare module gapi.client.adsensehost.v4_1 {
 }
 
 declare module gapi.client.adsensehost {
-    var accounts: gapi.client.adsensehost.v4_1.AccountsResource; 
+    var accounts: gapi.client.adsensehost.AccountsResource; 
     
-    var adclients: gapi.client.adsensehost.v4_1.AdclientsResource; 
+    var adclients: gapi.client.adsensehost.AdclientsResource; 
     
-    var associationsessions: gapi.client.adsensehost.v4_1.AssociationsessionsResource; 
+    var associationsessions: gapi.client.adsensehost.AssociationsessionsResource; 
     
-    var customchannels: gapi.client.adsensehost.v4_1.CustomchannelsResource; 
+    var customchannels: gapi.client.adsensehost.CustomchannelsResource; 
     
-    var reports: gapi.client.adsensehost.v4_1.ReportsResource; 
+    var reports: gapi.client.adsensehost.ReportsResource; 
     
-    var urlchannels: gapi.client.adsensehost.v4_1.UrlchannelsResource; 
+    var urlchannels: gapi.client.adsensehost.UrlchannelsResource; 
     
 }

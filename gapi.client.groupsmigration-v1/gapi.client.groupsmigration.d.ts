@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.groupsmigration.v1 {
+declare module gapi.client.groupsmigration {
     
     interface Groups {
         // The kind of insert resource this is.
@@ -25,6 +25,6 @@ declare module gapi.client.groupsmigration.v1 {
 }
 
 declare module gapi.client.groupsmigration {
-    var archive: gapi.client.groupsmigration.v1.ArchiveResource; 
+    var archive: gapi.client.groupsmigration.ArchiveResource; 
     
 }

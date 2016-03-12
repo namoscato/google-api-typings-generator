@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.storage.v1beta2 {
+declare module gapi.client.storage {
     
     interface Bucket {
         // Access controls on the bucket.
@@ -724,16 +724,16 @@ declare module gapi.client.storage.v1beta2 {
 }
 
 declare module gapi.client.storage {
-    var bucketAccessControls: gapi.client.storage.v1beta2.BucketAccessControlsResource; 
+    var bucketAccessControls: gapi.client.storage.BucketAccessControlsResource; 
     
-    var buckets: gapi.client.storage.v1beta2.BucketsResource; 
+    var buckets: gapi.client.storage.BucketsResource; 
     
-    var channels: gapi.client.storage.v1beta2.ChannelsResource; 
+    var channels: gapi.client.storage.ChannelsResource; 
     
-    var defaultObjectAccessControls: gapi.client.storage.v1beta2.DefaultObjectAccessControlsResource; 
+    var defaultObjectAccessControls: gapi.client.storage.DefaultObjectAccessControlsResource; 
     
-    var objectAccessControls: gapi.client.storage.v1beta2.ObjectAccessControlsResource; 
+    var objectAccessControls: gapi.client.storage.ObjectAccessControlsResource; 
     
-    var objects: gapi.client.storage.v1beta2.ObjectsResource; 
+    var objects: gapi.client.storage.ObjectsResource; 
     
 }

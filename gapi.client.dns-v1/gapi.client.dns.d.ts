@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.dns.v1 {
+declare module gapi.client.dns {
     
     interface Change {
         // Which ResourceRecordSets to add?
@@ -222,12 +222,12 @@ declare module gapi.client.dns.v1 {
 }
 
 declare module gapi.client.dns {
-    var changes: gapi.client.dns.v1.ChangesResource; 
+    var changes: gapi.client.dns.ChangesResource; 
     
-    var managedZones: gapi.client.dns.v1.ManagedZonesResource; 
+    var managedZones: gapi.client.dns.ManagedZonesResource; 
     
-    var projects: gapi.client.dns.v1.ProjectsResource; 
+    var projects: gapi.client.dns.ProjectsResource; 
     
-    var resourceRecordSets: gapi.client.dns.v1.ResourceRecordSetsResource; 
+    var resourceRecordSets: gapi.client.dns.ResourceRecordSetsResource; 
     
 }

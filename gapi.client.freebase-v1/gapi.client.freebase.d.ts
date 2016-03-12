@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.freebase.v1 {
+declare module gapi.client.freebase {
     
     interface ReconcileCandidate {
         // Percentage likelihood that this candidate is the unique matching entity. Value will be between 0.0 and 1.0

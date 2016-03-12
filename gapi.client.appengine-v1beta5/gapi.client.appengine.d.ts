@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.appengine.v1beta5 {
+declare module gapi.client.appengine {
     
     interface Operation {
         // The server-assigned name, which is only unique within the same service that originally returns it. If you use the default HTTP mapping above, the `name` should have the format of `operations/some/unique/name`.
@@ -538,6 +538,6 @@ declare module gapi.client.appengine.v1beta5 {
 }
 
 declare module gapi.client.appengine {
-    var apps: gapi.client.appengine.v1beta5.AppsResource; 
+    var apps: gapi.client.appengine.AppsResource; 
     
 }

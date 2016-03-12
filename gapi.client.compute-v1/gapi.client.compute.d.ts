@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.compute.v1 {
+declare module gapi.client.compute {
     
     interface AccessConfig {
         // [Output Only] Type of the resource. Always compute#accessConfig for access configs.
@@ -4913,76 +4913,76 @@ declare module gapi.client.compute.v1 {
 }
 
 declare module gapi.client.compute {
-    var addresses: gapi.client.compute.v1.AddressesResource; 
+    var addresses: gapi.client.compute.AddressesResource; 
     
-    var autoscalers: gapi.client.compute.v1.AutoscalersResource; 
+    var autoscalers: gapi.client.compute.AutoscalersResource; 
     
-    var backendServices: gapi.client.compute.v1.BackendServicesResource; 
+    var backendServices: gapi.client.compute.BackendServicesResource; 
     
-    var diskTypes: gapi.client.compute.v1.DiskTypesResource; 
+    var diskTypes: gapi.client.compute.DiskTypesResource; 
     
-    var disks: gapi.client.compute.v1.DisksResource; 
+    var disks: gapi.client.compute.DisksResource; 
     
-    var firewalls: gapi.client.compute.v1.FirewallsResource; 
+    var firewalls: gapi.client.compute.FirewallsResource; 
     
-    var forwardingRules: gapi.client.compute.v1.ForwardingRulesResource; 
+    var forwardingRules: gapi.client.compute.ForwardingRulesResource; 
     
-    var globalAddresses: gapi.client.compute.v1.GlobalAddressesResource; 
+    var globalAddresses: gapi.client.compute.GlobalAddressesResource; 
     
-    var globalForwardingRules: gapi.client.compute.v1.GlobalForwardingRulesResource; 
+    var globalForwardingRules: gapi.client.compute.GlobalForwardingRulesResource; 
     
-    var globalOperations: gapi.client.compute.v1.GlobalOperationsResource; 
+    var globalOperations: gapi.client.compute.GlobalOperationsResource; 
     
-    var httpHealthChecks: gapi.client.compute.v1.HttpHealthChecksResource; 
+    var httpHealthChecks: gapi.client.compute.HttpHealthChecksResource; 
     
-    var httpsHealthChecks: gapi.client.compute.v1.HttpsHealthChecksResource; 
+    var httpsHealthChecks: gapi.client.compute.HttpsHealthChecksResource; 
     
-    var images: gapi.client.compute.v1.ImagesResource; 
+    var images: gapi.client.compute.ImagesResource; 
     
-    var instanceGroupManagers: gapi.client.compute.v1.InstanceGroupManagersResource; 
+    var instanceGroupManagers: gapi.client.compute.InstanceGroupManagersResource; 
     
-    var instanceGroups: gapi.client.compute.v1.InstanceGroupsResource; 
+    var instanceGroups: gapi.client.compute.InstanceGroupsResource; 
     
-    var instanceTemplates: gapi.client.compute.v1.InstanceTemplatesResource; 
+    var instanceTemplates: gapi.client.compute.InstanceTemplatesResource; 
     
-    var instances: gapi.client.compute.v1.InstancesResource; 
+    var instances: gapi.client.compute.InstancesResource; 
     
-    var licenses: gapi.client.compute.v1.LicensesResource; 
+    var licenses: gapi.client.compute.LicensesResource; 
     
-    var machineTypes: gapi.client.compute.v1.MachineTypesResource; 
+    var machineTypes: gapi.client.compute.MachineTypesResource; 
     
-    var networks: gapi.client.compute.v1.NetworksResource; 
+    var networks: gapi.client.compute.NetworksResource; 
     
-    var projects: gapi.client.compute.v1.ProjectsResource; 
+    var projects: gapi.client.compute.ProjectsResource; 
     
-    var regionOperations: gapi.client.compute.v1.RegionOperationsResource; 
+    var regionOperations: gapi.client.compute.RegionOperationsResource; 
     
-    var regions: gapi.client.compute.v1.RegionsResource; 
+    var regions: gapi.client.compute.RegionsResource; 
     
-    var routes: gapi.client.compute.v1.RoutesResource; 
+    var routes: gapi.client.compute.RoutesResource; 
     
-    var snapshots: gapi.client.compute.v1.SnapshotsResource; 
+    var snapshots: gapi.client.compute.SnapshotsResource; 
     
-    var sslCertificates: gapi.client.compute.v1.SslCertificatesResource; 
+    var sslCertificates: gapi.client.compute.SslCertificatesResource; 
     
-    var subnetworks: gapi.client.compute.v1.SubnetworksResource; 
+    var subnetworks: gapi.client.compute.SubnetworksResource; 
     
-    var targetHttpProxies: gapi.client.compute.v1.TargetHttpProxiesResource; 
+    var targetHttpProxies: gapi.client.compute.TargetHttpProxiesResource; 
     
-    var targetHttpsProxies: gapi.client.compute.v1.TargetHttpsProxiesResource; 
+    var targetHttpsProxies: gapi.client.compute.TargetHttpsProxiesResource; 
     
-    var targetInstances: gapi.client.compute.v1.TargetInstancesResource; 
+    var targetInstances: gapi.client.compute.TargetInstancesResource; 
     
-    var targetPools: gapi.client.compute.v1.TargetPoolsResource; 
+    var targetPools: gapi.client.compute.TargetPoolsResource; 
     
-    var targetVpnGateways: gapi.client.compute.v1.TargetVpnGatewaysResource; 
+    var targetVpnGateways: gapi.client.compute.TargetVpnGatewaysResource; 
     
-    var urlMaps: gapi.client.compute.v1.UrlMapsResource; 
+    var urlMaps: gapi.client.compute.UrlMapsResource; 
     
-    var vpnTunnels: gapi.client.compute.v1.VpnTunnelsResource; 
+    var vpnTunnels: gapi.client.compute.VpnTunnelsResource; 
     
-    var zoneOperations: gapi.client.compute.v1.ZoneOperationsResource; 
+    var zoneOperations: gapi.client.compute.ZoneOperationsResource; 
     
-    var zones: gapi.client.compute.v1.ZonesResource; 
+    var zones: gapi.client.compute.ZonesResource; 
     
 }

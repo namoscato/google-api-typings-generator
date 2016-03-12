@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.clouddebugger.v2 {
+declare module gapi.client.clouddebugger {
     
     interface RegisterDebuggeeRequest {
         // Debuggee information to register. The fields `project`, `uniquifier`, `description` and `agent_version` of the debuggee must be set.
@@ -359,8 +359,8 @@ declare module gapi.client.clouddebugger.v2 {
 }
 
 declare module gapi.client.clouddebugger {
-    var controller: gapi.client.clouddebugger.v2.ControllerResource; 
+    var controller: gapi.client.clouddebugger.ControllerResource; 
     
-    var debugger: gapi.client.clouddebugger.v2.DebuggerResource; 
+    var debugger: gapi.client.clouddebugger.DebuggerResource; 
     
 }

@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.mirror.v1 {
+declare module gapi.client.mirror {
     
     interface Account {
         // 
@@ -531,16 +531,16 @@ declare module gapi.client.mirror.v1 {
 }
 
 declare module gapi.client.mirror {
-    var accounts: gapi.client.mirror.v1.AccountsResource; 
+    var accounts: gapi.client.mirror.AccountsResource; 
     
-    var contacts: gapi.client.mirror.v1.ContactsResource; 
+    var contacts: gapi.client.mirror.ContactsResource; 
     
-    var locations: gapi.client.mirror.v1.LocationsResource; 
+    var locations: gapi.client.mirror.LocationsResource; 
     
-    var settings: gapi.client.mirror.v1.SettingsResource; 
+    var settings: gapi.client.mirror.SettingsResource; 
     
-    var subscriptions: gapi.client.mirror.v1.SubscriptionsResource; 
+    var subscriptions: gapi.client.mirror.SubscriptionsResource; 
     
-    var timeline: gapi.client.mirror.v1.TimelineResource; 
+    var timeline: gapi.client.mirror.TimelineResource; 
     
 }

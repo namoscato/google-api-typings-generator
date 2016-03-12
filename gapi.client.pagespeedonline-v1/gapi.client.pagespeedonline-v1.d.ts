@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.pagespeedonline.v1 {
+declare module gapi.client.pagespeedonline {
     
     interface Result {
         // Localized PageSpeed results. Contains a ruleResults entry for each PageSpeed rule instantiated and run by the server.
@@ -97,6 +97,6 @@ declare module gapi.client.pagespeedonline.v1 {
 }
 
 declare module gapi.client.pagespeedonline {
-    var pagespeedapi: gapi.client.pagespeedonline.v1.PagespeedapiResource; 
+    var pagespeedapi: gapi.client.pagespeedonline.PagespeedapiResource; 
     
 }

@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.partners.v2 {
+declare module gapi.client.partners {
     
     interface LogUserEventRequest {
         // Current request metadata.
@@ -393,12 +393,12 @@ declare module gapi.client.partners.v2 {
 }
 
 declare module gapi.client.partners {
-    var userEvents: gapi.client.partners.v2.UserEventsResource; 
+    var userEvents: gapi.client.partners.UserEventsResource; 
     
-    var clientMessages: gapi.client.partners.v2.ClientMessagesResource; 
+    var clientMessages: gapi.client.partners.ClientMessagesResource; 
     
-    var userStates: gapi.client.partners.v2.UserStatesResource; 
+    var userStates: gapi.client.partners.UserStatesResource; 
     
-    var companies: gapi.client.partners.v2.CompaniesResource; 
+    var companies: gapi.client.partners.CompaniesResource; 
     
 }

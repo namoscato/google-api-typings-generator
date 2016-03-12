@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.admin.directory_v1 {
+declare module gapi.client.admin {
     
     interface Alias {
         // A alias email
@@ -1800,42 +1800,42 @@ declare module gapi.client.admin.directory_v1 {
 }
 
 declare module gapi.client.admin {
-    var asps: gapi.client.admin.directory_v1.AspsResource; 
+    var asps: gapi.client.admin.AspsResource; 
     
-    var channels: gapi.client.admin.directory_v1.ChannelsResource; 
+    var channels: gapi.client.admin.ChannelsResource; 
     
-    var chromeosdevices: gapi.client.admin.directory_v1.ChromeosdevicesResource; 
+    var chromeosdevices: gapi.client.admin.ChromeosdevicesResource; 
     
-    var customers: gapi.client.admin.directory_v1.CustomersResource; 
+    var customers: gapi.client.admin.CustomersResource; 
     
-    var domainAliases: gapi.client.admin.directory_v1.DomainAliasesResource; 
+    var domainAliases: gapi.client.admin.DomainAliasesResource; 
     
-    var domains: gapi.client.admin.directory_v1.DomainsResource; 
+    var domains: gapi.client.admin.DomainsResource; 
     
-    var groups: gapi.client.admin.directory_v1.GroupsResource; 
+    var groups: gapi.client.admin.GroupsResource; 
     
-    var members: gapi.client.admin.directory_v1.MembersResource; 
+    var members: gapi.client.admin.MembersResource; 
     
-    var mobiledevices: gapi.client.admin.directory_v1.MobiledevicesResource; 
+    var mobiledevices: gapi.client.admin.MobiledevicesResource; 
     
-    var notifications: gapi.client.admin.directory_v1.NotificationsResource; 
+    var notifications: gapi.client.admin.NotificationsResource; 
     
-    var orgunits: gapi.client.admin.directory_v1.OrgunitsResource; 
+    var orgunits: gapi.client.admin.OrgunitsResource; 
     
-    var privileges: gapi.client.admin.directory_v1.PrivilegesResource; 
+    var privileges: gapi.client.admin.PrivilegesResource; 
     
-    var resources: gapi.client.admin.directory_v1.ResourcesResource; 
+    var resources: gapi.client.admin.ResourcesResource; 
     
-    var roleAssignments: gapi.client.admin.directory_v1.RoleAssignmentsResource; 
+    var roleAssignments: gapi.client.admin.RoleAssignmentsResource; 
     
-    var roles: gapi.client.admin.directory_v1.RolesResource; 
+    var roles: gapi.client.admin.RolesResource; 
     
-    var schemas: gapi.client.admin.directory_v1.SchemasResource; 
+    var schemas: gapi.client.admin.SchemasResource; 
     
-    var tokens: gapi.client.admin.directory_v1.TokensResource; 
+    var tokens: gapi.client.admin.TokensResource; 
     
-    var users: gapi.client.admin.directory_v1.UsersResource; 
+    var users: gapi.client.admin.UsersResource; 
     
-    var verificationCodes: gapi.client.admin.directory_v1.VerificationCodesResource; 
+    var verificationCodes: gapi.client.admin.VerificationCodesResource; 
     
 }

@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.adexchangeseller.v2_0 {
+declare module gapi.client.adexchangeseller {
     
     interface Account {
         // Unique identifier of this account.
@@ -413,6 +413,6 @@ declare module gapi.client.adexchangeseller.v2_0 {
 }
 
 declare module gapi.client.adexchangeseller {
-    var accounts: gapi.client.adexchangeseller.v2_0.AccountsResource; 
+    var accounts: gapi.client.adexchangeseller.AccountsResource; 
     
 }

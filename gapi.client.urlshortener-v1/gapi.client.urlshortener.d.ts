@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.urlshortener.v1 {
+declare module gapi.client.urlshortener {
     
     interface AnalyticsSnapshot {
         // Top browsers, e.g. "Chrome"; sorted by (descending) click counts. Only present if this data is available.
@@ -95,6 +95,6 @@ declare module gapi.client.urlshortener.v1 {
 }
 
 declare module gapi.client.urlshortener {
-    var url: gapi.client.urlshortener.v1.UrlResource; 
+    var url: gapi.client.urlshortener.UrlResource; 
     
 }

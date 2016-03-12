@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.content.v2sandbox {
+declare module gapi.client.content {
     
     interface Error {
         // The domain of the error.
@@ -837,6 +837,6 @@ declare module gapi.client.content.v2sandbox {
 }
 
 declare module gapi.client.content {
-    var orders: gapi.client.content.v2sandbox.OrdersResource; 
+    var orders: gapi.client.content.OrdersResource; 
     
 }

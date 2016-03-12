@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.tasks.v1 {
+declare module gapi.client.tasks {
     
     interface Task {
         // Completion date of the task (as a RFC 3339 timestamp). This field is omitted if the task has not been completed.
@@ -215,8 +215,8 @@ declare module gapi.client.tasks.v1 {
 }
 
 declare module gapi.client.tasks {
-    var tasklists: gapi.client.tasks.v1.TasklistsResource; 
+    var tasklists: gapi.client.tasks.TasklistsResource; 
     
-    var tasks: gapi.client.tasks.v1.TasksResource; 
+    var tasks: gapi.client.tasks.TasksResource; 
     
 }

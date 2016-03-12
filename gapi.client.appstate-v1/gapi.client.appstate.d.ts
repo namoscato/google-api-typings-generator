@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.appstate.v1 {
+declare module gapi.client.appstate {
     
     interface GetResponse {
         // The current app state version.
@@ -82,6 +82,6 @@ declare module gapi.client.appstate.v1 {
 }
 
 declare module gapi.client.appstate {
-    var states: gapi.client.appstate.v1.StatesResource; 
+    var states: gapi.client.appstate.StatesResource; 
     
 }

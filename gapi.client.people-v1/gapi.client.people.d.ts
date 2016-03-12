@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.people.v1 {
+declare module gapi.client.people {
     
     interface Person {
         // The resource name for the person, assigned by the server. An ASCII string with a max length of 27 characters. Always starts with `people/`.
@@ -464,6 +464,6 @@ declare module gapi.client.people.v1 {
 }
 
 declare module gapi.client.people {
-    var people: gapi.client.people.v1.PeopleResource; 
+    var people: gapi.client.people.PeopleResource; 
     
 }

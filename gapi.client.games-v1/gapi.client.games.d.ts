@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.games.v1 {
+declare module gapi.client.games {
     
     interface AchievementDefinition {
         // The type of the achievement.
@@ -1953,34 +1953,34 @@ declare module gapi.client.games.v1 {
 }
 
 declare module gapi.client.games {
-    var achievementDefinitions: gapi.client.games.v1.AchievementDefinitionsResource; 
+    var achievementDefinitions: gapi.client.games.AchievementDefinitionsResource; 
     
-    var achievements: gapi.client.games.v1.AchievementsResource; 
+    var achievements: gapi.client.games.AchievementsResource; 
     
-    var applications: gapi.client.games.v1.ApplicationsResource; 
+    var applications: gapi.client.games.ApplicationsResource; 
     
-    var events: gapi.client.games.v1.EventsResource; 
+    var events: gapi.client.games.EventsResource; 
     
-    var leaderboards: gapi.client.games.v1.LeaderboardsResource; 
+    var leaderboards: gapi.client.games.LeaderboardsResource; 
     
-    var metagame: gapi.client.games.v1.MetagameResource; 
+    var metagame: gapi.client.games.MetagameResource; 
     
-    var players: gapi.client.games.v1.PlayersResource; 
+    var players: gapi.client.games.PlayersResource; 
     
-    var pushtokens: gapi.client.games.v1.PushtokensResource; 
+    var pushtokens: gapi.client.games.PushtokensResource; 
     
-    var questMilestones: gapi.client.games.v1.QuestMilestonesResource; 
+    var questMilestones: gapi.client.games.QuestMilestonesResource; 
     
-    var quests: gapi.client.games.v1.QuestsResource; 
+    var quests: gapi.client.games.QuestsResource; 
     
-    var revisions: gapi.client.games.v1.RevisionsResource; 
+    var revisions: gapi.client.games.RevisionsResource; 
     
-    var rooms: gapi.client.games.v1.RoomsResource; 
+    var rooms: gapi.client.games.RoomsResource; 
     
-    var scores: gapi.client.games.v1.ScoresResource; 
+    var scores: gapi.client.games.ScoresResource; 
     
-    var snapshots: gapi.client.games.v1.SnapshotsResource; 
+    var snapshots: gapi.client.games.SnapshotsResource; 
     
-    var turnBasedMatches: gapi.client.games.v1.TurnBasedMatchesResource; 
+    var turnBasedMatches: gapi.client.games.TurnBasedMatchesResource; 
     
 }

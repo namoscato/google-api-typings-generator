@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.calendar.v3 {
+declare module gapi.client.calendar {
     
     interface Acl {
         // ETag of the collection.
@@ -991,20 +991,20 @@ declare module gapi.client.calendar.v3 {
 }
 
 declare module gapi.client.calendar {
-    var acl: gapi.client.calendar.v3.AclResource; 
+    var acl: gapi.client.calendar.AclResource; 
     
-    var calendarList: gapi.client.calendar.v3.CalendarListResource; 
+    var calendarList: gapi.client.calendar.CalendarListResource; 
     
-    var calendars: gapi.client.calendar.v3.CalendarsResource; 
+    var calendars: gapi.client.calendar.CalendarsResource; 
     
-    var channels: gapi.client.calendar.v3.ChannelsResource; 
+    var channels: gapi.client.calendar.ChannelsResource; 
     
-    var colors: gapi.client.calendar.v3.ColorsResource; 
+    var colors: gapi.client.calendar.ColorsResource; 
     
-    var events: gapi.client.calendar.v3.EventsResource; 
+    var events: gapi.client.calendar.EventsResource; 
     
-    var freebusy: gapi.client.calendar.v3.FreebusyResource; 
+    var freebusy: gapi.client.calendar.FreebusyResource; 
     
-    var settings: gapi.client.calendar.v3.SettingsResource; 
+    var settings: gapi.client.calendar.SettingsResource; 
     
 }

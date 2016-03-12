@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.autoscaler.v1beta2 {
+declare module gapi.client.autoscaler {
     
     interface Autoscaler {
         // Configuration parameters for autoscaling algorithm.
@@ -330,10 +330,10 @@ declare module gapi.client.autoscaler.v1beta2 {
 }
 
 declare module gapi.client.autoscaler {
-    var autoscalers: gapi.client.autoscaler.v1beta2.AutoscalersResource; 
+    var autoscalers: gapi.client.autoscaler.AutoscalersResource; 
     
-    var zoneOperations: gapi.client.autoscaler.v1beta2.ZoneOperationsResource; 
+    var zoneOperations: gapi.client.autoscaler.ZoneOperationsResource; 
     
-    var zones: gapi.client.autoscaler.v1beta2.ZonesResource; 
+    var zones: gapi.client.autoscaler.ZonesResource; 
     
 }

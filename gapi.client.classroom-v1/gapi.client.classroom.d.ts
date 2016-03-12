@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.classroom.v1 {
+declare module gapi.client.classroom {
     
     interface Course {
         // Identifier for this course assigned by Classroom. When creating a course, you may optionally set this identifier to an alias string in the request to create a corresponding alias. The `id` is still assigned by Classroom and cannot be updated after the course is created. Specifying this field in a course update mask will result in an error.
@@ -333,10 +333,10 @@ declare module gapi.client.classroom.v1 {
 }
 
 declare module gapi.client.classroom {
-    var courses: gapi.client.classroom.v1.CoursesResource; 
+    var courses: gapi.client.classroom.CoursesResource; 
     
-    var invitations: gapi.client.classroom.v1.InvitationsResource; 
+    var invitations: gapi.client.classroom.InvitationsResource; 
     
-    var userProfiles: gapi.client.classroom.v1.UserProfilesResource; 
+    var userProfiles: gapi.client.classroom.UserProfilesResource; 
     
 }

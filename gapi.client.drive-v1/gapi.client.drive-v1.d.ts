@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.drive.v1 {
+declare module gapi.client.drive {
     
     interface File {
         // Create time for this file (formatted RFC 3339 timestamp).
@@ -120,6 +120,6 @@ declare module gapi.client.drive.v1 {
 }
 
 declare module gapi.client.drive {
-    var files: gapi.client.drive.v1.FilesResource; 
+    var files: gapi.client.drive.FilesResource; 
     
 }

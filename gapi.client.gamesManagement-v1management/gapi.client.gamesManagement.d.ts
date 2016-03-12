@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.gamesManagement.v1management {
+declare module gapi.client.gamesManagement {
     
     interface AchievementResetAllResponse {
         // Uniquely identifies the type of this resource. Value is always the fixed string gamesManagement#achievementResetAllResponse.
@@ -323,20 +323,20 @@ declare module gapi.client.gamesManagement.v1management {
 }
 
 declare module gapi.client.gamesManagement {
-    var achievements: gapi.client.gamesManagement.v1management.AchievementsResource; 
+    var achievements: gapi.client.gamesManagement.AchievementsResource; 
     
-    var applications: gapi.client.gamesManagement.v1management.ApplicationsResource; 
+    var applications: gapi.client.gamesManagement.ApplicationsResource; 
     
-    var events: gapi.client.gamesManagement.v1management.EventsResource; 
+    var events: gapi.client.gamesManagement.EventsResource; 
     
-    var players: gapi.client.gamesManagement.v1management.PlayersResource; 
+    var players: gapi.client.gamesManagement.PlayersResource; 
     
-    var quests: gapi.client.gamesManagement.v1management.QuestsResource; 
+    var quests: gapi.client.gamesManagement.QuestsResource; 
     
-    var rooms: gapi.client.gamesManagement.v1management.RoomsResource; 
+    var rooms: gapi.client.gamesManagement.RoomsResource; 
     
-    var scores: gapi.client.gamesManagement.v1management.ScoresResource; 
+    var scores: gapi.client.gamesManagement.ScoresResource; 
     
-    var turnBasedMatches: gapi.client.gamesManagement.v1management.TurnBasedMatchesResource; 
+    var turnBasedMatches: gapi.client.gamesManagement.TurnBasedMatchesResource; 
     
 }

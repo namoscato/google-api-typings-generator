@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.tagmanager.v1 {
+declare module gapi.client.tagmanager {
     
     interface Account {
         // The Account ID uniquely identifies the GTM Account.
@@ -967,6 +967,6 @@ declare module gapi.client.tagmanager.v1 {
 }
 
 declare module gapi.client.tagmanager {
-    var accounts: gapi.client.tagmanager.v1.AccountsResource; 
+    var accounts: gapi.client.tagmanager.AccountsResource; 
     
 }

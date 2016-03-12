@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.kgsearch.v1 {
+declare module gapi.client.kgsearch {
     
     interface SearchResponse {
         // The local context applicable for the response. See more details at http://www.w3.org/TR/json-ld/#context-definitions.
@@ -39,6 +39,6 @@ declare module gapi.client.kgsearch.v1 {
 }
 
 declare module gapi.client.kgsearch {
-    var entities: gapi.client.kgsearch.v1.EntitiesResource; 
+    var entities: gapi.client.kgsearch.EntitiesResource; 
     
 }

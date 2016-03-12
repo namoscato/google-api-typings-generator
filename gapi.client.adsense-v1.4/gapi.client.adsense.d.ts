@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.adsense.v1_4 {
+declare module gapi.client.adsense {
     
     interface Account {
         // 
@@ -866,24 +866,24 @@ declare module gapi.client.adsense.v1_4 {
 }
 
 declare module gapi.client.adsense {
-    var accounts: gapi.client.adsense.v1_4.AccountsResource; 
+    var accounts: gapi.client.adsense.AccountsResource; 
     
-    var adclients: gapi.client.adsense.v1_4.AdclientsResource; 
+    var adclients: gapi.client.adsense.AdclientsResource; 
     
-    var adunits: gapi.client.adsense.v1_4.AdunitsResource; 
+    var adunits: gapi.client.adsense.AdunitsResource; 
     
-    var alerts: gapi.client.adsense.v1_4.AlertsResource; 
+    var alerts: gapi.client.adsense.AlertsResource; 
     
-    var customchannels: gapi.client.adsense.v1_4.CustomchannelsResource; 
+    var customchannels: gapi.client.adsense.CustomchannelsResource; 
     
-    var metadata: gapi.client.adsense.v1_4.MetadataResource; 
+    var metadata: gapi.client.adsense.MetadataResource; 
     
-    var payments: gapi.client.adsense.v1_4.PaymentsResource; 
+    var payments: gapi.client.adsense.PaymentsResource; 
     
-    var reports: gapi.client.adsense.v1_4.ReportsResource; 
+    var reports: gapi.client.adsense.ReportsResource; 
     
-    var savedadstyles: gapi.client.adsense.v1_4.SavedadstylesResource; 
+    var savedadstyles: gapi.client.adsense.SavedadstylesResource; 
     
-    var urlchannels: gapi.client.adsense.v1_4.UrlchannelsResource; 
+    var urlchannels: gapi.client.adsense.UrlchannelsResource; 
     
 }

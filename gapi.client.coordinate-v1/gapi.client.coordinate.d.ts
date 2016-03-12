@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.coordinate.v1 {
+declare module gapi.client.coordinate {
     
     interface CustomField {
         // Custom field id.
@@ -396,16 +396,16 @@ declare module gapi.client.coordinate.v1 {
 }
 
 declare module gapi.client.coordinate {
-    var customFieldDef: gapi.client.coordinate.v1.CustomFieldDefResource; 
+    var customFieldDef: gapi.client.coordinate.CustomFieldDefResource; 
     
-    var jobs: gapi.client.coordinate.v1.JobsResource; 
+    var jobs: gapi.client.coordinate.JobsResource; 
     
-    var location: gapi.client.coordinate.v1.LocationResource; 
+    var location: gapi.client.coordinate.LocationResource; 
     
-    var schedule: gapi.client.coordinate.v1.ScheduleResource; 
+    var schedule: gapi.client.coordinate.ScheduleResource; 
     
-    var team: gapi.client.coordinate.v1.TeamResource; 
+    var team: gapi.client.coordinate.TeamResource; 
     
-    var worker: gapi.client.coordinate.v1.WorkerResource; 
+    var worker: gapi.client.coordinate.WorkerResource; 
     
 }

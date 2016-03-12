@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.appsactivity.v1 {
+declare module gapi.client.appsactivity {
     
     interface Activity {
         // The fields common to all of the singleEvents that make up the Activity.
@@ -136,6 +136,6 @@ declare module gapi.client.appsactivity.v1 {
 }
 
 declare module gapi.client.appsactivity {
-    var activities: gapi.client.appsactivity.v1.ActivitiesResource; 
+    var activities: gapi.client.appsactivity.ActivitiesResource; 
     
 }

@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.iam.v1alpha1 {
+declare module gapi.client.iam {
 }
 
 declare module gapi.client.iam {

@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.playmoviespartner.v1 {
+declare module gapi.client.playmoviespartner {
     
     interface ListAvailsResponse {
         // List of Avails that match the request criteria.
@@ -397,6 +397,6 @@ declare module gapi.client.playmoviespartner.v1 {
 }
 
 declare module gapi.client.playmoviespartner {
-    var accounts: gapi.client.playmoviespartner.v1.AccountsResource; 
+    var accounts: gapi.client.playmoviespartner.AccountsResource; 
     
 }

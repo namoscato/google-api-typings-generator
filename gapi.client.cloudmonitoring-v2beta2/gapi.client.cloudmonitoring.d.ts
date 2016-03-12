@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.cloudmonitoring.v2beta2 {
+declare module gapi.client.cloudmonitoring {
     
     interface DeleteMetricDescriptorResponse {
         // Identifies what kind of resource this is. Value: the fixed string "cloudmonitoring#deleteMetricDescriptorResponse".
@@ -305,10 +305,10 @@ declare module gapi.client.cloudmonitoring.v2beta2 {
 }
 
 declare module gapi.client.cloudmonitoring {
-    var metricDescriptors: gapi.client.cloudmonitoring.v2beta2.MetricDescriptorsResource; 
+    var metricDescriptors: gapi.client.cloudmonitoring.MetricDescriptorsResource; 
     
-    var timeseries: gapi.client.cloudmonitoring.v2beta2.TimeseriesResource; 
+    var timeseries: gapi.client.cloudmonitoring.TimeseriesResource; 
     
-    var timeseriesDescriptors: gapi.client.cloudmonitoring.v2beta2.TimeseriesDescriptorsResource; 
+    var timeseriesDescriptors: gapi.client.cloudmonitoring.TimeseriesDescriptorsResource; 
     
 }

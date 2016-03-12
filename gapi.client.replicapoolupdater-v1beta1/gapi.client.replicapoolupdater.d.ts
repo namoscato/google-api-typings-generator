@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.replicapoolupdater.v1beta1 {
+declare module gapi.client.replicapoolupdater {
     
     interface InstanceUpdate {
         // Errors that occurred during the instance update.
@@ -320,8 +320,8 @@ declare module gapi.client.replicapoolupdater.v1beta1 {
 }
 
 declare module gapi.client.replicapoolupdater {
-    var rollingUpdates: gapi.client.replicapoolupdater.v1beta1.RollingUpdatesResource; 
+    var rollingUpdates: gapi.client.replicapoolupdater.RollingUpdatesResource; 
     
-    var zoneOperations: gapi.client.replicapoolupdater.v1beta1.ZoneOperationsResource; 
+    var zoneOperations: gapi.client.replicapoolupdater.ZoneOperationsResource; 
     
 }

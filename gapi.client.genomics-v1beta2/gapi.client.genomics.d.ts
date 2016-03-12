@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.genomics.v1beta2 {
+declare module gapi.client.genomics {
     
     interface Annotation {
         // The annotation set to which this annotation belongs.
@@ -1276,28 +1276,28 @@ declare module gapi.client.genomics.v1beta2 {
 }
 
 declare module gapi.client.genomics {
-    var annotationSets: gapi.client.genomics.v1beta2.AnnotationSetsResource; 
+    var annotationSets: gapi.client.genomics.AnnotationSetsResource; 
     
-    var annotations: gapi.client.genomics.v1beta2.AnnotationsResource; 
+    var annotations: gapi.client.genomics.AnnotationsResource; 
     
-    var callsets: gapi.client.genomics.v1beta2.CallsetsResource; 
+    var callsets: gapi.client.genomics.CallsetsResource; 
     
-    var datasets: gapi.client.genomics.v1beta2.DatasetsResource; 
+    var datasets: gapi.client.genomics.DatasetsResource; 
     
-    var experimental: gapi.client.genomics.v1beta2.ExperimentalResource; 
+    var experimental: gapi.client.genomics.ExperimentalResource; 
     
-    var jobs: gapi.client.genomics.v1beta2.JobsResource; 
+    var jobs: gapi.client.genomics.JobsResource; 
     
-    var readgroupsets: gapi.client.genomics.v1beta2.ReadgroupsetsResource; 
+    var readgroupsets: gapi.client.genomics.ReadgroupsetsResource; 
     
-    var reads: gapi.client.genomics.v1beta2.ReadsResource; 
+    var reads: gapi.client.genomics.ReadsResource; 
     
-    var references: gapi.client.genomics.v1beta2.ReferencesResource; 
+    var references: gapi.client.genomics.ReferencesResource; 
     
-    var referencesets: gapi.client.genomics.v1beta2.ReferencesetsResource; 
+    var referencesets: gapi.client.genomics.ReferencesetsResource; 
     
-    var variants: gapi.client.genomics.v1beta2.VariantsResource; 
+    var variants: gapi.client.genomics.VariantsResource; 
     
-    var variantsets: gapi.client.genomics.v1beta2.VariantsetsResource; 
+    var variantsets: gapi.client.genomics.VariantsetsResource; 
     
 }

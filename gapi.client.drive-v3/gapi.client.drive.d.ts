@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.drive.v3 {
+declare module gapi.client.drive {
     
     interface About {
         // Whether the user has installed the requesting app.
@@ -790,20 +790,20 @@ declare module gapi.client.drive.v3 {
 }
 
 declare module gapi.client.drive {
-    var about: gapi.client.drive.v3.AboutResource; 
+    var about: gapi.client.drive.AboutResource; 
     
-    var changes: gapi.client.drive.v3.ChangesResource; 
+    var changes: gapi.client.drive.ChangesResource; 
     
-    var channels: gapi.client.drive.v3.ChannelsResource; 
+    var channels: gapi.client.drive.ChannelsResource; 
     
-    var comments: gapi.client.drive.v3.CommentsResource; 
+    var comments: gapi.client.drive.CommentsResource; 
     
-    var files: gapi.client.drive.v3.FilesResource; 
+    var files: gapi.client.drive.FilesResource; 
     
-    var permissions: gapi.client.drive.v3.PermissionsResource; 
+    var permissions: gapi.client.drive.PermissionsResource; 
     
-    var replies: gapi.client.drive.v3.RepliesResource; 
+    var replies: gapi.client.drive.RepliesResource; 
     
-    var revisions: gapi.client.drive.v3.RevisionsResource; 
+    var revisions: gapi.client.drive.RevisionsResource; 
     
 }

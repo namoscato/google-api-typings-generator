@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.appengine.v1beta4 {
+declare module gapi.client.appengine {
     
     interface Application {
         // The full path to the application in the API. Example: "apps/myapp". @OutputOnly
@@ -553,6 +553,6 @@ declare module gapi.client.appengine.v1beta4 {
 }
 
 declare module gapi.client.appengine {
-    var apps: gapi.client.appengine.v1beta4.AppsResource; 
+    var apps: gapi.client.appengine.AppsResource; 
     
 }

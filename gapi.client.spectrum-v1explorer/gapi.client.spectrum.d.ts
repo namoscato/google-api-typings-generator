@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.spectrum.v1explorer {
+declare module gapi.client.spectrum {
     
     interface AntennaCharacteristics {
         // The antenna height in meters. Whether the antenna height is required depends on the device type and the regulatory domain. Note that the height may be negative.
@@ -464,6 +464,6 @@ declare module gapi.client.spectrum.v1explorer {
 }
 
 declare module gapi.client.spectrum {
-    var paws: gapi.client.spectrum.v1explorer.PawsResource; 
+    var paws: gapi.client.spectrum.PawsResource; 
     
 }

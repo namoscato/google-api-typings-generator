@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.cloudbilling.v1 {
+declare module gapi.client.cloudbilling {
     
     interface BillingAccount {
         // The resource name of the billing account. The resource name has the form `billingAccounts/{billing_account_id}`. For example, `billingAccounts/012345-567890-ABCDEF` would be the resource name for billing account `012345-567890-ABCDEF`.
@@ -91,8 +91,8 @@ declare module gapi.client.cloudbilling.v1 {
 }
 
 declare module gapi.client.cloudbilling {
-    var billingAccounts: gapi.client.cloudbilling.v1.BillingAccountsResource; 
+    var billingAccounts: gapi.client.cloudbilling.BillingAccountsResource; 
     
-    var projects: gapi.client.cloudbilling.v1.ProjectsResource; 
+    var projects: gapi.client.cloudbilling.ProjectsResource; 
     
 }

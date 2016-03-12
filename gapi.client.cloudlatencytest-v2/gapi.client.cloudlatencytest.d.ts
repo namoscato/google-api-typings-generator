@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.cloudlatencytest.v2 {
+declare module gapi.client.cloudlatencytest {
     
     interface AggregatedStats {
         // 
@@ -67,6 +67,6 @@ declare module gapi.client.cloudlatencytest.v2 {
 }
 
 declare module gapi.client.cloudlatencytest {
-    var statscollection: gapi.client.cloudlatencytest.v2.StatscollectionResource; 
+    var statscollection: gapi.client.cloudlatencytest.StatscollectionResource; 
     
 }

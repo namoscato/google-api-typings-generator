@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.reseller.v1 {
+declare module gapi.client.reseller {
     
     interface Address {
         // Address line 1 of the address.
@@ -270,8 +270,8 @@ declare module gapi.client.reseller.v1 {
 }
 
 declare module gapi.client.reseller {
-    var customers: gapi.client.reseller.v1.CustomersResource; 
+    var customers: gapi.client.reseller.CustomersResource; 
     
-    var subscriptions: gapi.client.reseller.v1.SubscriptionsResource; 
+    var subscriptions: gapi.client.reseller.SubscriptionsResource; 
     
 }

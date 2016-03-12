@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.doubleclicksearch.v2 {
+declare module gapi.client.doubleclicksearch {
     
     interface Availability {
         // DS advertiser ID.
@@ -361,10 +361,10 @@ declare module gapi.client.doubleclicksearch.v2 {
 }
 
 declare module gapi.client.doubleclicksearch {
-    var conversion: gapi.client.doubleclicksearch.v2.ConversionResource; 
+    var conversion: gapi.client.doubleclicksearch.ConversionResource; 
     
-    var reports: gapi.client.doubleclicksearch.v2.ReportsResource; 
+    var reports: gapi.client.doubleclicksearch.ReportsResource; 
     
-    var savedColumns: gapi.client.doubleclicksearch.v2.SavedColumnsResource; 
+    var savedColumns: gapi.client.doubleclicksearch.SavedColumnsResource; 
     
 }

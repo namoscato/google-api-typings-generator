@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.qpxExpress.v1 {
+declare module gapi.client.qpxExpress {
     
     interface AircraftData {
         // The aircraft code. For example, for a Boeing 777 the code would be 777.
@@ -358,6 +358,6 @@ declare module gapi.client.qpxExpress.v1 {
 }
 
 declare module gapi.client.qpxExpress {
-    var trips: gapi.client.qpxExpress.v1.TripsResource; 
+    var trips: gapi.client.qpxExpress.TripsResource; 
     
 }

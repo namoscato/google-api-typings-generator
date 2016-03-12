@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.dfareporting.v1 {
+declare module gapi.client.dfareporting {
     
     interface DimensionFilter {
         // The name of the dimension to filter.
@@ -391,12 +391,12 @@ declare module gapi.client.dfareporting.v1 {
 }
 
 declare module gapi.client.dfareporting {
-    var dimensionValues: gapi.client.dfareporting.v1.DimensionValuesResource; 
+    var dimensionValues: gapi.client.dfareporting.DimensionValuesResource; 
     
-    var files: gapi.client.dfareporting.v1.FilesResource; 
+    var files: gapi.client.dfareporting.FilesResource; 
     
-    var reports: gapi.client.dfareporting.v1.ReportsResource; 
+    var reports: gapi.client.dfareporting.ReportsResource; 
     
-    var userProfiles: gapi.client.dfareporting.v1.UserProfilesResource; 
+    var userProfiles: gapi.client.dfareporting.UserProfilesResource; 
     
 }

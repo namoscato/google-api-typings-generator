@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.replicapool.v1beta2 {
+declare module gapi.client.replicapool {
     
     interface InstanceGroupManager {
         // The autohealing policy for this managed instance group. You can specify only one value.
@@ -310,8 +310,8 @@ declare module gapi.client.replicapool.v1beta2 {
 }
 
 declare module gapi.client.replicapool {
-    var instanceGroupManagers: gapi.client.replicapool.v1beta2.InstanceGroupManagersResource; 
+    var instanceGroupManagers: gapi.client.replicapool.InstanceGroupManagersResource; 
     
-    var zoneOperations: gapi.client.replicapool.v1beta2.ZoneOperationsResource; 
+    var zoneOperations: gapi.client.replicapool.ZoneOperationsResource; 
     
 }

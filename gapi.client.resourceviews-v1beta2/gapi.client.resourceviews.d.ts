@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.resourceviews.v1beta2 {
+declare module gapi.client.resourceviews {
     
     interface Label {
         // Key of the label.
@@ -318,8 +318,8 @@ declare module gapi.client.resourceviews.v1beta2 {
 }
 
 declare module gapi.client.resourceviews {
-    var zoneOperations: gapi.client.resourceviews.v1beta2.ZoneOperationsResource; 
+    var zoneOperations: gapi.client.resourceviews.ZoneOperationsResource; 
     
-    var zoneViews: gapi.client.resourceviews.v1beta2.ZoneViewsResource; 
+    var zoneViews: gapi.client.resourceviews.ZoneViewsResource; 
     
 }

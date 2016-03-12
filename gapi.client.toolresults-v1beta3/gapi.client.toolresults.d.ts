@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.toolresults.v1beta3 {
+declare module gapi.client.toolresults {
     
     interface Any {
         // A URL/resource name whose content describes the type of the serialized message.
@@ -883,6 +883,6 @@ declare module gapi.client.toolresults.v1beta3 {
 }
 
 declare module gapi.client.toolresults {
-    var projects: gapi.client.toolresults.v1beta3.ProjectsResource; 
+    var projects: gapi.client.toolresults.ProjectsResource; 
     
 }

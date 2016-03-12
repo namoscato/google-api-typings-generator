@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.admin.reports_v1 {
+declare module gapi.client.admin {
     
     interface Activities {
         // ETag of the resource.
@@ -255,12 +255,12 @@ declare module gapi.client.admin.reports_v1 {
 }
 
 declare module gapi.client.admin {
-    var activities: gapi.client.admin.reports_v1.ActivitiesResource; 
+    var activities: gapi.client.admin.ActivitiesResource; 
     
-    var channels: gapi.client.admin.reports_v1.ChannelsResource; 
+    var channels: gapi.client.admin.ChannelsResource; 
     
-    var customerUsageReports: gapi.client.admin.reports_v1.CustomerUsageReportsResource; 
+    var customerUsageReports: gapi.client.admin.CustomerUsageReportsResource; 
     
-    var userUsageReport: gapi.client.admin.reports_v1.UserUsageReportResource; 
+    var userUsageReport: gapi.client.admin.UserUsageReportResource; 
     
 }

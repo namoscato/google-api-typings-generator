@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.youtubereporting.v1 {
+declare module gapi.client.youtubereporting {
     
     interface Media {
         // Name of the media resource.
@@ -159,10 +159,10 @@ declare module gapi.client.youtubereporting.v1 {
 }
 
 declare module gapi.client.youtubereporting {
-    var media: gapi.client.youtubereporting.v1.MediaResource; 
+    var media: gapi.client.youtubereporting.MediaResource; 
     
-    var reportTypes: gapi.client.youtubereporting.v1.ReportTypesResource; 
+    var reportTypes: gapi.client.youtubereporting.ReportTypesResource; 
     
-    var jobs: gapi.client.youtubereporting.v1.JobsResource; 
+    var jobs: gapi.client.youtubereporting.JobsResource; 
     
 }

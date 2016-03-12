@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.content.v2 {
+declare module gapi.client.content {
     
     interface Account {
         // Indicates whether the merchant sells adult content.
@@ -2290,24 +2290,24 @@ declare module gapi.client.content.v2 {
 }
 
 declare module gapi.client.content {
-    var accounts: gapi.client.content.v2.AccountsResource; 
+    var accounts: gapi.client.content.AccountsResource; 
     
-    var accountshipping: gapi.client.content.v2.AccountshippingResource; 
+    var accountshipping: gapi.client.content.AccountshippingResource; 
     
-    var accountstatuses: gapi.client.content.v2.AccountstatusesResource; 
+    var accountstatuses: gapi.client.content.AccountstatusesResource; 
     
-    var accounttax: gapi.client.content.v2.AccounttaxResource; 
+    var accounttax: gapi.client.content.AccounttaxResource; 
     
-    var datafeeds: gapi.client.content.v2.DatafeedsResource; 
+    var datafeeds: gapi.client.content.DatafeedsResource; 
     
-    var datafeedstatuses: gapi.client.content.v2.DatafeedstatusesResource; 
+    var datafeedstatuses: gapi.client.content.DatafeedstatusesResource; 
     
-    var inventory: gapi.client.content.v2.InventoryResource; 
+    var inventory: gapi.client.content.InventoryResource; 
     
-    var orders: gapi.client.content.v2.OrdersResource; 
+    var orders: gapi.client.content.OrdersResource; 
     
-    var products: gapi.client.content.v2.ProductsResource; 
+    var products: gapi.client.content.ProductsResource; 
     
-    var productstatuses: gapi.client.content.v2.ProductstatusesResource; 
+    var productstatuses: gapi.client.content.ProductstatusesResource; 
     
 }

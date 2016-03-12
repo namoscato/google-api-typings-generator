@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.fitness.v1 {
+declare module gapi.client.fitness {
     
     interface AggregateBucket {
         // Available for Bucket.Type.ACTIVITY_TYPE, Bucket.Type.ACTIVITY_SEGMENT
@@ -386,6 +386,6 @@ declare module gapi.client.fitness.v1 {
 }
 
 declare module gapi.client.fitness {
-    var users: gapi.client.fitness.v1.UsersResource; 
+    var users: gapi.client.fitness.UsersResource; 
     
 }

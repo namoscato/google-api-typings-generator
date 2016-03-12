@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.container.v1 {
+declare module gapi.client.container {
     
     interface ListClustersResponse {
         // A list of clusters in the project in the specified zone, or across all ones.
@@ -215,6 +215,6 @@ declare module gapi.client.container.v1 {
 }
 
 declare module gapi.client.container {
-    var projects: gapi.client.container.v1.ProjectsResource; 
+    var projects: gapi.client.container.ProjectsResource; 
     
 }

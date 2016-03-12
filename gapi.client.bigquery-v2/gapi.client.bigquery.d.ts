@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.bigquery.v2 {
+declare module gapi.client.bigquery {
     
     interface BigtableColumn {
         // [Optional] The encoding of the values when the type is not STRING. Acceptable encoding values are: TEXT - indicates values are alphanumeric text strings. BINARY - indicates values are encoded using HBase Bytes.toBytes family of functions. 'encoding' can also be set at the column family level. However, the setting at this level takes precedence if 'encoding' is set at both levels.
@@ -922,14 +922,14 @@ declare module gapi.client.bigquery.v2 {
 }
 
 declare module gapi.client.bigquery {
-    var datasets: gapi.client.bigquery.v2.DatasetsResource; 
+    var datasets: gapi.client.bigquery.DatasetsResource; 
     
-    var jobs: gapi.client.bigquery.v2.JobsResource; 
+    var jobs: gapi.client.bigquery.JobsResource; 
     
-    var projects: gapi.client.bigquery.v2.ProjectsResource; 
+    var projects: gapi.client.bigquery.ProjectsResource; 
     
-    var tabledata: gapi.client.bigquery.v2.TabledataResource; 
+    var tabledata: gapi.client.bigquery.TabledataResource; 
     
-    var tables: gapi.client.bigquery.v2.TablesResource; 
+    var tables: gapi.client.bigquery.TablesResource; 
     
 }

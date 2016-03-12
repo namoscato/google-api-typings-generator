@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.serviceregistry.alpha {
+declare module gapi.client.serviceregistry {
     
     interface Endpoint {
         // A user-provided address of the service represented by this endpoint. This can be an IPv4 or IPv6 address, or a hostname.
@@ -228,8 +228,8 @@ declare module gapi.client.serviceregistry.alpha {
 }
 
 declare module gapi.client.serviceregistry {
-    var endpoints: gapi.client.serviceregistry.alpha.EndpointsResource; 
+    var endpoints: gapi.client.serviceregistry.EndpointsResource; 
     
-    var operations: gapi.client.serviceregistry.alpha.OperationsResource; 
+    var operations: gapi.client.serviceregistry.OperationsResource; 
     
 }

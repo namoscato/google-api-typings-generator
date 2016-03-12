@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.adexchangeseller.v1_1 {
+declare module gapi.client.adexchangeseller {
     
     interface Account {
         // Unique identifier of this account.
@@ -452,22 +452,22 @@ declare module gapi.client.adexchangeseller.v1_1 {
 }
 
 declare module gapi.client.adexchangeseller {
-    var accounts: gapi.client.adexchangeseller.v1_1.AccountsResource; 
+    var accounts: gapi.client.adexchangeseller.AccountsResource; 
     
-    var adclients: gapi.client.adexchangeseller.v1_1.AdclientsResource; 
+    var adclients: gapi.client.adexchangeseller.AdclientsResource; 
     
-    var adunits: gapi.client.adexchangeseller.v1_1.AdunitsResource; 
+    var adunits: gapi.client.adexchangeseller.AdunitsResource; 
     
-    var alerts: gapi.client.adexchangeseller.v1_1.AlertsResource; 
+    var alerts: gapi.client.adexchangeseller.AlertsResource; 
     
-    var customchannels: gapi.client.adexchangeseller.v1_1.CustomchannelsResource; 
+    var customchannels: gapi.client.adexchangeseller.CustomchannelsResource; 
     
-    var metadata: gapi.client.adexchangeseller.v1_1.MetadataResource; 
+    var metadata: gapi.client.adexchangeseller.MetadataResource; 
     
-    var preferreddeals: gapi.client.adexchangeseller.v1_1.PreferreddealsResource; 
+    var preferreddeals: gapi.client.adexchangeseller.PreferreddealsResource; 
     
-    var reports: gapi.client.adexchangeseller.v1_1.ReportsResource; 
+    var reports: gapi.client.adexchangeseller.ReportsResource; 
     
-    var urlchannels: gapi.client.adexchangeseller.v1_1.UrlchannelsResource; 
+    var urlchannels: gapi.client.adexchangeseller.UrlchannelsResource; 
     
 }

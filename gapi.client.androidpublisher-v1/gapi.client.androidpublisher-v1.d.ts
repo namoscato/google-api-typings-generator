@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.androidpublisher.v1 {
+declare module gapi.client.androidpublisher {
     
     interface SubscriptionPurchase {
         // Whether the subscription will automatically be renewed when it reaches its current expiry time.
@@ -43,6 +43,6 @@ declare module gapi.client.androidpublisher.v1 {
 }
 
 declare module gapi.client.androidpublisher {
-    var purchases: gapi.client.androidpublisher.v1.PurchasesResource; 
+    var purchases: gapi.client.androidpublisher.PurchasesResource; 
     
 }

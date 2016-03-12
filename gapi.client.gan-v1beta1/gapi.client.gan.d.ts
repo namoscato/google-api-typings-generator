@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.gan.v1beta1 {
+declare module gapi.client.gan {
     
     interface Advertiser {
         // True if the advertiser allows publisher created links, otherwise false.
@@ -645,16 +645,16 @@ declare module gapi.client.gan.v1beta1 {
 }
 
 declare module gapi.client.gan {
-    var advertisers: gapi.client.gan.v1beta1.AdvertisersResource; 
+    var advertisers: gapi.client.gan.AdvertisersResource; 
     
-    var ccOffers: gapi.client.gan.v1beta1.CcOffersResource; 
+    var ccOffers: gapi.client.gan.CcOffersResource; 
     
-    var events: gapi.client.gan.v1beta1.EventsResource; 
+    var events: gapi.client.gan.EventsResource; 
     
-    var links: gapi.client.gan.v1beta1.LinksResource; 
+    var links: gapi.client.gan.LinksResource; 
     
-    var publishers: gapi.client.gan.v1beta1.PublishersResource; 
+    var publishers: gapi.client.gan.PublishersResource; 
     
-    var reports: gapi.client.gan.v1beta1.ReportsResource; 
+    var reports: gapi.client.gan.ReportsResource; 
     
 }

@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.adexchangebuyer2.v2beta1 {
+declare module gapi.client.adexchangebuyer2 {
     
     interface ClientUser {
         // User's email address. The value of this field
@@ -268,6 +268,6 @@ declare module gapi.client.adexchangebuyer2.v2beta1 {
 }
 
 declare module gapi.client.adexchangebuyer2 {
-    var accounts: gapi.client.adexchangebuyer2.v2beta1.AccountsResource; 
+    var accounts: gapi.client.adexchangebuyer2.AccountsResource; 
     
 }

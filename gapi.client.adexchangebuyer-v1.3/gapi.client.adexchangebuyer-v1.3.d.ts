@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.adexchangebuyer.v1_3 {
+declare module gapi.client.adexchangebuyer {
     
     interface Account {
         // Your bidder locations that have distinct URLs.
@@ -545,18 +545,18 @@ declare module gapi.client.adexchangebuyer.v1_3 {
 }
 
 declare module gapi.client.adexchangebuyer {
-    var accounts: gapi.client.adexchangebuyer.v1_3.AccountsResource; 
+    var accounts: gapi.client.adexchangebuyer.AccountsResource; 
     
-    var billingInfo: gapi.client.adexchangebuyer.v1_3.BillingInfoResource; 
+    var billingInfo: gapi.client.adexchangebuyer.BillingInfoResource; 
     
-    var budget: gapi.client.adexchangebuyer.v1_3.BudgetResource; 
+    var budget: gapi.client.adexchangebuyer.BudgetResource; 
     
-    var creatives: gapi.client.adexchangebuyer.v1_3.CreativesResource; 
+    var creatives: gapi.client.adexchangebuyer.CreativesResource; 
     
-    var directDeals: gapi.client.adexchangebuyer.v1_3.DirectDealsResource; 
+    var directDeals: gapi.client.adexchangebuyer.DirectDealsResource; 
     
-    var performanceReport: gapi.client.adexchangebuyer.v1_3.PerformanceReportResource; 
+    var performanceReport: gapi.client.adexchangebuyer.PerformanceReportResource; 
     
-    var pretargetingConfig: gapi.client.adexchangebuyer.v1_3.PretargetingConfigResource; 
+    var pretargetingConfig: gapi.client.adexchangebuyer.PretargetingConfigResource; 
     
 }

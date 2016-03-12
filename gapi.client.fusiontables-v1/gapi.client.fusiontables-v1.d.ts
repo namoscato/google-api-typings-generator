@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.fusiontables.v1 {
+declare module gapi.client.fusiontables {
     
     interface Bucket {
         // Color of line or the interior of a polygon in #RRGGBB format.
@@ -564,16 +564,16 @@ declare module gapi.client.fusiontables.v1 {
 }
 
 declare module gapi.client.fusiontables {
-    var column: gapi.client.fusiontables.v1.ColumnResource; 
+    var column: gapi.client.fusiontables.ColumnResource; 
     
-    var query: gapi.client.fusiontables.v1.QueryResource; 
+    var query: gapi.client.fusiontables.QueryResource; 
     
-    var style: gapi.client.fusiontables.v1.StyleResource; 
+    var style: gapi.client.fusiontables.StyleResource; 
     
-    var table: gapi.client.fusiontables.v1.TableResource; 
+    var table: gapi.client.fusiontables.TableResource; 
     
-    var task: gapi.client.fusiontables.v1.TaskResource; 
+    var task: gapi.client.fusiontables.TaskResource; 
     
-    var template: gapi.client.fusiontables.v1.TemplateResource; 
+    var template: gapi.client.fusiontables.TemplateResource; 
     
 }

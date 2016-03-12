@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.androidpublisher.v2 {
+declare module gapi.client.androidpublisher {
     
     interface Apk {
         // Information about the binary payload of this APK.
@@ -972,12 +972,12 @@ declare module gapi.client.androidpublisher.v2 {
 }
 
 declare module gapi.client.androidpublisher {
-    var edits: gapi.client.androidpublisher.v2.EditsResource; 
+    var edits: gapi.client.androidpublisher.EditsResource; 
     
-    var entitlements: gapi.client.androidpublisher.v2.EntitlementsResource; 
+    var entitlements: gapi.client.androidpublisher.EntitlementsResource; 
     
-    var inappproducts: gapi.client.androidpublisher.v2.InappproductsResource; 
+    var inappproducts: gapi.client.androidpublisher.InappproductsResource; 
     
-    var purchases: gapi.client.androidpublisher.v2.PurchasesResource; 
+    var purchases: gapi.client.androidpublisher.PurchasesResource; 
     
 }

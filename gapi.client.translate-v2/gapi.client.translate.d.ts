@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.translate.v2 {
+declare module gapi.client.translate {
     
     interface DetectionsListResponse {
         // A detections contains detection results of several text
@@ -78,10 +78,10 @@ declare module gapi.client.translate.v2 {
 }
 
 declare module gapi.client.translate {
-    var detections: gapi.client.translate.v2.DetectionsResource; 
+    var detections: gapi.client.translate.DetectionsResource; 
     
-    var languages: gapi.client.translate.v2.LanguagesResource; 
+    var languages: gapi.client.translate.LanguagesResource; 
     
-    var translations: gapi.client.translate.v2.TranslationsResource; 
+    var translations: gapi.client.translate.TranslationsResource; 
     
 }

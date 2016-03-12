@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.adexchangeseller.v1 {
+declare module gapi.client.adexchangeseller {
     
     interface AdClient {
         // Whether this ad client is opted in to ARC.
@@ -317,14 +317,14 @@ declare module gapi.client.adexchangeseller.v1 {
 }
 
 declare module gapi.client.adexchangeseller {
-    var adclients: gapi.client.adexchangeseller.v1.AdclientsResource; 
+    var adclients: gapi.client.adexchangeseller.AdclientsResource; 
     
-    var adunits: gapi.client.adexchangeseller.v1.AdunitsResource; 
+    var adunits: gapi.client.adexchangeseller.AdunitsResource; 
     
-    var customchannels: gapi.client.adexchangeseller.v1.CustomchannelsResource; 
+    var customchannels: gapi.client.adexchangeseller.CustomchannelsResource; 
     
-    var reports: gapi.client.adexchangeseller.v1.ReportsResource; 
+    var reports: gapi.client.adexchangeseller.ReportsResource; 
     
-    var urlchannels: gapi.client.adexchangeseller.v1.UrlchannelsResource; 
+    var urlchannels: gapi.client.adexchangeseller.UrlchannelsResource; 
     
 }

@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.gamesConfiguration.v1configuration {
+declare module gapi.client.gamesConfiguration {
     
     interface AchievementConfiguration {
         // The type of the achievement.
@@ -259,10 +259,10 @@ declare module gapi.client.gamesConfiguration.v1configuration {
 }
 
 declare module gapi.client.gamesConfiguration {
-    var achievementConfigurations: gapi.client.gamesConfiguration.v1configuration.AchievementConfigurationsResource; 
+    var achievementConfigurations: gapi.client.gamesConfiguration.AchievementConfigurationsResource; 
     
-    var imageConfigurations: gapi.client.gamesConfiguration.v1configuration.ImageConfigurationsResource; 
+    var imageConfigurations: gapi.client.gamesConfiguration.ImageConfigurationsResource; 
     
-    var leaderboardConfigurations: gapi.client.gamesConfiguration.v1configuration.LeaderboardConfigurationsResource; 
+    var leaderboardConfigurations: gapi.client.gamesConfiguration.LeaderboardConfigurationsResource; 
     
 }

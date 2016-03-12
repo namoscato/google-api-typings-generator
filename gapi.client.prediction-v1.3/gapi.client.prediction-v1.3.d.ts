@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.prediction.v1_3 {
+declare module gapi.client.prediction {
     
     interface Input {
         // Input to the model for a prediction
@@ -117,8 +117,8 @@ declare module gapi.client.prediction.v1_3 {
 }
 
 declare module gapi.client.prediction {
-    var hostedmodels: gapi.client.prediction.v1_3.HostedmodelsResource; 
+    var hostedmodels: gapi.client.prediction.HostedmodelsResource; 
     
-    var training: gapi.client.prediction.v1_3.TrainingResource; 
+    var training: gapi.client.prediction.TrainingResource; 
     
 }

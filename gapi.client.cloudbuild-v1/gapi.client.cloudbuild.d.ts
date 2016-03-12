@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.cloudbuild.v1 {
+declare module gapi.client.cloudbuild {
     
     interface Status {
         // The status code, which should be an enum value of google.rpc.Code.
@@ -238,8 +238,8 @@ declare module gapi.client.cloudbuild.v1 {
 }
 
 declare module gapi.client.cloudbuild {
-    var projects: gapi.client.cloudbuild.v1.ProjectsResource; 
+    var projects: gapi.client.cloudbuild.ProjectsResource; 
     
-    var operations: gapi.client.cloudbuild.v1.OperationsResource; 
+    var operations: gapi.client.cloudbuild.OperationsResource; 
     
 }

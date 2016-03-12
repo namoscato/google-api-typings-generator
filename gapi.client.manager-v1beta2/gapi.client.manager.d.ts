@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.manager.v1beta2 {
+declare module gapi.client.manager {
     
     interface AccessConfig {
         // Name of this access configuration.
@@ -450,8 +450,8 @@ declare module gapi.client.manager.v1beta2 {
 }
 
 declare module gapi.client.manager {
-    var deployments: gapi.client.manager.v1beta2.DeploymentsResource; 
+    var deployments: gapi.client.manager.DeploymentsResource; 
     
-    var templates: gapi.client.manager.v1beta2.TemplatesResource; 
+    var templates: gapi.client.manager.TemplatesResource; 
     
 }

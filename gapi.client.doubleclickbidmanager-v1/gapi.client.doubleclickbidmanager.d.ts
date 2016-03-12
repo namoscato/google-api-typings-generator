@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.doubleclickbidmanager.v1 {
+declare module gapi.client.doubleclickbidmanager {
     
     interface DownloadLineItemsRequest {
         // File specification (column names, types, order) in which the line items will be returned. Default to EWF.
@@ -291,12 +291,12 @@ declare module gapi.client.doubleclickbidmanager.v1 {
 }
 
 declare module gapi.client.doubleclickbidmanager {
-    var lineitems: gapi.client.doubleclickbidmanager.v1.LineitemsResource; 
+    var lineitems: gapi.client.doubleclickbidmanager.LineitemsResource; 
     
-    var queries: gapi.client.doubleclickbidmanager.v1.QueriesResource; 
+    var queries: gapi.client.doubleclickbidmanager.QueriesResource; 
     
-    var reports: gapi.client.doubleclickbidmanager.v1.ReportsResource; 
+    var reports: gapi.client.doubleclickbidmanager.ReportsResource; 
     
-    var rubicon: gapi.client.doubleclickbidmanager.v1.RubiconResource; 
+    var rubicon: gapi.client.doubleclickbidmanager.RubiconResource; 
     
 }

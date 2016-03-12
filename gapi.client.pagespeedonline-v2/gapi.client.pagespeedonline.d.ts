@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.pagespeedonline.v2 {
+declare module gapi.client.pagespeedonline {
     
     interface PagespeedApiFormatStringV2 {
         // List of arguments for the format string.
@@ -148,6 +148,6 @@ declare module gapi.client.pagespeedonline.v2 {
 }
 
 declare module gapi.client.pagespeedonline {
-    var pagespeedapi: gapi.client.pagespeedonline.v2.PagespeedapiResource; 
+    var pagespeedapi: gapi.client.pagespeedonline.PagespeedapiResource; 
     
 }

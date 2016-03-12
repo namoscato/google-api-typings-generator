@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.sqladmin.v1beta3 {
+declare module gapi.client.sqladmin {
     
     interface BackupConfiguration {
         // Whether binary log is enabled. If backup configuration is disabled, binary log must be disabled as well.
@@ -685,16 +685,16 @@ declare module gapi.client.sqladmin.v1beta3 {
 }
 
 declare module gapi.client.sqladmin {
-    var backupRuns: gapi.client.sqladmin.v1beta3.BackupRunsResource; 
+    var backupRuns: gapi.client.sqladmin.BackupRunsResource; 
     
-    var flags: gapi.client.sqladmin.v1beta3.FlagsResource; 
+    var flags: gapi.client.sqladmin.FlagsResource; 
     
-    var instances: gapi.client.sqladmin.v1beta3.InstancesResource; 
+    var instances: gapi.client.sqladmin.InstancesResource; 
     
-    var operations: gapi.client.sqladmin.v1beta3.OperationsResource; 
+    var operations: gapi.client.sqladmin.OperationsResource; 
     
-    var sslCerts: gapi.client.sqladmin.v1beta3.SslCertsResource; 
+    var sslCerts: gapi.client.sqladmin.SslCertsResource; 
     
-    var tiers: gapi.client.sqladmin.v1beta3.TiersResource; 
+    var tiers: gapi.client.sqladmin.TiersResource; 
     
 }

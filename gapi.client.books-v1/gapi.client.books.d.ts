@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.books.v1 {
+declare module gapi.client.books {
     
     interface Annotation {
         // Anchor text after excerpt. For requests, if the user bookmarked a screen that has no flowing text on it, then this field should be empty.
@@ -1784,28 +1784,28 @@ declare module gapi.client.books.v1 {
 }
 
 declare module gapi.client.books {
-    var bookshelves: gapi.client.books.v1.BookshelvesResource; 
+    var bookshelves: gapi.client.books.BookshelvesResource; 
     
-    var cloudloading: gapi.client.books.v1.CloudloadingResource; 
+    var cloudloading: gapi.client.books.CloudloadingResource; 
     
-    var dictionary: gapi.client.books.v1.DictionaryResource; 
+    var dictionary: gapi.client.books.DictionaryResource; 
     
-    var layers: gapi.client.books.v1.LayersResource; 
+    var layers: gapi.client.books.LayersResource; 
     
-    var myconfig: gapi.client.books.v1.MyconfigResource; 
+    var myconfig: gapi.client.books.MyconfigResource; 
     
-    var mylibrary: gapi.client.books.v1.MylibraryResource; 
+    var mylibrary: gapi.client.books.MylibraryResource; 
     
-    var notification: gapi.client.books.v1.NotificationResource; 
+    var notification: gapi.client.books.NotificationResource; 
     
-    var onboarding: gapi.client.books.v1.OnboardingResource; 
+    var onboarding: gapi.client.books.OnboardingResource; 
     
-    var personalizedstream: gapi.client.books.v1.PersonalizedstreamResource; 
+    var personalizedstream: gapi.client.books.PersonalizedstreamResource; 
     
-    var promooffer: gapi.client.books.v1.PromoofferResource; 
+    var promooffer: gapi.client.books.PromoofferResource; 
     
-    var series: gapi.client.books.v1.SeriesResource; 
+    var series: gapi.client.books.SeriesResource; 
     
-    var volumes: gapi.client.books.v1.VolumesResource; 
+    var volumes: gapi.client.books.VolumesResource; 
     
 }

@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.dataproc.v1alpha1 {
+declare module gapi.client.dataproc {
     
     interface Cluster {
         // [Required] The Google Cloud Platform project ID that the cluster belongs to.
@@ -612,8 +612,8 @@ declare module gapi.client.dataproc.v1alpha1 {
 }
 
 declare module gapi.client.dataproc {
-    var projects: gapi.client.dataproc.v1alpha1.ProjectsResource; 
+    var projects: gapi.client.dataproc.ProjectsResource; 
     
-    var operations: gapi.client.dataproc.v1alpha1.OperationsResource; 
+    var operations: gapi.client.dataproc.OperationsResource; 
     
 }

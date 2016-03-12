@@ -4,7 +4,7 @@
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
 
-declare module gapi.client.cloudresourcemanager.v1 {
+declare module gapi.client.cloudresourcemanager {
     
     interface Project {
         // The number uniquely identifying the project. Example: 415104041262 Read-only.
@@ -135,6 +135,6 @@ declare module gapi.client.cloudresourcemanager.v1 {
 }
 
 declare module gapi.client.cloudresourcemanager {
-    var projects: gapi.client.cloudresourcemanager.v1.ProjectsResource; 
+    var projects: gapi.client.cloudresourcemanager.ProjectsResource; 
     
 }
