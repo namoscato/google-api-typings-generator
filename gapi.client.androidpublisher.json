@@ -1,0 +1,7 @@
+{
+    "versions": {
+        "1": "https://guthub.com/bolisov/typings-gapi/typings/gapi.client.androidpublisher-v1",
+        "2": "https://guthub.com/bolisov/typings-gapi/typings/gapi.client.androidpublisher-v2",
+        "1.1": "https://guthub.com/bolisov/typings-gapi/typings/gapi.client.androidpublisher-v1.1"
+    }
+}

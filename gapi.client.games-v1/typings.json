@@ -1,0 +1,11 @@
+{
+    "name": "games",
+    "main": "gapi.client.games.d.ts",
+    "version": "1",
+    "author": "Typed by Bolisov Alexey",
+    "description": "The API for Google Play Game Services.",
+    "homepage": "https://github.com/bolisov/typings-gapi",
+    "dependencies": {
+        "gapi.client": "github:bolisov/typings-gapi/gapi.client"
+    }
+}

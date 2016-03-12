@@ -1,0 +1,11 @@
+{
+    "name": "dns",
+    "main": "gapi.client.dns.d.ts",
+    "version": "1",
+    "author": "Typed by Bolisov Alexey",
+    "description": "The Google Cloud DNS API provides services for configuring and serving authoritative DNS records.",
+    "homepage": "https://github.com/bolisov/typings-gapi",
+    "dependencies": {
+        "gapi.client": "github:bolisov/typings-gapi/gapi.client"
+    }
+}

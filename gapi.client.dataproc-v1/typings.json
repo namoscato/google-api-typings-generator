@@ -1,0 +1,11 @@
+{
+    "name": "dataproc",
+    "main": "gapi.client.dataproc.d.ts",
+    "version": "1",
+    "author": "Typed by Bolisov Alexey",
+    "description": "An API for managing Hadoop-based clusters and jobs on Google Cloud Platform.",
+    "homepage": "https://github.com/bolisov/typings-gapi",
+    "dependencies": {
+        "gapi.client": "github:bolisov/typings-gapi/gapi.client"
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "name": "qpxExpress",
+    "main": "gapi.client.qpxExpress.d.ts",
+    "version": "1",
+    "author": "Typed by Bolisov Alexey",
+    "description": "Finds the least expensive flights between an origin and a destination.",
+    "homepage": "https://github.com/bolisov/typings-gapi",
+    "dependencies": {
+        "gapi.client": "github:bolisov/typings-gapi/gapi.client"
+    }
+}

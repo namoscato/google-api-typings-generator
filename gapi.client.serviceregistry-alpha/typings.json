@@ -1,0 +1,10 @@
+{
+    "name": "serviceregistry",
+    "main": "gapi.client.serviceregistry.d.ts",
+    "author": "Typed by Bolisov Alexey",
+    "description": "The Service Registry API allows users to manage service endpoints in Service Registry and use DNS-based service discovery / name resolution.",
+    "homepage": "https://github.com/bolisov/typings-gapi",
+    "dependencies": {
+        "gapi.client": "github:bolisov/typings-gapi/gapi.client"
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "name": "doubleclickbidmanager",
+    "main": "gapi.client.doubleclickbidmanager.d.ts",
+    "version": "1",
+    "author": "Typed by Bolisov Alexey",
+    "description": "API for viewing and managing your reports in DoubleClick Bid Manager.",
+    "homepage": "https://github.com/bolisov/typings-gapi",
+    "dependencies": {
+        "gapi.client": "github:bolisov/typings-gapi/gapi.client"
+    }
+}

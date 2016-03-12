@@ -1,0 +1,11 @@
+{
+    "name": "dataflow",
+    "main": "gapi.client.dataflow.d.ts",
+    "version": "1-b3",
+    "author": "Typed by Bolisov Alexey",
+    "description": "Google Dataflow API.",
+    "homepage": "https://github.com/bolisov/typings-gapi",
+    "dependencies": {
+        "gapi.client": "github:bolisov/typings-gapi/gapi.client"
+    }
+}

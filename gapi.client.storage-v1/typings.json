@@ -1,0 +1,11 @@
+{
+    "name": "storage",
+    "main": "gapi.client.storage.d.ts",
+    "version": "1",
+    "author": "Typed by Bolisov Alexey",
+    "description": "Stores and retrieves potentially large, immutable data objects.",
+    "homepage": "https://github.com/bolisov/typings-gapi",
+    "dependencies": {
+        "gapi.client": "github:bolisov/typings-gapi/gapi.client"
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "name": "genomics",
+    "main": "gapi.client.genomics.d.ts",
+    "version": "1-beta2",
+    "author": "Typed by Bolisov Alexey",
+    "description": "Provides access to Genomics data.",
+    "homepage": "https://github.com/bolisov/typings-gapi",
+    "dependencies": {
+        "gapi.client": "github:bolisov/typings-gapi/gapi.client"
+    }
+}

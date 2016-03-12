@@ -1,0 +1,11 @@
+{
+    "name": "androidpublisher",
+    "main": "gapi.client.androidpublisher-v1.1.d.ts",
+    "version": "1.1",
+    "author": "Typed by Bolisov Alexey",
+    "description": "Lets Android application developers access their Google Play accounts.",
+    "homepage": "https://github.com/bolisov/typings-gapi",
+    "dependencies": {
+        "gapi.client": "github:bolisov/typings-gapi/gapi.client"
+    }
+}

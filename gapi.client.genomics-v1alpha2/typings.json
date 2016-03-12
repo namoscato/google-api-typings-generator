@@ -1,0 +1,11 @@
+{
+    "name": "genomics",
+    "main": "gapi.client.genomics-v1alpha2.d.ts",
+    "version": "1-alpha2",
+    "author": "Typed by Bolisov Alexey",
+    "description": "Stores, processes, explores and shares genomic data. This API implements the Global Alliance for Genomics and Health (GA4GH) v0.5.1 API as well as several extensions.",
+    "homepage": "https://github.com/bolisov/typings-gapi",
+    "dependencies": {
+        "gapi.client": "github:bolisov/typings-gapi/gapi.client"
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "versions": {
+        "1-beta3": "https://guthub.com/bolisov/typings-gapi/typings/gapi.client.sqladmin-v1beta3",
+        "1-beta4": "https://guthub.com/bolisov/typings-gapi/typings/gapi.client.sqladmin-v1beta4"
+    }
+}

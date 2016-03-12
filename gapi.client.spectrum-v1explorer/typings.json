@@ -1,0 +1,11 @@
+{
+    "name": "spectrum",
+    "main": "gapi.client.spectrum.d.ts",
+    "version": "1-explorer",
+    "author": "Typed by Bolisov Alexey",
+    "description": "API for spectrum-management functions.",
+    "homepage": "https://github.com/bolisov/typings-gapi",
+    "dependencies": {
+        "gapi.client": "github:bolisov/typings-gapi/gapi.client"
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "name": "pubsub",
+    "main": "gapi.client.pubsub-v1beta1a.d.ts",
+    "version": "1-beta1a",
+    "author": "Typed by Bolisov Alexey",
+    "description": "Provides reliable, many-to-many, asynchronous messaging between applications.",
+    "homepage": "https://github.com/bolisov/typings-gapi",
+    "dependencies": {
+        "gapi.client": "github:bolisov/typings-gapi/gapi.client"
+    }
+}

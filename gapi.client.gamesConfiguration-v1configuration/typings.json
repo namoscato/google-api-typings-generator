@@ -1,0 +1,11 @@
+{
+    "name": "gamesConfiguration",
+    "main": "gapi.client.gamesConfiguration.d.ts",
+    "version": "1-configuration",
+    "author": "Typed by Bolisov Alexey",
+    "description": "The Publishing API for Google Play Game Services.",
+    "homepage": "https://github.com/bolisov/typings-gapi",
+    "dependencies": {
+        "gapi.client": "github:bolisov/typings-gapi/gapi.client"
+    }
+}

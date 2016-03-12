@@ -1,0 +1,11 @@
+{
+    "name": "webmasters",
+    "main": "gapi.client.webmasters.d.ts",
+    "version": "3",
+    "author": "Typed by Bolisov Alexey",
+    "description": "Lets you view Google Search Console data for your verified sites.",
+    "homepage": "https://github.com/bolisov/typings-gapi",
+    "dependencies": {
+        "gapi.client": "github:bolisov/typings-gapi/gapi.client"
+    }
+}

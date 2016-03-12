@@ -1,0 +1,11 @@
+{
+    "name": "prediction",
+    "main": "gapi.client.prediction-v1.2.d.ts",
+    "version": "1.2",
+    "author": "Typed by Bolisov Alexey",
+    "description": "Lets you access a cloud hosted machine learning service that makes it easy to build smart apps",
+    "homepage": "https://github.com/bolisov/typings-gapi",
+    "dependencies": {
+        "gapi.client": "github:bolisov/typings-gapi/gapi.client"
+    }
+}

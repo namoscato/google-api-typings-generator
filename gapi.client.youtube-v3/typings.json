@@ -1,0 +1,11 @@
+{
+    "name": "youtube",
+    "main": "gapi.client.youtube.d.ts",
+    "version": "3",
+    "author": "Typed by Bolisov Alexey",
+    "description": "Programmatic access to YouTube features.",
+    "homepage": "https://github.com/bolisov/typings-gapi",
+    "dependencies": {
+        "gapi.client": "github:bolisov/typings-gapi/gapi.client"
+    }
+}

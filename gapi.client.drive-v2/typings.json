@@ -1,0 +1,11 @@
+{
+    "name": "drive",
+    "main": "gapi.client.drive-v2.d.ts",
+    "version": "2",
+    "author": "Typed by Bolisov Alexey",
+    "description": "The API to interact with Drive.",
+    "homepage": "https://github.com/bolisov/typings-gapi",
+    "dependencies": {
+        "gapi.client": "github:bolisov/typings-gapi/gapi.client"
+    }
+}

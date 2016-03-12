@@ -1,0 +1,5 @@
+{
+    "versions": {
+        "1-explorer": "https://guthub.com/bolisov/typings-gapi/typings/gapi.client.spectrum-v1explorer"
+    }
+}

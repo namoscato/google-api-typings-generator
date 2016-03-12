@@ -1,0 +1,11 @@
+{
+    "name": "books",
+    "main": "gapi.client.books.d.ts",
+    "version": "1",
+    "author": "Typed by Bolisov Alexey",
+    "description": "Lets you search for books and manage your Google Books library.",
+    "homepage": "https://github.com/bolisov/typings-gapi",
+    "dependencies": {
+        "gapi.client": "github:bolisov/typings-gapi/gapi.client"
+    }
+}

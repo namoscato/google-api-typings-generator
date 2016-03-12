@@ -1,0 +1,11 @@
+{
+    "name": "replicapoolupdater",
+    "main": "gapi.client.replicapoolupdater.d.ts",
+    "version": "1-beta1",
+    "author": "Typed by Bolisov Alexey",
+    "description": "Updates groups of Compute Engine instances.",
+    "homepage": "https://github.com/bolisov/typings-gapi",
+    "dependencies": {
+        "gapi.client": "github:bolisov/typings-gapi/gapi.client"
+    }
+}

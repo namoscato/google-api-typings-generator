@@ -1,0 +1,5 @@
+{
+    "versions": {
+        "1-b3": "https://guthub.com/bolisov/typings-gapi/typings/gapi.client.dataflow-v1b3"
+    }
+}

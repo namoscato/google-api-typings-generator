@@ -1,0 +1,11 @@
+{
+    "name": "tasks",
+    "main": "gapi.client.tasks.d.ts",
+    "version": "1",
+    "author": "Typed by Bolisov Alexey",
+    "description": "Lets you manage your tasks and task lists.",
+    "homepage": "https://github.com/bolisov/typings-gapi",
+    "dependencies": {
+        "gapi.client": "github:bolisov/typings-gapi/gapi.client"
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "name": "cloudbilling",
+    "main": "gapi.client.cloudbilling.d.ts",
+    "version": "1",
+    "author": "Typed by Bolisov Alexey",
+    "description": "Retrieves Google Developers Console billing accounts and associates them with projects.",
+    "homepage": "https://github.com/bolisov/typings-gapi",
+    "dependencies": {
+        "gapi.client": "github:bolisov/typings-gapi/gapi.client"
+    }
+}

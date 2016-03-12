@@ -1,0 +1,11 @@
+{
+    "name": "resourceviews",
+    "main": "gapi.client.resourceviews-v1beta1.d.ts",
+    "version": "1-beta1",
+    "author": "Typed by Bolisov Alexey",
+    "description": "The Resource View API allows users to create and manage logical sets of Google Compute Engine instances.",
+    "homepage": "https://github.com/bolisov/typings-gapi",
+    "dependencies": {
+        "gapi.client": "github:bolisov/typings-gapi/gapi.client"
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "name": "proximitybeacon",
+    "main": "gapi.client.proximitybeacon.d.ts",
+    "version": "1-beta1",
+    "author": "Typed by Bolisov Alexey",
+    "description": "This API provides services to register, manage, index, and search beacons.",
+    "homepage": "https://github.com/bolisov/typings-gapi",
+    "dependencies": {
+        "gapi.client": "github:bolisov/typings-gapi/gapi.client"
+    }
+}

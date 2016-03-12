@@ -1,0 +1,11 @@
+{
+    "name": "androidenterprise",
+    "main": "gapi.client.androidenterprise.d.ts",
+    "version": "1",
+    "author": "Typed by Bolisov Alexey",
+    "description": "Allows MDMs/EMMs and enterprises to manage the deployment of apps to Android for Work users.",
+    "homepage": "https://github.com/bolisov/typings-gapi",
+    "dependencies": {
+        "gapi.client": "github:bolisov/typings-gapi/gapi.client"
+    }
+}

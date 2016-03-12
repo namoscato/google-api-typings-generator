@@ -1,0 +1,11 @@
+{
+    "name": "compute",
+    "main": "gapi.client.compute.d.ts",
+    "version": "1",
+    "author": "Typed by Bolisov Alexey",
+    "description": "API for the Google Compute Engine service.",
+    "homepage": "https://github.com/bolisov/typings-gapi",
+    "dependencies": {
+        "gapi.client": "github:bolisov/typings-gapi/gapi.client"
+    }
+}

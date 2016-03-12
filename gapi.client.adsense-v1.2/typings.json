@@ -1,0 +1,11 @@
+{
+    "name": "adsense",
+    "main": "gapi.client.adsense-v1.2.d.ts",
+    "version": "1.2",
+    "author": "Typed by Bolisov Alexey",
+    "description": "Accesses AdSense publishers' inventory and generates performance reports.",
+    "homepage": "https://github.com/bolisov/typings-gapi",
+    "dependencies": {
+        "gapi.client": "github:bolisov/typings-gapi/gapi.client"
+    }
+}

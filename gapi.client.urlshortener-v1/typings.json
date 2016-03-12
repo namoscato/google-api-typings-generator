@@ -1,0 +1,11 @@
+{
+    "name": "urlshortener",
+    "main": "gapi.client.urlshortener.d.ts",
+    "version": "1",
+    "author": "Typed by Bolisov Alexey",
+    "description": "Lets you create, inspect, and manage goo.gl short URLs",
+    "homepage": "https://github.com/bolisov/typings-gapi",
+    "dependencies": {
+        "gapi.client": "github:bolisov/typings-gapi/gapi.client"
+    }
+}

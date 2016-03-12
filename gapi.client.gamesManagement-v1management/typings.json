@@ -1,0 +1,11 @@
+{
+    "name": "gamesManagement",
+    "main": "gapi.client.gamesManagement.d.ts",
+    "version": "1-management",
+    "author": "Typed by Bolisov Alexey",
+    "description": "The Management API for Google Play Game Services.",
+    "homepage": "https://github.com/bolisov/typings-gapi",
+    "dependencies": {
+        "gapi.client": "github:bolisov/typings-gapi/gapi.client"
+    }
+}

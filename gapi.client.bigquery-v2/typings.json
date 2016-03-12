@@ -1,0 +1,11 @@
+{
+    "name": "bigquery",
+    "main": "gapi.client.bigquery.d.ts",
+    "version": "2",
+    "author": "Typed by Bolisov Alexey",
+    "description": "A data platform for customers to create, manage, share and query data.",
+    "homepage": "https://github.com/bolisov/typings-gapi",
+    "dependencies": {
+        "gapi.client": "github:bolisov/typings-gapi/gapi.client"
+    }
+}

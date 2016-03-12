@@ -1,0 +1,5 @@
+{
+    "versions": {
+        "1-beta1": "https://guthub.com/bolisov/typings-gapi/typings/gapi.client.replicapoolupdater-v1beta1"
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "name": "groupsmigration",
+    "main": "gapi.client.groupsmigration.d.ts",
+    "version": "1",
+    "author": "Typed by Bolisov Alexey",
+    "description": "Groups Migration Api.",
+    "homepage": "https://github.com/bolisov/typings-gapi",
+    "dependencies": {
+        "gapi.client": "github:bolisov/typings-gapi/gapi.client"
+    }
+}

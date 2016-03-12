@@ -1,0 +1,11 @@
+{
+    "name": "kgsearch",
+    "main": "gapi.client.kgsearch.d.ts",
+    "version": "1",
+    "author": "Typed by Bolisov Alexey",
+    "description": "Knowledge Graph Search API allows developers to search the Google Knowledge Graph for entities.",
+    "homepage": "https://github.com/bolisov/typings-gapi",
+    "dependencies": {
+        "gapi.client": "github:bolisov/typings-gapi/gapi.client"
+    }
+}

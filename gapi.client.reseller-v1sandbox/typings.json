@@ -1,0 +1,11 @@
+{
+    "name": "reseller",
+    "main": "gapi.client.reseller-v1sandbox.d.ts",
+    "version": "1-sandbox",
+    "author": "Typed by Bolisov Alexey",
+    "description": "Creates and manages your customers and their subscriptions.",
+    "homepage": "https://github.com/bolisov/typings-gapi",
+    "dependencies": {
+        "gapi.client": "github:bolisov/typings-gapi/gapi.client"
+    }
+}

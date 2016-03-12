@@ -1,0 +1,11 @@
+{
+    "name": "gan",
+    "main": "gapi.client.gan.d.ts",
+    "version": "1-beta1",
+    "author": "Typed by Bolisov Alexey",
+    "description": "Lets you have programmatic access to your Google Affiliate Network data.",
+    "homepage": "https://github.com/bolisov/typings-gapi",
+    "dependencies": {
+        "gapi.client": "github:bolisov/typings-gapi/gapi.client"
+    }
+}

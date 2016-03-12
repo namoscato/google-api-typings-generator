@@ -1,0 +1,11 @@
+{
+    "name": "youtubeAnalytics",
+    "main": "gapi.client.youtubeAnalytics.d.ts",
+    "version": "1",
+    "author": "Typed by Bolisov Alexey",
+    "description": "Retrieves your YouTube Analytics reports.",
+    "homepage": "https://github.com/bolisov/typings-gapi",
+    "dependencies": {
+        "gapi.client": "github:bolisov/typings-gapi/gapi.client"
+    }
+}
