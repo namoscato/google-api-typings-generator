@@ -2,9 +2,10 @@
     "name": "webfonts",
     "main": "gapi.client.webfonts.d.ts",
     "version": "1",
-    "author": "Typed by Bolisov Alexey",
+    "author": "Bolisov Alexey",
     "description": "Accesses the metadata for all families served by Google Fonts, providing a list of families currently available (including available styles and a list of supported script subsets).",
     "homepage": "https://github.com/bolisov/typings-gapi",
+    "ambient": true,
     "dependencies": {},
     "devDependencies": {},
     "ambientDependencies": {

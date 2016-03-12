@@ -2,9 +2,10 @@
     "name": "plus",
     "main": "gapi.client.plus.d.ts",
     "version": "1",
-    "author": "Typed by Bolisov Alexey",
+    "author": "Bolisov Alexey",
     "description": "The Google+ API enables developers to build on top of the Google+ platform.",
     "homepage": "https://github.com/bolisov/typings-gapi",
+    "ambient": true,
     "dependencies": {},
     "devDependencies": {},
     "ambientDependencies": {

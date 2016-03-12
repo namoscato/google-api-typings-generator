@@ -2,9 +2,10 @@
     "name": "toolresults",
     "main": "gapi.client.toolresults.d.ts",
     "version": "1-beta3",
-    "author": "Typed by Bolisov Alexey",
+    "author": "Bolisov Alexey",
     "description": "Read and publish results from Cloud Test Lab.",
     "homepage": "https://github.com/bolisov/typings-gapi",
+    "ambient": true,
     "dependencies": {},
     "devDependencies": {},
     "ambientDependencies": {

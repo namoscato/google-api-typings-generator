@@ -2,9 +2,10 @@
     "name": "customsearch",
     "main": "gapi.client.customsearch.d.ts",
     "version": "1",
-    "author": "Typed by Bolisov Alexey",
+    "author": "Bolisov Alexey",
     "description": "Lets you search over a website or collection of websites",
     "homepage": "https://github.com/bolisov/typings-gapi",
+    "ambient": true,
     "dependencies": {},
     "devDependencies": {},
     "ambientDependencies": {

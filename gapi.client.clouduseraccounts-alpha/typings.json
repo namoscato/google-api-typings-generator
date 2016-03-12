@@ -1,9 +1,10 @@
 {
     "name": "clouduseraccounts",
     "main": "gapi.client.clouduseraccounts-alpha.d.ts",
-    "author": "Typed by Bolisov Alexey",
+    "author": "Bolisov Alexey",
     "description": "Creates and manages users and groups for accessing Google Compute Engine virtual machines.",
     "homepage": "https://github.com/bolisov/typings-gapi",
+    "ambient": true,
     "dependencies": {},
     "devDependencies": {},
     "ambientDependencies": {

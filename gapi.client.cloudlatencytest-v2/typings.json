@@ -2,9 +2,10 @@
     "name": "cloudlatencytest",
     "main": "gapi.client.cloudlatencytest.d.ts",
     "version": "2",
-    "author": "Typed by Bolisov Alexey",
+    "author": "Bolisov Alexey",
     "description": "Reports latency data.",
     "homepage": "https://github.com/bolisov/typings-gapi",
+    "ambient": true,
     "dependencies": {},
     "devDependencies": {},
     "ambientDependencies": {

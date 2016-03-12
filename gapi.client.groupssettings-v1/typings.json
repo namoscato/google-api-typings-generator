@@ -2,9 +2,10 @@
     "name": "groupssettings",
     "main": "gapi.client.groupssettings.d.ts",
     "version": "1",
-    "author": "Typed by Bolisov Alexey",
+    "author": "Bolisov Alexey",
     "description": "Lets you manage permission levels and related settings of a group.",
     "homepage": "https://github.com/bolisov/typings-gapi",
+    "ambient": true,
     "dependencies": {},
     "devDependencies": {},
     "ambientDependencies": {

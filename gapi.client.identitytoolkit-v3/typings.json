@@ -2,9 +2,10 @@
     "name": "identitytoolkit",
     "main": "gapi.client.identitytoolkit.d.ts",
     "version": "3",
-    "author": "Typed by Bolisov Alexey",
+    "author": "Bolisov Alexey",
     "description": "Help the third party sites to implement federated login.",
     "homepage": "https://github.com/bolisov/typings-gapi",
+    "ambient": true,
     "dependencies": {},
     "devDependencies": {},
     "ambientDependencies": {

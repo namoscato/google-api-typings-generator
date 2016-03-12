@@ -2,9 +2,10 @@
     "name": "admin",
     "main": "gapi.client.admin-datatransfer_v1.d.ts",
     "version": "1",
-    "author": "Typed by Bolisov Alexey",
+    "author": "Bolisov Alexey",
     "description": "Transfers user data from one user to another.",
     "homepage": "https://github.com/bolisov/typings-gapi",
+    "ambient": true,
     "dependencies": {},
     "devDependencies": {},
     "ambientDependencies": {

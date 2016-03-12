@@ -2,9 +2,10 @@
     "name": "people",
     "main": "gapi.client.people.d.ts",
     "version": "1",
-    "author": "Typed by Bolisov Alexey",
+    "author": "Bolisov Alexey",
     "description": "The Google People API service gives access to information about profiles and contacts.",
     "homepage": "https://github.com/bolisov/typings-gapi",
+    "ambient": true,
     "dependencies": {},
     "devDependencies": {},
     "ambientDependencies": {

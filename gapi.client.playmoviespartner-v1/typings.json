@@ -2,9 +2,10 @@
     "name": "playmoviespartner",
     "main": "gapi.client.playmoviespartner.d.ts",
     "version": "1",
-    "author": "Typed by Bolisov Alexey",
+    "author": "Bolisov Alexey",
     "description": "Lets Google Play Movies Partners get the delivery status of their titles.",
     "homepage": "https://github.com/bolisov/typings-gapi",
+    "ambient": true,
     "dependencies": {},
     "devDependencies": {},
     "ambientDependencies": {

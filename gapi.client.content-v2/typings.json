@@ -2,9 +2,10 @@
     "name": "content",
     "main": "gapi.client.content.d.ts",
     "version": "2",
-    "author": "Typed by Bolisov Alexey",
+    "author": "Bolisov Alexey",
     "description": "Manages product items, inventory, and Merchant Center accounts for Google Shopping.",
     "homepage": "https://github.com/bolisov/typings-gapi",
+    "ambient": true,
     "dependencies": {},
     "devDependencies": {},
     "ambientDependencies": {

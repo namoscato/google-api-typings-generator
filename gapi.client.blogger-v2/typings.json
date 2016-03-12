@@ -2,9 +2,10 @@
     "name": "blogger",
     "main": "gapi.client.blogger-v2.d.ts",
     "version": "2",
-    "author": "Typed by Bolisov Alexey",
+    "author": "Bolisov Alexey",
     "description": "API for access to the data within Blogger.",
     "homepage": "https://github.com/bolisov/typings-gapi",
+    "ambient": true,
     "dependencies": {},
     "devDependencies": {},
     "ambientDependencies": {

@@ -2,9 +2,10 @@
     "name": "cloudtrace",
     "main": "gapi.client.cloudtrace.d.ts",
     "version": "1",
-    "author": "Typed by Bolisov Alexey",
+    "author": "Bolisov Alexey",
     "description": "The Cloud Trace API allows you to send traces to and retrieve traces from Google Cloud Trace.",
     "homepage": "https://github.com/bolisov/typings-gapi",
+    "ambient": true,
     "dependencies": {},
     "devDependencies": {},
     "ambientDependencies": {

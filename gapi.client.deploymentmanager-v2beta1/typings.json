@@ -2,9 +2,10 @@
     "name": "deploymentmanager",
     "main": "gapi.client.deploymentmanager-v2beta1.d.ts",
     "version": "2-beta1",
-    "author": "Typed by Bolisov Alexey",
+    "author": "Bolisov Alexey",
     "description": "The Deployment Manager API allows users to declaratively configure, deploy and run complex solutions on the Google Cloud Platform.",
     "homepage": "https://github.com/bolisov/typings-gapi",
+    "ambient": true,
     "dependencies": {},
     "devDependencies": {},
     "ambientDependencies": {

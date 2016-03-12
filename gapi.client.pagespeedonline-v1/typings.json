@@ -2,9 +2,10 @@
     "name": "pagespeedonline",
     "main": "gapi.client.pagespeedonline-v1.d.ts",
     "version": "1",
-    "author": "Typed by Bolisov Alexey",
+    "author": "Bolisov Alexey",
     "description": "Analyzes the performance of a web page and provides tailored suggestions to make that page faster.",
     "homepage": "https://github.com/bolisov/typings-gapi",
+    "ambient": true,
     "dependencies": {},
     "devDependencies": {},
     "ambientDependencies": {

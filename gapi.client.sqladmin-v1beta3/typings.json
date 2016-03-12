@@ -2,9 +2,10 @@
     "name": "sqladmin",
     "main": "gapi.client.sqladmin-v1beta3.d.ts",
     "version": "1-beta3",
-    "author": "Typed by Bolisov Alexey",
+    "author": "Bolisov Alexey",
     "description": "API for Cloud SQL database instance management.",
     "homepage": "https://github.com/bolisov/typings-gapi",
+    "ambient": true,
     "dependencies": {},
     "devDependencies": {},
     "ambientDependencies": {

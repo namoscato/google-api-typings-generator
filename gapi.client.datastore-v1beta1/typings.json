@@ -2,9 +2,10 @@
     "name": "datastore",
     "main": "gapi.client.datastore-v1beta1.d.ts",
     "version": "1-beta1",
-    "author": "Typed by Bolisov Alexey",
+    "author": "Bolisov Alexey",
     "description": "API for accessing Google Cloud Datastore.",
     "homepage": "https://github.com/bolisov/typings-gapi",
+    "ambient": true,
     "dependencies": {},
     "devDependencies": {},
     "ambientDependencies": {

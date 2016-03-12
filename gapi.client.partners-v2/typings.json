@@ -2,9 +2,10 @@
     "name": "partners",
     "main": "gapi.client.partners.d.ts",
     "version": "2",
-    "author": "Typed by Bolisov Alexey",
+    "author": "Bolisov Alexey",
     "description": "Lets advertisers search certified companies and create contact leads with them, and also audits the usage of clients.",
     "homepage": "https://github.com/bolisov/typings-gapi",
+    "ambient": true,
     "dependencies": {},
     "devDependencies": {},
     "ambientDependencies": {

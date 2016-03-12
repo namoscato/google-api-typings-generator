@@ -2,9 +2,10 @@
     "name": "dfareporting",
     "main": "gapi.client.dfareporting-v1.3.d.ts",
     "version": "1.3",
-    "author": "Typed by Bolisov Alexey",
+    "author": "Bolisov Alexey",
     "description": "Lets you create, run and download reports.",
     "homepage": "https://github.com/bolisov/typings-gapi",
+    "ambient": true,
     "dependencies": {},
     "devDependencies": {},
     "ambientDependencies": {

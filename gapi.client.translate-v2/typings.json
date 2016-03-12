@@ -2,9 +2,10 @@
     "name": "translate",
     "main": "gapi.client.translate.d.ts",
     "version": "2",
-    "author": "Typed by Bolisov Alexey",
+    "author": "Bolisov Alexey",
     "description": "Lets you translate text from one language to another",
     "homepage": "https://github.com/bolisov/typings-gapi",
+    "ambient": true,
     "dependencies": {},
     "devDependencies": {},
     "ambientDependencies": {

@@ -2,9 +2,10 @@
     "name": "analytics",
     "main": "gapi.client.analytics.d.ts",
     "version": "3",
-    "author": "Typed by Bolisov Alexey",
+    "author": "Bolisov Alexey",
     "description": "Views and manages your Google Analytics data.",
     "homepage": "https://github.com/bolisov/typings-gapi",
+    "ambient": true,
     "dependencies": {},
     "devDependencies": {},
     "ambientDependencies": {

@@ -2,9 +2,10 @@
     "name": "calendar",
     "main": "gapi.client.calendar.d.ts",
     "version": "3",
-    "author": "Typed by Bolisov Alexey",
+    "author": "Bolisov Alexey",
     "description": "Lets you manipulate events and other calendar data.",
     "homepage": "https://github.com/bolisov/typings-gapi",
+    "ambient": true,
     "dependencies": {},
     "devDependencies": {},
     "ambientDependencies": {

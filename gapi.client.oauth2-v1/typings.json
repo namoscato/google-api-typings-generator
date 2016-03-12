@@ -2,9 +2,10 @@
     "name": "oauth2",
     "main": "gapi.client.oauth2-v1.d.ts",
     "version": "1",
-    "author": "Typed by Bolisov Alexey",
+    "author": "Bolisov Alexey",
     "description": "Lets you access OAuth2 protocol related APIs.",
     "homepage": "https://github.com/bolisov/typings-gapi",
+    "ambient": true,
     "dependencies": {},
     "devDependencies": {},
     "ambientDependencies": {

@@ -2,9 +2,10 @@
     "name": "coordinate",
     "main": "gapi.client.coordinate.d.ts",
     "version": "1",
-    "author": "Typed by Bolisov Alexey",
+    "author": "Bolisov Alexey",
     "description": "Lets you view and manage jobs in a Coordinate team.",
     "homepage": "https://github.com/bolisov/typings-gapi",
+    "ambient": true,
     "dependencies": {},
     "devDependencies": {},
     "ambientDependencies": {

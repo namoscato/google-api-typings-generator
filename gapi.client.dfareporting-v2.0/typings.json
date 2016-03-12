@@ -2,9 +2,10 @@
     "name": "dfareporting",
     "main": "gapi.client.dfareporting-v2.0.d.ts",
     "version": "2.0",
-    "author": "Typed by Bolisov Alexey",
+    "author": "Bolisov Alexey",
     "description": "Manage your DoubleClick Campaign Manager ad campaigns and reports.",
     "homepage": "https://github.com/bolisov/typings-gapi",
+    "ambient": true,
     "dependencies": {},
     "devDependencies": {},
     "ambientDependencies": {

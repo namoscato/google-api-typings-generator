@@ -2,9 +2,10 @@
     "name": "tagmanager",
     "main": "gapi.client.tagmanager.d.ts",
     "version": "1",
-    "author": "Typed by Bolisov Alexey",
+    "author": "Bolisov Alexey",
     "description": "Accesses Tag Manager accounts and containers.",
     "homepage": "https://github.com/bolisov/typings-gapi",
+    "ambient": true,
     "dependencies": {},
     "devDependencies": {},
     "ambientDependencies": {

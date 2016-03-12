@@ -2,9 +2,10 @@
     "name": "cloudresourcemanager",
     "main": "gapi.client.cloudresourcemanager.d.ts",
     "version": "1",
-    "author": "Typed by Bolisov Alexey",
+    "author": "Bolisov Alexey",
     "description": "The Google Cloud Resource Manager API provides methods for creating, reading, and updating project metadata.",
     "homepage": "https://github.com/bolisov/typings-gapi",
+    "ambient": true,
     "dependencies": {},
     "devDependencies": {},
     "ambientDependencies": {

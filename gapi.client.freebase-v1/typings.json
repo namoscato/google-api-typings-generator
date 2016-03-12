@@ -2,9 +2,10 @@
     "name": "freebase",
     "main": "gapi.client.freebase.d.ts",
     "version": "1",
-    "author": "Typed by Bolisov Alexey",
+    "author": "Bolisov Alexey",
     "description": "Find Freebase entities using textual queries and other constraints.",
     "homepage": "https://github.com/bolisov/typings-gapi",
+    "ambient": true,
     "dependencies": {},
     "devDependencies": {},
     "ambientDependencies": {
