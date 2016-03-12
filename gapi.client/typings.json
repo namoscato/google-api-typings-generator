@@ -1,0 +1,7 @@
+{
+    "name": "google API client",
+    "main": "gapi.client.d.ts",
+    "version": "1.0",
+    "author": "Typed by Bolisov Alexey",    
+    "homepage": "https://github.com/bolisov/typings-gapi"    
+}
