@@ -5,7 +5,9 @@
     "author": "Typed by Bolisov Alexey",
     "description": "Knowledge Graph Search API allows developers to search the Google Knowledge Graph for entities.",
     "homepage": "https://github.com/bolisov/typings-gapi",
-    "dependencies": {
+    "dependencies": {},
+    "devDependencies": {},
+    "ambientDependencies": {
         "gapi.client": "github:bolisov/typings-gapi/gapi.client"
     }
 }

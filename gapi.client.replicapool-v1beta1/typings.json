@@ -5,7 +5,9 @@
     "author": "Typed by Bolisov Alexey",
     "description": "The Replica Pool API allows users to declaratively provision and manage groups of Google Compute Engine instances based on a common template.",
     "homepage": "https://github.com/bolisov/typings-gapi",
-    "dependencies": {
+    "dependencies": {},
+    "devDependencies": {},
+    "ambientDependencies": {
         "gapi.client": "github:bolisov/typings-gapi/gapi.client"
     }
 }

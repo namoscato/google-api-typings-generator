@@ -5,7 +5,9 @@
     "author": "Typed by Bolisov Alexey",
     "description": "Lets you access a cloud hosted machine learning service that makes it easy to build smart apps",
     "homepage": "https://github.com/bolisov/typings-gapi",
-    "dependencies": {
+    "dependencies": {},
+    "devDependencies": {},
+    "ambientDependencies": {
         "gapi.client": "github:bolisov/typings-gapi/gapi.client"
     }
 }

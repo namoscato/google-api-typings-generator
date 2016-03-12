@@ -5,7 +5,9 @@
     "author": "Typed by Bolisov Alexey",
     "description": "Lets you view and manage jobs in a Coordinate team.",
     "homepage": "https://github.com/bolisov/typings-gapi",
-    "dependencies": {
+    "dependencies": {},
+    "devDependencies": {},
+    "ambientDependencies": {
         "gapi.client": "github:bolisov/typings-gapi/gapi.client"
     }
 }

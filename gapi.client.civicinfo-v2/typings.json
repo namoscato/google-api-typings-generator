@@ -5,7 +5,9 @@
     "author": "Typed by Bolisov Alexey",
     "description": "An API for accessing civic information.",
     "homepage": "https://github.com/bolisov/typings-gapi",
-    "dependencies": {
+    "dependencies": {},
+    "devDependencies": {},
+    "ambientDependencies": {
         "gapi.client": "github:bolisov/typings-gapi/gapi.client"
     }
 }

@@ -5,7 +5,9 @@
     "author": "Typed by Bolisov Alexey",
     "description": "API for accessing Google Cloud Datastore.",
     "homepage": "https://github.com/bolisov/typings-gapi",
-    "dependencies": {
+    "dependencies": {},
+    "devDependencies": {},
+    "ambientDependencies": {
         "gapi.client": "github:bolisov/typings-gapi/gapi.client"
     }
 }

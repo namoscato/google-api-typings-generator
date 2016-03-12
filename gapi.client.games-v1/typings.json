@@ -5,7 +5,9 @@
     "author": "Typed by Bolisov Alexey",
     "description": "The API for Google Play Game Services.",
     "homepage": "https://github.com/bolisov/typings-gapi",
-    "dependencies": {
+    "dependencies": {},
+    "devDependencies": {},
+    "ambientDependencies": {
         "gapi.client": "github:bolisov/typings-gapi/gapi.client"
     }
 }

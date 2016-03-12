@@ -5,7 +5,9 @@
     "author": "Typed by Bolisov Alexey",
     "description": "Read and publish results from Cloud Test Lab.",
     "homepage": "https://github.com/bolisov/typings-gapi",
-    "dependencies": {
+    "dependencies": {},
+    "devDependencies": {},
+    "ambientDependencies": {
         "gapi.client": "github:bolisov/typings-gapi/gapi.client"
     }
 }

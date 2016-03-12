@@ -5,7 +5,9 @@
     "author": "Typed by Bolisov Alexey",
     "description": "The Google Cloud Logging API lets you write log entries and manage your logs, log sinks and logs-based metrics.",
     "homepage": "https://github.com/bolisov/typings-gapi",
-    "dependencies": {
+    "dependencies": {},
+    "devDependencies": {},
+    "ambientDependencies": {
         "gapi.client": "github:bolisov/typings-gapi/gapi.client"
     }
 }
