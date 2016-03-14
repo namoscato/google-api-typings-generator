@@ -832,6 +832,19 @@ declare module gapi.client.adexchangebuyer {
         width?: number,
     }
     
+    interface UpdatePrivateAuctionProposalRequest {
+        // The externalDealId of the deal to be updated.
+        externalDealId?: string,
+        // Optional note to be added.
+        note?: MarketplaceNote,
+        // The private auction id to be updated.
+        privateAuctionId?: string,
+        // The current revision number of the proposal to be updated.
+        proposalRevisionNumber?: string,
+        // The proposed action on the private auction proposal.
+        updateAction?: string,
+    }
+    
     interface AccountsResource {
         // Gets one account by ID.
         get (request: {        
@@ -996,6 +1009,14 @@ declare module gapi.client.adexchangebuyer {
     }
     
     
+    interface MarketplaceprivateauctionResource {
+        // Update a given private auction proposal
+        updateproposal (request: {        
+        }) : gapi.client.Request<void>;        
+        
+    }
+    
+    
     interface PerformanceReportResource {
         // Retrieves the authenticated user's list of performance metrics.
         list (request: {        
@@ -1147,6 +1168,8 @@ declare module gapi.client.adexchangebuyer {
     var marketplacedeals: gapi.client.adexchangebuyer.MarketplacedealsResource; 
     
     var marketplacenotes: gapi.client.adexchangebuyer.MarketplacenotesResource; 
+    
+    var marketplaceprivateauction: gapi.client.adexchangebuyer.MarketplaceprivateauctionResource; 
     
     var performanceReport: gapi.client.adexchangebuyer.PerformanceReportResource; 
     

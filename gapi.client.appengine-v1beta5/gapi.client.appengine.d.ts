@@ -7,7 +7,7 @@
 declare module gapi.client.appengine {
     
     interface Operation {
-        // The server-assigned name, which is only unique within the same service that originally returns it. If you use the default HTTP mapping above, the `name` should have the format of `operations/some/unique/name`.
+        // The server-assigned name, which is only unique within the same service that originally returns it. If you use the default HTTP mapping, the `name` should have the format of `operations/some/unique/name`.
         name?: string,
         // Service-specific metadata associated with the operation. It typically contains progress information and common metadata such as create time. Some services might not provide such metadata. Any method that returns a long-running operation should document the metadata type, if any.
         metadata?: any,
@@ -40,15 +40,15 @@ declare module gapi.client.appengine {
         name?: string,
         // The relative name/path of the application. Example: "myapp".
         id?: string,
-        // HTTP path dispatch rules for requests to the app that do not explicitly target a service or version. The rules are order-dependent.
+        // HTTP path dispatch rules for requests to the app that do not explicitly target a service or version. The rules are order-dependent. @OutputOnly
         dispatchRules?: UrlDispatchRule[],        
         // If set, only users from the specified Google Apps authentication domain may access the application. If not set, any Google Account may access the application.
         authDomain?: string,
-        // The location from which the application will be run. Choices are "us" for United States and "eu" for European Union. Application instances will run out of data centers in the chosen location and all of the application's End User Content will be stored at rest in the chosen location. The default is "us".
+        // The location from which the application will be run. Application instances will run out of data centers in the chosen location and all of the application's End User Content will be stored at rest. The default is "us-central". Choices are: "us-central" - Central US "europe-west" - Western Europe "us-east1" - Eastern US
         location?: string,
         // A Google Cloud Storage bucket which can be used for storing files associated with an application. This bucket is associated with the application and can be used by the gcloud deployment commands. @OutputOnly
         codeBucket?: string,
-        // Determines the cookie expiration policy for the application.
+        // Determines the cookie expiration policy for the application. @OutputOnly
         defaultCookieExpiration?: string,
         // The hostname used to reach the application, as resolved by App Engine. @OutputOnly
         defaultHostname?: string,
@@ -474,7 +474,7 @@ declare module gapi.client.appengine {
             versionsId: string,
             // Standard field mask for the set of fields to be updated.
             mask?: string,
-        }) : gapi.client.Request<Version>;        
+        }) : gapi.client.Request<Operation>;        
         
     }
     

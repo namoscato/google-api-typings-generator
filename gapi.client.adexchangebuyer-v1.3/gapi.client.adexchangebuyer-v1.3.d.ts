@@ -209,6 +209,8 @@ declare module gapi.client.adexchangebuyer {
         advertiser?: string,
         // Whether the publisher for this deal is eligible for alcohol ads.
         allowsAlcohol?: boolean,
+        // The account id that this deal was negotiated for. It is either the buyer or the client that this deal was negotiated on behalf of.
+        buyerAccountId?: string,
         // The currency code that applies to the fixed_cpm value. If not set then assumed to be USD.
         currencyCode?: string,
         // The deal type such as programmatic reservation or fixed price and so on.

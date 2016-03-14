@@ -3,7 +3,7 @@
     "main": "gapi.client.appengine.d.ts",
     "version": "1-beta5",
     "author": "Bolisov Alexey",
-    "description": "The Google App Engine Admin API enables developers to provision and manage their App Engine applications.",
+    "description": "Provisions and manages App Engine applications.",
     "homepage": "https://github.com/bolisov/typings-gapi",
     "ambient": true,
     "dependencies": {},
