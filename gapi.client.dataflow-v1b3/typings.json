@@ -3,7 +3,7 @@
     "main": "gapi.client.dataflow.d.ts",
     "version": "1-b3",
     "author": "Bolisov Alexey",
-    "description": "Google Dataflow API.",
+    "description": "Google Cloud Dataflow is a simple, flexible, and powerful system you can use to perform data processing tasks.",
     "homepage": "https://github.com/bolisov/typings-gapi",
     "ambient": true,
     "dependencies": {},

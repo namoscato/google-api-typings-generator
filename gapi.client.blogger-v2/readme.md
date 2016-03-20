@@ -34,7 +34,8 @@ Then load api client wrapper:
 gapi.client.load('blogger', 'v2', () => {
     // now we can use gapi.client.blogger
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript

@@ -231,7 +231,7 @@ declare module gapi.client.androidenterprise {
         detailsUrl?: string,
         // How and to whom the package is made available. The value publicGoogleHosted means that the package is available through the Play Store and not restricted to a specific enterprise. The value privateGoogleHosted means that the package is a private app (restricted to an enterprise) but hosted by Google. The value privateSelfHosted means that the package is a private app (restricted to an enterprise) and is privately hosted.
         distributionChannel?: string,
-        // A link to an image that can be used as an icon for the product.
+        // A link to an image that can be used as an icon for the product. This image is suitable for use at up to 512px x 512px.
         iconUrl?: string,
         // Identifies what kind of resource this is. Value: the fixed string "androidenterprise#product".
         kind?: string,
@@ -241,6 +241,8 @@ declare module gapi.client.androidenterprise {
         productPricing?: string,
         // Whether this app can only be installed on devices using the Android for Work container app.
         requiresContainerApp?: boolean,
+        // A link to a smaller image that can be used as an icon for the product. This image is suitable for use at up to 128px x 128px.
+        smallIconUrl?: string,
         // The name of the product.
         title?: string,
         // A link to the Google Play for Work details page for the product, for use by an Enterprise administrator.
@@ -569,7 +571,7 @@ declare module gapi.client.androidenterprise {
         delete (request: {        
             // The ID of the enterprise.
             enterpriseId: string,
-            // The ID of the entitlement, e.g. "app:com.google.android.gm".
+            // The ID of the entitlement (a product ID), e.g. "app:com.google.android.gm".
             entitlementId: string,
             // The ID of the user.
             userId: string,
@@ -579,7 +581,7 @@ declare module gapi.client.androidenterprise {
         get (request: {        
             // The ID of the enterprise.
             enterpriseId: string,
-            // The ID of the entitlement, e.g. "app:com.google.android.gm".
+            // The ID of the entitlement (a product ID), e.g. "app:com.google.android.gm".
             entitlementId: string,
             // The ID of the user.
             userId: string,
@@ -597,7 +599,7 @@ declare module gapi.client.androidenterprise {
         patch (request: {        
             // The ID of the enterprise.
             enterpriseId: string,
-            // The ID of the entitlement, e.g. "app:com.google.android.gm".
+            // The ID of the entitlement (a product ID), e.g. "app:com.google.android.gm".
             entitlementId: string,
             // Set to true to also install the product on all the user's devices where possible. Failure to install on one or more devices will not prevent this operation from returning successfully, as long as the entitlement was successfully assigned to the user.
             install?: boolean,
@@ -609,7 +611,7 @@ declare module gapi.client.androidenterprise {
         update (request: {        
             // The ID of the enterprise.
             enterpriseId: string,
-            // The ID of the entitlement, e.g. "app:com.google.android.gm".
+            // The ID of the entitlement (a product ID), e.g. "app:com.google.android.gm".
             entitlementId: string,
             // Set to true to also install the product on all the user's devices where possible. Failure to install on one or more devices will not prevent this operation from returning successfully, as long as the entitlement was successfully assigned to the user.
             install?: boolean,

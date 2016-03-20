@@ -54,6 +54,8 @@ declare module gapi.client.webmasters {
         searchType?: string,
         // [Required] Start date of the requested date range, in YYYY-MM-DD format, in PST time (UTC - 8:00). Must be less than or equal to the end date. This value is included in the range.
         startDate?: string,
+        // [Optional; Default is 0] Zero-based index of the first row in the response. Must be a non-negative number.
+        startRow?: number,
     }
     
     interface SearchAnalyticsQueryResponse {

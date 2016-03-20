@@ -129,15 +129,17 @@ declare module gapi.client.compute {
         // - projects/project/zones/zone/diskTypes/diskType 
         // - zones/zone/diskTypes/diskType
         diskType?: string,
-        // A source image used to create the disk. You can provide a private (custom) image, and Compute Engine will use the corresponding image from your project. For example:
+        // The source image used to create this disk.
+        // 
+        // To create a disk with a private image, specify the image name in the following format:
         // 
         // global/images/my-private-image 
         // 
-        // Or you can provide an image from a publicly-available project. For example, to use a Debian image from the debian-cloud project, make sure to include the project in the URL:
+        // To create a disk with a public image, specify the image name and the project that owns the image. For example, you can use a Debian image from the debian-cloud project:
         // 
-        // projects/debian-cloud/global/images/debian-7-wheezy-vYYYYMMDD 
+        // projects/debian-cloud/global/images/debian-8-jessie-vYYYYMMDD 
         // 
-        // where vYYYYMMDD is the image version. The fully-qualified URL will also work in both cases.
+        // The vYYYYMMDD value is the image version. The fully-qualified URL also works in both examples.
         sourceImage?: string,
     }
     
@@ -365,25 +367,23 @@ declare module gapi.client.compute {
         // 
         // If you specify this field along with sourceImage or sourceSnapshot, the value of sizeGb must not be less than the size of the sourceImage or the size of the snapshot.
         sizeGb?: string,
-        // The source image used to create this disk. If the source image is deleted from the system, this field will not be set, even if an image with the same name has been re-created.
+        // The source image used to create this disk. If the source image is deleted, this field will not be set.
         // 
-        // When creating a disk, you can provide a private (custom) image using the following input, and Compute Engine will use the corresponding image from your project. For example:
+        // To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-8 to use the latest Debian 8 image:
+        // 
+        // projects/debian-cloud/global/images/family/debian-8 
+        // 
+        // Alternatively, use a specific version of a public operating system image:
+        // 
+        // projects/debian-cloud/global/images/debian-8-jessie-vYYYYMMDD 
+        // 
+        // To create a disk with a private image that you created, specify the image name in the following format:
         // 
         // global/images/my-private-image 
         // 
-        // Or you can provide an image from a publicly-available project. For example, to use a Debian image from the debian-cloud project, make sure to include the project in the URL:
+        // You can also specify a private image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name:
         // 
-        // projects/debian-cloud/global/images/debian-7-wheezy-vYYYYMMDD 
-        // 
-        // where vYYYYMMDD is the image version. The fully-qualified URL will also work in both cases.
-        // 
-        // You can also specify the latest image for a private image family by replacing the image name suffix with family/family-name. For example:
-        // 
-        // global/images/family/my-private-family 
-        // 
-        // Or you can specify an image family from a publicly-available project. For example, to use the latest Debian 7 from the debian-cloud project, make sure to include the project in the URL:
-        // 
-        // projects/debian-cloud/global/images/family/debian-7
+        // global/images/family/my-private-family
         sourceImage?: string,
         // [Output Only] The ID value of the image used to create this disk. This value identifies the exact image that was used to create this persistent disk. For example, if you created the persistent disk from an image that was later deleted and recreated under the same name, the source image ID would identify the exact version of the image that was used.
         sourceImageId?: string,
@@ -510,6 +510,11 @@ declare module gapi.client.compute {
             // [Output Only] A human-readable description of the warning code.
             message?: string,
         },        
+    }
+    
+    interface DisksResizeRequest {
+        // The new size of the persistent disk, which is specified in GB.
+        sizeGb?: string,
     }
     
     interface DisksScopedList {
@@ -1477,7 +1482,7 @@ declare module gapi.client.compute {
         id?: string,
         // [Output Only] The time that this operation was requested. This value is in RFC3339 text format.
         insertTime?: string,
-        // [Output Only] Type of the resource. Always compute#operation for operation resources.
+        // [Output Only] Type of the resource. Always compute#operation for Operation resources.
         kind?: string,
         // [Output Only] Name of the resource.
         name?: string,
@@ -2415,17 +2420,6 @@ declare module gapi.client.compute {
         id?: string,
         // [Output Only] Type of the resource. Always compute#zone for zones.
         kind?: string,
-        // [Output Only] Any scheduled maintenance windows for this zone. When the zone is in a maintenance window, all resources which reside in the zone will be unavailable. For more information, see Maintenance Windows
-        maintenanceWindows?: {        
-            // [Output Only] Starting time of the maintenance window, in RFC3339 format.
-            beginTime?: string,
-            // [Output Only] Textual description of the maintenance window.
-            description?: string,
-            // [Output Only] Ending time of the maintenance window, in RFC3339 format.
-            endTime?: string,
-            // [Output Only] Name of the maintenance window.
-            name?: string,
-        }[],        
         // [Output Only] Name of the resource.
         name?: string,
         // [Output Only] Full URL reference to the region which hosts the zone.
@@ -2794,7 +2788,7 @@ declare module gapi.client.compute {
             zone: string,
         }) : gapi.client.Request<Disk>;        
         
-        // Creates a persistent disk in the specified project using the data in the request. You can create a disk with a sourceImage, a sourceSnapshot, or create an empty 200 GB data disk by omitting all properties. You can also create a disk that is larger than the default size by specifying the sizeGb property.
+        // Creates a persistent disk in the specified project using the data in the request. You can create a disk with a sourceImage, a sourceSnapshot, or create an empty 500 GB data disk by omitting all properties. You can also create a disk that is larger than the default size by specifying the sizeGb property.
         insert (request: {        
             // Project ID for this request.
             project: string,
@@ -2825,6 +2819,16 @@ declare module gapi.client.compute {
             // The name of the zone for this request.
             zone: string,
         }) : gapi.client.Request<DiskList>;        
+        
+        // Resizes the specified persistent disk.
+        resize (request: {        
+            // The name of the persistent disk.
+            disk: string,
+            // Project ID for this request.
+            project: string,
+            // The name of the zone for this request.
+            zone: string,
+        }) : gapi.client.Request<Operation>;        
         
     }
     

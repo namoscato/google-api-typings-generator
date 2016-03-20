@@ -34,7 +34,8 @@ Then load api client wrapper:
 gapi.client.load('dns', 'v1', () => {
     // now we can use gapi.client.dns
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript

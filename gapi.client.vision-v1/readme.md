@@ -34,7 +34,8 @@ Then load api client wrapper:
 gapi.client.load('vision', 'v1', () => {
     // now we can use gapi.client.vision
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript

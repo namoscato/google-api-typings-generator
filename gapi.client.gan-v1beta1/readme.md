@@ -34,7 +34,8 @@ Then load api client wrapper:
 gapi.client.load('gan', 'v1beta1', () => {
     // now we can use gapi.client.gan
     // ... 
-});```
+});
+```
 
 
 

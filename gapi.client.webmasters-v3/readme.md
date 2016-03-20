@@ -1,5 +1,5 @@
 # Typescript typings for Search Console API
-Lets you view Google Search Console data for your verified sites.
+View Google Search Console data for your verified sites.
 For detailed description please check [documentation](https://developers.google.com/webmaster-tools/).
 
 ## Installing
@@ -34,7 +34,8 @@ Then load api client wrapper:
 gapi.client.load('webmasters', 'v3', () => {
     // now we can use gapi.client.webmasters
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript

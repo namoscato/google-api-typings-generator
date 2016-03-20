@@ -34,7 +34,8 @@ Then load api client wrapper:
 gapi.client.load('spectrum', 'v1explorer', () => {
     // now we can use gapi.client.spectrum
     // ... 
-});```
+});
+```
 
 
 

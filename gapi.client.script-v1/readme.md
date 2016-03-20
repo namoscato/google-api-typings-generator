@@ -34,7 +34,8 @@ Then load api client wrapper:
 gapi.client.load('script', 'v1', () => {
     // now we can use gapi.client.script
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript

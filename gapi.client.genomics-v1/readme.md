@@ -1,6 +1,6 @@
 # Typescript typings for Genomics API
 Stores, processes, explores and shares genomic data. This API implements the Global Alliance for Genomics and Health (GA4GH) v0.5.1 API as well as several extensions.
-For detailed description please check [documentation]().
+For detailed description please check [documentation](https://cloud.google.com/genomics/).
 
 ## Installing
 
@@ -34,7 +34,8 @@ Then load api client wrapper:
 gapi.client.load('genomics', 'v1', () => {
     // now we can use gapi.client.genomics
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript

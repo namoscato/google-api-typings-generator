@@ -34,7 +34,8 @@ Then load api client wrapper:
 gapi.client.load('doubleclickbidmanager', 'v1', () => {
     // now we can use gapi.client.doubleclickbidmanager
     // ... 
-});```
+});
+```
 
 
 

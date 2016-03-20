@@ -1,5 +1,5 @@
 # Typescript typings for Google OAuth2 API
-Lets you access OAuth2 protocol related APIs.
+Obtains end-user authorization grants for use with other Google APIs.
 For detailed description please check [documentation](https://developers.google.com/accounts/docs/OAuth2).
 
 ## Installing
@@ -34,7 +34,8 @@ Then load api client wrapper:
 gapi.client.load('oauth2', 'v2', () => {
     // now we can use gapi.client.oauth2
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript

@@ -34,7 +34,8 @@ Then load api client wrapper:
 gapi.client.load('taskqueue', 'v1beta2', () => {
     // now we can use gapi.client.taskqueue
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript

@@ -34,7 +34,8 @@ Then load api client wrapper:
 gapi.client.load('clouduseraccounts', 'vm_alpha', () => {
     // now we can use gapi.client.clouduseraccounts
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript

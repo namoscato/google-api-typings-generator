@@ -7,7 +7,7 @@
 declare module gapi.client.toolresults {
     
     interface Any {
-        // A URL/resource name whose content describes the type of the serialized message.
+        // A URL/resource name whose content describes the type of the serialized protocol buffer message.
         // 
         // For URLs which use the schema `http`, `https`, or no schema, the following restrictions and interpretations apply:
         // 
@@ -15,7 +15,7 @@ declare module gapi.client.toolresults {
         // 
         // Schemas other than `http`, `https` (or the empty schema) might be used with implementation specific semantics.
         typeUrl?: string,
-        // Must be valid serialized data of the above specified type.
+        // Must be a valid serialized protocol buffer of the above specified type.
         value?: string,
     }
     

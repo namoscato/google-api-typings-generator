@@ -34,7 +34,8 @@ Then load api client wrapper:
 gapi.client.load('groupssettings', 'v1', () => {
     // now we can use gapi.client.groupssettings
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript

@@ -34,7 +34,8 @@ Then load api client wrapper:
 gapi.client.load('sqladmin', 'v1beta4', () => {
     // now we can use gapi.client.sqladmin
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript

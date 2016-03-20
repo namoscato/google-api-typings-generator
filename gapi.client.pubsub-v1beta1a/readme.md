@@ -34,7 +34,8 @@ Then load api client wrapper:
 gapi.client.load('pubsub', 'v1beta1a', () => {
     // now we can use gapi.client.pubsub
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript

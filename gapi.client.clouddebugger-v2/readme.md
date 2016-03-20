@@ -34,7 +34,8 @@ Then load api client wrapper:
 gapi.client.load('clouddebugger', 'v2', () => {
     // now we can use gapi.client.clouddebugger
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript

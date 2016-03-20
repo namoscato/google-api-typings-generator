@@ -34,7 +34,8 @@ Then load api client wrapper:
 gapi.client.load('freebase', 'v1', () => {
     // now we can use gapi.client.freebase
     // ... 
-});```
+});
+```
 
 
 

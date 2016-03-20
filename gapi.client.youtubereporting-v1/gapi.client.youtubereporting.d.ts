@@ -23,6 +23,8 @@ declare module gapi.client.youtubereporting {
         id?: string,
         // The name of the report type (max. 100 characters).
         name?: string,
+        // True if this a system-managed report type; otherwise false. Reporting jobs for system-managed report types are created automatically and can thus not be used in the `CreateJob` method.
+        systemManaged?: boolean,
     }
     
     interface Job {
@@ -34,6 +36,8 @@ declare module gapi.client.youtubereporting {
         name?: string,
         // The creation date/time of the job.
         createTime?: string,
+        // True if this a system-managed job that cannot be modified by the user; otherwise false.
+        systemManaged?: boolean,
     }
     
     interface ListJobsResponse {
@@ -87,6 +91,8 @@ declare module gapi.client.youtubereporting {
             pageSize?: number,
             // A token identifying a page of results the server should return. Typically, this is the value of ListReportTypesResponse.next_page_token returned in response to the previous call to the `ListReportTypes` method.
             pageToken?: string,
+            // If set to true, also system-managed report types will be returned; otherwise only the report types that can be used to create new reporting jobs will be returned.
+            includeSystemManaged?: boolean,
         }) : gapi.client.Request<ListReportTypesResponse>;        
         
     }
@@ -105,6 +111,10 @@ declare module gapi.client.youtubereporting {
             pageToken?: string,
             // If set, only reports created after the specified date/time are returned.
             createdAfter?: string,
+            // If set, only reports whose start time is greater than or equal the specified date/time are returned.
+            startTimeAtOrAfter?: string,
+            // If set, only reports whose start time is smaller than the specified date/time are returned.
+            startTimeBefore?: string,
         }) : gapi.client.Request<ListReportsResponse>;        
         
         // Gets the metadata of a specific report.
@@ -135,6 +145,8 @@ declare module gapi.client.youtubereporting {
             pageSize?: number,
             // A token identifying a page of results the server should return. Typically, this is the value of ListReportTypesResponse.next_page_token returned in response to the previous call to the `ListJobs` method.
             pageToken?: string,
+            // If set to true, also system-managed jobs will be returned; otherwise only user-created jobs will be returned. System-managed jobs can neither be modified nor deleted.
+            includeSystemManaged?: boolean,
         }) : gapi.client.Request<ListJobsResponse>;        
         
         // Gets a job.

@@ -34,7 +34,8 @@ Then load api client wrapper:
 gapi.client.load('gamesConfiguration', 'v1configuration', () => {
     // now we can use gapi.client.gamesConfiguration
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript

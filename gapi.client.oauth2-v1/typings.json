@@ -3,7 +3,7 @@
     "main": "gapi.client.oauth2-v1.d.ts",
     "version": "1",
     "author": "Bolisov Alexey",
-    "description": "Lets you access OAuth2 protocol related APIs.",
+    "description": "Obtains end-user authorization grants for use with other Google APIs.",
     "homepage": "https://github.com/bolisov/typings-gapi",
     "ambient": true,
     "dependencies": {},

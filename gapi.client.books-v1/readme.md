@@ -34,7 +34,8 @@ Then load api client wrapper:
 gapi.client.load('books', 'v1', () => {
     // now we can use gapi.client.books
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript

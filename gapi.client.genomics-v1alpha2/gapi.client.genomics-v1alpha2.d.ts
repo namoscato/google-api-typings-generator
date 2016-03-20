@@ -1,5 +1,5 @@
 // Type definitions for Google Genomics API v1alpha2
-// Project: 
+// Project: https://cloud.google.com/genomics/
 // Definitions by: Bolisov Alexey
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />

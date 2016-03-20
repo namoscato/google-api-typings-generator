@@ -34,7 +34,8 @@ Then load api client wrapper:
 gapi.client.load('toolresults', 'v1beta3', () => {
     // now we can use gapi.client.toolresults
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript

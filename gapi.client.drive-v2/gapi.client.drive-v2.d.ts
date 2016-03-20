@@ -477,7 +477,7 @@ declare module gapi.client.drive {
         modifiedDate?: string,
         // A map of the id of each of the user's apps to a link to open this file with that app. Only populated when the drive.apps.readonly scope is used.
         openWithLinks?: any,
-        // The original filename if the file was uploaded manually, or the original title if the file was inserted through the API. Note that renames of the title will not change the original filename. This field is only populated for files with content stored in Drive; it is not populated for Google Docs or shortcut files.
+        // The original filename of the uploaded content if available, or else the original value of the title field. This is only available for files with binary content in Drive.
         originalFilename?: string,
         // Whether the file is owned by the current user.
         ownedByMe?: boolean,

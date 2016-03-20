@@ -3,7 +3,7 @@
     "main": "gapi.client.calendar.d.ts",
     "version": "3",
     "author": "Bolisov Alexey",
-    "description": "Lets you manipulate events and other calendar data.",
+    "description": "Manipulates events and other calendar data.",
     "homepage": "https://github.com/bolisov/typings-gapi",
     "ambient": true,
     "dependencies": {},

@@ -34,7 +34,8 @@ Then load api client wrapper:
 gapi.client.load('youtube', 'v3', () => {
     // now we can use gapi.client.youtube
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript

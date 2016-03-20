@@ -34,7 +34,8 @@ Then load api client wrapper:
 gapi.client.load('replicapool', 'v1beta1', () => {
     // now we can use gapi.client.replicapool
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript

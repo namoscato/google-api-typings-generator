@@ -125,7 +125,7 @@ declare module gapi.client.clouduseraccounts {
         id?: string,
         // [Output Only] The time that this operation was requested. This value is in RFC3339 text format.
         insertTime?: string,
-        // [Output Only] Type of the resource. Always compute#operation for operation resources.
+        // [Output Only] Type of the resource. Always compute#operation for Operation resources.
         kind?: string,
         // [Output Only] Name of the resource.
         name?: string,

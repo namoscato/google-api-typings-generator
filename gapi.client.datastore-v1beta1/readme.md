@@ -1,5 +1,5 @@
 # Typescript typings for Google Cloud Datastore API
-API for accessing Google Cloud Datastore.
+Stores and queries data in Google Cloud Datastore.
 For detailed description please check [documentation](https://developers.google.com/datastore/).
 
 ## Installing
@@ -34,7 +34,8 @@ Then load api client wrapper:
 gapi.client.load('datastore', 'v1beta1', () => {
     // now we can use gapi.client.datastore
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript

@@ -34,7 +34,8 @@ Then load api client wrapper:
 gapi.client.load('logging', 'v2beta1', () => {
     // now we can use gapi.client.logging
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript

@@ -34,7 +34,8 @@ Then load api client wrapper:
 gapi.client.load('prediction', 'v1.4', () => {
     // now we can use gapi.client.prediction
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript

@@ -34,7 +34,8 @@ Then load api client wrapper:
 gapi.client.load('civicinfo', 'v2', () => {
     // now we can use gapi.client.civicinfo
     // ... 
-});```
+});
+```
 
 
 

@@ -178,7 +178,7 @@ declare module gapi.client.clouduseraccounts {
         id?: string,
         // [Output Only] The time that this operation was requested. This value is in RFC3339 text format.
         insertTime?: string,
-        // [Output Only] Type of the resource. Always compute#operation for operation resources.
+        // [Output Only] Type of the resource. Always compute#operation for Operation resources.
         kind?: string,
         // [Output Only] Name of the resource.
         name?: string,
@@ -247,7 +247,7 @@ declare module gapi.client.clouduseraccounts {
         etag?: string,
         // 
         iamOwned?: boolean,
-        // 
+        // If more than one rule is specified, the rules are applied in the following manner: - All matching LOG rules are always applied. - If any DENY/DENY_WITH_LOG rule matches, permission is denied. Logging will be applied if one or more matching rule requires logging. - Otherwise, if any ALLOW/ALLOW_WITH_LOG rule matches, permission is granted. Logging will be applied if one or more matching rule requires logging. - Otherwise, if no rule applies, permission is denied.
         rules?: Rule[],        
         // Version of the `Policy`. The default version is 0.
         version?: number,

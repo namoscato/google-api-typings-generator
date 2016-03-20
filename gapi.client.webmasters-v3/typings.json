@@ -3,7 +3,7 @@
     "main": "gapi.client.webmasters.d.ts",
     "version": "3",
     "author": "Bolisov Alexey",
-    "description": "Lets you view Google Search Console data for your verified sites.",
+    "description": "View Google Search Console data for your verified sites.",
     "homepage": "https://github.com/bolisov/typings-gapi",
     "ambient": true,
     "dependencies": {},

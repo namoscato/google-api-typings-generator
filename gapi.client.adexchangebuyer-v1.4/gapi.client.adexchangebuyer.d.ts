@@ -675,6 +675,8 @@ declare module gapi.client.adexchangebuyer {
         privateAuctionId?: string,
         // The unique id for the product (readonly)
         productId?: string,
+        // Id of the publisher profile for a given seller. A (seller.account_id, publisher_profile_id) pair uniquely identifies a publisher profile. Buyers can call the PublisherProfiles::List endpoint to get a list of publisher profiles for a given seller.
+        publisherProfileId?: string,
         // The revision number of the product. (readonly)
         revisionNumber?: string,
         // Information about the seller that created this product (readonly, except on create)
@@ -687,7 +689,7 @@ declare module gapi.client.adexchangebuyer {
         syndicationProduct?: string,
         // The negotiable terms of the deal (buyer-readonly)
         terms?: DealTerms,
-        // 
+        // The web property code for the seller. This field is meant to be copied over as is when creating deals.
         webPropertyCode?: string,
     }
     
@@ -741,6 +743,8 @@ declare module gapi.client.adexchangebuyer {
     }
     
     interface PublisherProfileApiProto {
+        // The account id of the seller.
+        accountId?: string,
         // A pitch statement for the buyer
         buyerPitchStatement?: string,
         // Link to publisher's Google+ page.
@@ -757,7 +761,7 @@ declare module gapi.client.adexchangebuyer {
         name?: string,
         // Publisher provided overview.
         overview?: string,
-        // Unique id for the publisher profile
+        // The pair of (seller.account_id, profile_id) uniquely identifies a publisher profile for a given publisher.
         profileId?: number,
         // The list of domains represented in this publisher profile. Empty if this is a parent profile.
         publisherDomains?: string[],        
@@ -837,8 +841,6 @@ declare module gapi.client.adexchangebuyer {
         externalDealId?: string,
         // Optional note to be added.
         note?: MarketplaceNote,
-        // The private auction id to be updated.
-        privateAuctionId?: string,
         // The current revision number of the proposal to be updated.
         proposalRevisionNumber?: string,
         // The proposed action on the private auction proposal.
@@ -1012,6 +1014,8 @@ declare module gapi.client.adexchangebuyer {
     interface MarketplaceprivateauctionResource {
         // Update a given private auction proposal
         updateproposal (request: {        
+            // The private auction id to be updated.
+            privateAuctionId?: string,
         }) : gapi.client.Request<void>;        
         
     }

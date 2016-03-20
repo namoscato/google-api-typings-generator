@@ -667,6 +667,8 @@ declare module gapi.client.dataflow {
         userStageToComputationNameMap?: any,
         // The size (in bits) of keys that will be assigned to source messages.
         forwardingKeyBits?: number,
+        // Version number for persistent state.
+        persistentStateVersion?: number,
     }
     
     interface ComputationTopology {

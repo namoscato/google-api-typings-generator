@@ -34,7 +34,8 @@ Then load api client wrapper:
 gapi.client.load('gamesManagement', 'v1management', () => {
     // now we can use gapi.client.gamesManagement
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript

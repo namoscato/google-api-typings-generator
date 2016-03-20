@@ -76,7 +76,7 @@ declare module gapi.client.doubleclicksearch {
         productLanguage?: string,
         // The quantity of this conversion, in millis.
         quantityMillis?: string,
-        // The revenue amount of this TRANSACTION conversion, in micros (value multiplied by 1000, no decimal). For example, to specify a revenue value of "10" enter "10000" in your request.
+        // The revenue amount of this TRANSACTION conversion, in micros (value multiplied by 1000000, no decimal). For example, to specify a revenue value of "10" enter "10000000" (10 million) in your request.
         revenueMicros?: string,
         // The numeric segmentation identifier (for example, DoubleClick Search Floodlight activity ID).
         segmentationId?: string,

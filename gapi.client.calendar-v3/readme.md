@@ -1,5 +1,5 @@
 # Typescript typings for Calendar API
-Lets you manipulate events and other calendar data.
+Manipulates events and other calendar data.
 For detailed description please check [documentation](https://developers.google.com/google-apps/calendar/firstapp).
 
 ## Installing
@@ -34,7 +34,8 @@ Then load api client wrapper:
 gapi.client.load('calendar', 'v3', () => {
     // now we can use gapi.client.calendar
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript

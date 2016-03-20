@@ -1,5 +1,5 @@
 # Typescript typings for Google Dataflow API
-Google Dataflow API.
+Google Cloud Dataflow is a simple, flexible, and powerful system you can use to perform data processing tasks.
 For detailed description please check [documentation](https://cloud.google.com/dataflow).
 
 ## Installing
@@ -34,7 +34,8 @@ Then load api client wrapper:
 gapi.client.load('dataflow', 'v1b3', () => {
     // now we can use gapi.client.dataflow
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript

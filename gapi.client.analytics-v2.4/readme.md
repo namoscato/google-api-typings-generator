@@ -34,7 +34,8 @@ Then load api client wrapper:
 gapi.client.load('analytics', 'v2.4', () => {
     // now we can use gapi.client.analytics
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript

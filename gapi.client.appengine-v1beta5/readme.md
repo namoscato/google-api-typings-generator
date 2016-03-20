@@ -34,7 +34,8 @@ Then load api client wrapper:
 gapi.client.load('appengine', 'v1beta5', () => {
     // now we can use gapi.client.appengine
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
