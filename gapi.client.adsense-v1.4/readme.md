@@ -64,33 +64,33 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use AdSense Management API resources:
 
 ```typescript
-gapi.client.accounts.<method name>({ /* method parameters */ })
+gapi.client.adsense.accounts.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.adclients.<method name>({ /* method parameters */ })
+gapi.client.adsense.adclients.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.adunits.<method name>({ /* method parameters */ })
+gapi.client.adsense.adunits.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.alerts.<method name>({ /* method parameters */ })
+gapi.client.adsense.alerts.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.customchannels.<method name>({ /* method parameters */ })
+gapi.client.adsense.customchannels.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.metadata.<method name>({ /* method parameters */ })
+gapi.client.adsense.metadata.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.payments.<method name>({ /* method parameters */ })
+gapi.client.adsense.payments.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.reports.<method name>({ /* method parameters */ })
+gapi.client.adsense.reports.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.savedadstyles.<method name>({ /* method parameters */ })
+gapi.client.adsense.savedadstyles.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.urlchannels.<method name>({ /* method parameters */ })
+gapi.client.adsense.urlchannels.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

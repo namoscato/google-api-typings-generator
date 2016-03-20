@@ -42,21 +42,21 @@ gapi.client.load('gan', 'v1beta1', () => {
 After that you can use Google Affiliate Network API resources:
 
 ```typescript
-gapi.client.advertisers.<method name>({ /* method parameters */ })
+gapi.client.gan.advertisers.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.ccOffers.<method name>({ /* method parameters */ })
+gapi.client.gan.ccOffers.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.events.<method name>({ /* method parameters */ })
+gapi.client.gan.events.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.links.<method name>({ /* method parameters */ })
+gapi.client.gan.links.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.publishers.<method name>({ /* method parameters */ })
+gapi.client.gan.publishers.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.reports.<method name>({ /* method parameters */ })
+gapi.client.gan.reports.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

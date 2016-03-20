@@ -64,18 +64,18 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Ad Exchange Seller API resources:
 
 ```typescript
-gapi.client.adclients.<method name>({ /* method parameters */ })
+gapi.client.adexchangeseller.adclients.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.adunits.<method name>({ /* method parameters */ })
+gapi.client.adexchangeseller.adunits.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.customchannels.<method name>({ /* method parameters */ })
+gapi.client.adexchangeseller.customchannels.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.reports.<method name>({ /* method parameters */ })
+gapi.client.adexchangeseller.reports.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.urlchannels.<method name>({ /* method parameters */ })
+gapi.client.adexchangeseller.urlchannels.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

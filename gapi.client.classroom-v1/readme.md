@@ -76,12 +76,12 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Google Classroom API resources:
 
 ```typescript
-gapi.client.courses.<method name>({ /* method parameters */ })
+gapi.client.classroom.courses.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.invitations.<method name>({ /* method parameters */ })
+gapi.client.classroom.invitations.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.userProfiles.<method name>({ /* method parameters */ })
+gapi.client.classroom.userProfiles.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

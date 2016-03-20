@@ -76,15 +76,15 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Google Analytics API resources:
 
 ```typescript
-gapi.client.data.<method name>({ /* method parameters */ })
+gapi.client.analytics.data.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.management.<method name>({ /* method parameters */ })
+gapi.client.analytics.management.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.metadata.<method name>({ /* method parameters */ })
+gapi.client.analytics.metadata.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.provisioning.<method name>({ /* method parameters */ })
+gapi.client.analytics.provisioning.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

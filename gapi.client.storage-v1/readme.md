@@ -73,21 +73,21 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Cloud Storage JSON API resources:
 
 ```typescript
-gapi.client.bucketAccessControls.<method name>({ /* method parameters */ })
+gapi.client.storage.bucketAccessControls.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.buckets.<method name>({ /* method parameters */ })
+gapi.client.storage.buckets.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.channels.<method name>({ /* method parameters */ })
+gapi.client.storage.channels.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.defaultObjectAccessControls.<method name>({ /* method parameters */ })
+gapi.client.storage.defaultObjectAccessControls.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.objectAccessControls.<method name>({ /* method parameters */ })
+gapi.client.storage.objectAccessControls.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.objects.<method name>({ /* method parameters */ })
+gapi.client.storage.objects.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

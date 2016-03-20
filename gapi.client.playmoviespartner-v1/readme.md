@@ -61,6 +61,6 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Google Play Movies Partner API resources:
 
 ```typescript
-gapi.client.accounts.<method name>({ /* method parameters */ })
+gapi.client.playmoviespartner.accounts.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

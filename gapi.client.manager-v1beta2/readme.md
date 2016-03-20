@@ -79,9 +79,9 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Deployment Manager API resources:
 
 ```typescript
-gapi.client.deployments.<method name>({ /* method parameters */ })
+gapi.client.manager.deployments.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.templates.<method name>({ /* method parameters */ })
+gapi.client.manager.templates.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

@@ -70,9 +70,9 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Google Cloud Service Registry API resources:
 
 ```typescript
-gapi.client.endpoints.<method name>({ /* method parameters */ })
+gapi.client.serviceregistry.endpoints.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.operations.<method name>({ /* method parameters */ })
+gapi.client.serviceregistry.operations.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

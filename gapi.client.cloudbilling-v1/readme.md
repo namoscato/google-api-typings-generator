@@ -61,9 +61,9 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Google Cloud Billing API resources:
 
 ```typescript
-gapi.client.billingAccounts.<method name>({ /* method parameters */ })
+gapi.client.cloudbilling.billingAccounts.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.projects.<method name>({ /* method parameters */ })
+gapi.client.cloudbilling.projects.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

@@ -61,15 +61,15 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Google Storage Transfer API resources:
 
 ```typescript
-gapi.client.googleServiceAccounts.<method name>({ /* method parameters */ })
+gapi.client.storagetransfer.googleServiceAccounts.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.v1.<method name>({ /* method parameters */ })
+gapi.client.storagetransfer.v1.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.transferJobs.<method name>({ /* method parameters */ })
+gapi.client.storagetransfer.transferJobs.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.transferOperations.<method name>({ /* method parameters */ })
+gapi.client.storagetransfer.transferOperations.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

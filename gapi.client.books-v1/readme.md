@@ -61,39 +61,39 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Books API resources:
 
 ```typescript
-gapi.client.bookshelves.<method name>({ /* method parameters */ })
+gapi.client.books.bookshelves.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.cloudloading.<method name>({ /* method parameters */ })
+gapi.client.books.cloudloading.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.dictionary.<method name>({ /* method parameters */ })
+gapi.client.books.dictionary.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.layers.<method name>({ /* method parameters */ })
+gapi.client.books.layers.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.myconfig.<method name>({ /* method parameters */ })
+gapi.client.books.myconfig.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.mylibrary.<method name>({ /* method parameters */ })
+gapi.client.books.mylibrary.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.notification.<method name>({ /* method parameters */ })
+gapi.client.books.notification.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.onboarding.<method name>({ /* method parameters */ })
+gapi.client.books.onboarding.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.personalizedstream.<method name>({ /* method parameters */ })
+gapi.client.books.personalizedstream.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.promooffer.<method name>({ /* method parameters */ })
+gapi.client.books.promooffer.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.series.<method name>({ /* method parameters */ })
+gapi.client.books.series.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.volumes.<method name>({ /* method parameters */ })
+gapi.client.books.volumes.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

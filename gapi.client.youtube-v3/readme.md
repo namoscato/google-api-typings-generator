@@ -76,81 +76,81 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use YouTube Data API resources:
 
 ```typescript
-gapi.client.activities.<method name>({ /* method parameters */ })
+gapi.client.youtube.activities.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.captions.<method name>({ /* method parameters */ })
+gapi.client.youtube.captions.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.channelBanners.<method name>({ /* method parameters */ })
+gapi.client.youtube.channelBanners.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.channelSections.<method name>({ /* method parameters */ })
+gapi.client.youtube.channelSections.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.channels.<method name>({ /* method parameters */ })
+gapi.client.youtube.channels.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.commentThreads.<method name>({ /* method parameters */ })
+gapi.client.youtube.commentThreads.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.comments.<method name>({ /* method parameters */ })
+gapi.client.youtube.comments.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.fanFundingEvents.<method name>({ /* method parameters */ })
+gapi.client.youtube.fanFundingEvents.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.guideCategories.<method name>({ /* method parameters */ })
+gapi.client.youtube.guideCategories.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.i18nLanguages.<method name>({ /* method parameters */ })
+gapi.client.youtube.i18nLanguages.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.i18nRegions.<method name>({ /* method parameters */ })
+gapi.client.youtube.i18nRegions.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.liveBroadcasts.<method name>({ /* method parameters */ })
+gapi.client.youtube.liveBroadcasts.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.liveChatBans.<method name>({ /* method parameters */ })
+gapi.client.youtube.liveChatBans.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.liveChatMessages.<method name>({ /* method parameters */ })
+gapi.client.youtube.liveChatMessages.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.liveChatModerators.<method name>({ /* method parameters */ })
+gapi.client.youtube.liveChatModerators.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.liveStreams.<method name>({ /* method parameters */ })
+gapi.client.youtube.liveStreams.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.playlistItems.<method name>({ /* method parameters */ })
+gapi.client.youtube.playlistItems.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.playlists.<method name>({ /* method parameters */ })
+gapi.client.youtube.playlists.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.search.<method name>({ /* method parameters */ })
+gapi.client.youtube.search.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.sponsors.<method name>({ /* method parameters */ })
+gapi.client.youtube.sponsors.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.subscriptions.<method name>({ /* method parameters */ })
+gapi.client.youtube.subscriptions.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.thumbnails.<method name>({ /* method parameters */ })
+gapi.client.youtube.thumbnails.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.videoAbuseReportReasons.<method name>({ /* method parameters */ })
+gapi.client.youtube.videoAbuseReportReasons.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.videoCategories.<method name>({ /* method parameters */ })
+gapi.client.youtube.videoCategories.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.videos.<method name>({ /* method parameters */ })
+gapi.client.youtube.videos.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.watermarks.<method name>({ /* method parameters */ })
+gapi.client.youtube.watermarks.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

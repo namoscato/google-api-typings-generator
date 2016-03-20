@@ -64,21 +64,21 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Google Maps Coordinate API resources:
 
 ```typescript
-gapi.client.customFieldDef.<method name>({ /* method parameters */ })
+gapi.client.coordinate.customFieldDef.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.jobs.<method name>({ /* method parameters */ })
+gapi.client.coordinate.jobs.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.location.<method name>({ /* method parameters */ })
+gapi.client.coordinate.location.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.schedule.<method name>({ /* method parameters */ })
+gapi.client.coordinate.schedule.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.team.<method name>({ /* method parameters */ })
+gapi.client.coordinate.team.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.worker.<method name>({ /* method parameters */ })
+gapi.client.coordinate.worker.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

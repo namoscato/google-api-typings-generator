@@ -85,42 +85,42 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Drive API resources:
 
 ```typescript
-gapi.client.about.<method name>({ /* method parameters */ })
+gapi.client.drive.about.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.apps.<method name>({ /* method parameters */ })
+gapi.client.drive.apps.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.changes.<method name>({ /* method parameters */ })
+gapi.client.drive.changes.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.channels.<method name>({ /* method parameters */ })
+gapi.client.drive.channels.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.children.<method name>({ /* method parameters */ })
+gapi.client.drive.children.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.comments.<method name>({ /* method parameters */ })
+gapi.client.drive.comments.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.files.<method name>({ /* method parameters */ })
+gapi.client.drive.files.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.parents.<method name>({ /* method parameters */ })
+gapi.client.drive.parents.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.permissions.<method name>({ /* method parameters */ })
+gapi.client.drive.permissions.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.properties.<method name>({ /* method parameters */ })
+gapi.client.drive.properties.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.realtime.<method name>({ /* method parameters */ })
+gapi.client.drive.realtime.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.replies.<method name>({ /* method parameters */ })
+gapi.client.drive.replies.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.revisions.<method name>({ /* method parameters */ })
+gapi.client.drive.revisions.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

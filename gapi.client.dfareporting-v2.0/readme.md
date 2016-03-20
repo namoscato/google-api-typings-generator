@@ -64,147 +64,147 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use DCM/DFA Reporting And Trafficking API resources:
 
 ```typescript
-gapi.client.accountActiveAdSummaries.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.accountActiveAdSummaries.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.accountPermissionGroups.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.accountPermissionGroups.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.accountPermissions.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.accountPermissions.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.accountUserProfiles.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.accountUserProfiles.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.accounts.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.accounts.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.ads.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.ads.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.advertiserGroups.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.advertiserGroups.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.advertisers.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.advertisers.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.browsers.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.browsers.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.campaignCreativeAssociations.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.campaignCreativeAssociations.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.campaigns.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.campaigns.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.changeLogs.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.changeLogs.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.cities.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.cities.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.connectionTypes.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.connectionTypes.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.contentCategories.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.contentCategories.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.countries.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.countries.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.creativeAssets.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.creativeAssets.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.creativeFieldValues.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.creativeFieldValues.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.creativeFields.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.creativeFields.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.creativeGroups.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.creativeGroups.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.creatives.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.creatives.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.dimensionValues.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.dimensionValues.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.directorySiteContacts.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.directorySiteContacts.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.directorySites.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.directorySites.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.eventTags.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.eventTags.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.files.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.files.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.floodlightActivities.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.floodlightActivities.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.floodlightActivityGroups.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.floodlightActivityGroups.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.floodlightConfigurations.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.floodlightConfigurations.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.landingPages.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.landingPages.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.metros.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.metros.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.mobileCarriers.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.mobileCarriers.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.operatingSystemVersions.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.operatingSystemVersions.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.operatingSystems.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.operatingSystems.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.placementGroups.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.placementGroups.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.placementStrategies.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.placementStrategies.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.placements.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.placements.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.platformTypes.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.platformTypes.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.postalCodes.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.postalCodes.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.regions.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.regions.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.reports.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.reports.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.sites.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.sites.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.sizes.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.sizes.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.subaccounts.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.subaccounts.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.userProfiles.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.userProfiles.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.userRolePermissionGroups.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.userRolePermissionGroups.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.userRolePermissions.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.userRolePermissions.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.userRoles.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.userRoles.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

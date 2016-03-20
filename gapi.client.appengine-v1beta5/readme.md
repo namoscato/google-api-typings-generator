@@ -61,6 +61,6 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Google App Engine Admin API resources:
 
 ```typescript
-gapi.client.apps.<method name>({ /* method parameters */ })
+gapi.client.appengine.apps.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

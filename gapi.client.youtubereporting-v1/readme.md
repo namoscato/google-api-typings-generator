@@ -64,12 +64,12 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use YouTube Reporting API resources:
 
 ```typescript
-gapi.client.media.<method name>({ /* method parameters */ })
+gapi.client.youtubereporting.media.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.reportTypes.<method name>({ /* method parameters */ })
+gapi.client.youtubereporting.reportTypes.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.jobs.<method name>({ /* method parameters */ })
+gapi.client.youtubereporting.jobs.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

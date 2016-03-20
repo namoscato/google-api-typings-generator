@@ -67,6 +67,6 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Google Cloud Datastore API resources:
 
 ```typescript
-gapi.client.datasets.<method name>({ /* method parameters */ })
+gapi.client.datastore.datasets.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

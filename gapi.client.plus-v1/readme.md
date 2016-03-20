@@ -70,12 +70,12 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Google+ API resources:
 
 ```typescript
-gapi.client.activities.<method name>({ /* method parameters */ })
+gapi.client.plus.activities.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.comments.<method name>({ /* method parameters */ })
+gapi.client.plus.comments.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.people.<method name>({ /* method parameters */ })
+gapi.client.plus.people.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

@@ -70,9 +70,9 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Google Cloud Dataproc API resources:
 
 ```typescript
-gapi.client.media.<method name>({ /* method parameters */ })
+gapi.client.dataproc.media.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.projects.<method name>({ /* method parameters */ })
+gapi.client.dataproc.projects.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

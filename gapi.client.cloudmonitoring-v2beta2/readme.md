@@ -64,12 +64,12 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Cloud Monitoring API resources:
 
 ```typescript
-gapi.client.metricDescriptors.<method name>({ /* method parameters */ })
+gapi.client.cloudmonitoring.metricDescriptors.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.timeseries.<method name>({ /* method parameters */ })
+gapi.client.cloudmonitoring.timeseries.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.timeseriesDescriptors.<method name>({ /* method parameters */ })
+gapi.client.cloudmonitoring.timeseriesDescriptors.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

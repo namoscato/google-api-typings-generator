@@ -64,12 +64,12 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Google Compute Engine Autoscaler API resources:
 
 ```typescript
-gapi.client.autoscalers.<method name>({ /* method parameters */ })
+gapi.client.autoscaler.autoscalers.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.zoneOperations.<method name>({ /* method parameters */ })
+gapi.client.autoscaler.zoneOperations.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.zones.<method name>({ /* method parameters */ })
+gapi.client.autoscaler.zones.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

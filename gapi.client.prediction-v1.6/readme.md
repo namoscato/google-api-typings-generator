@@ -70,9 +70,9 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Prediction API resources:
 
 ```typescript
-gapi.client.hostedmodels.<method name>({ /* method parameters */ })
+gapi.client.prediction.hostedmodels.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.trainedmodels.<method name>({ /* method parameters */ })
+gapi.client.prediction.trainedmodels.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

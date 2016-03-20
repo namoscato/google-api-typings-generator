@@ -64,9 +64,9 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Google Cloud Pub/Sub API resources:
 
 ```typescript
-gapi.client.topics.<method name>({ /* method parameters */ })
+gapi.client.pubsub.topics.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.subscriptions.<method name>({ /* method parameters */ })
+gapi.client.pubsub.subscriptions.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

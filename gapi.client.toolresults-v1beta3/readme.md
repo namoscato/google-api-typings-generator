@@ -61,6 +61,6 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Cloud Tool Results API resources:
 
 ```typescript
-gapi.client.projects.<method name>({ /* method parameters */ })
+gapi.client.toolresults.projects.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

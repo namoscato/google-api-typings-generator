@@ -88,21 +88,21 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Google+ Domains API resources:
 
 ```typescript
-gapi.client.activities.<method name>({ /* method parameters */ })
+gapi.client.plusDomains.activities.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.audiences.<method name>({ /* method parameters */ })
+gapi.client.plusDomains.audiences.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.circles.<method name>({ /* method parameters */ })
+gapi.client.plusDomains.circles.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.comments.<method name>({ /* method parameters */ })
+gapi.client.plusDomains.comments.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.media.<method name>({ /* method parameters */ })
+gapi.client.plusDomains.media.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.people.<method name>({ /* method parameters */ })
+gapi.client.plusDomains.people.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

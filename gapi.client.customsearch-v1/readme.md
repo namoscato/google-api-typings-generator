@@ -42,6 +42,6 @@ gapi.client.load('customsearch', 'v1', () => {
 After that you can use CustomSearch API resources:
 
 ```typescript
-gapi.client.cse.<method name>({ /* method parameters */ })
+gapi.client.customsearch.cse.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

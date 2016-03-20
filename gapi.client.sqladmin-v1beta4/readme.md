@@ -64,27 +64,27 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Cloud SQL Administration API resources:
 
 ```typescript
-gapi.client.backupRuns.<method name>({ /* method parameters */ })
+gapi.client.sqladmin.backupRuns.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.databases.<method name>({ /* method parameters */ })
+gapi.client.sqladmin.databases.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.flags.<method name>({ /* method parameters */ })
+gapi.client.sqladmin.flags.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.instances.<method name>({ /* method parameters */ })
+gapi.client.sqladmin.instances.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.operations.<method name>({ /* method parameters */ })
+gapi.client.sqladmin.operations.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.sslCerts.<method name>({ /* method parameters */ })
+gapi.client.sqladmin.sslCerts.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.tiers.<method name>({ /* method parameters */ })
+gapi.client.sqladmin.tiers.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.users.<method name>({ /* method parameters */ })
+gapi.client.sqladmin.users.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

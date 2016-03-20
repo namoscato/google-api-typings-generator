@@ -61,18 +61,18 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Blogger API resources:
 
 ```typescript
-gapi.client.blogs.<method name>({ /* method parameters */ })
+gapi.client.blogger.blogs.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.comments.<method name>({ /* method parameters */ })
+gapi.client.blogger.comments.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.pages.<method name>({ /* method parameters */ })
+gapi.client.blogger.pages.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.posts.<method name>({ /* method parameters */ })
+gapi.client.blogger.posts.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.users.<method name>({ /* method parameters */ })
+gapi.client.blogger.users.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

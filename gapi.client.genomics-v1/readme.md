@@ -73,30 +73,30 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Genomics API resources:
 
 ```typescript
-gapi.client.datasets.<method name>({ /* method parameters */ })
+gapi.client.genomics.datasets.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.operations.<method name>({ /* method parameters */ })
+gapi.client.genomics.operations.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.readgroupsets.<method name>({ /* method parameters */ })
+gapi.client.genomics.readgroupsets.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.reads.<method name>({ /* method parameters */ })
+gapi.client.genomics.reads.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.referencesets.<method name>({ /* method parameters */ })
+gapi.client.genomics.referencesets.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.references.<method name>({ /* method parameters */ })
+gapi.client.genomics.references.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.variants.<method name>({ /* method parameters */ })
+gapi.client.genomics.variants.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.variantsets.<method name>({ /* method parameters */ })
+gapi.client.genomics.variantsets.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.callsets.<method name>({ /* method parameters */ })
+gapi.client.genomics.callsets.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

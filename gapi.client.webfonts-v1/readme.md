@@ -42,6 +42,6 @@ gapi.client.load('webfonts', 'v1', () => {
 After that you can use Google Fonts Developer API resources:
 
 ```typescript
-gapi.client.webfonts.<method name>({ /* method parameters */ })
+gapi.client.webfonts.webfonts.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

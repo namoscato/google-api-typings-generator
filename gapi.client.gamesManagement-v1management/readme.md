@@ -64,27 +64,27 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Google Play Game Services Management API resources:
 
 ```typescript
-gapi.client.achievements.<method name>({ /* method parameters */ })
+gapi.client.gamesManagement.achievements.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.applications.<method name>({ /* method parameters */ })
+gapi.client.gamesManagement.applications.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.events.<method name>({ /* method parameters */ })
+gapi.client.gamesManagement.events.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.players.<method name>({ /* method parameters */ })
+gapi.client.gamesManagement.players.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.quests.<method name>({ /* method parameters */ })
+gapi.client.gamesManagement.quests.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.rooms.<method name>({ /* method parameters */ })
+gapi.client.gamesManagement.rooms.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.scores.<method name>({ /* method parameters */ })
+gapi.client.gamesManagement.scores.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.turnBasedMatches.<method name>({ /* method parameters */ })
+gapi.client.gamesManagement.turnBasedMatches.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

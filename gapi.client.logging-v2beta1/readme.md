@@ -73,12 +73,12 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Google Cloud Logging API resources:
 
 ```typescript
-gapi.client.projects.<method name>({ /* method parameters */ })
+gapi.client.logging.projects.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.entries.<method name>({ /* method parameters */ })
+gapi.client.logging.entries.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.monitoredResourceDescriptors.<method name>({ /* method parameters */ })
+gapi.client.logging.monitoredResourceDescriptors.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

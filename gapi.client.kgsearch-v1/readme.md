@@ -42,6 +42,6 @@ gapi.client.load('kgsearch', 'v1', () => {
 After that you can use Knowledge Graph Search API resources:
 
 ```typescript
-gapi.client.entities.<method name>({ /* method parameters */ })
+gapi.client.kgsearch.entities.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

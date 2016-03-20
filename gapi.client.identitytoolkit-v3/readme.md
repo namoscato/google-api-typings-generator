@@ -42,6 +42,6 @@ gapi.client.load('identitytoolkit', 'v3', () => {
 After that you can use Google Identity Toolkit API resources:
 
 ```typescript
-gapi.client.relyingparty.<method name>({ /* method parameters */ })
+gapi.client.identitytoolkit.relyingparty.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

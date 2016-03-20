@@ -64,9 +64,9 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Enterprise Apps Reseller API resources:
 
 ```typescript
-gapi.client.customers.<method name>({ /* method parameters */ })
+gapi.client.reseller.customers.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.subscriptions.<method name>({ /* method parameters */ })
+gapi.client.reseller.subscriptions.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

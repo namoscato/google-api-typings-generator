@@ -64,9 +64,9 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Genomics API resources:
 
 ```typescript
-gapi.client.operations.<method name>({ /* method parameters */ })
+gapi.client.genomics.operations.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.pipelines.<method name>({ /* method parameters */ })
+gapi.client.genomics.pipelines.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

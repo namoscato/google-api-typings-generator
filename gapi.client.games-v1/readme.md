@@ -67,48 +67,48 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Google Play Game Services API resources:
 
 ```typescript
-gapi.client.achievementDefinitions.<method name>({ /* method parameters */ })
+gapi.client.games.achievementDefinitions.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.achievements.<method name>({ /* method parameters */ })
+gapi.client.games.achievements.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.applications.<method name>({ /* method parameters */ })
+gapi.client.games.applications.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.events.<method name>({ /* method parameters */ })
+gapi.client.games.events.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.leaderboards.<method name>({ /* method parameters */ })
+gapi.client.games.leaderboards.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.metagame.<method name>({ /* method parameters */ })
+gapi.client.games.metagame.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.players.<method name>({ /* method parameters */ })
+gapi.client.games.players.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.pushtokens.<method name>({ /* method parameters */ })
+gapi.client.games.pushtokens.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.questMilestones.<method name>({ /* method parameters */ })
+gapi.client.games.questMilestones.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.quests.<method name>({ /* method parameters */ })
+gapi.client.games.quests.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.revisions.<method name>({ /* method parameters */ })
+gapi.client.games.revisions.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.rooms.<method name>({ /* method parameters */ })
+gapi.client.games.rooms.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.scores.<method name>({ /* method parameters */ })
+gapi.client.games.scores.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.snapshots.<method name>({ /* method parameters */ })
+gapi.client.games.snapshots.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.turnBasedMatches.<method name>({ /* method parameters */ })
+gapi.client.games.turnBasedMatches.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

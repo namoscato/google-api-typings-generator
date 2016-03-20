@@ -61,12 +61,12 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Google Play Game Services Publishing API resources:
 
 ```typescript
-gapi.client.achievementConfigurations.<method name>({ /* method parameters */ })
+gapi.client.gamesConfiguration.achievementConfigurations.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.imageConfigurations.<method name>({ /* method parameters */ })
+gapi.client.gamesConfiguration.imageConfigurations.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.leaderboardConfigurations.<method name>({ /* method parameters */ })
+gapi.client.gamesConfiguration.leaderboardConfigurations.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

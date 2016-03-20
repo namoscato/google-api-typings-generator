@@ -64,9 +64,9 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Tasks API resources:
 
 ```typescript
-gapi.client.tasklists.<method name>({ /* method parameters */ })
+gapi.client.tasks.tasklists.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.tasks.<method name>({ /* method parameters */ })
+gapi.client.tasks.tasks.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

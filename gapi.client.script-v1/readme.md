@@ -88,6 +88,6 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Google Apps Script Execution API resources:
 
 ```typescript
-gapi.client.scripts.<method name>({ /* method parameters */ })
+gapi.client.script.scripts.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

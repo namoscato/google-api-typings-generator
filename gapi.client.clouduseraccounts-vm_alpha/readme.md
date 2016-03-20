@@ -70,15 +70,15 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Cloud User Accounts API resources:
 
 ```typescript
-gapi.client.globalAccountsOperations.<method name>({ /* method parameters */ })
+gapi.client.clouduseraccounts.globalAccountsOperations.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.groups.<method name>({ /* method parameters */ })
+gapi.client.clouduseraccounts.groups.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.linux.<method name>({ /* method parameters */ })
+gapi.client.clouduseraccounts.linux.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.users.<method name>({ /* method parameters */ })
+gapi.client.clouduseraccounts.users.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

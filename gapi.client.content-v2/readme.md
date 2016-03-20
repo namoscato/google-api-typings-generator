@@ -61,33 +61,33 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Content API for Shopping resources:
 
 ```typescript
-gapi.client.accounts.<method name>({ /* method parameters */ })
+gapi.client.content.accounts.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.accountshipping.<method name>({ /* method parameters */ })
+gapi.client.content.accountshipping.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.accountstatuses.<method name>({ /* method parameters */ })
+gapi.client.content.accountstatuses.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.accounttax.<method name>({ /* method parameters */ })
+gapi.client.content.accounttax.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.datafeeds.<method name>({ /* method parameters */ })
+gapi.client.content.datafeeds.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.datafeedstatuses.<method name>({ /* method parameters */ })
+gapi.client.content.datafeedstatuses.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.inventory.<method name>({ /* method parameters */ })
+gapi.client.content.inventory.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.orders.<method name>({ /* method parameters */ })
+gapi.client.content.orders.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.products.<method name>({ /* method parameters */ })
+gapi.client.content.products.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.productstatuses.<method name>({ /* method parameters */ })
+gapi.client.content.productstatuses.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

@@ -61,21 +61,21 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use AdSense Host API resources:
 
 ```typescript
-gapi.client.accounts.<method name>({ /* method parameters */ })
+gapi.client.adsensehost.accounts.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.adclients.<method name>({ /* method parameters */ })
+gapi.client.adsensehost.adclients.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.associationsessions.<method name>({ /* method parameters */ })
+gapi.client.adsensehost.associationsessions.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.customchannels.<method name>({ /* method parameters */ })
+gapi.client.adsensehost.customchannels.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.reports.<method name>({ /* method parameters */ })
+gapi.client.adsensehost.reports.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.urlchannels.<method name>({ /* method parameters */ })
+gapi.client.adsensehost.urlchannels.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

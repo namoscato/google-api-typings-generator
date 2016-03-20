@@ -61,6 +61,6 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Google App State API resources:
 
 ```typescript
-gapi.client.states.<method name>({ /* method parameters */ })
+gapi.client.appstate.states.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

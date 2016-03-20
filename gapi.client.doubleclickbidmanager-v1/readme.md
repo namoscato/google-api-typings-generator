@@ -42,15 +42,15 @@ gapi.client.load('doubleclickbidmanager', 'v1', () => {
 After that you can use DoubleClick Bid Manager API resources:
 
 ```typescript
-gapi.client.lineitems.<method name>({ /* method parameters */ })
+gapi.client.doubleclickbidmanager.lineitems.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.queries.<method name>({ /* method parameters */ })
+gapi.client.doubleclickbidmanager.queries.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.reports.<method name>({ /* method parameters */ })
+gapi.client.doubleclickbidmanager.reports.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.rubicon.<method name>({ /* method parameters */ })
+gapi.client.doubleclickbidmanager.rubicon.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

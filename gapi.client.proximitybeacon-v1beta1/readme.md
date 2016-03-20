@@ -42,12 +42,12 @@ gapi.client.load('proximitybeacon', 'v1beta1', () => {
 After that you can use Google Proximity Beacon API resources:
 
 ```typescript
-gapi.client.beacons.<method name>({ /* method parameters */ })
+gapi.client.proximitybeacon.beacons.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.namespaces.<method name>({ /* method parameters */ })
+gapi.client.proximitybeacon.namespaces.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.beaconinfo.<method name>({ /* method parameters */ })
+gapi.client.proximitybeacon.beaconinfo.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

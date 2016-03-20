@@ -64,9 +64,9 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use TaskQueue API resources:
 
 ```typescript
-gapi.client.taskqueues.<method name>({ /* method parameters */ })
+gapi.client.taskqueue.taskqueues.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.tasks.<method name>({ /* method parameters */ })
+gapi.client.taskqueue.tasks.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

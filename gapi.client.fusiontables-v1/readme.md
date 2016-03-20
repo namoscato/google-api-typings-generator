@@ -64,21 +64,21 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Fusion Tables API resources:
 
 ```typescript
-gapi.client.column.<method name>({ /* method parameters */ })
+gapi.client.fusiontables.column.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.query.<method name>({ /* method parameters */ })
+gapi.client.fusiontables.query.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.style.<method name>({ /* method parameters */ })
+gapi.client.fusiontables.style.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.table.<method name>({ /* method parameters */ })
+gapi.client.fusiontables.table.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.task.<method name>({ /* method parameters */ })
+gapi.client.fusiontables.task.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.template.<method name>({ /* method parameters */ })
+gapi.client.fusiontables.template.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

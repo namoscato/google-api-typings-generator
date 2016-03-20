@@ -70,6 +70,6 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Google OAuth2 API resources:
 
 ```typescript
-gapi.client.userinfo.<method name>({ /* method parameters */ })
+gapi.client.oauth2.userinfo.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

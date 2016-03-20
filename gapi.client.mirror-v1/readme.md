@@ -64,21 +64,21 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Google Mirror API resources:
 
 ```typescript
-gapi.client.accounts.<method name>({ /* method parameters */ })
+gapi.client.mirror.accounts.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.contacts.<method name>({ /* method parameters */ })
+gapi.client.mirror.contacts.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.locations.<method name>({ /* method parameters */ })
+gapi.client.mirror.locations.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.settings.<method name>({ /* method parameters */ })
+gapi.client.mirror.settings.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.subscriptions.<method name>({ /* method parameters */ })
+gapi.client.mirror.subscriptions.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.timeline.<method name>({ /* method parameters */ })
+gapi.client.mirror.timeline.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

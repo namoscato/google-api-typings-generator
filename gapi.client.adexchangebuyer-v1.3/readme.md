@@ -61,24 +61,24 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Ad Exchange Buyer API resources:
 
 ```typescript
-gapi.client.accounts.<method name>({ /* method parameters */ })
+gapi.client.adexchangebuyer.accounts.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.billingInfo.<method name>({ /* method parameters */ })
+gapi.client.adexchangebuyer.billingInfo.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.budget.<method name>({ /* method parameters */ })
+gapi.client.adexchangebuyer.budget.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.creatives.<method name>({ /* method parameters */ })
+gapi.client.adexchangebuyer.creatives.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.directDeals.<method name>({ /* method parameters */ })
+gapi.client.adexchangebuyer.directDeals.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.performanceReport.<method name>({ /* method parameters */ })
+gapi.client.adexchangebuyer.performanceReport.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.pretargetingConfig.<method name>({ /* method parameters */ })
+gapi.client.adexchangebuyer.pretargetingConfig.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

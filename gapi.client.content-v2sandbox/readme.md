@@ -61,6 +61,6 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Content API for Shopping resources:
 
 ```typescript
-gapi.client.orders.<method name>({ /* method parameters */ })
+gapi.client.content.orders.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

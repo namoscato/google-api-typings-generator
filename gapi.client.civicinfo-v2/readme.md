@@ -42,12 +42,12 @@ gapi.client.load('civicinfo', 'v2', () => {
 After that you can use Google Civic Information API resources:
 
 ```typescript
-gapi.client.divisions.<method name>({ /* method parameters */ })
+gapi.client.civicinfo.divisions.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.elections.<method name>({ /* method parameters */ })
+gapi.client.civicinfo.elections.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.representatives.<method name>({ /* method parameters */ })
+gapi.client.civicinfo.representatives.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

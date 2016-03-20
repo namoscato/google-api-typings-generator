@@ -61,15 +61,15 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Google Play Developer API resources:
 
 ```typescript
-gapi.client.edits.<method name>({ /* method parameters */ })
+gapi.client.androidpublisher.edits.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.entitlements.<method name>({ /* method parameters */ })
+gapi.client.androidpublisher.entitlements.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.inappproducts.<method name>({ /* method parameters */ })
+gapi.client.androidpublisher.inappproducts.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.purchases.<method name>({ /* method parameters */ })
+gapi.client.androidpublisher.purchases.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

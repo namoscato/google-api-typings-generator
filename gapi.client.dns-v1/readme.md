@@ -70,15 +70,15 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Google Cloud DNS API resources:
 
 ```typescript
-gapi.client.changes.<method name>({ /* method parameters */ })
+gapi.client.dns.changes.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.managedZones.<method name>({ /* method parameters */ })
+gapi.client.dns.managedZones.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.projects.<method name>({ /* method parameters */ })
+gapi.client.dns.projects.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.resourceRecordSets.<method name>({ /* method parameters */ })
+gapi.client.dns.resourceRecordSets.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

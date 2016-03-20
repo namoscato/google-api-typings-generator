@@ -42,12 +42,12 @@ gapi.client.load('translate', 'v2', () => {
 After that you can use Translate API resources:
 
 ```typescript
-gapi.client.detections.<method name>({ /* method parameters */ })
+gapi.client.translate.detections.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.languages.<method name>({ /* method parameters */ })
+gapi.client.translate.languages.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.translations.<method name>({ /* method parameters */ })
+gapi.client.translate.translations.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

@@ -61,6 +61,6 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Enterprise License Manager API resources:
 
 ```typescript
-gapi.client.licenseAssignments.<method name>({ /* method parameters */ })
+gapi.client.licensing.licenseAssignments.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

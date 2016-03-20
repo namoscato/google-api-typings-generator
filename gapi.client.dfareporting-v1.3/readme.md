@@ -61,15 +61,15 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use DFA Reporting API resources:
 
 ```typescript
-gapi.client.dimensionValues.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.dimensionValues.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.files.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.files.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.reports.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.reports.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.userProfiles.<method name>({ /* method parameters */ })
+gapi.client.dfareporting.userProfiles.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

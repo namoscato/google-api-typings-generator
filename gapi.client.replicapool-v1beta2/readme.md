@@ -70,9 +70,9 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Google Compute Engine Instance Group Manager API resources:
 
 ```typescript
-gapi.client.instanceGroupManagers.<method name>({ /* method parameters */ })
+gapi.client.replicapool.instanceGroupManagers.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.zoneOperations.<method name>({ /* method parameters */ })
+gapi.client.replicapool.zoneOperations.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

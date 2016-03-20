@@ -79,18 +79,18 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use BigQuery API resources:
 
 ```typescript
-gapi.client.datasets.<method name>({ /* method parameters */ })
+gapi.client.bigquery.datasets.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.jobs.<method name>({ /* method parameters */ })
+gapi.client.bigquery.jobs.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.projects.<method name>({ /* method parameters */ })
+gapi.client.bigquery.projects.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.tabledata.<method name>({ /* method parameters */ })
+gapi.client.bigquery.tabledata.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.tables.<method name>({ /* method parameters */ })
+gapi.client.bigquery.tables.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

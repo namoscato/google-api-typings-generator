@@ -73,18 +73,18 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use YouTube Analytics API resources:
 
 ```typescript
-gapi.client.batchReportDefinitions.<method name>({ /* method parameters */ })
+gapi.client.youtubeAnalytics.batchReportDefinitions.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.batchReports.<method name>({ /* method parameters */ })
+gapi.client.youtubeAnalytics.batchReports.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.groupItems.<method name>({ /* method parameters */ })
+gapi.client.youtubeAnalytics.groupItems.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.groups.<method name>({ /* method parameters */ })
+gapi.client.youtubeAnalytics.groups.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.reports.<method name>({ /* method parameters */ })
+gapi.client.youtubeAnalytics.reports.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

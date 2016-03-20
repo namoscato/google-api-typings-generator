@@ -64,9 +64,9 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Admin Data Transfer API resources:
 
 ```typescript
-gapi.client.applications.<method name>({ /* method parameters */ })
+gapi.client.admin.applications.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.transfers.<method name>({ /* method parameters */ })
+gapi.client.admin.transfers.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

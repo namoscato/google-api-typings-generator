@@ -42,6 +42,6 @@ gapi.client.load('discovery', 'v1', () => {
 After that you can use APIs Discovery Service resources:
 
 ```typescript
-gapi.client.apis.<method name>({ /* method parameters */ })
+gapi.client.discovery.apis.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

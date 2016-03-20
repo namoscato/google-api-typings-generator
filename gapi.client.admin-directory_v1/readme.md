@@ -139,60 +139,60 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Admin Directory API resources:
 
 ```typescript
-gapi.client.asps.<method name>({ /* method parameters */ })
+gapi.client.admin.asps.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.channels.<method name>({ /* method parameters */ })
+gapi.client.admin.channels.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.chromeosdevices.<method name>({ /* method parameters */ })
+gapi.client.admin.chromeosdevices.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.customers.<method name>({ /* method parameters */ })
+gapi.client.admin.customers.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.domainAliases.<method name>({ /* method parameters */ })
+gapi.client.admin.domainAliases.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.domains.<method name>({ /* method parameters */ })
+gapi.client.admin.domains.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.groups.<method name>({ /* method parameters */ })
+gapi.client.admin.groups.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.members.<method name>({ /* method parameters */ })
+gapi.client.admin.members.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.mobiledevices.<method name>({ /* method parameters */ })
+gapi.client.admin.mobiledevices.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.notifications.<method name>({ /* method parameters */ })
+gapi.client.admin.notifications.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.orgunits.<method name>({ /* method parameters */ })
+gapi.client.admin.orgunits.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.privileges.<method name>({ /* method parameters */ })
+gapi.client.admin.privileges.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.resources.<method name>({ /* method parameters */ })
+gapi.client.admin.resources.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.roleAssignments.<method name>({ /* method parameters */ })
+gapi.client.admin.roleAssignments.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.roles.<method name>({ /* method parameters */ })
+gapi.client.admin.roles.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.schemas.<method name>({ /* method parameters */ })
+gapi.client.admin.schemas.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.tokens.<method name>({ /* method parameters */ })
+gapi.client.admin.tokens.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.users.<method name>({ /* method parameters */ })
+gapi.client.admin.users.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.verificationCodes.<method name>({ /* method parameters */ })
+gapi.client.admin.verificationCodes.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

@@ -67,9 +67,9 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Google Cloud Debugger API resources:
 
 ```typescript
-gapi.client.controller.<method name>({ /* method parameters */ })
+gapi.client.clouddebugger.controller.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.debugger.<method name>({ /* method parameters */ })
+gapi.client.clouddebugger.debugger.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

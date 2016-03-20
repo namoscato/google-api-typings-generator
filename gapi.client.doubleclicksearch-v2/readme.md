@@ -61,12 +61,12 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use DoubleClick Search API resources:
 
 ```typescript
-gapi.client.conversion.<method name>({ /* method parameters */ })
+gapi.client.doubleclicksearch.conversion.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.reports.<method name>({ /* method parameters */ })
+gapi.client.doubleclicksearch.reports.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.savedColumns.<method name>({ /* method parameters */ })
+gapi.client.doubleclicksearch.savedColumns.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

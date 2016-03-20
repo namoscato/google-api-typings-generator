@@ -70,9 +70,9 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Google Compute Engine Instance Group Updater API resources:
 
 ```typescript
-gapi.client.rollingUpdates.<method name>({ /* method parameters */ })
+gapi.client.replicapoolupdater.rollingUpdates.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.zoneOperations.<method name>({ /* method parameters */ })
+gapi.client.replicapoolupdater.zoneOperations.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

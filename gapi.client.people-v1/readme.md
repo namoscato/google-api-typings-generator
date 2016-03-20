@@ -85,6 +85,6 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Google People API resources:
 
 ```typescript
-gapi.client.people.<method name>({ /* method parameters */ })
+gapi.client.people.people.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

@@ -61,6 +61,6 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Drive API resources:
 
 ```typescript
-gapi.client.files.<method name>({ /* method parameters */ })
+gapi.client.drive.files.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

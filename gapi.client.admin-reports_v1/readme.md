@@ -64,15 +64,15 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Admin Reports API resources:
 
 ```typescript
-gapi.client.activities.<method name>({ /* method parameters */ })
+gapi.client.admin.activities.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.channels.<method name>({ /* method parameters */ })
+gapi.client.admin.channels.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.customerUsageReports.<method name>({ /* method parameters */ })
+gapi.client.admin.customerUsageReports.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.userUsageReport.<method name>({ /* method parameters */ })
+gapi.client.admin.userUsageReport.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

@@ -61,6 +61,6 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Groups Settings API resources:
 
 ```typescript
-gapi.client.groups.<method name>({ /* method parameters */ })
+gapi.client.groupssettings.groups.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```
