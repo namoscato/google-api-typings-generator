@@ -59,6 +59,6 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Ad Exchange Buyer API resources:
 
 ```typescript
-gapi.client.<api_resource>.<method name>({ /* method parameters */ })
+gapi.client.<api_name>.<api_resource>.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```
