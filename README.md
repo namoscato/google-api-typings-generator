@@ -33,7 +33,8 @@ Then load api client wrapper:
 gapi.client.load('<api_name>', '<api_version>', () => {
     // now we can use gapi.client.adexchangebuyer
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
