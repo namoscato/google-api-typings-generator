@@ -6,60 +6,6 @@
 
 declare module gapi.client.youtubeAnalytics {
     
-    interface BatchReport {
-        // The ID that YouTube assigns and uses to uniquely identify the report.
-        id?: string,
-        // This value specifies the type of data of this item. For batch report the kind property value is youtubeAnalytics#batchReport.
-        kind?: string,
-        // Report outputs.
-        outputs?: {        
-            // Cloud storage URL to download this report. This URL is valid for 30 minutes.
-            downloadUrl?: string,
-            // Format of the output.
-            format?: string,
-            // Type of the output.
-            type?: string,
-        }[],        
-        // The ID of the the report definition.
-        reportId?: string,
-        // Period included in the report. For reports containing all entities endTime is not set. Both startTime and endTime are inclusive.
-        timeSpan?: {        
-            // End of the period included in the report. Inclusive. For reports containing all entities endTime is not set.
-            endTime?: string,
-            // Start of the period included in the report. Inclusive.
-            startTime?: string,
-        },        
-        // The time when the report was updated.
-        timeUpdated?: string,
-    }
-    
-    interface BatchReportDefinition {
-        // The ID that YouTube assigns and uses to uniquely identify the report definition.
-        id?: string,
-        // This value specifies the type of data of this item. For batch report definition the kind property value is youtubeAnalytics#batchReportDefinition.
-        kind?: string,
-        // Name of the report definition.
-        name?: string,
-        // Status of the report definition.
-        status?: string,
-        // Type of the report definition.
-        type?: string,
-    }
-    
-    interface BatchReportDefinitionList {
-        // A list of batchReportDefinition resources that match the request criteria.
-        items?: BatchReportDefinition[],        
-        // This value specifies the type of data included in the API response. For the list method, the kind property value is youtubeAnalytics#batchReportDefinitionList.
-        kind?: string,
-    }
-    
-    interface BatchReportList {
-        // A list of batchReport resources that match the request criteria.
-        items?: BatchReport[],        
-        // This value specifies the type of data included in the API response. For the list method, the kind property value is youtubeAnalytics#batchReportList.
-        kind?: string,
-    }
-    
     interface Group {
         // 
         contentDetails?: {        
@@ -136,28 +82,6 @@ declare module gapi.client.youtubeAnalytics {
         // The list contains all rows of the result table. Each item in the list is an array that contains comma-delimited data corresponding to a single row of data. The order of the comma-delimited data fields will match the order of the columns listed in the columnHeaders field. If no data is available for the given query, the rows element will be omitted from the response. The response for a query with the day dimension will not contain rows for the most recent days.
         rows?: any[][],        
     }
-    
-    interface BatchReportDefinitionsResource {
-        // Retrieves a list of available batch report definitions.
-        list (request: {        
-            // The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of.
-            onBehalfOfContentOwner: string,
-        }) : gapi.client.Request<BatchReportDefinitionList>;        
-        
-    }
-    
-    
-    interface BatchReportsResource {
-        // Retrieves a list of processed batch reports.
-        list (request: {        
-            // The batchReportDefinitionId parameter specifies the ID of the batch reportort definition for which you are retrieving reports.
-            batchReportDefinitionId: string,
-            // The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of.
-            onBehalfOfContentOwner: string,
-        }) : gapi.client.Request<BatchReportList>;        
-        
-    }
-    
     
     interface GroupItemsResource {
         // Removes an item from a group.
@@ -250,6 +174,8 @@ declare module gapi.client.youtubeAnalytics {
             // - To request data for a YouTube user, set the ids parameter value to channel==CHANNEL_ID, where CHANNEL_ID specifies the unique YouTube channel ID.
             // - To request data for a YouTube CMS content owner, set the ids parameter value to contentOwner==OWNER_NAME, where OWNER_NAME is the CMS name of the content owner.
             ids: string,
+            // If set to true historical data (i.e. channel data from before the linking of the channel to the content owner) will be retrieved.
+            include-historical-channel-data?: boolean,
             // The maximum number of rows to include in the response.
             max-results?: number,
             // A comma-separated list of YouTube Analytics metrics, such as views or likes,dislikes. See the Available Reports document for a list of the reports that you can retrieve and the metrics available in each report, and see the Metrics document for definitions of those metrics.
@@ -267,10 +193,6 @@ declare module gapi.client.youtubeAnalytics {
 }
 
 declare module gapi.client.youtubeAnalytics {
-    var batchReportDefinitions: gapi.client.youtubeAnalytics.BatchReportDefinitionsResource; 
-    
-    var batchReports: gapi.client.youtubeAnalytics.BatchReportsResource; 
-    
     var groupItems: gapi.client.youtubeAnalytics.GroupItemsResource; 
     
     var groups: gapi.client.youtubeAnalytics.GroupsResource; 

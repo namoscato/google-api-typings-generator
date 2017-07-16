@@ -522,12 +522,20 @@ declare module gapi.client.books {
     interface Notification {
         // 
         body?: string,
+        // The list of crm experiment ids.
+        crmExperimentIds?: string[],        
+        // 
+        doc_id?: string,
+        // 
+        doc_type?: string,
         // 
         dont_show_notification?: boolean,
         // 
         iconUrl?: string,
         // Resource type.
         kind?: string,
+        // 
+        notificationGroup?: string,
         // 
         notification_type?: string,
         // 
@@ -674,6 +682,16 @@ declare module gapi.client.books {
                 // 
                 opted_state?: string,
             },            
+            // 
+            moreFromSeries?: {            
+                // 
+                opted_state?: string,
+            },            
+            // 
+            rewardExpirations?: {            
+                // 
+                opted_state?: string,
+            },            
         },        
     }
     
@@ -763,6 +781,8 @@ declare module gapi.client.books {
             offers?: {            
                 // The finsky offer type (e.g., PURCHASE=0 RENTAL=3)
                 finskyOfferType?: number,
+                // Indicates whether the offer is giftable.
+                giftable?: boolean,
                 // Offer list (=undiscounted) price in Micros.
                 listPrice?: {                
                     // 
@@ -823,12 +843,23 @@ declare module gapi.client.books {
             },            
             // Whether this volume is purchased, sample, pd download etc.
             entitlementType?: number,
+            // Information on the ability to share with the family.
+            familySharing?: {            
+                // The role of the user in the family.
+                familyRole?: string,
+                // Whether or not this volume can be shared with the family by the user. This includes sharing eligibility of both the volume and the user. If the value is true, the user can initiate a family sharing action.
+                isSharingAllowed?: boolean,
+                // Whether or not sharing this volume is temporarily disabled due to issues with the Family Wallet.
+                isSharingDisabledByFop?: boolean,
+            },            
             // Whether or not the user shared this volume with the family.
             isFamilySharedFromUser?: boolean,
             // Whether or not the user received this volume through family sharing.
             isFamilySharedToUser?: boolean,
-            // Whether or not this volume can be shared with the family by the user. This includes sharing eligibility of both the volume and the user. If the value is true, the user can initiate a family sharing action.
+            // Deprecated: Replaced by familySharing.
             isFamilySharingAllowed?: boolean,
+            // Deprecated: Replaced by familySharing.
+            isFamilySharingDisabledByFop?: boolean,
             // Whether or not this volume is currently in "my books."
             isInMyBooks?: boolean,
             // Whether or not this volume was pre-ordered by the authenticated user making the request. (In LITE projection.)
@@ -915,6 +946,17 @@ declare module gapi.client.books {
             maturityRating?: string,
             // Total number of pages as per publisher metadata.
             pageCount?: number,
+            // A top-level summary of the panelization info in this volume.
+            panelizationSummary?: {            
+                // 
+                containsEpubBubbles?: boolean,
+                // 
+                containsImageBubbles?: boolean,
+                // 
+                epubBubbleVersion?: string,
+                // 
+                imageBubbleVersion?: string,
+            },            
             // URL to preview this volume on the Google Books site.
             previewLink?: string,
             // Type of publication of this volume. Possible values are BOOK or MAGAZINE.
@@ -1328,6 +1370,8 @@ declare module gapi.client.books {
         
         // Inserts a new annotation.
         insert (request: {        
+            // The ID for the annotation to insert.
+            annotationId?: string,
             // ISO-3166-1 code to override the IP-based location.
             country?: string,
             // Requests that only the summary of the specified layer be provided in the response.
@@ -1661,7 +1705,7 @@ declare module gapi.client.books {
     interface MybooksResource {
         // Return a list of books in My Library.
         list (request: {        
-            // How the book was aquired
+            // How the book was acquired
             acquireMethod?: string,
             // ISO-3166-1 code to override the IP-based location.
             country?: string,
@@ -1755,6 +1799,8 @@ declare module gapi.client.books {
             langRestrict?: string,
             // Restrict search to this user's library.
             libraryRestrict?: string,
+            // The maximum allowed maturity rating of returned recommendations. Books with a higher maturity rating are filtered out.
+            maxAllowedMaturityRating?: string,
             // Maximum number of results to return.
             maxResults?: number,
             // Sort search results.

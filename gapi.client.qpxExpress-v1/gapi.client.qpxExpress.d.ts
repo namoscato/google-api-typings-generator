@@ -323,6 +323,8 @@ declare module gapi.client.qpxExpress {
         slice?: SliceInput[],        
         // The number of solutions to return, maximum 500.
         solutions?: number,
+        // IATA country code representing the point of ticketing.
+        ticketingCountry?: string,
     }
     
     interface TripOptionsResponse {

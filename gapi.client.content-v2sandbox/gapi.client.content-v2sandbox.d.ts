@@ -27,6 +27,8 @@ declare module gapi.client.content {
     interface Order {
         // Whether the order was acknowledged.
         acknowledged?: boolean,
+        // The channel type of the order: "purchaseOnGoogle" or "googleExpress".
+        channelType?: string,
         // The details of the customer who placed the order.
         customer?: OrderCustomer,
         // The details for the delivery.
@@ -95,7 +97,7 @@ declare module gapi.client.content {
         creationDate?: string,
         // The quantity that was canceled.
         quantity?: number,
-        // The reason for the cancellation.
+        // The reason for the cancellation. Orders that are cancelled with a noInventory reason will lead to the removal of the product from POG until you make an update to that product. This will not affect your Shopping ads.
         reason?: string,
         // The explanation of the reason.
         reasonText?: string,
@@ -104,7 +106,7 @@ declare module gapi.client.content {
     interface OrderCustomer {
         // Email address of the customer.
         email?: string,
-        // If set, this indicates the user had a choice to opt in or out of providing marketing rights to the merchant. If unset, this indicates the user has already made this choice in a previous purchase, and was thus not shown the marketing right opt in/out checkbox during the Purchases on Google checkout flow.
+        // If set, this indicates the user explicitly chose to opt in or out of providing marketing rights to the merchant. If unset, this indicates the user has already made this choice in a previous purchase, and was thus not shown the marketing right opt in/out checkbox during the checkout flow.
         explicitMarketingPreference?: boolean,
         // Full name of the customer.
         fullName?: string,
@@ -642,7 +644,7 @@ declare module gapi.client.content {
     interface TestOrderCustomer {
         // Email address of the customer.
         email?: string,
-        // If set, this indicates the user had a choice to opt in or out of providing marketing rights to the merchant. If unset, this indicates the user has already made this choice in a previous purchase, and was thus not shown the marketing right opt in/out checkbox during the Purchases on Google checkout flow. Optional.
+        // If set, this indicates the user explicitly chose to opt in or out of providing marketing rights to the merchant. If unset, this indicates the user has already made this choice in a previous purchase, and was thus not shown the marketing right opt in/out checkbox during the checkout flow. Optional.
         explicitMarketingPreference?: boolean,
         // Full name of the customer.
         fullName?: string,
@@ -704,7 +706,7 @@ declare module gapi.client.content {
     }
     
     interface OrdersResource {
-        // Marks an order as acknowledged.
+        // Marks an order as acknowledged. This method can only be called for non-multi-client accounts.
         acknowledge (request: {        
             // The ID of the managing account.
             merchantId: string,
@@ -712,7 +714,7 @@ declare module gapi.client.content {
             orderId: string,
         }) : gapi.client.Request<OrdersAcknowledgeResponse>;        
         
-        // Sandbox only. Moves a test order from state "inProgress" to state "pendingShipment".
+        // Sandbox only. Moves a test order from state "inProgress" to state "pendingShipment". This method can only be called for non-multi-client accounts.
         advancetestorder (request: {        
             // The ID of the managing account.
             merchantId: string,
@@ -720,7 +722,7 @@ declare module gapi.client.content {
             orderId: string,
         }) : gapi.client.Request<OrdersAdvanceTestOrderResponse>;        
         
-        // Cancels all line items in an order.
+        // Cancels all line items in an order, making a full refund. This method can only be called for non-multi-client accounts.
         cancel (request: {        
             // The ID of the managing account.
             merchantId: string,
@@ -728,7 +730,7 @@ declare module gapi.client.content {
             orderId: string,
         }) : gapi.client.Request<OrdersCancelResponse>;        
         
-        // Cancels a line item.
+        // Cancels a line item, making a full refund. This method can only be called for non-multi-client accounts.
         cancellineitem (request: {        
             // The ID of the managing account.
             merchantId: string,
@@ -736,17 +738,17 @@ declare module gapi.client.content {
             orderId: string,
         }) : gapi.client.Request<OrdersCancelLineItemResponse>;        
         
-        // Sandbox only. Creates a test order.
+        // Sandbox only. Creates a test order. This method can only be called for non-multi-client accounts.
         createtestorder (request: {        
             // The ID of the managing account.
             merchantId: string,
         }) : gapi.client.Request<OrdersCreateTestOrderResponse>;        
         
-        // Retrieves or modifies multiple orders in a single request.
+        // Retrieves or modifies multiple orders in a single request. This method can only be called for non-multi-client accounts.
         custombatch (request: {        
         }) : gapi.client.Request<OrdersCustomBatchResponse>;        
         
-        // Retrieves an order from your Merchant Center account.
+        // Retrieves an order from your Merchant Center account. This method can only be called for non-multi-client accounts.
         get (request: {        
             // The ID of the managing account.
             merchantId: string,
@@ -754,7 +756,7 @@ declare module gapi.client.content {
             orderId: string,
         }) : gapi.client.Request<Order>;        
         
-        // Retrieves an order using merchant order id.
+        // Retrieves an order using merchant order id. This method can only be called for non-multi-client accounts.
         getbymerchantorderid (request: {        
             // The ID of the managing account.
             merchantId: string,
@@ -762,7 +764,7 @@ declare module gapi.client.content {
             merchantOrderId: string,
         }) : gapi.client.Request<OrdersGetByMerchantOrderIdResponse>;        
         
-        // Sandbox only. Retrieves an order template that can be used to quickly create a new order in sandbox.
+        // Sandbox only. Retrieves an order template that can be used to quickly create a new order in sandbox. This method can only be called for non-multi-client accounts.
         gettestordertemplate (request: {        
             // The ID of the managing account.
             merchantId: string,
@@ -770,7 +772,7 @@ declare module gapi.client.content {
             templateName: string,
         }) : gapi.client.Request<OrdersGetTestOrderTemplateResponse>;        
         
-        // Lists the orders in your Merchant Center account.
+        // Lists the orders in your Merchant Center account. This method can only be called for non-multi-client accounts.
         list (request: {        
             // Obtains orders that match the acknowledgement status. When set to true, obtains orders that have been acknowledged. When false, obtains orders that have not been acknowledged.
             // We recommend using this filter set to false, in conjunction with the acknowledge call, such that only un-acknowledged orders are returned.
@@ -792,7 +794,7 @@ declare module gapi.client.content {
             statuses?: string,
         }) : gapi.client.Request<OrdersListResponse>;        
         
-        // Refund a portion of the order, up to the full amount paid.
+        // Refund a portion of the order, up to the full amount paid. This method can only be called for non-multi-client accounts.
         refund (request: {        
             // The ID of the managing account.
             merchantId: string,
@@ -800,7 +802,7 @@ declare module gapi.client.content {
             orderId: string,
         }) : gapi.client.Request<OrdersRefundResponse>;        
         
-        // Returns a line item.
+        // Returns a line item. This method can only be called for non-multi-client accounts.
         returnlineitem (request: {        
             // The ID of the managing account.
             merchantId: string,
@@ -808,7 +810,7 @@ declare module gapi.client.content {
             orderId: string,
         }) : gapi.client.Request<OrdersReturnLineItemResponse>;        
         
-        // Marks line item(s) as shipped.
+        // Marks line item(s) as shipped. This method can only be called for non-multi-client accounts.
         shiplineitems (request: {        
             // The ID of the managing account.
             merchantId: string,
@@ -816,7 +818,7 @@ declare module gapi.client.content {
             orderId: string,
         }) : gapi.client.Request<OrdersShipLineItemsResponse>;        
         
-        // Updates the merchant order ID for a given order.
+        // Updates the merchant order ID for a given order. This method can only be called for non-multi-client accounts.
         updatemerchantorderid (request: {        
             // The ID of the managing account.
             merchantId: string,
@@ -824,7 +826,7 @@ declare module gapi.client.content {
             orderId: string,
         }) : gapi.client.Request<OrdersUpdateMerchantOrderIdResponse>;        
         
-        // Updates a shipment's status, carrier, and/or tracking ID.
+        // Updates a shipment's status, carrier, and/or tracking ID. This method can only be called for non-multi-client accounts.
         updateshipment (request: {        
             // The ID of the managing account.
             merchantId: string,

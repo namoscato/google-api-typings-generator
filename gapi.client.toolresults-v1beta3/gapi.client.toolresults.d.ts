@@ -1,5 +1,5 @@
 // Type definitions for Google Cloud Tool Results API v1beta3
-// Project: https://developers.google.com/cloud-test-lab/
+// Project: https://firebase.google.com/docs/test-lab/
 // Definitions by: Bolisov Alexey
 
 /// <reference path="../gapi.client/gapi.client.d.ts" />
@@ -9,20 +9,55 @@ declare module gapi.client.toolresults {
     interface Any {
         // A URL/resource name whose content describes the type of the serialized protocol buffer message.
         // 
-        // For URLs which use the schema `http`, `https`, or no schema, the following restrictions and interpretations apply:
+        // For URLs which use the scheme `http`, `https`, or no scheme, the following restrictions and interpretations apply:
         // 
-        // * If no schema is provided, `https` is assumed. * The last segment of the URL's path must represent the fully qualified name of the type (as in `path/google.protobuf.Duration`). * An HTTP GET on the URL must yield a [google.protobuf.Type][] value in binary format, or produce an error. * Applications are allowed to cache lookup results based on the URL, or have them precompiled into a binary to avoid any lookup. Therefore, binary compatibility needs to be preserved on changes to types. (Use versioned type names to manage breaking changes.)
+        // * If no scheme is provided, `https` is assumed. * The last segment of the URL's path must represent the fully qualified name of the type (as in `path/google.protobuf.Duration`). The name should be in a canonical form (e.g., leading "." is not accepted). * An HTTP GET on the URL must yield a [google.protobuf.Type][] value in binary format, or produce an error. * Applications are allowed to cache lookup results based on the URL, or have them precompiled into a binary to avoid any lookup. Therefore, binary compatibility needs to be preserved on changes to types. (Use versioned type names to manage breaking changes.)
         // 
-        // Schemas other than `http`, `https` (or the empty schema) might be used with implementation specific semantics.
+        // Schemes other than `http`, `https` (or the empty scheme) might be used with implementation specific semantics.
         typeUrl?: string,
         // Must be a valid serialized protocol buffer of the above specified type.
         value?: string,
     }
     
+    interface AppStartTime {
+        // Optional. The time from app start to reaching the developer-reported "fully drawn" time. This is only stored if the app includes a call to Activity.reportFullyDrawn(). See https://developer.android.com/topic/performance/launch-time.html#time-full
+        fullyDrawnTime?: Duration,
+        // The time from app start to the first displayed activity being drawn, as reported in Logcat. See https://developer.android.com/topic/performance/launch-time.html#time-initial
+        initialDisplayTime?: Duration,
+    }
+    
+    interface BasicPerfSampleSeries {
+        // 
+        perfMetricType?: string,
+        // 
+        perfUnit?: string,
+        // 
+        sampleSeriesLabel?: string,
+    }
+    
+    interface BatchCreatePerfSamplesRequest {
+        // The set of PerfSamples to create should not include existing timestamps
+        perfSamples?: PerfSample[],        
+    }
+    
+    interface BatchCreatePerfSamplesResponse {
+        // 
+        perfSamples?: PerfSample[],        
+    }
+    
+    interface CPUInfo {
+        // description of the device processor ie '1.8 GHz hexa core 64-bit ARMv8-A'
+        cpuProcessor?: string,
+        // the CPU clock speed in GHz
+        cpuSpeedInGhz?: number,
+        // the number of CPU cores
+        numberOfCores?: number,
+    }
+    
     interface Duration {
         // Signed fractions of a second at nanosecond resolution of the span of time. Durations less than one second are represented with a 0 `seconds` field and a positive or negative `nanos` field. For durations of one second or more, a non-zero value for the `nanos` field must be of the same sign as the `seconds` field. Must be from -999,999,999 to +999,999,999 inclusive.
         nanos?: number,
-        // Signed seconds of the span of time. Must be from -315,576,000,000 to +315,576,000,000 inclusive.
+        // Signed seconds of the span of time. Must be from -315,576,000,000 to +315,576,000,000 inclusive. Note: these bounds are computed from: 60 sec/min * 60 min/hr * 24 hr/day * 365.25 days/year * 10000 years
         seconds?: string,
     }
     
@@ -76,6 +111,8 @@ declare module gapi.client.toolresults {
         otherNativeCrash?: boolean,
         // If the test overran some time limit, and that is why it failed.
         timedOut?: boolean,
+        // If the robo was unable to crawl the app; perhaps because the app did not start.
+        unableToCrawl?: boolean,
     }
     
     interface FileReference {
@@ -130,10 +167,6 @@ declare module gapi.client.toolresults {
         // 
         // For example, a mobile test requires provisioning a device where the test executes, and that provisioning can fail.
         infrastructureFailure?: boolean,
-        // A native process crashed on the device, producing a tombstone. It is unclear whether the crash was related to the app under test.
-        // 
-        // For example, OpenGL crashed, but it is unclear if the app is responsible. TODO(yinfu): Remove after all reference from TestService are deleted.
-        nativeCrash?: boolean,
     }
     
     interface ListExecutionsResponse {
@@ -158,6 +191,18 @@ declare module gapi.client.toolresults {
         nextPageToken?: string,
     }
     
+    interface ListPerfSampleSeriesResponse {
+        // The resulting PerfSampleSeries sorted by id
+        perfSampleSeries?: PerfSampleSeries[],        
+    }
+    
+    interface ListPerfSamplesResponse {
+        // Optional, returned if result size exceeds the page size specified in the request (or the default page size, 500, if unspecified). It indicates the last sample timestamp to be used as page_token in subsequent request
+        nextPageToken?: string,
+        // 
+        perfSamples?: PerfSample[],        
+    }
+    
     interface ListStepThumbnailsResponse {
         // A continuation token to resume the query at the next item.
         // 
@@ -176,6 +221,13 @@ declare module gapi.client.toolresults {
         nextPageToken?: string,
         // Steps.
         steps?: Step[],        
+    }
+    
+    interface MemoryInfo {
+        // Maximum memory that can be allocated to the process in KiB
+        memoryCapInKibibyte?: string,
+        // Total memory available on the device in KiB
+        memoryTotalInKibibyte?: string,
     }
     
     interface Outcome {
@@ -207,6 +259,52 @@ declare module gapi.client.toolresults {
         // 
         // Required
         summary?: string,
+    }
+    
+    interface PerfEnvironment {
+        // CPU related environment info
+        cpuInfo?: CPUInfo,
+        // Memory related environment info
+        memoryInfo?: MemoryInfo,
+    }
+    
+    interface PerfMetricsSummary {
+        // 
+        appStartTime?: AppStartTime,
+        // A tool results execution ID.
+        executionId?: string,
+        // A tool results history ID.
+        historyId?: string,
+        // Describes the environment in which the performance metrics were collected
+        perfEnvironment?: PerfEnvironment,
+        // Set of resource collected
+        perfMetrics?: string[],        
+        // The cloud project
+        projectId?: string,
+        // A tool results step ID.
+        stepId?: string,
+    }
+    
+    interface PerfSample {
+        // Timestamp of collection
+        sampleTime?: Timestamp,
+        // Value observed
+        value?: number,
+    }
+    
+    interface PerfSampleSeries {
+        // Basic series represented by a line chart
+        basicPerfSampleSeries?: BasicPerfSampleSeries,
+        // A tool results execution ID.
+        executionId?: string,
+        // A tool results history ID.
+        historyId?: string,
+        // The cloud project
+        projectId?: string,
+        // A sample series id
+        sampleSeriesId?: string,
+        // A tool results step ID.
+        stepId?: string,
     }
     
     interface ProjectSettings {
@@ -242,10 +340,17 @@ declare module gapi.client.toolresults {
         incompatibleDevice?: boolean,
     }
     
+    interface StackTrace {
+        // The stack trace message.
+        // 
+        // Required
+        exception?: string,
+    }
+    
     interface Status {
         // The status code, which should be an enum value of [google.rpc.Code][].
         code?: number,
-        // A list of messages that carry the error details. There will be a common set of message types for APIs to use.
+        // A list of messages that carry the error details. There is a common set of message types for APIs to use.
         details?: Any[],        
         // A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the [google.rpc.Status.details][] field, or localized by the client.
         message?: string,
@@ -373,6 +478,12 @@ declare module gapi.client.toolresults {
     }
     
     interface TestExecutionStep {
+        // Issues observed during the test execution.
+        // 
+        // For example, if the mobile app under test crashed during the test, the error message and the stack trace content can be recorded here to assist debugging.
+        // 
+        // - In response: present if set by create or update - In create/update request: optional
+        testIssues?: TestIssue[],        
         // List of test suite overview contents. This could be parsed from xUnit XML log by server, or uploaded directly by user. This references should only be called when test suites are fully parsed or uploaded.
         // 
         // The maximum allowed number of test suite overviews per step is 1000.
@@ -389,6 +500,15 @@ declare module gapi.client.toolresults {
         // 
         // - In response: always set - In create/update request: optional
         toolExecution?: ToolExecution,
+    }
+    
+    interface TestIssue {
+        // A brief human-readable message describing the abnormal event.
+        // 
+        // Required.
+        errorMessage?: string,
+        // Optional.
+        stackTrace?: StackTrace,
     }
     
     interface TestSuiteOverview {
@@ -453,7 +573,7 @@ declare module gapi.client.toolresults {
     interface Timestamp {
         // Non-negative fractions of a second at nanosecond resolution. Negative second values with fractions must still have non-negative nanos values that count forward in time. Must be from 0 to 999,999,999 inclusive.
         nanos?: number,
-        // Represents seconds of UTC time since Unix epoch 1970-01-01T00:00:00Z. Must be from from 0001-01-01T00:00:00Z to 9999-12-31T23:59:59Z inclusive.
+        // Represents seconds of UTC time since Unix epoch 1970-01-01T00:00:00Z. Must be from 0001-01-01T00:00:00Z to 9999-12-31T23:59:59Z inclusive.
         seconds?: string,
     }
     
@@ -510,6 +630,117 @@ declare module gapi.client.toolresults {
         // - In response: present if set by create/update request - In create/update request: optional
         testCase?: TestCaseReference,
     }
+    
+    interface PerfMetricsSummaryResource {
+        // Creates a PerfMetricsSummary resource.
+        // 
+        // May return any of the following error code(s): - ALREADY_EXISTS - A PerfMetricSummary already exists for the given Step - NOT_FOUND - The containing Step does not exist
+        create (request: {        
+            // A tool results execution ID.
+            executionId: string,
+            // A tool results history ID.
+            historyId: string,
+            // The cloud project
+            projectId: string,
+            // A tool results step ID.
+            stepId: string,
+        }) : gapi.client.Request<PerfMetricsSummary>;        
+        
+    }
+    
+    
+    interface SamplesResource {
+        // Creates a batch of PerfSamples - a client can submit multiple batches of Perf Samples through repeated calls to this method in order to split up a large request payload - duplicates and existing timestamp entries will be ignored. - the batch operation may partially succeed - the set of elements successfully inserted is returned in the response (omits items which already existed in the database).
+        // 
+        // May return any of the following canonical error codes: - NOT_FOUND - The containing PerfSampleSeries does not exist
+        batchCreate (request: {        
+            // A tool results execution ID.
+            executionId: string,
+            // A tool results history ID.
+            historyId: string,
+            // The cloud project
+            projectId: string,
+            // A sample series id
+            sampleSeriesId: string,
+            // A tool results step ID.
+            stepId: string,
+        }) : gapi.client.Request<BatchCreatePerfSamplesResponse>;        
+        
+        // Lists the Performance Samples of a given Sample Series - The list results are sorted by timestamps ascending - The default page size is 500 samples; and maximum size allowed 5000 - The response token indicates the last returned PerfSample timestamp - When the results size exceeds the page size, submit a subsequent request including the page token to return the rest of the samples up to the page limit
+        // 
+        // May return any of the following canonical error codes: - OUT_OF_RANGE - The specified request page_token is out of valid range - NOT_FOUND - The containing PerfSampleSeries does not exist
+        list (request: {        
+            // A tool results execution ID.
+            executionId: string,
+            // A tool results history ID.
+            historyId: string,
+            // The default page size is 500 samples, and the maximum size is 5000. If the page_size is greater than 5000, the effective page size will be 5000
+            pageSize?: number,
+            // Optional, the next_page_token returned in the previous response
+            pageToken?: string,
+            // The cloud project
+            projectId: string,
+            // A sample series id
+            sampleSeriesId: string,
+            // A tool results step ID.
+            stepId: string,
+        }) : gapi.client.Request<ListPerfSamplesResponse>;        
+        
+    }
+    
+    
+    interface PerfSampleSeriesResource {
+        // Creates a PerfSampleSeries.
+        // 
+        // May return any of the following error code(s): - ALREADY_EXISTS - PerfMetricSummary already exists for the given Step - NOT_FOUND - The containing Step does not exist
+        create (request: {        
+            // A tool results execution ID.
+            executionId: string,
+            // A tool results history ID.
+            historyId: string,
+            // The cloud project
+            projectId: string,
+            // A tool results step ID.
+            stepId: string,
+        }) : gapi.client.Request<PerfSampleSeries>;        
+        
+        // Gets a PerfSampleSeries.
+        // 
+        // May return any of the following error code(s): - NOT_FOUND - The specified PerfSampleSeries does not exist
+        get (request: {        
+            // A tool results execution ID.
+            executionId: string,
+            // A tool results history ID.
+            historyId: string,
+            // The cloud project
+            projectId: string,
+            // A sample series id
+            sampleSeriesId: string,
+            // A tool results step ID.
+            stepId: string,
+        }) : gapi.client.Request<PerfSampleSeries>;        
+        
+        // Lists PerfSampleSeries for a given Step.
+        // 
+        // The request provides an optional filter which specifies one or more PerfMetricsType to include in the result; if none returns all. The resulting PerfSampleSeries are sorted by ids.
+        // 
+        // May return any of the following canonical error codes: - NOT_FOUND - The containing Step does not exist
+        list (request: {        
+            // A tool results execution ID.
+            executionId: string,
+            // Specify one or more PerfMetricType values such as CPU to filter the result
+            filter?: string,
+            // A tool results history ID.
+            historyId: string,
+            // The cloud project
+            projectId: string,
+            // A tool results step ID.
+            stepId: string,
+        }) : gapi.client.Request<ListPerfSampleSeriesResponse>;        
+        
+        samples: SamplesResource,
+    }
+    
     
     interface ThumbnailsResource {
         // Lists thumbnails of images attached to a step.
@@ -598,6 +829,20 @@ declare module gapi.client.toolresults {
             stepId: string,
         }) : gapi.client.Request<Step>;        
         
+        // Retrieves a PerfMetricsSummary.
+        // 
+        // May return any of the following error code(s): - NOT_FOUND - The specified PerfMetricsSummary does not exist
+        getPerfMetricsSummary (request: {        
+            // A tool results execution ID.
+            executionId: string,
+            // A tool results history ID.
+            historyId: string,
+            // The cloud project
+            projectId: string,
+            // A tool results step ID.
+            stepId: string,
+        }) : gapi.client.Request<PerfMetricsSummary>;        
+        
         // Lists Steps for a given Execution.
         // 
         // The steps are sorted by creation_time in descending order. The step_id key will be used to order the steps with the same creation_time.
@@ -682,6 +927,8 @@ declare module gapi.client.toolresults {
             stepId: string,
         }) : gapi.client.Request<Step>;        
         
+        perfMetricsSummary: PerfMetricsSummaryResource,
+        perfSampleSeries: PerfSampleSeriesResource,
         thumbnails: ThumbnailsResource,
     }
     
@@ -861,11 +1108,11 @@ declare module gapi.client.toolresults {
         
         // Creates resources for settings which have not yet been set.
         // 
-        // Currently, this creates a single resource: a Google Cloud Storage bucket, to be used as the default bucket for this project. The bucket is created in the name of the user calling. Except in rare cases, calling this method in parallel from multiple clients will only create a single bucket. In order to avoid unnecessary storage charges, the bucket is configured to automatically delete objects older than 90 days.
+        // Currently, this creates a single resource: a Google Cloud Storage bucket, to be used as the default bucket for this project. The bucket is created in an FTL-own storage project. Except for in rare cases, calling this method in parallel from multiple clients will only create a single bucket. In order to avoid unnecessary storage charges, the bucket is configured to automatically delete objects older than 90 days.
         // 
-        // The bucket is created with the project-private ACL: All project team members are given permissions to the bucket and objects created within it according to their roles. Project owners have owners rights, and so on. The default ACL on objects created in the bucket is project-private as well. See Google Cloud Storage documentation for more details.
+        // The bucket is created with the following permissions: - Owner access for owners of central storage project (FTL-owned) - Writer access for owners/editors of customer project - Reader access for viewers of customer project The default ACL on objects created in the bucket is: - Owner access for owners of central storage project - Reader access for owners/editors/viewers of customer project See Google Cloud Storage documentation for more details.
         // 
-        // If there is already a default bucket set and the project can access the bucket, this call does nothing. However, if the project doesn't have the permission to access the bucket or the bucket is deteleted, a new bucket will be created.
+        // If there is already a default bucket set and the project can access the bucket, this call does nothing. However, if the project doesn't have the permission to access the bucket or the bucket is deleted, a new bucket will be created.
         // 
         // May return any canonical error codes, including the following:
         // 

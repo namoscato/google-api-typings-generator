@@ -41,6 +41,8 @@ declare module gapi.client.fitness {
         bucketByTime?: BucketByTime,
         // The end of a window of time. Data that intersects with this time window will be aggregated. The time is in milliseconds since epoch, inclusive.
         endTimeMillis?: string,
+        // A list of acceptable data quality standards. Only data points which conform to at least one of the specified data quality standards will be returned. If the list is empty, all data points are returned.
+        filteredDataQualityStandard?: string[],        
         // The start of a window of time. Data that intersects with this time window will be aggregated. The time is in milliseconds since epoch, inclusive.
         startTimeMillis?: string,
     }
@@ -76,6 +78,17 @@ declare module gapi.client.fitness {
     interface BucketByTime {
         // Specifies that result buckets aggregate data by exactly durationMillis time frames. Time frames that contain no data will be included in the response with an empty dataset.
         durationMillis?: string,
+        // 
+        period?: BucketByTimePeriod,
+    }
+    
+    interface BucketByTimePeriod {
+        // org.joda.timezone.DateTimeZone
+        timeZoneId?: string,
+        // 
+        type?: string,
+        // 
+        value?: number,
     }
     
     interface DataPoint {
@@ -102,6 +115,8 @@ declare module gapi.client.fitness {
     interface DataSource {
         // Information about an application which feeds sensor data into the platform.
         application?: Application,
+        // 
+        dataQualityStandard?: string[],        
         // A unique identifier for the data stream produced by this data source. The identifier includes:
         // 
         //  
@@ -180,6 +195,8 @@ declare module gapi.client.fitness {
     interface ListSessionsResponse {
         // If includeDeleted is set to true in the request, this list will contain sessions deleted with original end times that are within the startTime and endTime frame.
         deletedSession?: Session[],        
+        // Flag to indicate server has more data to transfer
+        hasMoreData?: boolean,
         // The continuation token, which is used to page through large result sets. Provide this value in a subsequent request to return the next page of results.
         nextPageToken?: string,
         // Sessions with an end time that is between startTime and endTime of the request.
@@ -251,7 +268,7 @@ declare module gapi.client.fitness {
             dataSourceId: string,
             // Dataset identifier that is a composite of the minimum data point start time and maximum data point end time represented as nanoseconds from the epoch. The ID is formatted like: "startTime-endTime" where startTime and endTime are 64 bit integers.
             datasetId: string,
-            // If specified, no more than this many data points will be included in the dataset. If the there are more data points in the dataset, nextPageToken will be set in the dataset response.
+            // If specified, no more than this many data points will be included in the dataset. If there are more data points in the dataset, nextPageToken will be set in the dataset response.
             limit?: number,
             // The continuation token, which is used to page through large datasets. To get the next page of a dataset, set this parameter to the value of nextPageToken from the previous response. Each subsequent call will yield a partial dataset with data point end timestamps that are strictly smaller than those in the previous partial response.
             pageToken?: string,
@@ -281,7 +298,7 @@ declare module gapi.client.fitness {
             userId: string,
         }) : gapi.client.Request<DataSource>;        
         
-        // Delete the data source if there are no datapoints associated with it
+        // Deletes the specified data source. The request will fail if the data source contains any data points.
         delete (request: {        
             // The data stream ID of the data source to delete.
             dataSourceId: string,
@@ -289,7 +306,7 @@ declare module gapi.client.fitness {
             userId: string,
         }) : gapi.client.Request<DataSource>;        
         
-        // Returns a data source identified by a data stream ID.
+        // Returns the specified data source.
         get (request: {        
             // The data stream ID of the data source to retrieve.
             dataSourceId: string,
@@ -297,7 +314,7 @@ declare module gapi.client.fitness {
             userId: string,
         }) : gapi.client.Request<DataSource>;        
         
-        // Lists all data sources that are visible to the developer, using the OAuth scopes provided. The list is not exhaustive: the user may have private data sources that are only visible to other developers or calls using other scopes.
+        // Lists all data sources that are visible to the developer, using the OAuth scopes provided. The list is not exhaustive; the user may have private data sources that are only visible to other developers, or calls using other scopes.
         list (request: {        
             // The names of data types to include in the list. If not specified, all data sources will be returned.
             dataTypeName?: string,
@@ -305,9 +322,9 @@ declare module gapi.client.fitness {
             userId: string,
         }) : gapi.client.Request<ListDataSourcesResponse>;        
         
-        // Updates a given data source. It is an error to modify the data source's data stream ID, data type, type, stream name or device information apart from the device version. Changing these fields would require a new unique data stream ID and separate data source.
+        // Updates the specified data source. The dataStreamId, dataType, type, dataStreamName, and device properties with the exception of version, cannot be modified.
         // 
-        // Data sources are identified by their data stream ID. This method supports patch semantics.
+        // Data sources are identified by their dataStreamId. This method supports patch semantics.
         patch (request: {        
             // The data stream ID of the data source to update.
             dataSourceId: string,
@@ -315,9 +332,9 @@ declare module gapi.client.fitness {
             userId: string,
         }) : gapi.client.Request<DataSource>;        
         
-        // Updates a given data source. It is an error to modify the data source's data stream ID, data type, type, stream name or device information apart from the device version. Changing these fields would require a new unique data stream ID and separate data source.
+        // Updates the specified data source. The dataStreamId, dataType, type, dataStreamName, and device properties with the exception of version, cannot be modified.
         // 
-        // Data sources are identified by their data stream ID.
+        // Data sources are identified by their dataStreamId.
         update (request: {        
             // The data stream ID of the data source to update.
             dataSourceId: string,

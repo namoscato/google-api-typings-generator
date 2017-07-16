@@ -77,6 +77,8 @@ declare module gapi.client.sqladmin {
     }
     
     interface DatabaseInstance {
+        // Connection name of the Cloud SQL instance used in connection strings.
+        connectionName?: string,
         // The current disk usage of the instance in bytes.
         currentDiskSize?: string,
         // The database engine type and version. Can be MYSQL_5_5 or MYSQL_5_6. Defaults to MYSQL_5_5. The databaseVersion cannot be changed after instance creation.
@@ -438,7 +440,7 @@ declare module gapi.client.sqladmin {
         RAM?: string,
         // This is always sql#tier.
         kind?: string,
-        // The applicable regions for this tier. Can be us-east1, europe-west1, or asia-east1.
+        // The applicable regions for this tier.
         region?: string[],        
         // An identifier for the service tier, for example D1, D2 etc. For related information, see Pricing.
         tier?: string,

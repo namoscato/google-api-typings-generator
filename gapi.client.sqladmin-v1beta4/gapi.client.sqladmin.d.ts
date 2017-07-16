@@ -29,6 +29,8 @@ declare module gapi.client.sqladmin {
     }
     
     interface BackupRun {
+        // The description of this run, only applicable to on-demand backups.
+        description?: string,
         // The time the backup operation completed in UTC timezone in RFC 3339 format, for example 2012-11-15T16:19:00.094Z.
         endTime?: string,
         // The time the run was enqueued in UTC timezone in RFC 3339 format, for example 2012-11-15T16:19:00.094Z.
@@ -47,6 +49,8 @@ declare module gapi.client.sqladmin {
         startTime?: string,
         // The status of this run.
         status?: string,
+        // The type of this run; can be either "AUTOMATED" or "ON_DEMAND".
+        type?: string,
         // The start time of the backup window during which this the backup was attempted in RFC 3339 format, for example 2012-11-15T16:19:00.094Z.
         windowStartTime?: string,
     }
@@ -109,9 +113,11 @@ declare module gapi.client.sqladmin {
         // SECOND_GEN: A newer Cloud SQL backend that runs in a Compute Engine VM.
         // EXTERNAL: A MySQL server that is not managed by Google.
         backendType?: string,
+        // Connection name of the Cloud SQL instance used in connection strings.
+        connectionName?: string,
         // The current disk usage of the instance in bytes. This property has been deprecated. Users should use the "cloudsql.googleapis.com/database/disk/bytes_used" metric in Cloud Monitoring API instead. Please see https://groups.google.com/d/msg/google-cloud-sql-announce/I_7-F9EBhT0/BtvFtdFeAgAJ for details.
         currentDiskSize?: string,
-        // The database engine type and version. Can be MYSQL_5_5 or MYSQL_5_6. Defaults to MYSQL_5_6. The databaseVersion can not be changed after instance creation.
+        // The database engine type and version. The databaseVersion can not be changed after instance creation. Can be MYSQL_5_5, MYSQL_5_6 or MYSQL_5_7. Defaults to MYSQL_5_6. MYSQL_5_7 is applicable only to Second Generation instances.
         databaseVersion?: string,
         // HTTP 1.1 Entity tag for the resource.
         etag?: string,
@@ -119,7 +125,7 @@ declare module gapi.client.sqladmin {
         failoverReplica?: {        
             // The availability status of the failover replica. A false status indicates that the failover replica is out of sync. The master can only failover to the falover replica when the status is true.
             available?: boolean,
-            // The name of the failover replica.
+            // The name of the failover replica. If specified at instance creation, a failover replica is created for the instance. The name doesn't include the project ID. This property is applicable only to Second Generation instances.
             name?: string,
         },        
         // The instance type. This can be one of the following.
@@ -211,7 +217,7 @@ declare module gapi.client.sqladmin {
     interface Flag {
         // For STRING flags, a list of strings that the value can be set to.
         allowedStringValues?: string[],        
-        // The database version this flag applies to. Can be MYSQL_5_5, MYSQL_5_6, or both.
+        // The database version this flag applies to. Can be MYSQL_5_5, MYSQL_5_6, or MYSQL_5_7. MYSQL_5_7 is applicable only to Second Generation instances.
         appliesTo?: string[],        
         // This is always sql#flag.
         kind?: string,
@@ -248,6 +254,8 @@ declare module gapi.client.sqladmin {
         // SQL: The file contains SQL statements.
         // CSV: The file contains CSV data.
         fileType?: string,
+        // The PostgreSQL user to use for this import operation. Defaults to cloudsqlsuperuser. Does not apply to MySQL instances.
+        importUser?: string,
         // This is always sql#importContext.
         kind?: string,
         // A path to the file in Google Cloud Storage from which the import is made. The URI is in the form gs://bucketName/fileName. Compressed gzip files (.gz) are supported when fileType is SQL.
@@ -288,6 +296,11 @@ declare module gapi.client.sqladmin {
         restoreBackupContext?: RestoreBackupContext,
     }
     
+    interface InstancesTruncateLogRequest {
+        // Contains details about the truncate log operation.
+        truncateLogContext?: TruncateLogContext,
+    }
+    
     interface IpConfiguration {
         // The list of external networks that are allowed to connect to the instance using the IP. In CIDR notation, also known as 'slash' notation (e.g. 192.168.100.0/24).
         authorizedNetworks?: AclEntry[],        
@@ -302,6 +315,8 @@ declare module gapi.client.sqladmin {
         ipAddress?: string,
         // The due time for this IP to be retired in RFC 3339 format, for example 2012-11-15T16:19:00.094Z. This field is only available when the IP is scheduled to be retired.
         timeToRetire?: string,
+        // The type of this IP address. A PRIMARY address is an address that can accept incoming connections. An OUTGOING address is the source address of connections originating from the instance, if supported.
+        type?: string,
     }
     
     interface LocationPreference {
@@ -381,7 +396,7 @@ declare module gapi.client.sqladmin {
         status?: string,
         // Name of the database instance related to this operation.
         targetId?: string,
-        // The URI of the instance related to the operation.
+        // 
         targetLink?: string,
         // The project ID of the target instance related to this operation.
         targetProject?: string,
@@ -434,20 +449,22 @@ declare module gapi.client.sqladmin {
     }
     
     interface Settings {
-        // The activation policy for this instance. This specifies when the instance should be activated and is applicable only when the instance state is RUNNABLE. This can be one of the following.
-        // ALWAYS: The instance should always be active.
-        // NEVER: The instance should never be activated.
-        // ON_DEMAND: The instance is activated upon receiving requests; only applicable to First Generation instances.
+        // The activation policy specifies when the instance is activated; it is applicable only when the instance state is RUNNABLE. The activation policy cannot be updated together with other settings for Second Generation instances. Valid values:
+        // ALWAYS: The instance is on; it is not deactivated by inactivity.
+        // NEVER: The instance is off; it is not activated, even if a connection request arrives.
+        // ON_DEMAND: The instance responds to incoming requests, and turns itself off when not in use. Instances with PER_USE pricing turn off after 15 minutes of inactivity. Instances with PER_PACKAGE pricing turn off after 12 hours of inactivity.
         activationPolicy?: string,
         // The App Engine app IDs that can access this instance. This property is only applicable to First Generation instances.
         authorizedGaeApplications?: string[],        
+        // Reserved for future use.
+        availabilityType?: string,
         // The daily backup configuration for the instance.
         backupConfiguration?: BackupConfiguration,
         // Configuration specific to read replica instances. Indicates whether database flags for crash-safe replication are enabled. This property is only applicable to First Generation instances.
         crashSafeReplicationEnabled?: boolean,
-        // The size of data disk, in GB. The data disk size minimum is 10GB. This property is only applicable to Second Generation instances.
+        // The size of data disk, in GB. The data disk size minimum is 10GB. Applies only to Second Generation instances.
         dataDiskSizeGb?: string,
-        // The type of data disk. Only supported for Second Generation instances. The default type is PD_SSD. This property is only applicable to Second Generation instances.
+        // The type of data disk. Only supported for Second Generation instances. The default type is PD_SSD. Applies only to Second Generation instances.
         dataDiskType?: string,
         // The database flags passed to the instance at startup.
         databaseFlags?: DatabaseFlags[],        
@@ -459,7 +476,7 @@ declare module gapi.client.sqladmin {
         kind?: string,
         // The location preference settings. This allows the instance to be located as near as possible to either an App Engine app or GCE zone for better performance. App Engine co-location is only applicable to First Generation instances.
         locationPreference?: LocationPreference,
-        // The maintenance window for this instance. This specifies when the instance may be restarted for maintenance purposes. This property is only applicable to Second Generation instances.
+        // The maintenance window for this instance. This specifies when the instance may be restarted for maintenance purposes. Applies only to Second Generation instances.
         maintenanceWindow?: MaintenanceWindow,
         // The pricing plan for this instance. This can be either PER_USE or PACKAGE. Only PER_USE is supported for Second Generation instances.
         pricingPlan?: string,
@@ -467,8 +484,14 @@ declare module gapi.client.sqladmin {
         replicationType?: string,
         // The version of instance settings. This is a required field for update method to make sure concurrent updates are handled properly. During update, use the most recent settingsVersion value for this instance and do not try to update this value.
         settingsVersion?: string,
+        // Configuration to increase storage size automatically. The default value is true. Applies only to Second Generation instances.
+        storageAutoResize?: boolean,
+        // The maximum size to which storage capacity can be automatically increased. The default value is 0, which specifies that there is no limit. Applies only to Second Generation instances.
+        storageAutoResizeLimit?: string,
         // The tier of service for this instance, for example D1, D2. For more information, see pricing.
         tier?: string,
+        // User-provided labels, represented as a dictionary where each label is a single key value pair.
+        userLabels?: any,
     }
     
     interface SslCert {
@@ -510,10 +533,12 @@ declare module gapi.client.sqladmin {
     }
     
     interface SslCertsInsertResponse {
-        // The new client certificate and private key. The new certificate will not work until the instance is restarted.
+        // The new client certificate and private key. The new certificate will not work until the instance is restarted for First Generation instances.
         clientCert?: SslCertDetail,
         // This is always sql#sslCertsInsert.
         kind?: string,
+        // The operation to track the ssl certs insert request.
+        operation?: Operation,
         // The server Certificate Authority's certificate. If this is missing you can force a new one to be generated by calling resetSslConfig method on instances resource.
         serverCaCert?: SslCert,
     }
@@ -532,7 +557,7 @@ declare module gapi.client.sqladmin {
         RAM?: string,
         // This is always sql#tier.
         kind?: string,
-        // The applicable regions for this tier. Can be us-east1, europe-west1 or asia-east1.
+        // The applicable regions for this tier.
         region?: string[],        
         // An identifier for the service tier, for example D1, D2 etc. For related information, see Pricing.
         tier?: string,
@@ -543,6 +568,13 @@ declare module gapi.client.sqladmin {
         items?: Tier[],        
         // This is always sql#tiersList.
         kind?: string,
+    }
+    
+    interface TruncateLogContext {
+        // This is always sql#truncateLogContext.
+        kind?: string,
+        // The type of log to truncate. Valid values are MYSQL_GENERAL_TABLE and MYSQL_SLOW_TABLE.
+        logType?: string,
     }
     
     interface User {
@@ -591,6 +623,14 @@ declare module gapi.client.sqladmin {
             // Project ID of the project that contains the instance.
             project: string,
         }) : gapi.client.Request<BackupRun>;        
+        
+        // Creates a new backup run on demand. This method is applicable only to Second Generation instances.
+        insert (request: {        
+            // Cloud SQL instance ID. This does not include the project ID.
+            instance: string,
+            // Project ID of the project that contains the instance.
+            project: string,
+        }) : gapi.client.Request<Operation>;        
         
         // Lists all backup runs associated with a given instance and configuration in the reverse chronological order of the enqueued time.
         list (request: {        
@@ -670,6 +710,8 @@ declare module gapi.client.sqladmin {
     interface FlagsResource {
         // List all available database flags for Google Cloud SQL instances.
         list (request: {        
+            // Database version for flag retrieval. Flags are specific to the database version.
+            databaseVersion?: string,
         }) : gapi.client.Request<FlagsListResponse>;        
         
     }
@@ -732,6 +774,8 @@ declare module gapi.client.sqladmin {
         
         // Lists instances under a given project in the alphabetical order of the instance name.
         list (request: {        
+            // An expression for filtering the results of the request, such as by name or label.
+            filter?: string,
             // The maximum number of results to return per response.
             maxResults?: number,
             // A previously-returned page token representing part of the larger set of results to view.
@@ -793,6 +837,14 @@ declare module gapi.client.sqladmin {
             // Cloud SQL read replica instance name.
             instance: string,
             // ID of the project that contains the read replica.
+            project: string,
+        }) : gapi.client.Request<Operation>;        
+        
+        // Truncate MySQL general and slow query log tables
+        truncateLog (request: {        
+            // Cloud SQL instance ID. This does not include the project ID.
+            instance: string,
+            // Project ID of the Cloud SQL project.
             project: string,
         }) : gapi.client.Request<Operation>;        
         

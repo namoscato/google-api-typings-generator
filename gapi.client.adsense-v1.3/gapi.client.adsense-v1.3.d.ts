@@ -75,7 +75,7 @@ declare module gapi.client.adsense {
             // The color of the ad url.
             url?: string,
         },        
-        // The style of the corners in the ad.
+        // The style of the corners in the ad (deprecated: never populated, ignored).
         corners?: string,
         // The font which is included in the style.
         font?: {        

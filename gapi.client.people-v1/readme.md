@@ -1,5 +1,5 @@
 # Typescript typings for Google People API
-The Google People API service gives access to information about profiles and contacts.
+Provides access to information about profiles and contacts.
 For detailed description please check [documentation](https://developers.google.com/people/).
 
 ## Installing
@@ -34,8 +34,7 @@ Then load api client wrapper:
 gapi.client.load('people', 'v1', () => {
     // now we can use gapi.client.people
     // ... 
-});
-```
+});```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -43,20 +42,17 @@ Don't forget to authenticate your client before sending any request to resources
 // declare client_id registered in Google Developers Console
 var client_id = '',
     scope = [     
-        // Manage your contacts
-        'https://www.googleapis.com/auth/contacts',
-    
-        // View your contacts
-        'https://www.googleapis.com/auth/contacts.readonly',
-    
-        // Know your basic profile info and list of people in your circles.
+        // Know the list of people in your circles, your age range, and language
         'https://www.googleapis.com/auth/plus.login',
+    
+        // View your basic profile info
+        'https://www.googleapis.com/auth/userinfo.profile',
     
         // View your street addresses
         'https://www.googleapis.com/auth/user.addresses.read',
     
-        // View your complete date of birth
-        'https://www.googleapis.com/auth/user.birthday.read',
+        // Manage your contacts
+        'https://www.googleapis.com/auth/contacts',
     
         // View your email addresses
         'https://www.googleapis.com/auth/user.emails.read',
@@ -67,8 +63,11 @@ var client_id = '',
         // View your email address
         'https://www.googleapis.com/auth/userinfo.email',
     
-        // View your basic profile info
-        'https://www.googleapis.com/auth/userinfo.profile',
+        // View your complete date of birth
+        'https://www.googleapis.com/auth/user.birthday.read',
+    
+        // View your contacts
+        'https://www.googleapis.com/auth/contacts.readonly',
     ],
     immediate = true;
 // ...
@@ -85,6 +84,9 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Google People API resources:
 
 ```typescript
-gapi.client.people.people.<method name>({ /* method parameters */ })
+gapi.client.contactGroups.<method name>({ /* method parameters */ })
+    .then(response => { /* handling response */ });
+
+gapi.client.people.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

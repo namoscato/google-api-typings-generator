@@ -125,7 +125,7 @@ declare module gapi.client.calendar {
     interface CalendarNotification {
         // The method used to deliver the notification. Possible values are:  
         // - "email" - Reminders are sent via email. 
-        // - "sms" - Reminders are sent via SMS. This value is read-only and is ignored on inserts and updates. SMS reminders are only available for Google Apps for Work, Education, and Government customers.
+        // - "sms" - Reminders are sent via SMS. This value is read-only and is ignored on inserts and updates. SMS reminders are only available for G Suite customers.
         method?: string,
         // The type of notification. Possible values are:  
         // - "eventCreation" - Notification sent when a new event is put on the calendar. 
@@ -175,6 +175,26 @@ declare module gapi.client.calendar {
         kind?: string,
         // Last modification time of the color palette (as a RFC3339 timestamp). Read-only.
         updated?: string,
+    }
+    
+    interface DeepLinkData {
+        // 
+        links?: Link[],        
+        // 
+        url?: string,
+    }
+    
+    interface DisplayInfo {
+        // 
+        appIconUrl?: string,
+        // 
+        appShortTitle?: string,
+        // 
+        appTitle?: string,
+        // 
+        linkShortTitle?: string,
+        // 
+        linkTitle?: string,
     }
     
     interface Error {
@@ -385,10 +405,17 @@ declare module gapi.client.calendar {
         timeZone?: string,
     }
     
+    interface EventHabitInstance {
+        // Metadata specific to this instance.
+        data?: HabitInstanceData,
+        // Id of the habit this instance belongs to.
+        parentId?: string,
+    }
+    
     interface EventReminder {
         // The method used by this reminder. Possible values are:  
         // - "email" - Reminders are sent via email. 
-        // - "sms" - Reminders are sent via SMS. These are only available for Google Apps for Work, Education, and Government customers. Requests to set SMS reminders for other account types are ignored. 
+        // - "sms" - Reminders are sent via SMS. These are only available for G Suite customers. Requests to set SMS reminders for other account types are ignored. 
         // - "popup" - Reminders are sent via a UI popup.
         method?: string,
         // Number of minutes before the start of the event when the reminder should trigger. Valid values are between 0 and 40320 (4 weeks in minutes).
@@ -470,6 +497,39 @@ declare module gapi.client.calendar {
         timeMax?: string,
         // The start of the interval.
         timeMin?: string,
+    }
+    
+    interface HabitInstanceData {
+        // 
+        status?: string,
+        // 
+        statusInferred?: boolean,
+        // 
+        type?: string,
+    }
+    
+    interface LaunchInfo {
+        // 
+        appId?: string,
+        // 
+        installUrl?: string,
+        // 
+        intentAction?: string,
+        // 
+        uri?: string,
+    }
+    
+    interface Link {
+        // 
+        applinkingSource?: string,
+        // 
+        displayInfo?: DisplayInfo,
+        // 
+        launchInfo?: LaunchInfo,
+        // 
+        platform?: string,
+        // 
+        url?: string,
     }
     
     interface Setting {
@@ -792,7 +852,7 @@ declare module gapi.client.calendar {
             iCalUID?: string,
             // The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.
             maxAttendees?: number,
-            // Maximum number of events returned on one result page. By default the value is 250 events. The page size can never be larger than 2500 events. Optional.
+            // Maximum number of events returned on one result page. The number of events in the resulting page may be less than this value, or none at all, even if there are more events matching the query. Incomplete pages can be detected by a non-empty nextPageToken field in the response. By default the value is 250 events. The page size can never be larger than 2500 events. Optional.
             maxResults?: number,
             // The order of the events returned in the result. Optional. The default is an unspecified, stable order.
             orderBy?: string,
@@ -899,7 +959,7 @@ declare module gapi.client.calendar {
             iCalUID?: string,
             // The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.
             maxAttendees?: number,
-            // Maximum number of events returned on one result page. By default the value is 250 events. The page size can never be larger than 2500 events. Optional.
+            // Maximum number of events returned on one result page. The number of events in the resulting page may be less than this value, or none at all, even if there are more events matching the query. Incomplete pages can be detected by a non-empty nextPageToken field in the response. By default the value is 250 events. The page size can never be larger than 2500 events. Optional.
             maxResults?: number,
             // The order of the events returned in the result. Optional. The default is an unspecified, stable order.
             orderBy?: string,

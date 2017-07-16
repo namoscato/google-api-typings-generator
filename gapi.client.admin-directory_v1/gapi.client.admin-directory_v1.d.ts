@@ -21,7 +21,7 @@ declare module gapi.client.admin {
     
     interface Aliases {
         // List of alias objects.
-        aliases?: Alias[],        
+        aliases?: any[],        
         // ETag of the resource.
         etag?: string,
         // Kind of resource this is.
@@ -133,7 +133,7 @@ declare module gapi.client.admin {
         kind?: string,
         // Date and time the device was last enrolled (Read-only)
         lastEnrollmentTime?: string,
-        // Date and time the device was last synchronized with the policy settings in the Google Apps administrator control panel (Read-only)
+        // Date and time the device was last synchronized with the policy settings in the G Suite administrator control panel (Read-only)
         lastSync?: string,
         // Chromebook Mac Address on wifi network interface (Read-only)
         macAddress?: string,
@@ -168,6 +168,13 @@ declare module gapi.client.admin {
         willAutoRenew?: boolean,
     }
     
+    interface ChromeOsDeviceAction {
+        // Action to be taken on the ChromeOs Device
+        action?: string,
+        // 
+        deprovisionReason?: string,
+    }
+    
     interface ChromeOsDevices {
         // List of Chrome OS Device objects.
         chromeosdevices?: ChromeOsDevice[],        
@@ -188,7 +195,7 @@ declare module gapi.client.admin {
         customerDomain?: string,
         // ETag of the resource.
         etag?: string,
-        // The unique ID for the customer's Google account. (Readonly)
+        // The unique ID for the customer's G Suite account. (Readonly)
         id?: string,
         // Identifies the resource as a customer. Value: admin#directory#customer
         kind?: string,
@@ -316,6 +323,8 @@ declare module gapi.client.admin {
         kind?: string,
         // Role of member
         role?: string,
+        // Status of member (Immutable)
+        status?: string,
         // Type of member (Immutable)
         type?: string,
     }
@@ -349,6 +358,10 @@ declare module gapi.client.admin {
         }[],        
         // Mobile Device Baseband version (Read-only)
         basebandVersion?: string,
+        // Mobile Device Bootloader version (Read-only)
+        bootloaderVersion?: string,
+        // Mobile Device Brand (Read-only)
+        brand?: string,
         // Mobile Device Build number (Read-only)
         buildNumber?: string,
         // The default locale used on the Mobile Device (Read-only)
@@ -359,12 +372,18 @@ declare module gapi.client.admin {
         deviceCompromisedStatus?: string,
         // Mobile Device serial number (Read-only)
         deviceId?: string,
+        // DevicePasswordStatus (Read-only)
+        devicePasswordStatus?: string,
         // List of owner user's email addresses (Read-only)
         email?: string[],        
+        // Mobile Device Encryption Status (Read-only)
+        encryptionStatus?: string,
         // ETag of the resource.
         etag?: string,
-        // Date and time the device was first synchronized with the policy settings in the Google Apps administrator control panel (Read-only)
+        // Date and time the device was first synchronized with the policy settings in the G Suite administrator control panel (Read-only)
         firstSync?: string,
+        // Mobile Device Hardware (Read-only)
+        hardware?: string,
         // Mobile Device Hardware Id (Read-only)
         hardwareId?: string,
         // Mobile Device IMEI number (Read-only)
@@ -373,10 +392,12 @@ declare module gapi.client.admin {
         kernelVersion?: string,
         // Kind of resource this is.
         kind?: string,
-        // Date and time the device was last synchronized with the policy settings in the Google Apps administrator control panel (Read-only)
+        // Date and time the device was last synchronized with the policy settings in the G Suite administrator control panel (Read-only)
         lastSync?: string,
         // Boolean indicating if this account is on owner/primary profile or not (Read-only)
         managedAccountIsOnOwnerProfile?: boolean,
+        // Mobile Device manufacturer (Read-only)
+        manufacturer?: string,
         // Mobile Device MEID number (Read-only)
         meid?: string,
         // Name of the model of the device
@@ -389,8 +410,14 @@ declare module gapi.client.admin {
         os?: string,
         // List of accounts added on device (Read-only)
         otherAccountsInfo?: string[],        
+        // DMAgentPermission (Read-only)
+        privilege?: string,
+        // Mobile Device release version version (Read-only)
+        releaseVersion?: string,
         // Unique identifier of Mobile Device (Read-only)
         resourceId?: string,
+        // Mobile Device Security patch level (Read-only)
+        securityPatchLevel?: string,
         // Mobile Device SSN or Serial Number (Read-only)
         serialNumber?: string,
         // Status of the device (Read-only)
@@ -661,7 +688,7 @@ declare module gapi.client.admin {
         aliases?: string[],        
         // Boolean indicating if the user should change password in next login
         changePasswordAtNextLogin?: boolean,
-        // User's Google account creation time. (Read-only)
+        // User's G Suite account creation time. (Read-only)
         creationTime?: string,
         // Custom fields of the user.
         customSchemas?: any,
@@ -689,12 +716,20 @@ declare module gapi.client.admin {
         isAdmin?: boolean,
         // Boolean indicating if the user is delegated admin (Read-only)
         isDelegatedAdmin?: boolean,
+        // Is 2-step verification enforced (Read-only)
+        isEnforcedIn2Sv?: boolean,
+        // Is enrolled in 2-step verification (Read-only)
+        isEnrolledIn2Sv?: boolean,
         // Is mailbox setup (Read-only)
         isMailboxSetup?: boolean,
         // Kind of resource this is.
         kind?: string,
+        // 
+        languages?: any,
         // User's last login time. (Read-only)
         lastLoginTime?: string,
+        // 
+        locations?: any,
         // User's name
         name?: UserName,
         // List of non editable aliases (Read-only)
@@ -709,10 +744,14 @@ declare module gapi.client.admin {
         password?: string,
         // 
         phones?: any,
+        // 
+        posixAccounts?: any,
         // username of User
         primaryEmail?: string,
         // 
         relations?: any,
+        // 
+        sshPublicKeys?: any,
         // Indicates if user is suspended
         suspended?: boolean,
         // Suspension reason if user is suspended (Read-only)
@@ -799,6 +838,30 @@ declare module gapi.client.admin {
         type?: string,
     }
     
+    interface UserLanguage {
+        // Other language. User can provide own language name if there is no corresponding Google III language code. If this is set LanguageCode can't be set
+        customLanguage?: string,
+        // Language Code. Should be used for storing Google III LanguageCode string representation for language. Illegal values cause SchemaException.
+        languageCode?: string,
+    }
+    
+    interface UserLocation {
+        // Textual location. This is most useful for display purposes to concisely describe the location. For example, "Mountain View, CA", "Near Seattle", "US-NYC-9TH 9A209A".
+        area?: string,
+        // Building Identifier.
+        buildingId?: string,
+        // Custom Type.
+        customType?: string,
+        // Most specific textual code of individual desk location.
+        deskCode?: string,
+        // Floor name/number.
+        floorName?: string,
+        // Floor section. More specific location within the floor. For example, if a floor is divided into sections "A", "B", and "C", this field would identify one of those values.
+        floorSection?: string,
+        // Each entry can have a type which indicates standard types of that entry. For example location could be of types default and desk. In addition to standard type, an entry can have a custom type and can give it any name. Such types should have "custom" as type and also have a customType value.
+        type?: string,
+    }
+    
     interface UserMakeAdmin {
         // Boolean indicating new admin status of the user
         status?: boolean,
@@ -824,6 +887,8 @@ declare module gapi.client.admin {
         description?: string,
         // The domain to which the organization belongs to.
         domain?: string,
+        // The full-time equivalent percent within the organization (100000 = 100%).
+        fullTimeEquivalent?: number,
         // Location of the organization. This need not be fully qualified address.
         location?: string,
         // Name of the organization
@@ -868,6 +933,25 @@ declare module gapi.client.admin {
         width?: number,
     }
     
+    interface UserPosixAccount {
+        // The GECOS (user information) for this account.
+        gecos?: string,
+        // The default group ID.
+        gid?: number,
+        // The path to the home directory for this account.
+        homeDirectory?: string,
+        // If this is user's primary account within the SystemId.
+        primary?: boolean,
+        // The path to the login shell for this account.
+        shell?: string,
+        // System identifier for which account Username or Uid apply to.
+        systemId?: string,
+        // The POSIX compliant user ID.
+        uid?: number,
+        // The username of the account.
+        username?: string,
+    }
+    
     interface UserRelation {
         // Custom Type.
         customType?: string,
@@ -875,6 +959,15 @@ declare module gapi.client.admin {
         type?: string,
         // The name of the relation.
         value?: string,
+    }
+    
+    interface UserSshPublicKey {
+        // An expiration time in microseconds since epoch.
+        expirationTimeUsec?: string,
+        // A SHA-256 fingerprint of the SSH public key. (Read-only)
+        fingerprint?: string,
+        // An SSH public key.
+        key?: string,
     }
     
     interface UserUndelete {
@@ -961,11 +1054,19 @@ declare module gapi.client.admin {
     
     
     interface ChromeosdevicesResource {
+        // Take action on Chrome OS Device
+        action (request: {        
+            // Immutable ID of the G Suite account
+            customerId: string,
+            // Immutable ID of Chrome OS Device
+            resourceId: string,
+        }) : gapi.client.Request<void>;        
+        
         // Retrieve Chrome OS Device
         get (request: {        
-            // Immutable id of the Google Apps account
+            // Immutable ID of the G Suite account
             customerId: string,
-            // Immutable id of Chrome OS Device
+            // Immutable ID of Chrome OS Device
             deviceId: string,
             // Restrict information returned to a set of selected fields.
             projection?: string,
@@ -973,12 +1074,14 @@ declare module gapi.client.admin {
         
         // Retrieve all Chrome OS Devices of a customer (paginated)
         list (request: {        
-            // Immutable id of the Google Apps account
+            // Immutable ID of the G Suite account
             customerId: string,
             // Maximum number of results to return. Default is 100
             maxResults?: number,
             // Column to use for sorting results
             orderBy?: string,
+            // Full path of the organization unit or its Id
+            orgUnitPath?: string,
             // Token to specify next page in the list
             pageToken?: string,
             // Restrict information returned to a set of selected fields.
@@ -991,9 +1094,9 @@ declare module gapi.client.admin {
         
         // Update Chrome OS Device. This method supports patch semantics.
         patch (request: {        
-            // Immutable id of the Google Apps account
+            // Immutable ID of the G Suite account
             customerId: string,
-            // Immutable id of Chrome OS Device
+            // Immutable ID of Chrome OS Device
             deviceId: string,
             // Restrict information returned to a set of selected fields.
             projection?: string,
@@ -1001,9 +1104,9 @@ declare module gapi.client.admin {
         
         // Update Chrome OS Device
         update (request: {        
-            // Immutable id of the Google Apps account
+            // Immutable ID of the G Suite account
             customerId: string,
-            // Immutable id of Chrome OS Device
+            // Immutable ID of Chrome OS Device
             deviceId: string,
             // Restrict information returned to a set of selected fields.
             projection?: string,
@@ -1013,7 +1116,7 @@ declare module gapi.client.admin {
     
     
     interface CustomersResource {
-        // Retrives a customer.
+        // Retrieves a customer.
         get (request: {        
             // Id of the customer to be retrieved
             customerKey: string,
@@ -1037,7 +1140,7 @@ declare module gapi.client.admin {
     interface DomainAliasesResource {
         // Deletes a Domain Alias of the customer.
         delete (request: {        
-            // Immutable id of the Google Apps account.
+            // Immutable ID of the G Suite account.
             customer: string,
             // Name of domain alias to be retrieved.
             domainAliasName: string,
@@ -1045,7 +1148,7 @@ declare module gapi.client.admin {
         
         // Retrieves a domain alias of the customer.
         get (request: {        
-            // Immutable id of the Google Apps account.
+            // Immutable ID of the G Suite account.
             customer: string,
             // Name of domain alias to be retrieved.
             domainAliasName: string,
@@ -1053,13 +1156,13 @@ declare module gapi.client.admin {
         
         // Inserts a Domain alias of the customer.
         insert (request: {        
-            // Immutable id of the Google Apps account.
+            // Immutable ID of the G Suite account.
             customer: string,
         }) : gapi.client.Request<DomainAlias>;        
         
         // Lists the domain aliases of the customer.
         list (request: {        
-            // Immutable id of the Google Apps account.
+            // Immutable ID of the G Suite account.
             customer: string,
             // Name of the parent domain for which domain aliases are to be fetched.
             parentDomainName?: string,
@@ -1071,15 +1174,15 @@ declare module gapi.client.admin {
     interface DomainsResource {
         // Deletes a domain of the customer.
         delete (request: {        
-            // Immutable id of the Google Apps account.
+            // Immutable ID of the G Suite account.
             customer: string,
             // Name of domain to be deleted
             domainName: string,
         }) : gapi.client.Request<void>;        
         
-        // Retrives a domain of the customer.
+        // Retrieves a domain of the customer.
         get (request: {        
-            // Immutable id of the Google Apps account.
+            // Immutable ID of the G Suite account.
             customer: string,
             // Name of domain to be retrieved
             domainName: string,
@@ -1087,13 +1190,13 @@ declare module gapi.client.admin {
         
         // Inserts a domain of the customer.
         insert (request: {        
-            // Immutable id of the Google Apps account.
+            // Immutable ID of the G Suite account.
             customer: string,
         }) : gapi.client.Request<Domains>;        
         
         // Lists the domains of the customer.
         list (request: {        
-            // Immutable id of the Google Apps account.
+            // Immutable ID of the G Suite account.
             customer: string,
         }) : gapi.client.Request<Domains2>;        
         
@@ -1143,7 +1246,7 @@ declare module gapi.client.admin {
         
         // Retrieve all groups in a domain (paginated)
         list (request: {        
-            // Immutable id of the Google Apps account. In case of multi-domain, to fetch all groups for a customer, fill this field instead of domain.
+            // Immutable ID of the G Suite account. In case of multi-domain, to fetch all groups for a customer, fill this field instead of domain.
             customer?: string,
             // Name of the domain. Fill this field to get groups from only this domain. To return all groups in a multi-domain fill customer field instead.
             domain?: string,
@@ -1228,33 +1331,33 @@ declare module gapi.client.admin {
     interface MobiledevicesResource {
         // Take action on Mobile Device
         action (request: {        
-            // Immutable id of the Google Apps account
+            // Immutable ID of the G Suite account
             customerId: string,
-            // Immutable id of Mobile Device
+            // Immutable ID of Mobile Device
             resourceId: string,
         }) : gapi.client.Request<void>;        
         
         // Delete Mobile Device
         delete (request: {        
-            // Immutable id of the Google Apps account
+            // Immutable ID of the G Suite account
             customerId: string,
-            // Immutable id of Mobile Device
+            // Immutable ID of Mobile Device
             resourceId: string,
         }) : gapi.client.Request<void>;        
         
         // Retrieve Mobile Device
         get (request: {        
-            // Immutable id of the Google Apps account
+            // Immutable ID of the G Suite account
             customerId: string,
             // Restrict information returned to a set of selected fields.
             projection?: string,
-            // Immutable id of Mobile Device
+            // Immutable ID of Mobile Device
             resourceId: string,
         }) : gapi.client.Request<MobileDevice>;        
         
         // Retrieve all Mobile Devices of a customer (paginated)
         list (request: {        
-            // Immutable id of the Google Apps account
+            // Immutable ID of the G Suite account
             customerId: string,
             // Maximum number of results to return. Default is 100
             maxResults?: number,
@@ -1276,7 +1379,7 @@ declare module gapi.client.admin {
     interface NotificationsResource {
         // Deletes a notification
         delete (request: {        
-            // The unique ID for the customer's Google account. The customerId is also returned as part of the Users resource.
+            // The unique ID for the customer's G Suite account. The customerId is also returned as part of the Users resource.
             customer: string,
             // The unique ID of the notification.
             notificationId: string,
@@ -1284,7 +1387,7 @@ declare module gapi.client.admin {
         
         // Retrieves a notification.
         get (request: {        
-            // The unique ID for the customer's Google account. The customerId is also returned as part of the Users resource.
+            // The unique ID for the customer's G Suite account. The customerId is also returned as part of the Users resource.
             customer: string,
             // The unique ID of the notification.
             notificationId: string,
@@ -1292,7 +1395,7 @@ declare module gapi.client.admin {
         
         // Retrieves a list of notifications.
         list (request: {        
-            // The unique ID for the customer's Google account.
+            // The unique ID for the customer's G Suite account.
             customer: string,
             // The ISO 639-1 code of the language notifications are returned in. The default is English (en).
             language?: string,
@@ -1304,7 +1407,7 @@ declare module gapi.client.admin {
         
         // Updates a notification. This method supports patch semantics.
         patch (request: {        
-            // The unique ID for the customer's Google account.
+            // The unique ID for the customer's G Suite account.
             customer: string,
             // The unique ID of the notification.
             notificationId: string,
@@ -1312,7 +1415,7 @@ declare module gapi.client.admin {
         
         // Updates a notification.
         update (request: {        
-            // The unique ID for the customer's Google account.
+            // The unique ID for the customer's G Suite account.
             customer: string,
             // The unique ID of the notification.
             notificationId: string,
@@ -1324,7 +1427,7 @@ declare module gapi.client.admin {
     interface OrgunitsResource {
         // Remove Organization Unit
         delete (request: {        
-            // Immutable id of the Google Apps account
+            // Immutable ID of the G Suite account
             customerId: string,
             // Full path of the organization unit or its Id
             orgUnitPath: string,
@@ -1332,7 +1435,7 @@ declare module gapi.client.admin {
         
         // Retrieve Organization Unit
         get (request: {        
-            // Immutable id of the Google Apps account
+            // Immutable ID of the G Suite account
             customerId: string,
             // Full path of the organization unit or its Id
             orgUnitPath: string,
@@ -1340,13 +1443,13 @@ declare module gapi.client.admin {
         
         // Add Organization Unit
         insert (request: {        
-            // Immutable id of the Google Apps account
+            // Immutable ID of the G Suite account
             customerId: string,
         }) : gapi.client.Request<OrgUnit>;        
         
         // Retrieve all Organization Units
         list (request: {        
-            // Immutable id of the Google Apps account
+            // Immutable ID of the G Suite account
             customerId: string,
             // the URL-encoded organization unit's path or its Id
             orgUnitPath?: string,
@@ -1356,7 +1459,7 @@ declare module gapi.client.admin {
         
         // Update Organization Unit. This method supports patch semantics.
         patch (request: {        
-            // Immutable id of the Google Apps account
+            // Immutable ID of the G Suite account
             customerId: string,
             // Full path of the organization unit or its Id
             orgUnitPath: string,
@@ -1364,7 +1467,7 @@ declare module gapi.client.admin {
         
         // Update Organization Unit
         update (request: {        
-            // Immutable id of the Google Apps account
+            // Immutable ID of the G Suite account
             customerId: string,
             // Full path of the organization unit or its Id
             orgUnitPath: string,
@@ -1376,7 +1479,7 @@ declare module gapi.client.admin {
     interface PrivilegesResource {
         // Retrieves a paginated list of all privileges for a customer.
         list (request: {        
-            // Immutable ID of the Google Apps account.
+            // Immutable ID of the G Suite account.
             customer: string,
         }) : gapi.client.Request<Privileges>;        
         
@@ -1388,7 +1491,7 @@ declare module gapi.client.admin {
         delete (request: {        
             // The unique ID of the calendar resource to delete.
             calendarResourceId: string,
-            // The unique ID for the customer's Google account. As an account administrator, you can also use the my_customer alias to represent your account's customer ID.
+            // The unique ID for the customer's G Suite account. As an account administrator, you can also use the my_customer alias to represent your account's customer ID.
             customer: string,
         }) : gapi.client.Request<void>;        
         
@@ -1396,19 +1499,19 @@ declare module gapi.client.admin {
         get (request: {        
             // The unique ID of the calendar resource to retrieve.
             calendarResourceId: string,
-            // The unique ID for the customer's Google account. As an account administrator, you can also use the my_customer alias to represent your account's customer ID.
+            // The unique ID for the customer's G Suite account. As an account administrator, you can also use the my_customer alias to represent your account's customer ID.
             customer: string,
         }) : gapi.client.Request<CalendarResource>;        
         
         // Inserts a calendar resource.
         insert (request: {        
-            // The unique ID for the customer's Google account. As an account administrator, you can also use the my_customer alias to represent your account's customer ID.
+            // The unique ID for the customer's G Suite account. As an account administrator, you can also use the my_customer alias to represent your account's customer ID.
             customer: string,
         }) : gapi.client.Request<CalendarResource>;        
         
         // Retrieves a list of calendar resources for an account.
         list (request: {        
-            // The unique ID for the customer's Google account. As an account administrator, you can also use the my_customer alias to represent your account's customer ID.
+            // The unique ID for the customer's G Suite account. As an account administrator, you can also use the my_customer alias to represent your account's customer ID.
             customer: string,
             // Maximum number of results to return.
             maxResults?: number,
@@ -1420,7 +1523,7 @@ declare module gapi.client.admin {
         patch (request: {        
             // The unique ID of the calendar resource to update.
             calendarResourceId: string,
-            // The unique ID for the customer's Google account. As an account administrator, you can also use the my_customer alias to represent your account's customer ID.
+            // The unique ID for the customer's G Suite account. As an account administrator, you can also use the my_customer alias to represent your account's customer ID.
             customer: string,
         }) : gapi.client.Request<CalendarResource>;        
         
@@ -1428,7 +1531,7 @@ declare module gapi.client.admin {
         update (request: {        
             // The unique ID of the calendar resource to update.
             calendarResourceId: string,
-            // The unique ID for the customer's Google account. As an account administrator, you can also use the my_customer alias to represent your account's customer ID.
+            // The unique ID for the customer's G Suite account. As an account administrator, you can also use the my_customer alias to represent your account's customer ID.
             customer: string,
         }) : gapi.client.Request<CalendarResource>;        
         
@@ -1443,7 +1546,7 @@ declare module gapi.client.admin {
     interface RoleAssignmentsResource {
         // Deletes a role assignment.
         delete (request: {        
-            // Immutable ID of the Google Apps account.
+            // Immutable ID of the G Suite account.
             customer: string,
             // Immutable ID of the role assignment.
             roleAssignmentId: string,
@@ -1451,7 +1554,7 @@ declare module gapi.client.admin {
         
         // Retrieve a role assignment.
         get (request: {        
-            // Immutable ID of the Google Apps account.
+            // Immutable ID of the G Suite account.
             customer: string,
             // Immutable ID of the role assignment.
             roleAssignmentId: string,
@@ -1459,13 +1562,13 @@ declare module gapi.client.admin {
         
         // Creates a role assignment.
         insert (request: {        
-            // Immutable ID of the Google Apps account.
+            // Immutable ID of the G Suite account.
             customer: string,
         }) : gapi.client.Request<RoleAssignment>;        
         
         // Retrieves a paginated list of all roleAssignments.
         list (request: {        
-            // Immutable ID of the Google Apps account.
+            // Immutable ID of the G Suite account.
             customer: string,
             // Maximum number of results to return.
             maxResults?: number,
@@ -1483,7 +1586,7 @@ declare module gapi.client.admin {
     interface RolesResource {
         // Deletes a role.
         delete (request: {        
-            // Immutable ID of the Google Apps account.
+            // Immutable ID of the G Suite account.
             customer: string,
             // Immutable ID of the role.
             roleId: string,
@@ -1491,7 +1594,7 @@ declare module gapi.client.admin {
         
         // Retrieves a role.
         get (request: {        
-            // Immutable ID of the Google Apps account.
+            // Immutable ID of the G Suite account.
             customer: string,
             // Immutable ID of the role.
             roleId: string,
@@ -1499,13 +1602,13 @@ declare module gapi.client.admin {
         
         // Creates a role.
         insert (request: {        
-            // Immutable ID of the Google Apps account.
+            // Immutable ID of the G Suite account.
             customer: string,
         }) : gapi.client.Request<Role>;        
         
         // Retrieves a paginated list of all the roles in a domain.
         list (request: {        
-            // Immutable id of the Google Apps account.
+            // Immutable ID of the G Suite account.
             customer: string,
             // Maximum number of results to return.
             maxResults?: number,
@@ -1515,7 +1618,7 @@ declare module gapi.client.admin {
         
         // Updates a role. This method supports patch semantics.
         patch (request: {        
-            // Immutable ID of the Google Apps account.
+            // Immutable ID of the G Suite account.
             customer: string,
             // Immutable ID of the role.
             roleId: string,
@@ -1523,7 +1626,7 @@ declare module gapi.client.admin {
         
         // Updates a role.
         update (request: {        
-            // Immutable ID of the Google Apps account.
+            // Immutable ID of the G Suite account.
             customer: string,
             // Immutable ID of the role.
             roleId: string,
@@ -1535,7 +1638,7 @@ declare module gapi.client.admin {
     interface SchemasResource {
         // Delete schema
         delete (request: {        
-            // Immutable id of the Google Apps account
+            // Immutable ID of the G Suite account
             customerId: string,
             // Name or immutable Id of the schema
             schemaKey: string,
@@ -1543,7 +1646,7 @@ declare module gapi.client.admin {
         
         // Retrieve schema
         get (request: {        
-            // Immutable id of the Google Apps account
+            // Immutable ID of the G Suite account
             customerId: string,
             // Name or immutable Id of the schema
             schemaKey: string,
@@ -1551,19 +1654,19 @@ declare module gapi.client.admin {
         
         // Create schema.
         insert (request: {        
-            // Immutable id of the Google Apps account
+            // Immutable ID of the G Suite account
             customerId: string,
         }) : gapi.client.Request<Schema>;        
         
         // Retrieve all schemas for a customer
         list (request: {        
-            // Immutable id of the Google Apps account
+            // Immutable ID of the G Suite account
             customerId: string,
         }) : gapi.client.Request<Schemas>;        
         
         // Update schema. This method supports patch semantics.
         patch (request: {        
-            // Immutable id of the Google Apps account
+            // Immutable ID of the G Suite account
             customerId: string,
             // Name or immutable Id of the schema.
             schemaKey: string,
@@ -1571,7 +1674,7 @@ declare module gapi.client.admin {
         
         // Update schema
         update (request: {        
-            // Immutable id of the Google Apps account
+            // Immutable ID of the G Suite account
             customerId: string,
             // Name or immutable Id of the schema.
             schemaKey: string,
@@ -1695,7 +1798,7 @@ declare module gapi.client.admin {
         list (request: {        
             // Comma-separated list of schema names. All fields from these schemas are fetched. This should only be set when projection=custom.
             customFieldMask?: string,
-            // Immutable id of the Google Apps account. In case of multi-domain, to fetch all users for a customer, fill this field instead of domain.
+            // Immutable ID of the G Suite account. In case of multi-domain, to fetch all users for a customer, fill this field instead of domain.
             customer?: string,
             // Name of the domain. Fill this field to get users from only this domain. To return all users in a multi-domain fill customer field instead.
             domain?: string,
@@ -1747,7 +1850,7 @@ declare module gapi.client.admin {
         watch (request: {        
             // Comma-separated list of schema names. All fields from these schemas are fetched. This should only be set when projection=custom.
             customFieldMask?: string,
-            // Immutable id of the Google Apps account. In case of multi-domain, to fetch all users for a customer, fill this field instead of domain.
+            // Immutable ID of the G Suite account. In case of multi-domain, to fetch all users for a customer, fill this field instead of domain.
             customer?: string,
             // Name of the domain. Fill this field to get users from only this domain. To return all users in a multi-domain fill customer field instead.
             domain?: string,

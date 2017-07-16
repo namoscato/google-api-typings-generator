@@ -18,7 +18,29 @@ declare module gapi.client.doubleclickbidmanager {
     }
     
     interface DownloadLineItemsResponse {
-        // Retrieved line items in CSV format. Refer to  Entity Write File Format or  Structured Data File Format for more information on file formats.
+        // Retrieved line items in CSV format. For more information about file formats, see  Entity Write File Format.
+        lineItems?: string,
+    }
+    
+    interface DownloadRequest {
+        // File types that will be returned.
+        fileTypes?: string[],        
+        // The IDs of the specified filter type. This is used to filter entities to fetch. At least one ID must be specified. Only one ID is allowed for the ADVERTISER_ID filter type. For INSERTION_ORDER_ID or LINE_ITEM_ID filter types, all IDs must be from the same Advertiser.
+        filterIds?: string[],        
+        // Filter type used to filter line items to fetch.
+        filterType?: string,
+        // SDF Version (column names, types, order) in which the entities will be returned. Default to 3.
+        version?: string,
+    }
+    
+    interface DownloadResponse {
+        // Retrieved ad groups in SDF format.
+        adGroups?: string,
+        // Retrieved ads in SDF format.
+        ads?: string,
+        // Retrieved insertion orders in SDF format.
+        insertionOrders?: string,
+        // Retrieved line items in SDF format.
         lineItems?: string,
     }
     
@@ -41,32 +63,6 @@ declare module gapi.client.doubleclickbidmanager {
         kind?: string,
         // Retrieved reports.
         reports?: Report[],        
-    }
-    
-    interface Note {
-        // Note id.
-        id?: string,
-        // Message from publisher.
-        message?: string,
-        // Equals "publisher" for notification from Rubicon.
-        source?: string,
-        // Time when the note was added, e.g. "2015-12-16T17:25:35.000-08:00".
-        timestamp?: string,
-        // Publisher user name.
-        username?: string,
-    }
-    
-    interface NotifyProposalChangeRequest {
-        // Action taken by publisher. One of: Accept, Decline, Append
-        action?: string,
-        // URL to access proposal detail.
-        href?: string,
-        // Below are contents of notification from Rubicon. Proposal id.
-        id?: string,
-        // Notes from publisher
-        notes?: Note[],        
-        // Deal token, available when proposal is accepted by publisher.
-        token?: string,
     }
     
     interface Parameters {
@@ -281,10 +277,10 @@ declare module gapi.client.doubleclickbidmanager {
     }
     
     
-    interface RubiconResource {
-        // Update proposal upon actions of Rubicon publisher.
-        notifyproposalchange (request: {        
-        }) : gapi.client.Request<void>;        
+    interface SdfResource {
+        // Retrieves entities in SDF format.
+        download (request: {        
+        }) : gapi.client.Request<DownloadResponse>;        
         
     }
     
@@ -297,6 +293,6 @@ declare module gapi.client.doubleclickbidmanager {
     
     var reports: gapi.client.doubleclickbidmanager.ReportsResource; 
     
-    var rubicon: gapi.client.doubleclickbidmanager.RubiconResource; 
+    var sdf: gapi.client.doubleclickbidmanager.SdfResource; 
     
 }

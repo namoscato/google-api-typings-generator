@@ -1,4 +1,4 @@
-// Type definitions for Google Google Apps Activity API v1
+// Type definitions for Google G Suite Activity API v1
 // Project: https://developers.google.com/google-apps/activity/
 // Definitions by: Bolisov Alexey
 
@@ -103,6 +103,8 @@ declare module gapi.client.appsactivity {
     interface User {
         // A boolean which indicates whether the specified User was deleted. If true, name, photo and permission_id will be omitted.
         isDeleted?: boolean,
+        // Whether the user is the authenticated user.
+        isMe?: boolean,
         // The displayable name of the user.
         name?: string,
         // The permission ID associated with this user. Equivalent to the Drive API's permission ID for this user, returned as part of the Drive Permissions resource.

@@ -164,7 +164,7 @@ declare module gapi.client.admin {
             applicationName: string,
             // Represents the customer for which the data is to be fetched.
             customerId?: string,
-            // Return events which occured at or before this time.
+            // Return events which occurred at or before this time.
             endTime?: string,
             // Name of the event being queried.
             eventName?: string,
@@ -174,7 +174,7 @@ declare module gapi.client.admin {
             maxResults?: number,
             // Token to specify next page.
             pageToken?: string,
-            // Return events which occured at or after this time.
+            // Return events which occurred at or after this time.
             startTime?: string,
             // Represents the profile id or the user email for which the data should be filtered. When 'all' is specified as the userKey, it returns usageReports for all users.
             userKey: string,
@@ -188,7 +188,7 @@ declare module gapi.client.admin {
             applicationName: string,
             // Represents the customer for which the data is to be fetched.
             customerId?: string,
-            // Return events which occured at or before this time.
+            // Return events which occurred at or before this time.
             endTime?: string,
             // Name of the event being queried.
             eventName?: string,
@@ -198,7 +198,7 @@ declare module gapi.client.admin {
             maxResults?: number,
             // Token to specify next page.
             pageToken?: string,
-            // Return events which occured at or after this time.
+            // Return events which occurred at or after this time.
             startTime?: string,
             // Represents the profile id or the user email for which the data should be filtered. When 'all' is specified as the userKey, it returns usageReports for all users.
             userKey: string,

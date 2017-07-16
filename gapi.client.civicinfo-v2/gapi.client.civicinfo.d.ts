@@ -22,6 +22,8 @@ declare module gapi.client.civicinfo {
     interface AdministrativeBody {
         // A URL provided by this administrative body for information on absentee voting.
         absenteeVotingInfoUrl?: string,
+        // 
+        addressLines?: string[],        
         // A URL provided by this administrative body to give contest information to the voter.
         ballotInfoUrl?: string,
         // The mailing address of this administrative body.
@@ -55,7 +57,7 @@ declare module gapi.client.civicinfo {
         channels?: Channel[],        
         // The email address for the candidate's campaign.
         email?: string,
-        // The candidate's name.
+        // The candidate's name. If this is a joint ticket it will indicate the name of the candidate at the top of a ticket followed by a / and that name of candidate at the bottom of the ticket. e.g. "Mitt Romney / Paul Ryan"
         name?: string,
         // The order the candidate appears on the ballot for this contest.
         orderOnBallot?: string,
@@ -95,7 +97,7 @@ declare module gapi.client.civicinfo {
         office?: string,
         // If this is a partisan election, the name of the party it is for.
         primaryParty?: string,
-        // The set of ballot responses for the referendum. A ballot response represents a line on the ballot. Common examples might include "yes" or "no" for referenda, or a judge's name for a retention contest. This field is only populated for contests of type 'Referendum'.
+        // The set of ballot responses for the referendum. A ballot response represents a line on the ballot. Common examples might include "yes" or "no" for referenda. This field is only populated for contests of type 'Referendum'.
         referendumBallotResponses?: string[],        
         // Specifies a short summary of the referendum that is typically on the ballot below the title but above the text. This field is only populated for contests of type 'Referendum'.
         referendumBrief?: string,
@@ -121,8 +123,23 @@ declare module gapi.client.civicinfo {
         sources?: Source[],        
         // "Yes" or "No" depending on whether this a contest being held outside the normal election cycle.
         special?: string,
-        // The type of contest. Usually this will be 'General', 'Primary', or 'Run-off' for contests with candidates. For referenda this will be 'Referendum'.
+        // The type of contest. Usually this will be 'General', 'Primary', or 'Run-off' for contests with candidates. For referenda this will be 'Referendum'. For Retention contests this will typically be 'Retention'.
         type?: string,
+    }
+    
+    interface ContextParams {
+        // 
+        clientProfile?: string,
+    }
+    
+    interface DivisionRepresentativeInfoRequest {
+        // 
+        contextParams?: ContextParams,
+    }
+    
+    interface DivisionSearchRequest {
+        // 
+        contextParams?: ContextParams,
     }
     
     interface DivisionSearchResponse {
@@ -165,6 +182,11 @@ declare module gapi.client.civicinfo {
         title?: string,
     }
     
+    interface ElectionsQueryRequest {
+        // 
+        contextParams?: ContextParams,
+    }
+    
     interface ElectionsQueryResponse {
         // A list of available elections
         elections?: Election[],        
@@ -175,6 +197,8 @@ declare module gapi.client.civicinfo {
     interface ElectoralDistrict {
         // An identifier for this district, relative to its scope. For example, the 34th State Senate district would have id "34" and a scope of stateUpper.
         id?: string,
+        // 
+        kgForeignKey?: string,
         // The name of the district.
         name?: string,
         // The geographic scope of this district. If unspecified the district's geography is not known. One of: national, statewide, congressional, stateUpper, stateLower, countywide, judicial, schoolBoard, cityWide, township, countyCouncil, cityCouncil, ward, special
@@ -249,6 +273,71 @@ declare module gapi.client.civicinfo {
         voterServices?: string,
     }
     
+    interface PostalAddress {
+        // 
+        addressLines?: string[],        
+        // 
+        administrativeAreaName?: string,
+        // 
+        countryName?: string,
+        // 
+        countryNameCode?: string,
+        // 
+        dependentLocalityName?: string,
+        // 
+        dependentThoroughfareLeadingType?: string,
+        // 
+        dependentThoroughfareName?: string,
+        // 
+        dependentThoroughfarePostDirection?: string,
+        // 
+        dependentThoroughfarePreDirection?: string,
+        // 
+        dependentThoroughfareTrailingType?: string,
+        // 
+        dependentThoroughfaresConnector?: string,
+        // 
+        dependentThoroughfaresIndicator?: string,
+        // 
+        dependentThoroughfaresType?: string,
+        // 
+        firmName?: string,
+        // 
+        isDisputed?: boolean,
+        // 
+        languageCode?: string,
+        // 
+        localityName?: string,
+        // 
+        postBoxNumber?: string,
+        // 
+        postalCodeNumber?: string,
+        // 
+        postalCodeNumberExtension?: string,
+        // 
+        premiseName?: string,
+        // 
+        recipientName?: string,
+        // 
+        sortingCode?: string,
+        // 
+        subAdministrativeAreaName?: string,
+        // 
+        subPremiseName?: string,
+        // 
+        thoroughfareLeadingType?: string,
+        // 
+        thoroughfareName?: string,
+        // 
+        thoroughfareNumber?: string,
+        // 
+        thoroughfarePostDirection?: string,
+        // 
+        thoroughfarePreDirection?: string,
+        // 
+        thoroughfareTrailingType?: string,
+    }
+    
     interface RepresentativeInfoData {
         // Political geographic divisions that contain the requested address.
         divisions?: any,
@@ -256,6 +345,11 @@ declare module gapi.client.civicinfo {
         offices?: Office[],        
         // Officials holding the offices listed above. Will only be present if includeOffices was true in the request.
         officials?: Official[],        
+    }
+    
+    interface RepresentativeInfoRequest {
+        // 
+        contextParams?: ContextParams,
     }
     
     interface RepresentativeInfoResponse {
@@ -295,6 +389,13 @@ declare module gapi.client.civicinfo {
         official?: boolean,
     }
     
+    interface VoterInfoRequest {
+        // 
+        contextParams?: ContextParams,
+        // 
+        voterInfoSegmentResult?: VoterInfoSegmentResult,
+    }
+    
     interface VoterInfoResponse {
         // Contests that will appear on the voter's ballot.
         contests?: Contest[],        
@@ -320,6 +421,17 @@ declare module gapi.client.civicinfo {
         state?: AdministrationRegion[],        
     }
     
+    interface VoterInfoSegmentResult {
+        // 
+        generatedMillis?: string,
+        // 
+        postalAddress?: PostalAddress,
+        // 
+        request?: VoterInfoRequest,
+        // 
+        response?: VoterInfoResponse,
+    }
+    
     interface DivisionsResource {
         // Searches for political divisions by their natural name or OCD ID.
         search (request: {        
@@ -343,6 +455,8 @@ declare module gapi.client.civicinfo {
             electionId?: string,
             // If set to true, only data from official state sources will be returned.
             officialOnly?: boolean,
+            // If set to true, the query will return the success codeand include any partial information when it is unable to determine a matching address or unable to determine the election for electionId=0 queries.
+            returnAllAvailableData?: boolean,
         }) : gapi.client.Request<VoterInfoResponse>;        
         
     }

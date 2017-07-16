@@ -727,6 +727,8 @@ declare module gapi.client.analytics {
         }[],        
         // Determines if Analytics data contains samples.
         containsSampledData?: boolean,
+        // The last refreshed time in seconds for Analytics data.
+        dataLastRefreshed?: string,
         // 
         dataTable?: {        
             // 
@@ -918,6 +920,42 @@ declare module gapi.client.analytics {
         username?: string,
     }
     
+    interface IncludeConditions {
+        // The look-back window lets you specify a time frame for evaluating the behavior that qualifies users for your audience. For example, if your filters include users from Central Asia, and Transactions Greater than 2, and you set the look-back window to 14 days, then any user from Central Asia whose cumulative transactions exceed 2 during the last 14 days is added to the audience.
+        daysToLookBack?: number,
+        // Boolean indicating whether this segment is a smart list. https://support.google.com/analytics/answer/4628577
+        isSmartList?: boolean,
+        // Resource type for include conditions.
+        kind?: string,
+        // Number of days (in the range 1 to 540) a user remains in the audience.
+        membershipDurationDays?: number,
+        // The segment condition that will cause a user to be added to an audience.
+        segment?: string,
+    }
+    
+    interface LinkedForeignAccount {
+        // Account ID to which this linked foreign account belongs.
+        accountId?: string,
+        // Boolean indicating whether this is eligible for search.
+        eligibleForSearch?: boolean,
+        // Entity ad account link ID.
+        id?: string,
+        // Internal ID for the web property to which this linked foreign account belongs.
+        internalWebPropertyId?: string,
+        // Resource type for linked foreign account.
+        kind?: string,
+        // The foreign account ID. For example the an AdWords `linkedAccountId` has the following format XXX-XXX-XXXX.
+        linkedAccountId?: string,
+        // Remarketing audience ID to which this linked foreign account belongs.
+        remarketingAudienceId?: string,
+        // The status of this foreign account link.
+        status?: string,
+        // The type of the foreign account. For example `ADWORDS_LINKS`.
+        type?: string,
+        // Web property ID of the form UA-XXXXX-YY to which this linked foreign account belongs.
+        webPropertyId?: string,
+    }
+    
     interface McfData {
         // Column headers that list dimension names followed by the metric names. The order of dimensions and metrics is same as specified in the request.
         columnHeaders?: {        
@@ -1019,7 +1057,7 @@ declare module gapi.client.analytics {
         // Time this view (profile) was created.
         created?: string,
         // The currency type associated with this view (profile), defaults to USD. The supported values are:
-        // ARS, AUD, BGN, BRL, CAD, CHF, CNY, CZK, DKK, EUR, GBP, HKD, HUF, IDR, INR, JPY, KRW, LTL, MXN, NOK, NZD, PHP, PLN, RUB, SEK, THB, TRY, TWD, USD, VND, ZAR
+        // USD, JPY, EUR, GBP, AUD, KRW, BRL, CNY, DKK, RUB, SEK, NOK, PLN, TRY, TWD, HKD, THB, IDR, ARS, MXN, VND, PHP, INR, CHF, CAD, CZK, NZD, HUF, BGN, LTL, ZAR, UAH, AED, BOB, CLP, COP, EGP, HRK, ILS, MAD, MYR, PEN, PKR, RON, RSD, SAR, SGD, VEF, LVL
         currency?: string,
         // Default page for this view (profile).
         defaultPage?: string,
@@ -1212,6 +1250,69 @@ declare module gapi.client.analytics {
         totalsForAllResults?: any,
     }
     
+    interface RemarketingAudience {
+        // Account ID to which this remarketing audience belongs.
+        accountId?: string,
+        // The simple audience definition that will cause a user to be added to an audience.
+        audienceDefinition?: {        
+            // Defines the conditions to include users to the audience.
+            includeConditions?: IncludeConditions,
+        },        
+        // The type of audience, either SIMPLE or STATE_BASED.
+        audienceType?: string,
+        // Time this remarketing audience was created.
+        created?: string,
+        // The description of this remarketing audience.
+        description?: string,
+        // Remarketing Audience ID.
+        id?: string,
+        // Internal ID for the web property to which this remarketing audience belongs.
+        internalWebPropertyId?: string,
+        // Collection type.
+        kind?: string,
+        // The linked ad accounts associated with this remarketing audience. A remarketing audience can have only one linkedAdAccount currently.
+        linkedAdAccounts?: LinkedForeignAccount[],        
+        // The views (profiles) that this remarketing audience is linked to.
+        linkedViews?: string[],        
+        // The name of this remarketing audience.
+        name?: string,
+        // A state based audience definition that will cause a user to be added or removed from an audience.
+        stateBasedAudienceDefinition?: {        
+            // Defines the conditions to exclude users from the audience.
+            excludeConditions?: {            
+                // Whether to make the exclusion TEMPORARY or PERMANENT.
+                exclusionDuration?: string,
+                // The segment condition that will cause a user to be removed from an audience.
+                segment?: string,
+            },            
+            // Defines the conditions to include users to the audience.
+            includeConditions?: IncludeConditions,
+        },        
+        // Time this remarketing audience was last modified.
+        updated?: string,
+        // Web property ID of the form UA-XXXXX-YY to which this remarketing audience belongs.
+        webPropertyId?: string,
+    }
+    
+    interface RemarketingAudiences {
+        // A list of remarketing audiences.
+        items?: RemarketingAudience[],        
+        // The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.
+        itemsPerPage?: number,
+        // Collection type.
+        kind?: string,
+        // Link to next page for this remarketing audience collection.
+        nextLink?: string,
+        // Link to previous page for this view (profile) collection.
+        previousLink?: string,
+        // The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter.
+        startIndex?: number,
+        // The total number of results for the query, regardless of the number of results in the response.
+        totalResults?: number,
+        // Email ID of the authenticated user
+        username?: string,
+    }
+    
     interface Segment {
         // Time the segment was created.
         created?: string,
@@ -1266,7 +1367,7 @@ declare module gapi.client.analytics {
         created?: string,
         // The dimensions for the unsampled report.
         dimensions?: string,
-        // The type of download you need to use for the report data file.
+        // The type of download you need to use for the report data file. Possible values include `GOOGLE_DRIVE` and `GOOGLE_CLOUD_STORAGE`. If the value is `GOOGLE_DRIVE`, see the `driveDownloadDetails` field. If the value is `GOOGLE_CLOUD_STORAGE`, see the `cloudStorageDownloadDetails` field.
         downloadType?: string,
         // Download details for a file stored in Google Drive.
         driveDownloadDetails?: {        
@@ -2129,6 +2230,72 @@ declare module gapi.client.analytics {
     }
     
     
+    interface RemarketingAudienceResource {
+        // Delete a remarketing audience.
+        delete (request: {        
+            // Account ID to which the remarketing audience belongs.
+            accountId: string,
+            // The ID of the remarketing audience to delete.
+            remarketingAudienceId: string,
+            // Web property ID to which the remarketing audience belongs.
+            webPropertyId: string,
+        }) : gapi.client.Request<void>;        
+        
+        // Gets a remarketing audience to which the user has access.
+        get (request: {        
+            // The account ID of the remarketing audience to retrieve.
+            accountId: string,
+            // The ID of the remarketing audience to retrieve.
+            remarketingAudienceId: string,
+            // The web property ID of the remarketing audience to retrieve.
+            webPropertyId: string,
+        }) : gapi.client.Request<RemarketingAudience>;        
+        
+        // Creates a new remarketing audience.
+        insert (request: {        
+            // The account ID for which to create the remarketing audience.
+            accountId: string,
+            // Web property ID for which to create the remarketing audience.
+            webPropertyId: string,
+        }) : gapi.client.Request<RemarketingAudience>;        
+        
+        // Lists remarketing audiences to which the user has access.
+        list (request: {        
+            // The account ID of the remarketing audiences to retrieve.
+            accountId: string,
+            // The maximum number of remarketing audiences to include in this response.
+            max-results?: number,
+            // An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+            start-index?: number,
+            // 
+            type?: string,
+            // The web property ID of the remarketing audiences to retrieve.
+            webPropertyId: string,
+        }) : gapi.client.Request<RemarketingAudiences>;        
+        
+        // Updates an existing remarketing audience. This method supports patch semantics.
+        patch (request: {        
+            // The account ID of the remarketing audience to update.
+            accountId: string,
+            // The ID of the remarketing audience to update.
+            remarketingAudienceId: string,
+            // The web property ID of the remarketing audience to update.
+            webPropertyId: string,
+        }) : gapi.client.Request<RemarketingAudience>;        
+        
+        // Updates an existing remarketing audience.
+        update (request: {        
+            // The account ID of the remarketing audience to update.
+            accountId: string,
+            // The ID of the remarketing audience to update.
+            remarketingAudienceId: string,
+            // The web property ID of the remarketing audience to update.
+            webPropertyId: string,
+        }) : gapi.client.Request<RemarketingAudience>;        
+        
+    }
+    
+    
     interface SegmentsResource {
         // Lists segments to which the user has access.
         list (request: {        
@@ -2408,6 +2575,7 @@ declare module gapi.client.analytics {
         profileFilterLinks: ProfileFilterLinksResource,
         profileUserLinks: ProfileUserLinksResource,
         profiles: ProfilesResource,
+        remarketingAudience: RemarketingAudienceResource,
         segments: SegmentsResource,
         unsampledReports: UnsampledReportsResource,
         uploads: UploadsResource,

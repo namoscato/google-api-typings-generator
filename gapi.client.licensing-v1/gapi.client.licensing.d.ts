@@ -11,12 +11,16 @@ declare module gapi.client.licensing {
         etags?: string,
         // Identifies the resource as a LicenseAssignment.
         kind?: string,
-        // Name of the product.
+        // Id of the product.
         productId?: string,
+        // Display Name of the product.
+        productName?: string,
         // Link to this page.
         selfLink?: string,
-        // Name of the sku of the product.
+        // Id of the sku of the product.
         skuId?: string,
+        // Display Name of the sku of the product.
+        skuName?: string,
         // Email id of the user.
         userId?: string,
     }

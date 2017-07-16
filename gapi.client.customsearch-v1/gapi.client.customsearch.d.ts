@@ -57,8 +57,6 @@ declare module gapi.client.customsearch {
         // 
         cr?: string,
         // 
-        cref?: string,
-        // 
         cx?: string,
         // 
         dateRestrict?: string,
@@ -228,8 +226,6 @@ declare module gapi.client.customsearch {
             c2coff?: string,
             // Country restrict(s).
             cr?: string,
-            // The URL of a linked custom search engine
-            cref?: string,
             // The custom search engine ID to scope this search query
             cx?: string,
             // Specifies all search results are from a time period

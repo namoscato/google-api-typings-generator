@@ -26,11 +26,11 @@ declare module gapi.client.androidpublisher {
     interface SubscriptionPurchase {
         // Whether the subscription will automatically be renewed when it reaches its current expiry time.
         autoRenewing?: boolean,
-        // Time at which the subscription was granted, in milliseconds since Epoch.
+        // Time at which the subscription was granted, in milliseconds since the Epoch.
         initiationTimestampMsec?: string,
         // This kind represents a subscriptionPurchase object in the androidpublisher service.
         kind?: string,
-        // Time at which the subscription will expire, in milliseconds since Epoch.
+        // Time at which the subscription will expire, in milliseconds since the Epoch.
         validUntilTimestampMsec?: string,
     }
     

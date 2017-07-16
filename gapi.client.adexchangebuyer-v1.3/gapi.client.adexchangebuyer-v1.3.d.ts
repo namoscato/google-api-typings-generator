@@ -187,7 +187,7 @@ declare module gapi.client.adexchangebuyer {
         vendorType?: number[],        
         // The version for this creative. Read-only. This field should not be set in requests.
         version?: number,
-        // The url to fetch a video ad. If set, HTMLSnippet should not be set.
+        // The URL to fetch a video ad. If set, HTMLSnippet and the nativeAd should not be set.
         videoURL?: string,
         // Ad width.
         width?: number,

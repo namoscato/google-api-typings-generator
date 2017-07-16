@@ -113,6 +113,8 @@ declare module gapi.client.gamesManagement {
         originalPlayerId?: string,
         // The ID of the player.
         playerId?: string,
+        // The player's profile settings. Controls whether or not the player's profile is visible to other players.
+        profileSettings?: ProfileSettings,
         // The player's title rewarded for their game activities.
         title?: string,
     }
@@ -135,6 +137,13 @@ declare module gapi.client.gamesManagement {
         // - "WEEKLY" - The score is a weekly score. 
         // - "DAILY" - The score is a daily score.
         resetScoreTimeSpans?: string[],        
+    }
+    
+    interface ProfileSettings {
+        // Uniquely identifies the type of this resource. Value is always the fixed string gamesManagement#profileSettings.
+        kind?: string,
+        // The player's current profile visibility. This field is visible to both 1P and 3P APIs.
+        profileVisible?: boolean,
     }
     
     interface QuestsResetMultipleForAllRequest {

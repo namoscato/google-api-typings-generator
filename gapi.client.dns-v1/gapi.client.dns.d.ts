@@ -43,7 +43,7 @@ declare module gapi.client.dns {
         id?: string,
         // Identifies what kind of resource this is. Value: the fixed string "dns#managedZone".
         kind?: string,
-        // User assigned name for this resource. Must be unique within the project. The name must be 1-32 characters long, must begin with a letter, end with a letter or digit, and only contain lowercase letters, digits or dashes.
+        // User assigned name for this resource. Must be unique within the project. The name must be 1-63 characters long, must begin with a letter, end with a letter or digit, and only contain lowercase letters, digits or dashes.
         name?: string,
         // Optionally specifies the NameServerSet for this ManagedZone. A NameServerSet is a set of DNS name servers that all host the same ManagedZones. Most users will leave this field unset.
         nameServerSet?: string,

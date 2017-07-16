@@ -67,6 +67,55 @@ declare module gapi.client.androidpublisher {
         id?: string,
     }
     
+    interface Comment {
+        // A comment from a developer.
+        developerComment?: DeveloperComment,
+        // A comment from a user.
+        userComment?: UserComment,
+    }
+    
+    interface DeobfuscationFile {
+        // The type of the deobfuscation file.
+        symbolType?: string,
+    }
+    
+    interface DeobfuscationFilesUploadResponse {
+        // 
+        deobfuscationFile?: DeobfuscationFile,
+    }
+    
+    interface DeveloperComment {
+        // The last time at which this comment was updated.
+        lastModified?: Timestamp,
+        // The content of the comment, i.e. reply body.
+        text?: string,
+    }
+    
+    interface DeviceMetadata {
+        // Device CPU make e.g. "Qualcomm"
+        cpuMake?: string,
+        // Device CPU model e.g. "MSM8974"
+        cpuModel?: string,
+        // Device class (e.g. tablet)
+        deviceClass?: string,
+        // OpenGL version
+        glEsVersion?: number,
+        // Device manufacturer (e.g. Motorola)
+        manufacturer?: string,
+        // Comma separated list of native platforms (e.g. "arm", "arm7")
+        nativePlatform?: string,
+        // Device model name (e.g. Droid)
+        productName?: string,
+        // Device RAM in Megabytes e.g. "2048"
+        ramMb?: number,
+        // Screen density in DPI
+        screenDensityDpi?: number,
+        // Screen height in pixels
+        screenHeightPx?: number,
+        // Screen width in pixels
+        screenWidthPx?: number,
+    }
+    
     interface Entitlement {
         // This kind represents an entitlement object in the androidpublisher service.
         kind?: string,
@@ -327,6 +376,41 @@ declare module gapi.client.androidpublisher {
         start?: MonthDay,
     }
     
+    interface Review {
+        // The name of the user who wrote the review.
+        authorName?: string,
+        // A repeated field containing comments for the review.
+        comments?: Comment[],        
+        // Unique identifier for this review.
+        reviewId?: string,
+    }
+    
+    interface ReviewReplyResult {
+        // The time at which the reply took effect.
+        lastEdited?: Timestamp,
+        // The reply text that was applied.
+        replyText?: string,
+    }
+    
+    interface ReviewsListResponse {
+        // 
+        pageInfo?: PageInfo,
+        // 
+        reviews?: Review[],        
+        // 
+        tokenPagination?: TokenPagination,
+    }
+    
+    interface ReviewsReplyRequest {
+        // The text to set as the reply. Replies of more than approximately 350 characters will be rejected. HTML tags will be stripped.
+        replyText?: string,
+    }
+    
+    interface ReviewsReplyResponse {
+        // 
+        result?: ReviewReplyResult,
+    }
+    
     interface Season {
         // Inclusive end date of the recurrence period.
         end?: MonthDay,
@@ -337,7 +421,7 @@ declare module gapi.client.androidpublisher {
     }
     
     interface SubscriptionDeferralInfo {
-        // The desired next expiry time for the subscription in milliseconds since Epoch. The given time must be after the current expiry time for the subscription.
+        // The desired next expiry time to assign to the subscription, in milliseconds since the Epoch. The given time must be later/greater than the current expiry time for the subscription.
         desiredExpiryTimeMillis?: string,
         // The expected expiry time for the subscription. If the current expiry time for the subscription is not the value specified here, the deferral will not occur.
         expectedExpiryTimeMillis?: string,
@@ -346,12 +430,30 @@ declare module gapi.client.androidpublisher {
     interface SubscriptionPurchase {
         // Whether the subscription will automatically be renewed when it reaches its current expiry time.
         autoRenewing?: boolean,
-        // Time at which the subscription will expire, in milliseconds since Epoch.
+        // The reason why a subscription was cancelled or is not auto-renewing. Possible values are:  
+        // - User cancelled the subscription 
+        // - Subscription was cancelled by the system, for example because of a billing problem
+        cancelReason?: number,
+        // ISO 3166-1 alpha-2 billing country/region code of the user at the time the subscription was granted.
+        countryCode?: string,
+        // A developer-specified string that contains supplemental information about an order.
+        developerPayload?: string,
+        // Time at which the subscription will expire, in milliseconds since the Epoch.
         expiryTimeMillis?: string,
         // This kind represents a subscriptionPurchase object in the androidpublisher service.
         kind?: string,
-        // Time at which the subscription was granted, in milliseconds since Epoch.
+        // The payment state of the subscription. Possible values are:  
+        // - Payment pending 
+        // - Payment received
+        paymentState?: number,
+        // Price of the subscription, not including tax. Price is expressed in micro-units, where 1,000,000 micro-units represents one unit of the currency. For example, if the subscription price is €1.99, price_amount_micros is 1990000.
+        priceAmountMicros?: string,
+        // ISO 4217 currency code for the subscription price. For example, if the price is specified in British pounds sterling, price_currency_code is "GBP".
+        priceCurrencyCode?: string,
+        // Time at which the subscription was granted, in milliseconds since the Epoch.
         startTimeMillis?: string,
+        // The time at which the subscription was canceled by the user, in milliseconds since the epoch. Only present if cancelReason is 0.
+        userCancellationTimeMillis?: string,
     }
     
     interface SubscriptionPurchasesDeferRequest {
@@ -369,6 +471,13 @@ declare module gapi.client.androidpublisher {
         googleGroups?: string[],        
         // 
         googlePlusCommunities?: string[],        
+    }
+    
+    interface Timestamp {
+        // 
+        nanos?: number,
+        // 
+        seconds?: string,
     }
     
     interface TokenPagination {
@@ -392,6 +501,53 @@ declare module gapi.client.androidpublisher {
         kind?: string,
         // 
         tracks?: Track[],        
+    }
+    
+    interface UserComment {
+        // Integer Android SDK version of the user's device at the time the review was written, e.g. 23 is Marshmallow. May be absent.
+        androidOsVersion?: number,
+        // Integer version code of the app as installed at the time the review was written. May be absent.
+        appVersionCode?: number,
+        // String version name of the app as installed at the time the review was written. May be absent.
+        appVersionName?: string,
+        // Codename for the reviewer's device, e.g. klte, flounder. May be absent.
+        device?: string,
+        // Some information about the characteristics of the user's device
+        deviceMetadata?: DeviceMetadata,
+        // The last time at which this comment was updated.
+        lastModified?: Timestamp,
+        // Untranslated text of the review, in the case where the review has been translated. If the review has not been translated this is left blank.
+        originalText?: string,
+        // Language code for the reviewer. This is taken from the device settings so is not guaranteed to match the language the review is written in. May be absent.
+        reviewerLanguage?: string,
+        // The star rating associated with the review, from 1 to 5.
+        starRating?: number,
+        // The content of the comment, i.e. review body. In some cases users have been able to write a review with separate title and body; in those cases the title and body are concatenated and separated by a tab character.
+        text?: string,
+        // Number of users who have given this review a thumbs down
+        thumbsDownCount?: number,
+        // Number of users who have given this review a thumbs up
+        thumbsUpCount?: number,
+    }
+    
+    interface VoidedPurchase {
+        // This kind represents a voided purchase object in the androidpublisher service.
+        kind?: string,
+        // The time at which the purchase was made, in milliseconds since the epoch (Jan 1, 1970).
+        purchaseTimeMillis?: string,
+        // The token that was generated when a purchase was made. This uniquely identifies a purchase.
+        purchaseToken?: string,
+        // The time at which the purchase was cancelled/refunded/charged-back, in milliseconds since the epoch (Jan 1, 1970).
+        voidedTimeMillis?: string,
+    }
+    
+    interface VoidedPurchasesListResponse {
+        // 
+        pageInfo?: PageInfo,
+        // 
+        tokenPagination?: TokenPagination,
+        // 
+        voidedPurchases?: VoidedPurchase[],        
     }
     
     interface ApklistingsResource {
@@ -490,6 +646,22 @@ declare module gapi.client.androidpublisher {
             // Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
             packageName: string,
         }) : gapi.client.Request<Apk>;        
+        
+    }
+    
+    
+    interface DeobfuscationfilesResource {
+        // Uploads the deobfuscation file of the specified APK. If a deobfuscation file already exists, it will be replaced.
+        upload (request: {        
+            // The version code of the APK whose deobfuscation file is being uploaded.
+            apkVersionCode: number,
+            // 
+            deobfuscationFileType: string,
+            // Unique identifier for this edit.
+            editId: string,
+            // Unique identifier of the Android app for which the deobfuscatiuon files are being uploaded; for example, "com.spiffygame".
+            packageName: string,
+        }) : gapi.client.Request<DeobfuscationFilesUploadResponse>;        
         
     }
     
@@ -805,6 +977,7 @@ declare module gapi.client.androidpublisher {
         
         apklistings: ApklistingsResource,
         apks: ApksResource,
+        deobfuscationfiles: DeobfuscationfilesResource,
         details: DetailsResource,
         expansionfiles: ExpansionfilesResource,
         images: ImagesResource,
@@ -964,9 +1137,66 @@ declare module gapi.client.androidpublisher {
     }
     
     
+    interface VoidedpurchasesResource {
+        // Lists the purchases that were cancelled, refunded or charged-back.
+        list (request: {        
+            // The time, in milliseconds since the Epoch, of the newest voided in-app product purchase that you want to see in the response. The value of this parameter cannot be greater than the current time and is ignored if a pagination token is set. Default value is current time.
+            endTime?: string,
+            // 
+            maxResults?: number,
+            // The package name of the application for which voided purchases need to be returned (for example, 'com.some.thing').
+            packageName: string,
+            // 
+            startIndex?: number,
+            // The time, in milliseconds since the Epoch, of the oldest voided in-app product purchase that you want to see in the response. The value of this parameter cannot be older than 30 days and is ignored if a pagination token is set. Default value is current time minus 30 days.
+            startTime?: string,
+            // 
+            token?: string,
+        }) : gapi.client.Request<VoidedPurchasesListResponse>;        
+        
+    }
+    
+    
     interface PurchasesResource {
         products: ProductsResource,
         subscriptions: SubscriptionsResource,
+        voidedpurchases: VoidedpurchasesResource,
+    }
+    
+    
+    interface ReviewsResource {
+        // Returns a single review.
+        get (request: {        
+            // Unique identifier for the Android app for which we want reviews; for example, "com.spiffygame".
+            packageName: string,
+            // 
+            reviewId: string,
+            // 
+            translationLanguage?: string,
+        }) : gapi.client.Request<Review>;        
+        
+        // Returns a list of reviews. Only reviews from last week will be returned.
+        list (request: {        
+            // 
+            maxResults?: number,
+            // Unique identifier for the Android app for which we want reviews; for example, "com.spiffygame".
+            packageName: string,
+            // 
+            startIndex?: number,
+            // 
+            token?: string,
+            // 
+            translationLanguage?: string,
+        }) : gapi.client.Request<ReviewsListResponse>;        
+        
+        // Reply to a single review, or update an existing reply.
+        reply (request: {        
+            // Unique identifier for the Android app for which we want reviews; for example, "com.spiffygame".
+            packageName: string,
+            // 
+            reviewId: string,
+        }) : gapi.client.Request<ReviewsReplyResponse>;        
+        
     }
     
 }
@@ -979,5 +1209,7 @@ declare module gapi.client.androidpublisher {
     var inappproducts: gapi.client.androidpublisher.InappproductsResource; 
     
     var purchases: gapi.client.androidpublisher.PurchasesResource; 
+    
+    var reviews: gapi.client.androidpublisher.ReviewsResource; 
     
 }
