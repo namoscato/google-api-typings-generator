@@ -6,131 +6,11 @@
 
 declare module gapi.client.clouddebugger {
     
-    interface CloudRepoSourceContext {
-        // The ID of the repo.
-        repoId?: RepoId,
-        // An alias, which may be a branch or tag.
-        aliasContext?: AliasContext,
-        // A revision ID.
-        revisionId?: string,
-        // The name of an alias (branch, tag, etc.).
-        aliasName?: string,
-    }
-    
-    interface RegisterDebuggeeResponse {
-        // Debuggee resource.
-        // The field `id` is guranteed to be set (in addition to the echoed fields).
-        debuggee?: Debuggee,
-    }
-    
-    interface RegisterDebuggeeRequest {
-        // Debuggee information to register.
-        // The fields `project`, `uniquifier`, `description` and `agent_version`
-        // of the debuggee must be set.
-        debuggee?: Debuggee,
-    }
-    
-    interface GetBreakpointResponse {
-        // Complete breakpoint state.
-        // The fields `id` and `location` are guaranteed to be set.
-        breakpoint?: Breakpoint,
-    }
-    
-    interface StatusMessage {
-        // Status message text.
-        description?: FormatMessage,
-        // Distinguishes errors from informational messages.
-        isError?: boolean,
-        // Reference to which the message applies.
-        refersTo?: string,
-    }
-    
-    interface GitSourceContext {
-        // Git commit hash.
-        // required.
-        revisionId?: string,
-        // Git repository URL.
-        url?: string,
-    }
-    
-    interface Variable {
-        // Variable type (e.g. `MyClass`). If the variable is split with
-        // `var_table_index`, `type` goes next to `value`. The interpretation of
-        // a type is agent specific. It is recommended to include the dynamic type
-        // rather than a static type of an object.
-        type?: string,
-        // Simple value of the variable.
-        value?: string,
-        // Reference to a variable in the shared variable table. More than
-        // one variable can reference the same variable in the table. The
-        // `var_table_index` field is an index into `variable_table` in Breakpoint.
-        varTableIndex?: number,
-        // Members contained or pointed to by the variable.
-        members?: Variable[],        
-        // Status associated with the variable. This field will usually stay
-        // unset. A status of a single variable only applies to that variable or
-        // expression. The rest of breakpoint data still remains valid. Variables
-        // might be reported in error state even when breakpoint is not in final
-        // state.
-        // 
-        // The message may refer to variable name with `refers_to` set to
-        // `VARIABLE_NAME`. Alternatively `refers_to` will be set to `VARIABLE_VALUE`.
-        // In either case variable value and members will be unset.
-        // 
-        // Example of error message applied to name: `Invalid expression syntax`.
-        // 
-        // Example of information message applied to value: `Not captured`.
-        // 
-        // Examples of error message applied to value:
-        // 
-        // *   `Malformed string`,
-        // *   `Field f not found in class C`
-        // *   `Null pointer dereference`
-        status?: StatusMessage,
-        // Name of the variable, if any.
+    interface AliasContext {
+        // The alias name.
         name?: string,
-    }
-    
-    interface StackFrame {
-        // Set of local variables at the stack frame location.
-        // Note that this might not be populated for all stack frames.
-        locals?: Variable[],        
-        // Source location of the call site.
-        location?: SourceLocation,
-        // Demangled function name at the call site.
-        function?: string,
-        // Set of arguments passed to this function.
-        // Note that this might not be populated for all stack frames.
-        arguments?: Variable[],        
-    }
-    
-    interface RepoId {
-        // A server-assigned, globally unique identifier.
-        uid?: string,
-        // A combination of a project ID and a repo name.
-        projectRepoId?: ProjectRepoId,
-    }
-    
-    interface FormatMessage {
-        // Format template for the message. The `format` uses placeholders `$0`,
-        // `$1`, etc. to reference parameters. `$$` can be used to denote the `$`
-        // character.
-        // 
-        // Examples:
-        // 
-        // *   `Failed to load '$0' which helps debug $1 the first time it
-        //     is loaded.  Again, $0 is very important.`
-        // *   `Please pay $$10 to use $0 instead of $1.`
-        format?: string,
-        // Optional parameters to be embedded into the message.
-        parameters?: string[],        
-    }
-    
-    interface ExtendedSourceContext {
-        // Labels with user defined metadata.
-        labels?: any,
-        // Any source context.
-        context?: SourceContext,
+        // The alias kind.
+        kind?: string,
     }
     
     interface ListDebuggeesResponse {
@@ -142,36 +22,46 @@ declare module gapi.client.clouddebugger {
         debuggees?: Debuggee[],        
     }
     
-    interface AliasContext {
-        // The alias kind.
-        kind?: string,
-        // The alias name.
-        name?: string,
-    }
-    
     interface Empty {
     }
     
     interface SourceLocation {
-        // Path to the source file within the source context of the target binary.
-        path?: string,
         // Line inside the file. The first line in the file has the value `1`.
         line?: number,
+        // Path to the source file within the source context of the target binary.
+        path?: string,
     }
     
     interface Debuggee {
+        // References to the locations and revisions of the source code used in the
+        // deployed application.
+        // 
+        // Contexts describing a remote repo related to the source code
+        // have a `category` label of `remote_repo`. Source snapshot source
+        // contexts have a `category` of `snapshot`.
+        extSourceContexts?: ExtendedSourceContext[],        
+        // A set of custom debuggee properties, populated by the agent, to be
+        // displayed to the user.
+        labels?: any,
+        // Human readable message to be displayed to the user about this debuggee.
+        // Absence of this field indicates no status. The message can be either
+        // informational or an error status.
+        status?: StatusMessage,
+        // If set to `true`, indicates that the debuggee is considered as inactive by
+        // the Controller service.
+        isInactive?: boolean,
         // Project the debuggee is associated with.
         // Use the project number when registering a Google Cloud Platform project.
         project?: string,
-        // Unique identifier for the debuggee generated by the controller service.
-        id?: string,
+        // If set to `true`, indicates that the agent should disable itself and
+        // detach from the debuggee.
+        isDisabled?: boolean,
         // Version ID of the agent release. The version ID is structured as
         // following: `domain/type/vmajor.minor` (for example
         // `google.com/gcp-java/v1.1`).
         agentVersion?: string,
-        // If set to `true`, indicates that the agent should disable itself and
-        // detach from the debuggee.
-        isDisabled?: boolean,
+        // Unique identifier for the debuggee generated by the controller service.
+        id?: string,
         // Debuggee uniquifier within the project.
         // Any string that identifies the application within the project can be used.
         // Including environment and version or build IDs is recommended.
@@ -187,30 +77,6 @@ declare module gapi.client.clouddebugger {
         // `ext_source_contexts` if it is not empty. Debug agents should populate
         // both this field and `ext_source_contexts`.
         sourceContexts?: SourceContext[],        
-        // References to the locations and revisions of the source code used in the
-        // deployed application.
-        // 
-        // Contexts describing a remote repo related to the source code
-        // have a `category` label of `remote_repo`. Source snapshot source
-        // contexts have a `category` of `snapshot`.
-        extSourceContexts?: ExtendedSourceContext[],        
-        // A set of custom debuggee properties, populated by the agent, to be
-        // displayed to the user.
-        labels?: any,
-        // If set to `true`, indicates that the debuggee is considered as inactive by
-        // the Controller service.
-        isInactive?: boolean,
-        // Human readable message to be displayed to the user about this debuggee.
-        // Absence of this field indicates no status. The message can be either
-        // informational or an error status.
-        status?: StatusMessage,
-    }
-    
-    interface ProjectRepoId {
-        // The name of the repo. Leave empty for the default repo.
-        repoName?: string,
-        // The ID of the project.
-        projectId?: string,
     }
     
     interface ListActiveBreakpointsResponse {
@@ -225,12 +91,22 @@ declare module gapi.client.clouddebugger {
         waitExpired?: boolean,
     }
     
+    interface ProjectRepoId {
+        // The name of the repo. Leave empty for the default repo.
+        repoName?: string,
+        // The ID of the project.
+        projectId?: string,
+    }
+    
     interface CloudWorkspaceSourceContext {
-        // The ID of the workspace.
-        workspaceId?: CloudWorkspaceId,
         // The ID of the snapshot.
         // An empty snapshot_id refers to the most recent snapshot.
         snapshotId?: string,
+        // The ID of the workspace.
+        workspaceId?: CloudWorkspaceId,
+    }
+    
+    interface UpdateActiveBreakpointResponse {
     }
     
     interface GerritSourceContext {
@@ -248,43 +124,26 @@ declare module gapi.client.clouddebugger {
         gerritProject?: string,
     }
     
-    interface UpdateActiveBreakpointResponse {
-    }
-    
     interface CloudWorkspaceId {
-        // The ID of the repo containing the workspace.
-        repoId?: RepoId,
         // The unique name of the workspace within the repo.  This is the name
         // chosen by the client in the Source API's CreateWorkspace method.
         name?: string,
+        // The ID of the repo containing the workspace.
+        repoId?: RepoId,
     }
     
     interface ListBreakpointsResponse {
-        // A wait token that can be used in the next call to `list` (REST) or
-        // `ListBreakpoints` (RPC) to block until the list of breakpoints has changes.
-        nextWaitToken?: string,
         // List of breakpoints matching the request.
         // The fields `id` and `location` are guaranteed to be set on each breakpoint.
         // The fields: `stack_frames`, `evaluated_expressions` and `variable_table`
         // are cleared on each breakpoint regardless of its status.
         breakpoints?: Breakpoint[],        
+        // A wait token that can be used in the next call to `list` (REST) or
+        // `ListBreakpoints` (RPC) to block until the list of breakpoints has changes.
+        nextWaitToken?: string,
     }
     
     interface Breakpoint {
-        // Time this breakpoint was created by the server in seconds resolution.
-        createTime?: string,
-        // Only relevant when action is `LOG`. Defines the message to log when
-        // the breakpoint hits. The message may include parameter placeholders `$0`,
-        // `$1`, etc. These placeholders are replaced with the evaluated value
-        // of the appropriate expression. Expressions not referenced in
-        // `log_message_format` are not logged.
-        // 
-        // Example: `Message received, id = $0, count = $1` with
-        // `expressions` = `[ message.id, message.count ]`.
-        logMessageFormat?: string,
-        // A set of custom breakpoint properties, populated by the agent, to be
-        // displayed to the user.
-        labels?: any,
         // List of read-only expressions to evaluate at the breakpoint location.
         // The expressions are composed using expressions in the programming language
         // at the source location. If the breakpoint action is `LOG`, the evaluated
@@ -350,12 +209,20 @@ declare module gapi.client.clouddebugger {
         // variable. The effective variable is a merge of the referencing variable
         // and the referenced variable.
         variableTable?: Variable[],        
-    }
-    
-    interface SetBreakpointResponse {
-        // Breakpoint resource.
-        // The field `id` is guaranteed to be set (in addition to the echoed fileds).
-        breakpoint?: Breakpoint,
+        // A set of custom breakpoint properties, populated by the agent, to be
+        // displayed to the user.
+        labels?: any,
+        // Only relevant when action is `LOG`. Defines the message to log when
+        // the breakpoint hits. The message may include parameter placeholders `$0`,
+        // `$1`, etc. These placeholders are replaced with the evaluated value
+        // of the appropriate expression. Expressions not referenced in
+        // `log_message_format` are not logged.
+        // 
+        // Example: `Message received, id = $0, count = $1` with
+        // `expressions` = `[ message.id, message.count ]`.
+        logMessageFormat?: string,
+        // Time this breakpoint was created by the server in seconds resolution.
+        createTime?: string,
     }
     
     interface UpdateActiveBreakpointRequest {
@@ -364,20 +231,254 @@ declare module gapi.client.clouddebugger {
         breakpoint?: Breakpoint,
     }
     
+    interface SetBreakpointResponse {
+        // Breakpoint resource.
+        // The field `id` is guaranteed to be set (in addition to the echoed fileds).
+        breakpoint?: Breakpoint,
+    }
+    
     interface SourceContext {
-        // A SourceContext referring to any third party Git repo (e.g. GitHub).
-        git?: GitSourceContext,
         // A SourceContext referring to a Gerrit project.
         gerrit?: GerritSourceContext,
         // A SourceContext referring to a snapshot in a cloud workspace.
         cloudWorkspace?: CloudWorkspaceSourceContext,
         // A SourceContext referring to a revision in a cloud repo.
         cloudRepo?: CloudRepoSourceContext,
+        // A SourceContext referring to any third party Git repo (e.g. GitHub).
+        git?: GitSourceContext,
+    }
+    
+    interface CloudRepoSourceContext {
+        // A revision ID.
+        revisionId?: string,
+        // The name of an alias (branch, tag, etc.).
+        aliasName?: string,
+        // The ID of the repo.
+        repoId?: RepoId,
+        // An alias, which may be a branch or tag.
+        aliasContext?: AliasContext,
+    }
+    
+    interface RegisterDebuggeeResponse {
+        // Debuggee resource.
+        // The field `id` is guranteed to be set (in addition to the echoed fields).
+        debuggee?: Debuggee,
+    }
+    
+    interface RegisterDebuggeeRequest {
+        // Debuggee information to register.
+        // The fields `project`, `uniquifier`, `description` and `agent_version`
+        // of the debuggee must be set.
+        debuggee?: Debuggee,
+    }
+    
+    interface GetBreakpointResponse {
+        // Complete breakpoint state.
+        // The fields `id` and `location` are guaranteed to be set.
+        breakpoint?: Breakpoint,
+    }
+    
+    interface StatusMessage {
+        // Status message text.
+        description?: FormatMessage,
+        // Distinguishes errors from informational messages.
+        isError?: boolean,
+        // Reference to which the message applies.
+        refersTo?: string,
+    }
+    
+    interface GitSourceContext {
+        // Git commit hash.
+        // required.
+        revisionId?: string,
+        // Git repository URL.
+        url?: string,
+    }
+    
+    interface Variable {
+        // Name of the variable, if any.
+        name?: string,
+        // Variable type (e.g. `MyClass`). If the variable is split with
+        // `var_table_index`, `type` goes next to `value`. The interpretation of
+        // a type is agent specific. It is recommended to include the dynamic type
+        // rather than a static type of an object.
+        type?: string,
+        // Simple value of the variable.
+        value?: string,
+        // Reference to a variable in the shared variable table. More than
+        // one variable can reference the same variable in the table. The
+        // `var_table_index` field is an index into `variable_table` in Breakpoint.
+        varTableIndex?: number,
+        // Members contained or pointed to by the variable.
+        members?: Variable[],        
+        // Status associated with the variable. This field will usually stay
+        // unset. A status of a single variable only applies to that variable or
+        // expression. The rest of breakpoint data still remains valid. Variables
+        // might be reported in error state even when breakpoint is not in final
+        // state.
+        // 
+        // The message may refer to variable name with `refers_to` set to
+        // `VARIABLE_NAME`. Alternatively `refers_to` will be set to `VARIABLE_VALUE`.
+        // In either case variable value and members will be unset.
+        // 
+        // Example of error message applied to name: `Invalid expression syntax`.
+        // 
+        // Example of information message applied to value: `Not captured`.
+        // 
+        // Examples of error message applied to value:
+        // 
+        // *   `Malformed string`,
+        // *   `Field f not found in class C`
+        // *   `Null pointer dereference`
+        status?: StatusMessage,
+    }
+    
+    interface StackFrame {
+        // Demangled function name at the call site.
+        function?: string,
+        // Set of arguments passed to this function.
+        // Note that this might not be populated for all stack frames.
+        arguments?: Variable[],        
+        // Set of local variables at the stack frame location.
+        // Note that this might not be populated for all stack frames.
+        locals?: Variable[],        
+        // Source location of the call site.
+        location?: SourceLocation,
+    }
+    
+    interface RepoId {
+        // A combination of a project ID and a repo name.
+        projectRepoId?: ProjectRepoId,
+        // A server-assigned, globally unique identifier.
+        uid?: string,
+    }
+    
+    interface FormatMessage {
+        // Optional parameters to be embedded into the message.
+        parameters?: string[],        
+        // Format template for the message. The `format` uses placeholders `$0`,
+        // `$1`, etc. to reference parameters. `$$` can be used to denote the `$`
+        // character.
+        // 
+        // Examples:
+        // 
+        // *   `Failed to load '$0' which helps debug $1 the first time it
+        //     is loaded.  Again, $0 is very important.`
+        // *   `Please pay $$10 to use $0 instead of $1.`
+        format?: string,
+    }
+    
+    interface ExtendedSourceContext {
+        // Any source context.
+        context?: SourceContext,
+        // Labels with user defined metadata.
+        labels?: any,
     }
     
     interface BreakpointsResource {
+        // Deletes the breakpoint from the debuggee.
+        delete (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // OAuth access token.
+            access_token?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // ID of the breakpoint to delete.
+            breakpointId: string,
+            // ID of the debuggee whose breakpoint to delete.
+            debuggeeId: string,
+            // The client version making the call.
+            // Following: `domain/type/version` (e.g., `google.com/intellij/v1`).
+            clientVersion?: string,
+        }) : gapi.client.Request<Empty>;        
+        
+        // Sets the breakpoint to the debuggee.
+        set (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // OAuth access token.
+            access_token?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // ID of the debuggee where the breakpoint is to be set.
+            debuggeeId: string,
+            // The client version making the call.
+            // Following: `domain/type/version` (e.g., `google.com/intellij/v1`).
+            clientVersion?: string,
+        }) : gapi.client.Request<SetBreakpointResponse>;        
+        
         // Lists all breakpoints for the debuggee.
         list (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // OAuth access token.
+            access_token?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // This field is deprecated. The following fields are always stripped out of
+            // the result: `stack_frames`, `evaluated_expressions` and `variable_table`.
+            stripResults?: boolean,
             // ID of the debuggee whose breakpoints to list.
             debuggeeId: string,
             // A wait token that, if specified, blocks the call until the breakpoints
@@ -391,47 +492,50 @@ declare module gapi.client.clouddebugger {
             clientVersion?: string,
             // Only breakpoints with the specified action will pass the filter.
             action.value?: string,
-            // When set to `true`, the response includes active and inactive
-            // breakpoints. Otherwise, it includes only active breakpoints.
-            includeInactive?: boolean,
             // When set to `true`, the response includes the list of breakpoints set by
             // any user. Otherwise, it includes only breakpoints set by the caller.
             includeAllUsers?: boolean,
-            // This field is deprecated. The following fields are always stripped out of
-            // the result: `stack_frames`, `evaluated_expressions` and `variable_table`.
-            stripResults?: boolean,
+            // When set to `true`, the response includes active and inactive
+            // breakpoints. Otherwise, it includes only active breakpoints.
+            includeInactive?: boolean,
         }) : gapi.client.Request<ListBreakpointsResponse>;        
         
         // Gets breakpoint information.
         get (request: {        
-            // The client version making the call.
-            // Following: `domain/type/version` (e.g., `google.com/intellij/v1`).
-            clientVersion?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // OAuth access token.
+            access_token?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
             // ID of the breakpoint to get.
             breakpointId: string,
             // ID of the debuggee whose breakpoint to get.
             debuggeeId: string,
+            // The client version making the call.
+            // Following: `domain/type/version` (e.g., `google.com/intellij/v1`).
+            clientVersion?: string,
         }) : gapi.client.Request<GetBreakpointResponse>;        
-        
-        // Deletes the breakpoint from the debuggee.
-        delete (request: {        
-            // ID of the debuggee whose breakpoint to delete.
-            debuggeeId: string,
-            // The client version making the call.
-            // Following: `domain/type/version` (e.g., `google.com/intellij/v1`).
-            clientVersion?: string,
-            // ID of the breakpoint to delete.
-            breakpointId: string,
-        }) : gapi.client.Request<Empty>;        
-        
-        // Sets the breakpoint to the debuggee.
-        set (request: {        
-            // ID of the debuggee where the breakpoint is to be set.
-            debuggeeId: string,
-            // The client version making the call.
-            // Following: `domain/type/version` (e.g., `google.com/intellij/v1`).
-            clientVersion?: string,
-        }) : gapi.client.Request<SetBreakpointResponse>;        
         
     }
     
@@ -439,14 +543,40 @@ declare module gapi.client.clouddebugger {
     interface DebuggeesResource {
         // Lists all the debuggees that the user can set breakpoints to.
         list (request: {        
-            // The client version making the call.
-            // Following: `domain/type/version` (e.g., `google.com/intellij/v1`).
-            clientVersion?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // OAuth access token.
+            access_token?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
             // When set to `true`, the result includes all debuggees. Otherwise, the
             // result includes only debuggees that are active.
             includeInactive?: boolean,
             // Project number of a Google Cloud project whose debuggees to list.
             project?: string,
+            // The client version making the call.
+            // Following: `domain/type/version` (e.g., `google.com/intellij/v1`).
+            clientVersion?: string,
         }) : gapi.client.Request<ListDebuggeesResponse>;        
         
         breakpoints: BreakpointsResource,
@@ -459,6 +589,48 @@ declare module gapi.client.clouddebugger {
     
     
     interface BreakpointsResource {
+        // Updates the breakpoint state or mutable fields.
+        // The entire Breakpoint message must be sent back to the controller
+        // service.
+        // 
+        // Updates to active breakpoint fields are only allowed if the new value
+        // does not change the breakpoint specification. Updates to the `location`,
+        // `condition` and `expressions` fields should not alter the breakpoint
+        // semantics. These may only make changes such as canonicalizing a value
+        // or snapping the location to the correct line of code.
+        update (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // OAuth access token.
+            access_token?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Identifies the debuggee being debugged.
+            debuggeeId: string,
+            // Breakpoint identifier, unique in the scope of the debuggee.
+            id: string,
+        }) : gapi.client.Request<UpdateActiveBreakpointResponse>;        
+        
         // Returns the list of all active breakpoints for the debuggee.
         // 
         // The breakpoint specification (`location`, `condition`, and `expressions`
@@ -473,6 +645,36 @@ declare module gapi.client.clouddebugger {
         // until the controller removes them from the active list to avoid
         // setting those breakpoints again.
         list (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // OAuth access token.
+            access_token?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // A wait token that, if specified, blocks the method call until the list
+            // of active breakpoints has changed, or a server selected timeout has
+            // expired.  The value should be set from the last returned response.
+            waitToken?: string,
             // If set to `true`, returns `google.rpc.Code.OK` status and sets the
             // `wait_expired` response field to `true` when the server-selected timeout
             // has expired (recommended).
@@ -482,27 +684,7 @@ declare module gapi.client.clouddebugger {
             successOnTimeout?: boolean,
             // Identifies the debuggee.
             debuggeeId: string,
-            // A wait token that, if specified, blocks the method call until the list
-            // of active breakpoints has changed, or a server selected timeout has
-            // expired.  The value should be set from the last returned response.
-            waitToken?: string,
         }) : gapi.client.Request<ListActiveBreakpointsResponse>;        
-        
-        // Updates the breakpoint state or mutable fields.
-        // The entire Breakpoint message must be sent back to the controller
-        // service.
-        // 
-        // Updates to active breakpoint fields are only allowed if the new value
-        // does not change the breakpoint specification. Updates to the `location`,
-        // `condition` and `expressions` fields should not alter the breakpoint
-        // semantics. These may only make changes such as canonicalizing a value
-        // or snapping the location to the correct line of code.
-        update (request: {        
-            // Identifies the debuggee being debugged.
-            debuggeeId: string,
-            // Breakpoint identifier, unique in the scope of the debuggee.
-            id: string,
-        }) : gapi.client.Request<UpdateActiveBreakpointResponse>;        
         
     }
     
@@ -519,6 +701,32 @@ declare module gapi.client.clouddebugger {
         // data loss. If the debuggee is disabled by the server, the response will
         // have `is_disabled` set to `true`.
         register (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // OAuth access token.
+            access_token?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
         }) : gapi.client.Request<RegisterDebuggeeResponse>;        
         
         breakpoints: BreakpointsResource,

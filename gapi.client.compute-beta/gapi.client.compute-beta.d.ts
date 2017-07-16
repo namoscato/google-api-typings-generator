@@ -3845,6 +3845,20 @@ declare module gapi.client.compute {
     interface AcceleratorTypesResource {
         // Retrieves an aggregated list of accelerator types.
         aggregatedList (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -3871,6 +3885,20 @@ declare module gapi.client.compute {
         
         // Returns the specified accelerator type. Get a list of available accelerator types by making a list() request.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the accelerator type to return.
             acceleratorType: string,
             // Project ID for this request.
@@ -3881,6 +3909,20 @@ declare module gapi.client.compute {
         
         // Retrieves a list of accelerator types available to the specified project.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -3913,6 +3955,20 @@ declare module gapi.client.compute {
     interface AddressesResource {
         // Retrieves an aggregated list of addresses.
         aggregatedList (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -3939,6 +3995,20 @@ declare module gapi.client.compute {
         
         // Deletes the specified address resource.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the address resource to delete.
             address: string,
             // Project ID for this request.
@@ -3955,6 +4025,20 @@ declare module gapi.client.compute {
         
         // Returns the specified address resource.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the address resource to return.
             address: string,
             // Project ID for this request.
@@ -3965,6 +4049,20 @@ declare module gapi.client.compute {
         
         // Creates an address resource in the specified project using the data included in the request.
         insert (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the region for this request.
@@ -3979,6 +4077,20 @@ declare module gapi.client.compute {
         
         // Retrieves a list of addresses contained within the specified region.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -4007,6 +4119,20 @@ declare module gapi.client.compute {
         
         // Sets the labels on an Address. To learn more about labels, read the Labeling Resources documentation.
         setLabels (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // The region for this request.
@@ -4023,6 +4149,20 @@ declare module gapi.client.compute {
         
         // Returns permissions that a caller has on the specified resource.
         testIamPermissions (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // The name of the region for this request.
@@ -4037,6 +4177,20 @@ declare module gapi.client.compute {
     interface AutoscalersResource {
         // Retrieves an aggregated list of autoscalers.
         aggregatedList (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -4063,6 +4217,20 @@ declare module gapi.client.compute {
         
         // Deletes the specified autoscaler.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the autoscaler to delete.
             autoscaler: string,
             // Project ID for this request.
@@ -4079,6 +4247,20 @@ declare module gapi.client.compute {
         
         // Returns the specified autoscaler resource. Get a list of available autoscalers by making a list() request.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the autoscaler to return.
             autoscaler: string,
             // Project ID for this request.
@@ -4089,6 +4271,20 @@ declare module gapi.client.compute {
         
         // Creates an autoscaler in the specified project using the data included in the request.
         insert (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -4103,6 +4299,20 @@ declare module gapi.client.compute {
         
         // Retrieves a list of autoscalers contained within the specified zone.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -4131,6 +4341,20 @@ declare module gapi.client.compute {
         
         // Updates an autoscaler in the specified project using the data included in the request. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
         patch (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the autoscaler to patch.
             autoscaler?: string,
             // Project ID for this request.
@@ -4147,6 +4371,20 @@ declare module gapi.client.compute {
         
         // Returns permissions that a caller has on the specified resource.
         testIamPermissions (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the resource for this request.
@@ -4157,6 +4395,20 @@ declare module gapi.client.compute {
         
         // Updates an autoscaler in the specified project using the data included in the request.
         update (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the autoscaler to update.
             autoscaler?: string,
             // Project ID for this request.
@@ -4177,6 +4429,20 @@ declare module gapi.client.compute {
     interface BackendBucketsResource {
         // Deletes the specified BackendBucket resource.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the BackendBucket resource to delete.
             backendBucket: string,
             // Project ID for this request.
@@ -4191,6 +4457,20 @@ declare module gapi.client.compute {
         
         // Returns the specified BackendBucket resource. Get a list of available backend buckets by making a list() request.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the BackendBucket resource to return.
             backendBucket: string,
             // Project ID for this request.
@@ -4199,6 +4479,20 @@ declare module gapi.client.compute {
         
         // Creates a BackendBucket resource in the specified project using the data included in the request.
         insert (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -4211,6 +4505,20 @@ declare module gapi.client.compute {
         
         // Retrieves the list of BackendBucket resources available to the specified project.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -4237,6 +4545,20 @@ declare module gapi.client.compute {
         
         // Updates the specified BackendBucket resource with the data included in the request. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
         patch (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the BackendBucket resource to patch.
             backendBucket: string,
             // Project ID for this request.
@@ -4251,6 +4573,20 @@ declare module gapi.client.compute {
         
         // Updates the specified BackendBucket resource with the data included in the request.
         update (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the BackendBucket resource to update.
             backendBucket: string,
             // Project ID for this request.
@@ -4269,6 +4605,20 @@ declare module gapi.client.compute {
     interface BackendServicesResource {
         // Retrieves the list of all BackendService resources, regional and global, available to the specified project.
         aggregatedList (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -4295,6 +4645,20 @@ declare module gapi.client.compute {
         
         // Deletes the specified BackendService resource.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the BackendService resource to delete.
             backendService: string,
             // Project ID for this request.
@@ -4309,6 +4673,20 @@ declare module gapi.client.compute {
         
         // Returns the specified BackendService resource. Get a list of available backend services by making a list() request.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the BackendService resource to return.
             backendService: string,
             // Project ID for this request.
@@ -4317,6 +4695,20 @@ declare module gapi.client.compute {
         
         // Gets the most recent health check results for this BackendService.
         getHealth (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the BackendService resource to which the queried instance belongs.
             backendService: string,
             // 
@@ -4325,6 +4717,20 @@ declare module gapi.client.compute {
         
         // Creates a BackendService resource in the specified project using the data included in the request. There are several restrictions and guidelines to keep in mind when creating a backend service. Read  Restrictions and Guidelines for more information.
         insert (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -4337,6 +4743,20 @@ declare module gapi.client.compute {
         
         // Retrieves the list of BackendService resources available to the specified project.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -4363,6 +4783,20 @@ declare module gapi.client.compute {
         
         // Patches the specified BackendService resource with the data included in the request. There are several restrictions and guidelines to keep in mind when updating a backend service. Read  Restrictions and Guidelines for more information. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
         patch (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the BackendService resource to patch.
             backendService: string,
             // Project ID for this request.
@@ -4377,6 +4811,20 @@ declare module gapi.client.compute {
         
         // Returns permissions that a caller has on the specified resource.
         testIamPermissions (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the resource for this request.
@@ -4385,6 +4833,20 @@ declare module gapi.client.compute {
         
         // Updates the specified BackendService resource with the data included in the request. There are several restrictions and guidelines to keep in mind when updating a backend service. Read  Restrictions and Guidelines for more information.
         update (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the BackendService resource to update.
             backendService: string,
             // Project ID for this request.
@@ -4403,6 +4865,20 @@ declare module gapi.client.compute {
     interface DiskTypesResource {
         // Retrieves an aggregated list of disk types.
         aggregatedList (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -4429,6 +4905,20 @@ declare module gapi.client.compute {
         
         // Returns the specified disk type. Get a list of available disk types by making a list() request.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the disk type to return.
             diskType: string,
             // Project ID for this request.
@@ -4439,6 +4929,20 @@ declare module gapi.client.compute {
         
         // Retrieves a list of disk types available to the specified project.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -4471,6 +4975,20 @@ declare module gapi.client.compute {
     interface DisksResource {
         // Retrieves an aggregated list of persistent disks.
         aggregatedList (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -4497,6 +5015,20 @@ declare module gapi.client.compute {
         
         // Creates a snapshot of a specified persistent disk.
         createSnapshot (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the persistent disk to snapshot.
             disk: string,
             // 
@@ -4515,6 +5047,20 @@ declare module gapi.client.compute {
         
         // Deletes the specified persistent disk. Deleting a disk removes its data permanently and is irreversible. However, deleting a disk does not delete any snapshots previously made from the disk. You must separately delete snapshots.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the persistent disk to delete.
             disk: string,
             // Project ID for this request.
@@ -4531,6 +5077,20 @@ declare module gapi.client.compute {
         
         // Returns a specified persistent disk. Get a list of available persistent disks by making a list() request.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the persistent disk to return.
             disk: string,
             // Project ID for this request.
@@ -4541,6 +5101,20 @@ declare module gapi.client.compute {
         
         // Creates a persistent disk in the specified project using the data in the request. You can create a disk with a sourceImage, a sourceSnapshot, or create an empty 500 GB data disk by omitting all properties. You can also create a disk that is larger than the default size by specifying the sizeGb property.
         insert (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -4557,6 +5131,20 @@ declare module gapi.client.compute {
         
         // Retrieves a list of persistent disks contained within the specified zone.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -4585,6 +5173,20 @@ declare module gapi.client.compute {
         
         // Resizes the specified persistent disk.
         resize (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The name of the persistent disk.
             disk: string,
             // Project ID for this request.
@@ -4601,6 +5203,20 @@ declare module gapi.client.compute {
         
         // Sets the labels on a disk. To learn more about labels, read the Labeling Resources documentation.
         setLabels (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -4617,6 +5233,20 @@ declare module gapi.client.compute {
         
         // Returns permissions that a caller has on the specified resource.
         testIamPermissions (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the resource for this request.
@@ -4631,6 +5261,20 @@ declare module gapi.client.compute {
     interface FirewallsResource {
         // Deletes the specified firewall.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the firewall rule to delete.
             firewall: string,
             // Project ID for this request.
@@ -4645,6 +5289,20 @@ declare module gapi.client.compute {
         
         // Returns the specified firewall.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the firewall rule to return.
             firewall: string,
             // Project ID for this request.
@@ -4653,6 +5311,20 @@ declare module gapi.client.compute {
         
         // Creates a firewall rule in the specified project using the data included in the request.
         insert (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -4665,6 +5337,20 @@ declare module gapi.client.compute {
         
         // Retrieves the list of firewall rules available to the specified project.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -4691,6 +5377,20 @@ declare module gapi.client.compute {
         
         // Updates the specified firewall rule with the data included in the request. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
         patch (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the firewall rule to patch.
             firewall: string,
             // Project ID for this request.
@@ -4705,6 +5405,20 @@ declare module gapi.client.compute {
         
         // Returns permissions that a caller has on the specified resource.
         testIamPermissions (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the resource for this request.
@@ -4713,6 +5427,20 @@ declare module gapi.client.compute {
         
         // Updates the specified firewall rule with the data included in the request. Using PUT method, can only update following fields of firewall rule: allowed, description, sourceRanges, sourceTags, targetTags.
         update (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the firewall rule to update.
             firewall: string,
             // Project ID for this request.
@@ -4731,6 +5459,20 @@ declare module gapi.client.compute {
     interface ForwardingRulesResource {
         // Retrieves an aggregated list of forwarding rules.
         aggregatedList (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -4757,6 +5499,20 @@ declare module gapi.client.compute {
         
         // Deletes the specified ForwardingRule resource.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the ForwardingRule resource to delete.
             forwardingRule: string,
             // Project ID for this request.
@@ -4773,6 +5529,20 @@ declare module gapi.client.compute {
         
         // Returns the specified ForwardingRule resource.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the ForwardingRule resource to return.
             forwardingRule: string,
             // Project ID for this request.
@@ -4783,6 +5553,20 @@ declare module gapi.client.compute {
         
         // Creates a ForwardingRule resource in the specified project and region using the data included in the request.
         insert (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the region scoping this request.
@@ -4797,6 +5581,20 @@ declare module gapi.client.compute {
         
         // Retrieves a list of ForwardingRule resources available to the specified project and region.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -4825,6 +5623,20 @@ declare module gapi.client.compute {
         
         // Sets the labels on the specified resource. To learn more about labels, read the Labeling Resources documentation.
         setLabels (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // The region for this request.
@@ -4841,6 +5653,20 @@ declare module gapi.client.compute {
         
         // Changes target URL for forwarding rule. The new target should be of the same type as the old target.
         setTarget (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the ForwardingRule resource in which target is to be set.
             forwardingRule: string,
             // Project ID for this request.
@@ -4857,6 +5683,20 @@ declare module gapi.client.compute {
         
         // Returns permissions that a caller has on the specified resource.
         testIamPermissions (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // The name of the region for this request.
@@ -4871,6 +5711,20 @@ declare module gapi.client.compute {
     interface GlobalAddressesResource {
         // Deletes the specified address resource.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the address resource to delete.
             address: string,
             // Project ID for this request.
@@ -4885,6 +5739,20 @@ declare module gapi.client.compute {
         
         // Returns the specified address resource. Get a list of available addresses by making a list() request.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the address resource to return.
             address: string,
             // Project ID for this request.
@@ -4893,6 +5761,20 @@ declare module gapi.client.compute {
         
         // Creates an address resource in the specified project using the data included in the request.
         insert (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -4905,6 +5787,20 @@ declare module gapi.client.compute {
         
         // Retrieves a list of global addresses.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -4931,6 +5827,20 @@ declare module gapi.client.compute {
         
         // Sets the labels on a GlobalAddress. To learn more about labels, read the Labeling Resources documentation.
         setLabels (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the resource for this request.
@@ -4939,6 +5849,20 @@ declare module gapi.client.compute {
         
         // Returns permissions that a caller has on the specified resource.
         testIamPermissions (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the resource for this request.
@@ -4951,6 +5875,20 @@ declare module gapi.client.compute {
     interface GlobalForwardingRulesResource {
         // Deletes the specified GlobalForwardingRule resource.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the ForwardingRule resource to delete.
             forwardingRule: string,
             // Project ID for this request.
@@ -4965,6 +5903,20 @@ declare module gapi.client.compute {
         
         // Returns the specified GlobalForwardingRule resource. Get a list of available forwarding rules by making a list() request.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the ForwardingRule resource to return.
             forwardingRule: string,
             // Project ID for this request.
@@ -4973,6 +5925,20 @@ declare module gapi.client.compute {
         
         // Creates a GlobalForwardingRule resource in the specified project using the data included in the request.
         insert (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -4985,6 +5951,20 @@ declare module gapi.client.compute {
         
         // Retrieves a list of GlobalForwardingRule resources available to the specified project.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -5011,6 +5991,20 @@ declare module gapi.client.compute {
         
         // Sets the labels on the specified resource. To learn more about labels, read the Labeling Resources documentation.
         setLabels (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the resource for this request.
@@ -5019,6 +6013,20 @@ declare module gapi.client.compute {
         
         // Changes target URL for the GlobalForwardingRule resource. The new target should be of the same type as the old target.
         setTarget (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the ForwardingRule resource in which target is to be set.
             forwardingRule: string,
             // Project ID for this request.
@@ -5033,6 +6041,20 @@ declare module gapi.client.compute {
         
         // Returns permissions that a caller has on the specified resource.
         testIamPermissions (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the resource for this request.
@@ -5045,6 +6067,20 @@ declare module gapi.client.compute {
     interface GlobalOperationsResource {
         // Retrieves an aggregated list of all operations.
         aggregatedList (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -5071,6 +6107,20 @@ declare module gapi.client.compute {
         
         // Deletes the specified Operations resource.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the Operations resource to delete.
             operation: string,
             // Project ID for this request.
@@ -5079,6 +6129,20 @@ declare module gapi.client.compute {
         
         // Retrieves the specified Operations resource. Get a list of operations by making a list() request.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the Operations resource to return.
             operation: string,
             // Project ID for this request.
@@ -5087,6 +6151,20 @@ declare module gapi.client.compute {
         
         // Retrieves a list of Operation resources contained within the specified project.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -5117,6 +6195,20 @@ declare module gapi.client.compute {
     interface HealthChecksResource {
         // Deletes the specified HealthCheck resource.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the HealthCheck resource to delete.
             healthCheck: string,
             // Project ID for this request.
@@ -5131,6 +6223,20 @@ declare module gapi.client.compute {
         
         // Returns the specified HealthCheck resource. Get a list of available health checks by making a list() request.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the HealthCheck resource to return.
             healthCheck: string,
             // Project ID for this request.
@@ -5139,6 +6245,20 @@ declare module gapi.client.compute {
         
         // Creates a HealthCheck resource in the specified project using the data included in the request.
         insert (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -5151,6 +6271,20 @@ declare module gapi.client.compute {
         
         // Retrieves the list of HealthCheck resources available to the specified project.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -5177,6 +6311,20 @@ declare module gapi.client.compute {
         
         // Updates a HealthCheck resource in the specified project using the data included in the request. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
         patch (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the HealthCheck resource to patch.
             healthCheck: string,
             // Project ID for this request.
@@ -5191,6 +6339,20 @@ declare module gapi.client.compute {
         
         // Returns permissions that a caller has on the specified resource.
         testIamPermissions (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the resource for this request.
@@ -5199,6 +6361,20 @@ declare module gapi.client.compute {
         
         // Updates a HealthCheck resource in the specified project using the data included in the request.
         update (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the HealthCheck resource to update.
             healthCheck: string,
             // Project ID for this request.
@@ -5217,6 +6393,20 @@ declare module gapi.client.compute {
     interface HttpHealthChecksResource {
         // Deletes the specified HttpHealthCheck resource.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the HttpHealthCheck resource to delete.
             httpHealthCheck: string,
             // Project ID for this request.
@@ -5231,6 +6421,20 @@ declare module gapi.client.compute {
         
         // Returns the specified HttpHealthCheck resource. Get a list of available HTTP health checks by making a list() request.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the HttpHealthCheck resource to return.
             httpHealthCheck: string,
             // Project ID for this request.
@@ -5239,6 +6443,20 @@ declare module gapi.client.compute {
         
         // Creates a HttpHealthCheck resource in the specified project using the data included in the request.
         insert (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -5251,6 +6469,20 @@ declare module gapi.client.compute {
         
         // Retrieves the list of HttpHealthCheck resources available to the specified project.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -5277,6 +6509,20 @@ declare module gapi.client.compute {
         
         // Updates a HttpHealthCheck resource in the specified project using the data included in the request. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
         patch (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the HttpHealthCheck resource to patch.
             httpHealthCheck: string,
             // Project ID for this request.
@@ -5291,6 +6537,20 @@ declare module gapi.client.compute {
         
         // Returns permissions that a caller has on the specified resource.
         testIamPermissions (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the resource for this request.
@@ -5299,6 +6559,20 @@ declare module gapi.client.compute {
         
         // Updates a HttpHealthCheck resource in the specified project using the data included in the request.
         update (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the HttpHealthCheck resource to update.
             httpHealthCheck: string,
             // Project ID for this request.
@@ -5317,6 +6591,20 @@ declare module gapi.client.compute {
     interface HttpsHealthChecksResource {
         // Deletes the specified HttpsHealthCheck resource.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the HttpsHealthCheck resource to delete.
             httpsHealthCheck: string,
             // Project ID for this request.
@@ -5331,6 +6619,20 @@ declare module gapi.client.compute {
         
         // Returns the specified HttpsHealthCheck resource. Get a list of available HTTPS health checks by making a list() request.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the HttpsHealthCheck resource to return.
             httpsHealthCheck: string,
             // Project ID for this request.
@@ -5339,6 +6641,20 @@ declare module gapi.client.compute {
         
         // Creates a HttpsHealthCheck resource in the specified project using the data included in the request.
         insert (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -5351,6 +6667,20 @@ declare module gapi.client.compute {
         
         // Retrieves the list of HttpsHealthCheck resources available to the specified project.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -5377,6 +6707,20 @@ declare module gapi.client.compute {
         
         // Updates a HttpsHealthCheck resource in the specified project using the data included in the request. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
         patch (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the HttpsHealthCheck resource to patch.
             httpsHealthCheck: string,
             // Project ID for this request.
@@ -5391,6 +6735,20 @@ declare module gapi.client.compute {
         
         // Returns permissions that a caller has on the specified resource.
         testIamPermissions (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the resource for this request.
@@ -5399,6 +6757,20 @@ declare module gapi.client.compute {
         
         // Updates a HttpsHealthCheck resource in the specified project using the data included in the request.
         update (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the HttpsHealthCheck resource to update.
             httpsHealthCheck: string,
             // Project ID for this request.
@@ -5417,6 +6789,20 @@ declare module gapi.client.compute {
     interface ImagesResource {
         // Deletes the specified image.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the image resource to delete.
             image: string,
             // Project ID for this request.
@@ -5433,6 +6819,20 @@ declare module gapi.client.compute {
         // 
         // If an empty request body is given, clears the deprecation status instead.
         deprecate (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Image name.
             image: string,
             // Project ID for this request.
@@ -5445,6 +6845,20 @@ declare module gapi.client.compute {
         
         // Returns the specified image. Get a list of available images by making a list() request.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the image resource to return.
             image: string,
             // Project ID for this request.
@@ -5453,6 +6867,20 @@ declare module gapi.client.compute {
         
         // Returns the latest image that is part of an image family and is not deprecated.
         getFromFamily (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the image family to search for.
             family: string,
             // Project ID for this request.
@@ -5461,6 +6889,20 @@ declare module gapi.client.compute {
         
         // Creates an image in the specified project using the data included in the request.
         insert (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Force image creation if true.
             forceCreate?: boolean,
             // Project ID for this request.
@@ -5475,6 +6917,20 @@ declare module gapi.client.compute {
         
         // Retrieves the list of private images available to the specified project. Private images are images you create that belong to your project. This method does not get any images that belong to other projects, including publicly-available images, like Debian 8. If you want to get a list of publicly-available images, use this method to make a request to the respective image project, such as debian-cloud or windows-cloud.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -5501,6 +6957,20 @@ declare module gapi.client.compute {
         
         // Sets the labels on an image. To learn more about labels, read the Labeling Resources documentation.
         setLabels (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the resource for this request.
@@ -5509,6 +6979,20 @@ declare module gapi.client.compute {
         
         // Returns permissions that a caller has on the specified resource.
         testIamPermissions (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the resource for this request.
@@ -5525,6 +7009,20 @@ declare module gapi.client.compute {
         // 
         // You can specify a maximum of 1000 instances with this method per request.
         abandonInstances (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The name of the managed instance group.
             instanceGroupManager: string,
             // Project ID for this request.
@@ -5541,6 +7039,20 @@ declare module gapi.client.compute {
         
         // Retrieves the list of managed instance groups and groups them by zone.
         aggregatedList (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -5567,6 +7079,20 @@ declare module gapi.client.compute {
         
         // Deletes the specified managed instance group and all of the instances in that group. Note that the instance group must not belong to a backend service. Read  Deleting an instance group for more information.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The name of the managed instance group to delete.
             instanceGroupManager: string,
             // Project ID for this request.
@@ -5587,6 +7113,20 @@ declare module gapi.client.compute {
         // 
         // You can specify a maximum of 1000 instances with this method per request.
         deleteInstances (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The name of the managed instance group.
             instanceGroupManager: string,
             // Project ID for this request.
@@ -5603,6 +7143,20 @@ declare module gapi.client.compute {
         
         // Returns all of the details about the specified managed instance group. Get a list of available managed instance groups by making a list() request.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The name of the managed instance group.
             instanceGroupManager: string,
             // Project ID for this request.
@@ -5615,6 +7169,20 @@ declare module gapi.client.compute {
         // 
         // A managed instance group can have up to 1000 VM instances per group. Please contact Cloud Support if you need an increase in this limit.
         insert (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -5629,6 +7197,20 @@ declare module gapi.client.compute {
         
         // Retrieves a list of managed instance groups that are contained within the specified project and zone.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -5657,6 +7239,20 @@ declare module gapi.client.compute {
         
         // Lists all of the instances in the managed instance group. Each instance in the list has a currentAction, which indicates the action that the managed instance group is performing on the instance. For example, if the group is still creating an instance, the currentAction is CREATING. If a previous action failed, the list displays the errors for that failed action.
         listManagedInstances (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // 
             filter?: string,
             // The name of the managed instance group.
@@ -5675,6 +7271,20 @@ declare module gapi.client.compute {
         
         // Updates a managed instance group using the information that you specify in the request. This operation is marked as DONE when the group is patched even if the instances in the group are still in the process of being patched. You must separately verify the status of the individual instances with the listManagedInstances method. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
         patch (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The name of the instance group manager.
             instanceGroupManager: string,
             // Project ID for this request.
@@ -5695,6 +7305,20 @@ declare module gapi.client.compute {
         // 
         // You can specify a maximum of 1000 instances with this method per request.
         recreateInstances (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The name of the managed instance group.
             instanceGroupManager: string,
             // Project ID for this request.
@@ -5713,6 +7337,20 @@ declare module gapi.client.compute {
         // 
         // If the group is part of a backend service that has enabled connection draining, it can take up to 60 seconds after the connection draining duration has elapsed before the VM instance is removed or deleted.
         resize (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The name of the managed instance group.
             instanceGroupManager: string,
             // Project ID for this request.
@@ -5735,6 +7373,20 @@ declare module gapi.client.compute {
         // 
         // If the group is part of a backend service that has enabled connection draining, it can take up to 60 seconds after the connection draining duration has elapsed before the VM instance is removed or deleted.
         resizeAdvanced (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The name of the managed instance group.
             instanceGroupManager: string,
             // Project ID for this request.
@@ -5751,6 +7403,20 @@ declare module gapi.client.compute {
         
         // Modifies the autohealing policies.
         setAutoHealingPolicies (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The name of the instance group manager.
             instanceGroupManager: string,
             // Project ID for this request.
@@ -5767,6 +7433,20 @@ declare module gapi.client.compute {
         
         // Specifies the instance template to use when creating new instances in this group. The templates for existing instances in the group do not change unless you recreate them.
         setInstanceTemplate (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The name of the managed instance group.
             instanceGroupManager: string,
             // Project ID for this request.
@@ -5783,6 +7463,20 @@ declare module gapi.client.compute {
         
         // Modifies the target pools to which all instances in this managed instance group are assigned. The target pools automatically apply to all of the instances in the managed instance group. This operation is marked DONE when you make the request even if the instances have not yet been added to their target pools. The change might take some time to apply to all of the instances in the group depending on the size of the group.
         setTargetPools (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The name of the managed instance group.
             instanceGroupManager: string,
             // Project ID for this request.
@@ -5799,6 +7493,20 @@ declare module gapi.client.compute {
         
         // Returns permissions that a caller has on the specified resource.
         testIamPermissions (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the resource for this request.
@@ -5809,6 +7517,20 @@ declare module gapi.client.compute {
         
         // Updates a managed instance group using the information that you specify in the request. This operation is marked as DONE when the group is updated even if the instances in the group have not yet been updated. You must separately verify the status of the individual instances with the listManagedInstances method.
         update (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The name of the instance group manager.
             instanceGroupManager: string,
             // Project ID for this request.
@@ -5829,6 +7551,20 @@ declare module gapi.client.compute {
     interface InstanceGroupsResource {
         // Adds a list of instances to the specified instance group. All of the instances in the instance group must be in the same network/subnetwork. Read  Adding instances for more information.
         addInstances (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The name of the instance group where you are adding instances.
             instanceGroup: string,
             // Project ID for this request.
@@ -5845,6 +7581,20 @@ declare module gapi.client.compute {
         
         // Retrieves the list of instance groups and sorts them by zone.
         aggregatedList (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -5871,6 +7621,20 @@ declare module gapi.client.compute {
         
         // Deletes the specified instance group. The instances in the group are not deleted. Note that instance group must not belong to a backend service. Read  Deleting an instance group for more information.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The name of the instance group to delete.
             instanceGroup: string,
             // Project ID for this request.
@@ -5887,6 +7651,20 @@ declare module gapi.client.compute {
         
         // Returns the specified instance group. Get a list of available instance groups by making a list() request.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The name of the instance group.
             instanceGroup: string,
             // Project ID for this request.
@@ -5897,6 +7675,20 @@ declare module gapi.client.compute {
         
         // Creates an instance group in the specified project using the parameters that are included in the request.
         insert (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -5911,6 +7703,20 @@ declare module gapi.client.compute {
         
         // Retrieves the list of instance groups that are located in the specified project and zone.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -5939,6 +7745,20 @@ declare module gapi.client.compute {
         
         // Lists the instances in the specified instance group.
         listInstances (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -5971,6 +7791,20 @@ declare module gapi.client.compute {
         // 
         // If the group is part of a backend service that has enabled connection draining, it can take up to 60 seconds after the connection draining duration before the VM instance is removed or deleted.
         removeInstances (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The name of the instance group where the specified instances will be removed.
             instanceGroup: string,
             // Project ID for this request.
@@ -5987,6 +7821,20 @@ declare module gapi.client.compute {
         
         // Sets the named ports for the specified instance group.
         setNamedPorts (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The name of the instance group where the named ports are updated.
             instanceGroup: string,
             // Project ID for this request.
@@ -6003,6 +7851,20 @@ declare module gapi.client.compute {
         
         // Returns permissions that a caller has on the specified resource.
         testIamPermissions (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the resource for this request.
@@ -6017,6 +7879,20 @@ declare module gapi.client.compute {
     interface InstanceTemplatesResource {
         // Deletes the specified instance template. If you delete an instance template that is being referenced from another instance group, the instance group will not be able to create or recreate virtual machine instances. Deleting an instance template is permanent and cannot be undone.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The name of the instance template to delete.
             instanceTemplate: string,
             // Project ID for this request.
@@ -6031,6 +7907,20 @@ declare module gapi.client.compute {
         
         // Returns the specified instance template. Get a list of available instance templates by making a list() request.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The name of the instance template.
             instanceTemplate: string,
             // Project ID for this request.
@@ -6039,6 +7929,20 @@ declare module gapi.client.compute {
         
         // Creates an instance template in the specified project using the data that is included in the request. If you are creating a new template to update an existing instance group, your new instance template must use the same network or, if applicable, the same subnetwork as the original template.
         insert (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -6051,6 +7955,20 @@ declare module gapi.client.compute {
         
         // Retrieves a list of instance templates that are contained within the specified project and zone.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -6077,6 +7995,20 @@ declare module gapi.client.compute {
         
         // Returns permissions that a caller has on the specified resource.
         testIamPermissions (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the resource for this request.
@@ -6089,6 +8021,20 @@ declare module gapi.client.compute {
     interface InstancesResource {
         // Adds an access config to an instance's network interface.
         addAccessConfig (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The instance name for this request.
             instance: string,
             // The name of the network interface to add to this instance.
@@ -6107,6 +8053,20 @@ declare module gapi.client.compute {
         
         // Retrieves aggregated list of instances.
         aggregatedList (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -6133,6 +8093,20 @@ declare module gapi.client.compute {
         
         // Attaches an existing Disk resource to an instance. You must first create the disk before you can attach it. It is not possible to create and attach a disk at the same time. For more information, read Adding a persistent disk to your instance.
         attachDisk (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The instance name for this request.
             instance: string,
             // Project ID for this request.
@@ -6149,6 +8123,20 @@ declare module gapi.client.compute {
         
         // Deletes the specified Instance resource. For more information, see Stopping or Deleting an Instance.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the instance resource to delete.
             instance: string,
             // Project ID for this request.
@@ -6165,6 +8153,20 @@ declare module gapi.client.compute {
         
         // Deletes an access config from an instance's network interface.
         deleteAccessConfig (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The name of the access config to delete.
             accessConfig: string,
             // The instance name for this request.
@@ -6185,6 +8187,20 @@ declare module gapi.client.compute {
         
         // Detaches a disk from an instance.
         detachDisk (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Disk device name to detach.
             deviceName: string,
             // Instance name.
@@ -6203,6 +8219,20 @@ declare module gapi.client.compute {
         
         // Returns the specified Instance resource. Get a list of available instances by making a list() request.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the instance resource to return.
             instance: string,
             // Project ID for this request.
@@ -6213,6 +8243,20 @@ declare module gapi.client.compute {
         
         // Returns the specified instance's serial port output.
         getSerialPortOutput (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the instance scoping this request.
             instance: string,
             // Specifies which COM or serial port to retrieve data from.
@@ -6227,6 +8271,20 @@ declare module gapi.client.compute {
         
         // Creates an instance resource in the specified project using the data included in the request.
         insert (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -6241,6 +8299,20 @@ declare module gapi.client.compute {
         
         // Retrieves the list of instances contained within the specified zone.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -6269,6 +8341,20 @@ declare module gapi.client.compute {
         
         // Retrieves the list of referrers to instances contained within the specified zone.
         listReferrers (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -6299,6 +8385,20 @@ declare module gapi.client.compute {
         
         // Performs a reset on the instance. For more information, see Resetting an instance.
         reset (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the instance scoping this request.
             instance: string,
             // Project ID for this request.
@@ -6315,6 +8415,20 @@ declare module gapi.client.compute {
         
         // Sets the auto-delete flag for a disk attached to an instance.
         setDiskAutoDelete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Whether to auto-delete the disk when the instance is deleted.
             autoDelete: boolean,
             // The device name of the disk to modify.
@@ -6335,6 +8449,20 @@ declare module gapi.client.compute {
         
         // Sets labels on an instance. To learn more about labels, read the Labeling Resources documentation.
         setLabels (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the instance scoping this request.
             instance: string,
             // Project ID for this request.
@@ -6351,6 +8479,20 @@ declare module gapi.client.compute {
         
         // Changes the number and/or type of accelerator for a stopped instance to the values specified in the request.
         setMachineResources (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the instance scoping this request.
             instance: string,
             // Project ID for this request.
@@ -6367,6 +8509,20 @@ declare module gapi.client.compute {
         
         // Changes the machine type for a stopped instance to the machine type specified in the request.
         setMachineType (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the instance scoping this request.
             instance: string,
             // Project ID for this request.
@@ -6383,6 +8539,20 @@ declare module gapi.client.compute {
         
         // Sets metadata for the specified instance to the data included in the request.
         setMetadata (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the instance scoping this request.
             instance: string,
             // Project ID for this request.
@@ -6399,6 +8569,20 @@ declare module gapi.client.compute {
         
         // Changes the minimum CPU platform that this instance should use. This method can only be called on a stopped instance. For more information, read Specifying a Minimum CPU Platform.
         setMinCpuPlatform (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the instance scoping this request.
             instance: string,
             // Project ID for this request.
@@ -6415,6 +8599,20 @@ declare module gapi.client.compute {
         
         // Sets an instance's scheduling options.
         setScheduling (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Instance name.
             instance: string,
             // Project ID for this request.
@@ -6431,6 +8629,20 @@ declare module gapi.client.compute {
         
         // Sets the service account on the instance. For more information, read Changing the service account and access scopes for an instance.
         setServiceAccount (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the instance resource to start.
             instance: string,
             // Project ID for this request.
@@ -6447,6 +8659,20 @@ declare module gapi.client.compute {
         
         // Sets tags for the specified instance to the data included in the request.
         setTags (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the instance scoping this request.
             instance: string,
             // Project ID for this request.
@@ -6463,6 +8689,20 @@ declare module gapi.client.compute {
         
         // Starts an instance that was stopped using the using the instances().stop method. For more information, see Restart an instance.
         start (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the instance resource to start.
             instance: string,
             // Project ID for this request.
@@ -6479,6 +8719,20 @@ declare module gapi.client.compute {
         
         // Starts an instance that was stopped using the using the instances().stop method. For more information, see Restart an instance.
         startWithEncryptionKey (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the instance resource to start.
             instance: string,
             // Project ID for this request.
@@ -6495,6 +8749,20 @@ declare module gapi.client.compute {
         
         // Stops a running instance, shutting it down cleanly, and allows you to restart the instance at a later time. Stopped instances do not incur per-minute, virtual machine usage charges while they are stopped, but any resources that the virtual machine is using, such as persistent disks and static IP addresses, will continue to be charged until they are deleted. For more information, see Stopping an instance.
         stop (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the instance resource to stop.
             instance: string,
             // Project ID for this request.
@@ -6511,6 +8779,20 @@ declare module gapi.client.compute {
         
         // Returns permissions that a caller has on the specified resource.
         testIamPermissions (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the resource for this request.
@@ -6525,6 +8807,20 @@ declare module gapi.client.compute {
     interface LicensesResource {
         // Returns the specified License resource.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the License resource to return.
             license: string,
             // Project ID for this request.
@@ -6537,6 +8833,20 @@ declare module gapi.client.compute {
     interface MachineTypesResource {
         // Retrieves an aggregated list of machine types.
         aggregatedList (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -6563,6 +8873,20 @@ declare module gapi.client.compute {
         
         // Returns the specified machine type. Get a list of available machine types by making a list() request.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the machine type to return.
             machineType: string,
             // Project ID for this request.
@@ -6573,6 +8897,20 @@ declare module gapi.client.compute {
         
         // Retrieves a list of machine types available to the specified project.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -6605,6 +8943,20 @@ declare module gapi.client.compute {
     interface NetworksResource {
         // Adds a peering to the specified network.
         addPeering (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the network resource to add peering to.
             network: string,
             // Project ID for this request.
@@ -6619,6 +8971,20 @@ declare module gapi.client.compute {
         
         // Deletes the specified network.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the network to delete.
             network: string,
             // Project ID for this request.
@@ -6633,6 +8999,20 @@ declare module gapi.client.compute {
         
         // Returns the specified network. Get a list of available networks by making a list() request.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the network to return.
             network: string,
             // Project ID for this request.
@@ -6641,6 +9021,20 @@ declare module gapi.client.compute {
         
         // Creates a network in the specified project using the data included in the request.
         insert (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -6653,6 +9047,20 @@ declare module gapi.client.compute {
         
         // Retrieves the list of networks available to the specified project.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -6679,6 +9087,20 @@ declare module gapi.client.compute {
         
         // Removes a peering from the specified network.
         removePeering (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the network resource to remove peering from.
             network: string,
             // Project ID for this request.
@@ -6693,6 +9115,20 @@ declare module gapi.client.compute {
         
         // Switches the network mode from auto subnet mode to custom subnet mode.
         switchToCustomMode (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the network to be updated.
             network: string,
             // Project ID for this request.
@@ -6707,6 +9143,20 @@ declare module gapi.client.compute {
         
         // Returns permissions that a caller has on the specified resource.
         testIamPermissions (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the resource for this request.
@@ -6719,6 +9169,20 @@ declare module gapi.client.compute {
     interface ProjectsResource {
         // Disable this project as an XPN host project.
         disableXpnHost (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -6731,6 +9195,20 @@ declare module gapi.client.compute {
         
         // Disable an XPN resource associated with this host project.
         disableXpnResource (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -6743,6 +9221,20 @@ declare module gapi.client.compute {
         
         // Enable this project as an XPN host project.
         enableXpnHost (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -6755,6 +9247,20 @@ declare module gapi.client.compute {
         
         // Enable XPN resource (a.k.a service project or service folder in the future) for a host project, so that subnetworks in the host project can be used by instances in the service project or folder.
         enableXpnResource (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -6767,18 +9273,60 @@ declare module gapi.client.compute {
         
         // Returns the specified Project resource.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
         }) : gapi.client.Request<Project>;        
         
         // Get the XPN host project that this project links to. May be empty if no link exists.
         getXpnHost (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
         }) : gapi.client.Request<Project>;        
         
         // Get XPN resources associated with this host project.
         getXpnResources (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // 
             filter?: string,
             // 
@@ -6793,6 +9341,20 @@ declare module gapi.client.compute {
         
         // List all XPN host projects visible to the user in an organization.
         listXpnHosts (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // 
             filter?: string,
             // 
@@ -6807,6 +9369,20 @@ declare module gapi.client.compute {
         
         // Moves a persistent disk from one zone to another.
         moveDisk (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -6819,6 +9395,20 @@ declare module gapi.client.compute {
         
         // Moves an instance and its attached persistent disks from one zone to another.
         moveInstance (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -6831,6 +9421,20 @@ declare module gapi.client.compute {
         
         // Sets metadata common to all instances within the specified project using the data included in the request.
         setCommonInstanceMetadata (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -6843,6 +9447,20 @@ declare module gapi.client.compute {
         
         // Enables the usage export feature and sets the usage export bucket where reports are stored. If you provide an empty request body using this method, the usage export feature will be disabled.
         setUsageExportBucket (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -6859,6 +9477,20 @@ declare module gapi.client.compute {
     interface RegionAutoscalersResource {
         // Deletes the specified autoscaler.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the autoscaler to delete.
             autoscaler: string,
             // Project ID for this request.
@@ -6875,6 +9507,20 @@ declare module gapi.client.compute {
         
         // Returns the specified autoscaler.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the autoscaler to return.
             autoscaler: string,
             // Project ID for this request.
@@ -6885,6 +9531,20 @@ declare module gapi.client.compute {
         
         // Creates an autoscaler in the specified project using the data included in the request.
         insert (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the region scoping this request.
@@ -6899,6 +9559,20 @@ declare module gapi.client.compute {
         
         // Retrieves a list of autoscalers contained within the specified region.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -6927,6 +9601,20 @@ declare module gapi.client.compute {
         
         // Updates an autoscaler in the specified project using the data included in the request. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
         patch (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the autoscaler to patch.
             autoscaler?: string,
             // Project ID for this request.
@@ -6943,6 +9631,20 @@ declare module gapi.client.compute {
         
         // Returns permissions that a caller has on the specified resource.
         testIamPermissions (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // The name of the region for this request.
@@ -6953,6 +9655,20 @@ declare module gapi.client.compute {
         
         // Updates an autoscaler in the specified project using the data included in the request.
         update (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the autoscaler to update.
             autoscaler?: string,
             // Project ID for this request.
@@ -6971,6 +9687,20 @@ declare module gapi.client.compute {
     interface RegionBackendServicesResource {
         // Deletes the specified regional BackendService resource.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the BackendService resource to delete.
             backendService: string,
             // Project ID for this request.
@@ -6987,6 +9717,20 @@ declare module gapi.client.compute {
         
         // Returns the specified regional BackendService resource.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the BackendService resource to return.
             backendService: string,
             // Project ID for this request.
@@ -6997,6 +9741,20 @@ declare module gapi.client.compute {
         
         // Gets the most recent health check results for this regional BackendService.
         getHealth (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the BackendService resource to which the queried instance belongs.
             backendService: string,
             // 
@@ -7007,6 +9765,20 @@ declare module gapi.client.compute {
         
         // Creates a regional BackendService resource in the specified project using the data included in the request. There are several restrictions and guidelines to keep in mind when creating a regional backend service. Read  Restrictions and Guidelines for more information.
         insert (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the region scoping this request.
@@ -7021,6 +9793,20 @@ declare module gapi.client.compute {
         
         // Retrieves the list of regional BackendService resources available to the specified project in the given region.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -7049,6 +9835,20 @@ declare module gapi.client.compute {
         
         // Updates the specified regional BackendService resource with the data included in the request. There are several restrictions and guidelines to keep in mind when updating a backend service. Read  Restrictions and Guidelines for more information. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
         patch (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the BackendService resource to patch.
             backendService: string,
             // Project ID for this request.
@@ -7065,6 +9865,20 @@ declare module gapi.client.compute {
         
         // Returns permissions that a caller has on the specified resource.
         testIamPermissions (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // The name of the region for this request.
@@ -7075,6 +9889,20 @@ declare module gapi.client.compute {
         
         // Updates the specified regional BackendService resource with the data included in the request. There are several restrictions and guidelines to keep in mind when updating a backend service. Read  Restrictions and Guidelines for more information.
         update (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the BackendService resource to update.
             backendService: string,
             // Project ID for this request.
@@ -7095,6 +9923,20 @@ declare module gapi.client.compute {
     interface RegionCommitmentsResource {
         // Retrieves an aggregated list of commitments.
         aggregatedList (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -7121,6 +9963,20 @@ declare module gapi.client.compute {
         
         // Returns the specified commitment resource. Get a list of available commitments by making a list() request.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the commitment to return.
             commitment: string,
             // Project ID for this request.
@@ -7131,6 +9987,20 @@ declare module gapi.client.compute {
         
         // Creates a commitment in the specified project using the data included in the request.
         insert (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the region for this request.
@@ -7145,6 +10015,20 @@ declare module gapi.client.compute {
         
         // Retrieves a list of commitments contained within the specified region.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -7181,6 +10065,20 @@ declare module gapi.client.compute {
         // 
         // You can specify a maximum of 1000 instances with this method per request.
         abandonInstances (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the managed instance group.
             instanceGroupManager: string,
             // Project ID for this request.
@@ -7197,6 +10095,20 @@ declare module gapi.client.compute {
         
         // Deletes the specified managed instance group and all of the instances in that group.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the managed instance group to delete.
             instanceGroupManager: string,
             // Project ID for this request.
@@ -7217,6 +10129,20 @@ declare module gapi.client.compute {
         // 
         // You can specify a maximum of 1000 instances with this method per request.
         deleteInstances (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the managed instance group.
             instanceGroupManager: string,
             // Project ID for this request.
@@ -7233,6 +10159,20 @@ declare module gapi.client.compute {
         
         // Returns all of the details about the specified managed instance group.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the managed instance group to return.
             instanceGroupManager: string,
             // Project ID for this request.
@@ -7245,6 +10185,20 @@ declare module gapi.client.compute {
         // 
         // A regional managed instance group can contain up to 2000 instances.
         insert (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the region scoping this request.
@@ -7259,6 +10213,20 @@ declare module gapi.client.compute {
         
         // Retrieves the list of managed instance groups that are contained within the specified region.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -7287,6 +10255,20 @@ declare module gapi.client.compute {
         
         // Lists the instances in the managed instance group and instances that are scheduled to be created. The list includes any current actions that the group has scheduled for its instances.
         listManagedInstances (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // 
             filter?: string,
             // The name of the managed instance group.
@@ -7305,6 +10287,20 @@ declare module gapi.client.compute {
         
         // Updates a managed instance group using the information that you specify in the request. This operation is marked as DONE when the group is patched even if the instances in the group are still in the process of being patched. You must separately verify the status of the individual instances with the listmanagedinstances method. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
         patch (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The name of the instance group manager.
             instanceGroupManager: string,
             // Project ID for this request.
@@ -7325,6 +10321,20 @@ declare module gapi.client.compute {
         // 
         // You can specify a maximum of 1000 instances with this method per request.
         recreateInstances (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the managed instance group.
             instanceGroupManager: string,
             // Project ID for this request.
@@ -7343,6 +10353,20 @@ declare module gapi.client.compute {
         // 
         // If the group is part of a backend service that has enabled connection draining, it can take up to 60 seconds after the connection draining duration has elapsed before the VM instance is removed or deleted.
         resize (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the managed instance group.
             instanceGroupManager: string,
             // Project ID for this request.
@@ -7361,6 +10385,20 @@ declare module gapi.client.compute {
         
         // Modifies the autohealing policy for the instances in this managed instance group.
         setAutoHealingPolicies (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the managed instance group.
             instanceGroupManager: string,
             // Project ID for this request.
@@ -7377,6 +10415,20 @@ declare module gapi.client.compute {
         
         // Sets the instance template to use when creating new instances or recreating instances in this group. Existing instances are not affected.
         setInstanceTemplate (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The name of the managed instance group.
             instanceGroupManager: string,
             // Project ID for this request.
@@ -7393,6 +10445,20 @@ declare module gapi.client.compute {
         
         // Modifies the target pools to which all new instances in this group are assigned. Existing instances in the group are not affected.
         setTargetPools (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the managed instance group.
             instanceGroupManager: string,
             // Project ID for this request.
@@ -7409,6 +10475,20 @@ declare module gapi.client.compute {
         
         // Returns permissions that a caller has on the specified resource.
         testIamPermissions (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // The name of the region for this request.
@@ -7419,6 +10499,20 @@ declare module gapi.client.compute {
         
         // Updates a managed instance group using the information that you specify in the request. This operation is marked as DONE when the group is updated even if the instances in the group have not yet been updated. You must separately verify the status of the individual instances with the listmanagedinstances method.
         update (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The name of the instance group manager.
             instanceGroupManager: string,
             // Project ID for this request.
@@ -7439,6 +10533,20 @@ declare module gapi.client.compute {
     interface RegionInstanceGroupsResource {
         // Returns the specified instance group resource.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the instance group resource to return.
             instanceGroup: string,
             // Project ID for this request.
@@ -7449,6 +10557,20 @@ declare module gapi.client.compute {
         
         // Retrieves the list of instance group resources contained within the specified region.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -7477,6 +10599,20 @@ declare module gapi.client.compute {
         
         // Lists the instances in the specified instance group and displays information about the named ports. Depending on the specified options, this method can list all instances or only the instances that are running.
         listInstances (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -7507,6 +10643,20 @@ declare module gapi.client.compute {
         
         // Sets the named ports for the specified regional instance group.
         setNamedPorts (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The name of the regional instance group where the named ports are updated.
             instanceGroup: string,
             // Project ID for this request.
@@ -7523,6 +10673,20 @@ declare module gapi.client.compute {
         
         // Returns permissions that a caller has on the specified resource.
         testIamPermissions (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // The name of the region for this request.
@@ -7537,6 +10701,20 @@ declare module gapi.client.compute {
     interface RegionOperationsResource {
         // Deletes the specified region-specific Operations resource.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the Operations resource to delete.
             operation: string,
             // Project ID for this request.
@@ -7547,6 +10725,20 @@ declare module gapi.client.compute {
         
         // Retrieves the specified region-specific Operations resource.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the Operations resource to return.
             operation: string,
             // Project ID for this request.
@@ -7557,6 +10749,20 @@ declare module gapi.client.compute {
         
         // Retrieves a list of Operation resources contained within the specified region.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -7589,6 +10795,20 @@ declare module gapi.client.compute {
     interface RegionsResource {
         // Returns the specified Region resource. Get a list of available regions by making a list() request.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the region resource to return.
@@ -7597,6 +10817,20 @@ declare module gapi.client.compute {
         
         // Retrieves the list of region resources available to the specified project.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -7627,6 +10861,20 @@ declare module gapi.client.compute {
     interface RoutersResource {
         // Retrieves an aggregated list of routers.
         aggregatedList (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -7653,6 +10901,20 @@ declare module gapi.client.compute {
         
         // Deletes the specified Router resource.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the region for this request.
@@ -7669,6 +10931,20 @@ declare module gapi.client.compute {
         
         // Returns the specified Router resource. Get a list of available routers by making a list() request.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the region for this request.
@@ -7679,6 +10955,20 @@ declare module gapi.client.compute {
         
         // Retrieves runtime information of the specified router.
         getRouterStatus (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the region for this request.
@@ -7689,6 +10979,20 @@ declare module gapi.client.compute {
         
         // Creates a Router resource in the specified project and region using the data included in the request.
         insert (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the region for this request.
@@ -7703,6 +11007,20 @@ declare module gapi.client.compute {
         
         // Retrieves a list of Router resources available to the specified project.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -7731,6 +11049,20 @@ declare module gapi.client.compute {
         
         // Patches the specified Router resource with the data included in the request. This method supports PATCH semantics and uses JSON merge patch format and processing rules.
         patch (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the region for this request.
@@ -7747,6 +11079,20 @@ declare module gapi.client.compute {
         
         // Preview fields auto-generated during router create and update operations. Calling this method does NOT create or update the router.
         preview (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the region for this request.
@@ -7757,6 +11103,20 @@ declare module gapi.client.compute {
         
         // Returns permissions that a caller has on the specified resource.
         testIamPermissions (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // The name of the region for this request.
@@ -7767,6 +11127,20 @@ declare module gapi.client.compute {
         
         // Updates the specified Router resource with the data included in the request.
         update (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the region for this request.
@@ -7787,6 +11161,20 @@ declare module gapi.client.compute {
     interface RoutesResource {
         // Deletes the specified Route resource.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -7801,6 +11189,20 @@ declare module gapi.client.compute {
         
         // Returns the specified Route resource. Get a list of available routes by making a list() request.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the Route resource to return.
@@ -7809,6 +11211,20 @@ declare module gapi.client.compute {
         
         // Creates a Route resource in the specified project using the data included in the request.
         insert (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -7821,6 +11237,20 @@ declare module gapi.client.compute {
         
         // Retrieves the list of Route resources available to the specified project.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -7847,6 +11277,20 @@ declare module gapi.client.compute {
         
         // Returns permissions that a caller has on the specified resource.
         testIamPermissions (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the resource for this request.
@@ -7861,6 +11305,20 @@ declare module gapi.client.compute {
         // 
         // For more information, see Deleting snaphots.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -7875,6 +11333,20 @@ declare module gapi.client.compute {
         
         // Returns the specified Snapshot resource. Get a list of available snapshots by making a list() request.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the Snapshot resource to return.
@@ -7883,6 +11355,20 @@ declare module gapi.client.compute {
         
         // Retrieves the list of Snapshot resources contained within the specified project.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -7909,6 +11395,20 @@ declare module gapi.client.compute {
         
         // Sets the labels on a snapshot. To learn more about labels, read the Labeling Resources documentation.
         setLabels (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the resource for this request.
@@ -7917,6 +11417,20 @@ declare module gapi.client.compute {
         
         // Returns permissions that a caller has on the specified resource.
         testIamPermissions (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the resource for this request.
@@ -7929,6 +11443,20 @@ declare module gapi.client.compute {
     interface SslCertificatesResource {
         // Deletes the specified SslCertificate resource.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -7943,6 +11471,20 @@ declare module gapi.client.compute {
         
         // Returns the specified SslCertificate resource. Get a list of available SSL certificates by making a list() request.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the SslCertificate resource to return.
@@ -7951,6 +11493,20 @@ declare module gapi.client.compute {
         
         // Creates a SslCertificate resource in the specified project using the data included in the request.
         insert (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -7963,6 +11519,20 @@ declare module gapi.client.compute {
         
         // Retrieves the list of SslCertificate resources available to the specified project.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -7989,6 +11559,20 @@ declare module gapi.client.compute {
         
         // Returns permissions that a caller has on the specified resource.
         testIamPermissions (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the resource for this request.
@@ -8001,6 +11585,20 @@ declare module gapi.client.compute {
     interface SubnetworksResource {
         // Retrieves an aggregated list of subnetworks.
         aggregatedList (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -8027,6 +11625,20 @@ declare module gapi.client.compute {
         
         // Deletes the specified subnetwork.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the region scoping this request.
@@ -8043,6 +11655,20 @@ declare module gapi.client.compute {
         
         // Expands the IP CIDR range of the subnetwork to a specified value.
         expandIpCidrRange (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the region scoping this request.
@@ -8059,6 +11685,20 @@ declare module gapi.client.compute {
         
         // Returns the specified subnetwork. Get a list of available subnetworks list() request.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the region scoping this request.
@@ -8069,6 +11709,20 @@ declare module gapi.client.compute {
         
         // Gets the access control policy for a resource. May be empty if no such policy or resource exists.
         getIamPolicy (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // The name of the region for this request.
@@ -8079,6 +11733,20 @@ declare module gapi.client.compute {
         
         // Creates a subnetwork in the specified project using the data included in the request.
         insert (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the region scoping this request.
@@ -8093,6 +11761,20 @@ declare module gapi.client.compute {
         
         // Retrieves a list of subnetworks available to the specified project.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -8121,6 +11803,20 @@ declare module gapi.client.compute {
         
         // Sets the access control policy on the specified resource. Replaces any existing policy.
         setIamPolicy (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // The name of the region for this request.
@@ -8131,6 +11827,20 @@ declare module gapi.client.compute {
         
         // Set whether VMs in this subnet can access Google services without assigning external IP addresses through Private Google Access.
         setPrivateIpGoogleAccess (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the region scoping this request.
@@ -8147,6 +11857,20 @@ declare module gapi.client.compute {
         
         // Returns permissions that a caller has on the specified resource.
         testIamPermissions (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // The name of the region for this request.
@@ -8161,6 +11885,20 @@ declare module gapi.client.compute {
     interface TargetHttpProxiesResource {
         // Deletes the specified TargetHttpProxy resource.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -8175,6 +11913,20 @@ declare module gapi.client.compute {
         
         // Returns the specified TargetHttpProxy resource. Get a list of available target HTTP proxies by making a list() request.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the TargetHttpProxy resource to return.
@@ -8183,6 +11935,20 @@ declare module gapi.client.compute {
         
         // Creates a TargetHttpProxy resource in the specified project using the data included in the request.
         insert (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -8195,6 +11961,20 @@ declare module gapi.client.compute {
         
         // Retrieves the list of TargetHttpProxy resources available to the specified project.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -8221,6 +12001,20 @@ declare module gapi.client.compute {
         
         // Changes the URL map for TargetHttpProxy.
         setUrlMap (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -8235,6 +12029,20 @@ declare module gapi.client.compute {
         
         // Returns permissions that a caller has on the specified resource.
         testIamPermissions (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the resource for this request.
@@ -8247,6 +12055,20 @@ declare module gapi.client.compute {
     interface TargetHttpsProxiesResource {
         // Deletes the specified TargetHttpsProxy resource.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -8261,6 +12083,20 @@ declare module gapi.client.compute {
         
         // Returns the specified TargetHttpsProxy resource. Get a list of available target HTTPS proxies by making a list() request.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the TargetHttpsProxy resource to return.
@@ -8269,6 +12105,20 @@ declare module gapi.client.compute {
         
         // Creates a TargetHttpsProxy resource in the specified project using the data included in the request.
         insert (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -8281,6 +12131,20 @@ declare module gapi.client.compute {
         
         // Retrieves the list of TargetHttpsProxy resources available to the specified project.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -8307,6 +12171,20 @@ declare module gapi.client.compute {
         
         // Replaces SslCertificates for TargetHttpsProxy.
         setSslCertificates (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -8321,6 +12199,20 @@ declare module gapi.client.compute {
         
         // Changes the URL map for TargetHttpsProxy.
         setUrlMap (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -8335,6 +12227,20 @@ declare module gapi.client.compute {
         
         // Returns permissions that a caller has on the specified resource.
         testIamPermissions (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the resource for this request.
@@ -8347,6 +12253,20 @@ declare module gapi.client.compute {
     interface TargetInstancesResource {
         // Retrieves an aggregated list of target instances.
         aggregatedList (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -8373,6 +12293,20 @@ declare module gapi.client.compute {
         
         // Deletes the specified TargetInstance resource.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -8389,6 +12323,20 @@ declare module gapi.client.compute {
         
         // Returns the specified TargetInstance resource. Get a list of available target instances by making a list() request.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the TargetInstance resource to return.
@@ -8399,6 +12347,20 @@ declare module gapi.client.compute {
         
         // Creates a TargetInstance resource in the specified project and zone using the data included in the request.
         insert (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -8413,6 +12375,20 @@ declare module gapi.client.compute {
         
         // Retrieves a list of TargetInstance resources available to the specified project and zone.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -8441,6 +12417,20 @@ declare module gapi.client.compute {
         
         // Returns permissions that a caller has on the specified resource.
         testIamPermissions (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the resource for this request.
@@ -8455,6 +12445,20 @@ declare module gapi.client.compute {
     interface TargetPoolsResource {
         // Adds health check URLs to a target pool.
         addHealthCheck (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the region scoping this request.
@@ -8471,6 +12475,20 @@ declare module gapi.client.compute {
         
         // Adds an instance to a target pool.
         addInstance (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the region scoping this request.
@@ -8487,6 +12505,20 @@ declare module gapi.client.compute {
         
         // Retrieves an aggregated list of target pools.
         aggregatedList (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -8513,6 +12545,20 @@ declare module gapi.client.compute {
         
         // Deletes the specified target pool.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the region scoping this request.
@@ -8529,6 +12575,20 @@ declare module gapi.client.compute {
         
         // Returns the specified target pool. Get a list of available target pools by making a list() request.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the region scoping this request.
@@ -8539,6 +12599,20 @@ declare module gapi.client.compute {
         
         // Gets the most recent health check results for each IP for the instance that is referenced by the given target pool.
         getHealth (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the region scoping this request.
@@ -8549,6 +12623,20 @@ declare module gapi.client.compute {
         
         // Creates a target pool in the specified project and region using the data included in the request.
         insert (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the region scoping this request.
@@ -8563,6 +12651,20 @@ declare module gapi.client.compute {
         
         // Retrieves a list of target pools available to the specified project and region.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -8591,6 +12693,20 @@ declare module gapi.client.compute {
         
         // Removes health check URL from a target pool.
         removeHealthCheck (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the region for this request.
@@ -8607,6 +12723,20 @@ declare module gapi.client.compute {
         
         // Removes instance URL from a target pool.
         removeInstance (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the region scoping this request.
@@ -8623,6 +12753,20 @@ declare module gapi.client.compute {
         
         // Changes a backup target pool's configurations.
         setBackup (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // New failoverRatio value for the target pool.
             failoverRatio?: number,
             // Project ID for this request.
@@ -8641,6 +12785,20 @@ declare module gapi.client.compute {
         
         // Returns permissions that a caller has on the specified resource.
         testIamPermissions (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // The name of the region for this request.
@@ -8655,6 +12813,20 @@ declare module gapi.client.compute {
     interface TargetSslProxiesResource {
         // Deletes the specified TargetSslProxy resource.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -8669,6 +12841,20 @@ declare module gapi.client.compute {
         
         // Returns the specified TargetSslProxy resource. Get a list of available target SSL proxies by making a list() request.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the TargetSslProxy resource to return.
@@ -8677,6 +12863,20 @@ declare module gapi.client.compute {
         
         // Creates a TargetSslProxy resource in the specified project using the data included in the request.
         insert (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -8689,6 +12889,20 @@ declare module gapi.client.compute {
         
         // Retrieves the list of TargetSslProxy resources available to the specified project.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -8715,6 +12929,20 @@ declare module gapi.client.compute {
         
         // Changes the BackendService for TargetSslProxy.
         setBackendService (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -8729,6 +12957,20 @@ declare module gapi.client.compute {
         
         // Changes the ProxyHeaderType for TargetSslProxy.
         setProxyHeader (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -8743,6 +12985,20 @@ declare module gapi.client.compute {
         
         // Changes SslCertificates for TargetSslProxy.
         setSslCertificates (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -8757,6 +13013,20 @@ declare module gapi.client.compute {
         
         // Returns permissions that a caller has on the specified resource.
         testIamPermissions (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the resource for this request.
@@ -8769,6 +13039,20 @@ declare module gapi.client.compute {
     interface TargetTcpProxiesResource {
         // Deletes the specified TargetTcpProxy resource.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -8783,6 +13067,20 @@ declare module gapi.client.compute {
         
         // Returns the specified TargetTcpProxy resource. Get a list of available target TCP proxies by making a list() request.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the TargetTcpProxy resource to return.
@@ -8791,6 +13089,20 @@ declare module gapi.client.compute {
         
         // Creates a TargetTcpProxy resource in the specified project using the data included in the request.
         insert (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -8803,6 +13115,20 @@ declare module gapi.client.compute {
         
         // Retrieves the list of TargetTcpProxy resources available to the specified project.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -8829,6 +13155,20 @@ declare module gapi.client.compute {
         
         // Changes the BackendService for TargetTcpProxy.
         setBackendService (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -8843,6 +13183,20 @@ declare module gapi.client.compute {
         
         // Changes the ProxyHeaderType for TargetTcpProxy.
         setProxyHeader (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -8861,6 +13215,20 @@ declare module gapi.client.compute {
     interface TargetVpnGatewaysResource {
         // Retrieves an aggregated list of target VPN gateways.
         aggregatedList (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -8887,6 +13255,20 @@ declare module gapi.client.compute {
         
         // Deletes the specified target VPN gateway.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the region for this request.
@@ -8903,6 +13285,20 @@ declare module gapi.client.compute {
         
         // Returns the specified target VPN gateway. Get a list of available target VPN gateways by making a list() request.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the region for this request.
@@ -8913,6 +13309,20 @@ declare module gapi.client.compute {
         
         // Creates a target VPN gateway in the specified project and region using the data included in the request.
         insert (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the region for this request.
@@ -8927,6 +13337,20 @@ declare module gapi.client.compute {
         
         // Retrieves a list of target VPN gateways available to the specified project and region.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -8955,6 +13379,20 @@ declare module gapi.client.compute {
         
         // Returns permissions that a caller has on the specified resource.
         testIamPermissions (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // The name of the region for this request.
@@ -8969,6 +13407,20 @@ declare module gapi.client.compute {
     interface UrlMapsResource {
         // Deletes the specified UrlMap resource.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -8983,6 +13435,20 @@ declare module gapi.client.compute {
         
         // Returns the specified UrlMap resource. Get a list of available URL maps by making a list() request.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the UrlMap resource to return.
@@ -8991,6 +13457,20 @@ declare module gapi.client.compute {
         
         // Creates a UrlMap resource in the specified project using the data included in the request.
         insert (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -9003,6 +13483,20 @@ declare module gapi.client.compute {
         
         // Initiates a cache invalidation operation, invalidating the specified path, scoped to the specified UrlMap.
         invalidateCache (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -9017,6 +13511,20 @@ declare module gapi.client.compute {
         
         // Retrieves the list of UrlMap resources available to the specified project.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -9043,6 +13551,20 @@ declare module gapi.client.compute {
         
         // Patches the specified UrlMap resource with the data included in the request. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
         patch (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -9057,6 +13579,20 @@ declare module gapi.client.compute {
         
         // Returns permissions that a caller has on the specified resource.
         testIamPermissions (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the resource for this request.
@@ -9065,6 +13601,20 @@ declare module gapi.client.compute {
         
         // Updates the specified UrlMap resource with the data included in the request.
         update (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -9079,6 +13629,20 @@ declare module gapi.client.compute {
         
         // Runs static validation for the UrlMap. In particular, the tests of the provided UrlMap will be run. Calling this method does NOT create the UrlMap.
         validate (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the UrlMap resource to be validated as.
@@ -9091,6 +13655,20 @@ declare module gapi.client.compute {
     interface VpnTunnelsResource {
         // Retrieves an aggregated list of VPN tunnels.
         aggregatedList (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -9117,6 +13695,20 @@ declare module gapi.client.compute {
         
         // Deletes the specified VpnTunnel resource.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the region for this request.
@@ -9133,6 +13725,20 @@ declare module gapi.client.compute {
         
         // Returns the specified VpnTunnel resource. Get a list of available VPN tunnels by making a list() request.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the region for this request.
@@ -9143,6 +13749,20 @@ declare module gapi.client.compute {
         
         // Creates a VpnTunnel resource in the specified project and region using the data included in the request.
         insert (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the region for this request.
@@ -9157,6 +13777,20 @@ declare module gapi.client.compute {
         
         // Retrieves a list of VpnTunnel resources contained in the specified project and region.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -9185,6 +13819,20 @@ declare module gapi.client.compute {
         
         // Returns permissions that a caller has on the specified resource.
         testIamPermissions (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // The name of the region for this request.
@@ -9199,6 +13847,20 @@ declare module gapi.client.compute {
     interface ZoneOperationsResource {
         // Deletes the specified zone-specific Operations resource.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the Operations resource to delete.
             operation: string,
             // Project ID for this request.
@@ -9209,6 +13871,20 @@ declare module gapi.client.compute {
         
         // Retrieves the specified zone-specific Operations resource.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the Operations resource to return.
             operation: string,
             // Project ID for this request.
@@ -9219,6 +13895,20 @@ declare module gapi.client.compute {
         
         // Retrieves a list of Operation resources contained within the specified zone.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.
@@ -9251,6 +13941,20 @@ declare module gapi.client.compute {
     interface ZonesResource {
         // Returns the specified Zone resource. Get a list of available zones by making a list() request.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID for this request.
             project: string,
             // Name of the zone resource to return.
@@ -9259,6 +13963,20 @@ declare module gapi.client.compute {
         
         // Retrieves the list of Zone resources available to the specified project.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Sets a filter {expression} for filtering listed resources. Your {expression} must be in the format: field_name comparison_string literal_string.
             // 
             // The field_name is the name of the field you want to compare. Only atomic field types are supported (string, number, boolean). The comparison_string must be either eq (equals) or ne (not equals). The literal_string is the string value to filter to. The literal value must be valid for the type of field you are filtering by (string, number, boolean). For string fields, the literal value is interpreted as a regular expression using RE2 syntax. The literal value must match the entire field.

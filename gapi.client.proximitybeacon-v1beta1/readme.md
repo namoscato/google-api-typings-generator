@@ -60,6 +60,9 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Google Proximity Beacon API resources:
 
 ```typescript
+gapi.client.beaconinfo.<method name>({ /* method parameters */ })
+    .then(response => { /* handling response */ });
+
 gapi.client.namespaces.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
@@ -67,8 +70,5 @@ gapi.client.v1beta1.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
 gapi.client.beacons.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.beaconinfo.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

@@ -43,11 +43,11 @@ Don't forget to authenticate your client before sending any request to resources
 // declare client_id registered in Google Developers Console
 var client_id = '',
     scope = [     
-        // View and manage Pub/Sub topics and subscriptions
-        'https://www.googleapis.com/auth/pubsub',
-    
         // View and manage your data across Google Cloud Platform services
         'https://www.googleapis.com/auth/cloud-platform',
+    
+        // View and manage Pub/Sub topics and subscriptions
+        'https://www.googleapis.com/auth/pubsub',
     ],
     immediate = true;
 // ...
@@ -64,9 +64,9 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Google Cloud Pub/Sub API resources:
 
 ```typescript
-gapi.client.topics.<method name>({ /* method parameters */ })
+gapi.client.subscriptions.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.subscriptions.<method name>({ /* method parameters */ })
+gapi.client.topics.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

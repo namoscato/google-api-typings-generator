@@ -636,6 +636,20 @@ declare module gapi.client.toolresults {
         // 
         // May return any of the following error code(s): - ALREADY_EXISTS - A PerfMetricSummary already exists for the given Step - NOT_FOUND - The containing Step does not exist
         create (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // A tool results execution ID.
             executionId: string,
             // A tool results history ID.
@@ -654,6 +668,20 @@ declare module gapi.client.toolresults {
         // 
         // May return any of the following canonical error codes: - NOT_FOUND - The containing PerfSampleSeries does not exist
         batchCreate (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // A tool results execution ID.
             executionId: string,
             // A tool results history ID.
@@ -670,6 +698,20 @@ declare module gapi.client.toolresults {
         // 
         // May return any of the following canonical error codes: - OUT_OF_RANGE - The specified request page_token is out of valid range - NOT_FOUND - The containing PerfSampleSeries does not exist
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // A tool results execution ID.
             executionId: string,
             // A tool results history ID.
@@ -694,6 +736,20 @@ declare module gapi.client.toolresults {
         // 
         // May return any of the following error code(s): - ALREADY_EXISTS - PerfMetricSummary already exists for the given Step - NOT_FOUND - The containing Step does not exist
         create (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // A tool results execution ID.
             executionId: string,
             // A tool results history ID.
@@ -708,6 +764,20 @@ declare module gapi.client.toolresults {
         // 
         // May return any of the following error code(s): - NOT_FOUND - The specified PerfSampleSeries does not exist
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // A tool results execution ID.
             executionId: string,
             // A tool results history ID.
@@ -726,6 +796,20 @@ declare module gapi.client.toolresults {
         // 
         // May return any of the following canonical error codes: - NOT_FOUND - The containing Step does not exist
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // A tool results execution ID.
             executionId: string,
             // Specify one or more PerfMetricType values such as CPU to filter the result
@@ -747,6 +831,20 @@ declare module gapi.client.toolresults {
         // 
         // May return any of the following canonical error codes: - PERMISSION_DENIED - if the user is not authorized to read from the project, or from any of the images - INVALID_ARGUMENT - if the request is malformed - NOT_FOUND - if the step does not exist, or if any of the images do not exist
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // An Execution id.
             // 
             // Required.
@@ -787,6 +885,20 @@ declare module gapi.client.toolresults {
         // 
         // - PERMISSION_DENIED - if the user is not authorized to write to project - INVALID_ARGUMENT - if the request is malformed - FAILED_PRECONDITION - if the step is too large (more than 10Mib) - NOT_FOUND - if the containing Execution does not exist
         create (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // A Execution id.
             // 
             // Required.
@@ -811,6 +923,20 @@ declare module gapi.client.toolresults {
         // 
         // - PERMISSION_DENIED - if the user is not authorized to read project - INVALID_ARGUMENT - if the request is malformed - NOT_FOUND - if the Step does not exist
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // A Execution id.
             // 
             // Required.
@@ -833,6 +959,20 @@ declare module gapi.client.toolresults {
         // 
         // May return any of the following error code(s): - NOT_FOUND - The specified PerfMetricsSummary does not exist
         getPerfMetricsSummary (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // A tool results execution ID.
             executionId: string,
             // A tool results history ID.
@@ -851,6 +991,20 @@ declare module gapi.client.toolresults {
         // 
         // - PERMISSION_DENIED - if the user is not authorized to read project - INVALID_ARGUMENT - if the request is malformed - FAILED_PRECONDITION - if an argument in the request happens to be invalid; e.g. if an attempt is made to list the children of a nonexistent Step - NOT_FOUND - if the containing Execution does not exist
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // A Execution id.
             // 
             // Required.
@@ -881,6 +1035,20 @@ declare module gapi.client.toolresults {
         // 
         // - PERMISSION_DENIED - if the user is not authorized to write project - INVALID_ARGUMENT - if the request is malformed - FAILED_PRECONDITION - if the requested state transition is illegal (e.g try to upload a duplicate xml file), if the updated step is too large (more than 10Mib) - NOT_FOUND - if the containing Execution does not exist
         patch (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // A Execution id.
             // 
             // Required.
@@ -909,6 +1077,20 @@ declare module gapi.client.toolresults {
         // 
         // - PERMISSION_DENIED - if the user is not authorized to write project - INVALID_ARGUMENT - if the request is malformed - FAILED_PRECONDITION - if the requested state transition is illegal, e.g try to upload a duplicate xml file or a file too large. - NOT_FOUND - if the containing Execution does not exist
         publishXunitXmlFiles (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // A Execution id.
             // 
             // Required.
@@ -942,6 +1124,20 @@ declare module gapi.client.toolresults {
         // 
         // - PERMISSION_DENIED - if the user is not authorized to write to project - INVALID_ARGUMENT - if the request is malformed - NOT_FOUND - if the containing History does not exist
         create (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // A History id.
             // 
             // Required.
@@ -962,6 +1158,20 @@ declare module gapi.client.toolresults {
         // 
         // - PERMISSION_DENIED - if the user is not authorized to write to project - INVALID_ARGUMENT - if the request is malformed - NOT_FOUND - if the Execution does not exist
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // An Execution id.
             // 
             // Required.
@@ -984,6 +1194,20 @@ declare module gapi.client.toolresults {
         // 
         // - PERMISSION_DENIED - if the user is not authorized to read project - INVALID_ARGUMENT - if the request is malformed - NOT_FOUND - if the containing History does not exist
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // A History id.
             // 
             // Required.
@@ -1010,6 +1234,20 @@ declare module gapi.client.toolresults {
         // 
         // - PERMISSION_DENIED - if the user is not authorized to write to project - INVALID_ARGUMENT - if the request is malformed - FAILED_PRECONDITION - if the requested state transition is illegal - NOT_FOUND - if the containing History does not exist
         patch (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Required.
             executionId: string,
             // Required.
@@ -1035,6 +1273,20 @@ declare module gapi.client.toolresults {
         // 
         // - PERMISSION_DENIED - if the user is not authorized to write to project - INVALID_ARGUMENT - if the request is malformed - NOT_FOUND - if the containing project does not exist
         create (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // A Project id.
             // 
             // Required.
@@ -1051,6 +1303,20 @@ declare module gapi.client.toolresults {
         // 
         // - PERMISSION_DENIED - if the user is not authorized to read project - INVALID_ARGUMENT - if the request is malformed - NOT_FOUND - if the History does not exist
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // A History id.
             // 
             // Required.
@@ -1069,6 +1335,20 @@ declare module gapi.client.toolresults {
         // 
         // - PERMISSION_DENIED - if the user is not authorized to read project - INVALID_ARGUMENT - if the request is malformed - NOT_FOUND - if the History does not exist
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // If set, only return histories with the given name.
             // 
             // Optional.
@@ -1100,6 +1380,20 @@ declare module gapi.client.toolresults {
         // 
         // - PERMISSION_DENIED - if the user is not authorized to read from project
         getSettings (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // A Project id.
             // 
             // Required.
@@ -1118,6 +1412,20 @@ declare module gapi.client.toolresults {
         // 
         // - PERMISSION_DENIED - if the user is not authorized to write to project - Any error code raised by Google Cloud Storage
         initializeSettings (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // A Project id.
             // 
             // Required.

@@ -41,6 +41,12 @@ gapi.client.load('safebrowsing', 'v4', () => {
 After that you can use Google Safe Browsing API resources:
 
 ```typescript
+gapi.client.fullHashes.<method name>({ /* method parameters */ })
+    .then(response => { /* handling response */ });
+
+gapi.client.encodedUpdates.<method name>({ /* method parameters */ })
+    .then(response => { /* handling response */ });
+
 gapi.client.threatListUpdates.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
@@ -51,11 +57,5 @@ gapi.client.threatLists.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
 gapi.client.threatMatches.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.fullHashes.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.encodedUpdates.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

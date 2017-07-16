@@ -42,9 +42,6 @@ Don't forget to authenticate your client before sending any request to resources
 // declare client_id registered in Google Developers Console
 var client_id = '',
     scope = [     
-        // View and manage Google Drive files and folders that you have opened or created with this app
-        'https://www.googleapis.com/auth/drive.file',
-    
         // View your Google Spreadsheets
         'https://www.googleapis.com/auth/spreadsheets.readonly',
     
@@ -56,6 +53,9 @@ var client_id = '',
     
         // View and manage your spreadsheets in Google Drive
         'https://www.googleapis.com/auth/spreadsheets',
+    
+        // View and manage Google Drive files and folders that you have opened or created with this app
+        'https://www.googleapis.com/auth/drive.file',
     ],
     immediate = true;
 // ...

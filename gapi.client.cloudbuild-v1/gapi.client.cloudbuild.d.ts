@@ -6,6 +6,139 @@
 
 declare module gapi.client.cloudbuild {
     
+    interface Status {
+        // The status code, which should be an enum value of google.rpc.Code.
+        code?: number,
+        // A developer-facing error message, which should be in English. Any
+        // user-facing error message should be localized and sent in the
+        // google.rpc.Status.details field, or localized by the client.
+        message?: string,
+        // A list of messages that carry the error details.  There is a common set of
+        // message types for APIs to use.
+        details?: any[],        
+    }
+    
+    interface Empty {
+    }
+    
+    interface BuildTrigger {
+        // Template describing the types of source changes to trigger a build.
+        // 
+        // Branch and tag names in trigger templates are interpreted as regular
+        // expressions. Any branch or tag change that matches that regular expression
+        // will trigger a build.
+        triggerTemplate?: RepoSource,
+        // Path, from the source root, to a file whose contents is used for the
+        // template.
+        filename?: string,
+        // Unique identifier of the trigger.
+        // 
+        // @OutputOnly
+        id?: string,
+        // Contents of the build template.
+        build?: Build,
+        // Substitutions data for Build resource.
+        substitutions?: any,
+        // Human-readable description of this trigger.
+        description?: string,
+        // Time when the trigger was created.
+        // 
+        // @OutputOnly
+        createTime?: string,
+        // If true, the trigger will never result in a build.
+        disabled?: boolean,
+    }
+    
+    interface Build {
+        // Tags for annotation of a Build. These are not docker tags.
+        tags?: string[],        
+        // Unique identifier of the build.
+        // @OutputOnly
+        id?: string,
+        // Substitutions data for Build resource.
+        substitutions?: any,
+        // Time at which execution of the build was started.
+        // @OutputOnly
+        startTime?: string,
+        // Time at which the request to create the build was received.
+        // @OutputOnly
+        createTime?: string,
+        // A permanent fixed identifier for source.
+        // @OutputOnly
+        sourceProvenance?: SourceProvenance,
+        // A list of images to be pushed upon the successful completion of all build
+        // steps.
+        // 
+        // The images will be pushed using the builder service account's credentials.
+        // 
+        // The digests of the pushed images will be stored in the Build resource's
+        // results field.
+        // 
+        // If any of the images fail to be pushed, the build is marked FAILURE.
+        images?: string[],        
+        // ID of the project.
+        // @OutputOnly.
+        projectId?: string,
+        // Time at which execution of the build was finished.
+        // 
+        // The difference between finish_time and start_time is the duration of the
+        // build's execution.
+        // @OutputOnly
+        finishTime?: string,
+        // URL to logs for this build in Google Cloud Logging.
+        // @OutputOnly
+        logUrl?: string,
+        // Special options for this build.
+        options?: BuildOptions,
+        // Describes where to find the source files to build.
+        source?: Source,
+        // Customer-readable message about the current status.
+        // @OutputOnly
+        statusDetail?: string,
+        // Status of the build.
+        // @OutputOnly
+        status?: string,
+        // Amount of time that this build should be allowed to run, to second
+        // granularity. If this amount of time elapses, work on the build will cease
+        // and the build status will be TIMEOUT.
+        // 
+        // Default time is ten minutes.
+        timeout?: string,
+        // Secrets to decrypt using Cloud KMS.
+        secrets?: Secret[],        
+        // Results of the build.
+        // @OutputOnly
+        results?: Results,
+        // Google Cloud Storage bucket where logs should be written (see
+        // [Bucket Name
+        // Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
+        // Logs file names will be of the format `${logs_bucket}/log-${build_id}.txt`.
+        logsBucket?: string,
+        // Describes the operations to be performed on the workspace.
+        steps?: BuildStep[],        
+        // The ID of the BuildTrigger that triggered this build, if it was
+        // triggered automatically.
+        // @OutputOnly
+        buildTriggerId?: string,
+    }
+    
+    interface CancelBuildRequest {
+    }
+    
+    interface ListBuildsResponse {
+        // Token to receive the next page of results.
+        nextPageToken?: string,
+        // Builds will be sorted by create_time, descending.
+        builds?: Build[],        
+    }
+    
+    interface ListOperationsResponse {
+        // A list of operations that matches the specified filter in the request.
+        operations?: Operation[],        
+        // The standard List next-page token.
+        nextPageToken?: string,
+    }
+    
     interface Source {
         // If provided, get the source from this location in in Google Cloud
         // Storage.
@@ -39,10 +172,10 @@ declare module gapi.client.cloudbuild {
     }
     
     interface Results {
-        // List of build step digests, in order corresponding to build step indices.
-        buildStepImages?: string[],        
         // Images that were built as a part of the build.
         images?: BuiltImage[],        
+        // List of build step digests, in order corresponding to build step indices.
+        buildStepImages?: string[],        
     }
     
     interface BuildOperationMetadata {
@@ -79,6 +212,11 @@ declare module gapi.client.cloudbuild {
     }
     
     interface Operation {
+        // Service-specific metadata associated with the operation.  It typically
+        // contains progress information and common metadata such as create time.
+        // Some services might not provide such metadata.  Any method that returns a
+        // long-running operation should document the metadata type, if any.
+        metadata?: any,
         // If the value is `false`, it means the operation is still in progress.
         // If true, the operation is completed, and either `error` or `response` is
         // available.
@@ -98,11 +236,6 @@ declare module gapi.client.cloudbuild {
         name?: string,
         // The error result of the operation in case of failure or cancellation.
         error?: Status,
-        // Service-specific metadata associated with the operation.  It typically
-        // contains progress information and common metadata such as create time.
-        // Some services might not provide such metadata.  Any method that returns a
-        // long-running operation should document the metadata type, if any.
-        metadata?: any,
     }
     
     interface BuiltImage {
@@ -113,14 +246,11 @@ declare module gapi.client.cloudbuild {
         digest?: string,
     }
     
-    interface Hash {
-        // The type of hash that was performed.
-        type?: string,
-        // The hash value.
-        value?: string,
-    }
-    
     interface RepoSource {
+        // Explicit commit SHA to build.
+        commitSha?: string,
+        // Name of the tag to build.
+        tagName?: string,
         // Name of the branch to build.
         branchName?: string,
         // Name of the repo. If omitted, the name "default" is assumed.
@@ -128,27 +258,20 @@ declare module gapi.client.cloudbuild {
         // ID of the project that owns the repo. If omitted, the project ID requesting
         // the build is assumed.
         projectId?: string,
-        // Explicit commit SHA to build.
-        commitSha?: string,
-        // Name of the tag to build.
-        tagName?: string,
     }
     
     interface BuildStep {
-        // Working directory (relative to project source root) to use when running
-        // this operation's container.
-        dir?: string,
-        // A list of environment variable definitions to be used when running a step.
-        // 
-        // The elements are of the form "KEY=VALUE" for the environment variable "KEY"
-        // being given the value "VALUE".
-        env?: string[],        
         // The ID(s) of the step(s) that this build step depends on.
         // This build step will not start until all the build steps in wait_for
         // have completed successfully. If wait_for is empty, this build step will
         // start when all previous build steps in the Build.Steps list have completed
         // successfully.
         waitFor?: string[],        
+        // A list of environment variable definitions to be used when running a step.
+        // 
+        // The elements are of the form "KEY=VALUE" for the environment variable "KEY"
+        // being given the value "VALUE".
+        env?: string[],        
         // A list of arguments that will be presented to the step when it is started.
         // 
         // If the image used to run the step's container has an entrypoint, these args
@@ -182,6 +305,16 @@ declare module gapi.client.cloudbuild {
         // A list of environment variables which are encrypted using a Cloud KMS
         // crypto key. These values must be specified in the build's secrets.
         secretEnv?: string[],        
+        // Working directory (relative to project source root) to use when running
+        // this operation's container.
+        dir?: string,
+    }
+    
+    interface Hash {
+        // The hash value.
+        value?: string,
+        // The type of hash that was performed.
+        type?: string,
     }
     
     interface FileHashes {
@@ -201,248 +334,37 @@ declare module gapi.client.cloudbuild {
         kmsKeyName?: string,
     }
     
-    interface Status {
-        // A list of messages that carry the error details.  There is a common set of
-        // message types for APIs to use.
-        details?: any[],        
-        // The status code, which should be an enum value of google.rpc.Code.
-        code?: number,
-        // A developer-facing error message, which should be in English. Any
-        // user-facing error message should be localized and sent in the
-        // google.rpc.Status.details field, or localized by the client.
-        message?: string,
-    }
-    
-    interface Empty {
-    }
-    
-    interface BuildTrigger {
-        // Human-readable description of this trigger.
-        description?: string,
-        // If true, the trigger will never result in a build.
-        disabled?: boolean,
-        // Time when the trigger was created.
-        // 
-        // @OutputOnly
-        createTime?: string,
-        // Template describing the types of source changes to trigger a build.
-        // 
-        // Branch and tag names in trigger templates are interpreted as regular
-        // expressions. Any branch or tag change that matches that regular expression
-        // will trigger a build.
-        triggerTemplate?: RepoSource,
-        // Path, from the source root, to a file whose contents is used for the
-        // template.
-        filename?: string,
-        // Unique identifier of the trigger.
-        // 
-        // @OutputOnly
-        id?: string,
-        // Contents of the build template.
-        build?: Build,
-        // Substitutions data for Build resource.
-        substitutions?: any,
-    }
-    
-    interface Build {
-        // A list of images to be pushed upon the successful completion of all build
-        // steps.
-        // 
-        // The images will be pushed using the builder service account's credentials.
-        // 
-        // The digests of the pushed images will be stored in the Build resource's
-        // results field.
-        // 
-        // If any of the images fail to be pushed, the build is marked FAILURE.
-        images?: string[],        
-        // ID of the project.
-        // @OutputOnly.
-        projectId?: string,
-        // URL to logs for this build in Google Cloud Logging.
-        // @OutputOnly
-        logUrl?: string,
-        // Time at which execution of the build was finished.
-        // 
-        // The difference between finish_time and start_time is the duration of the
-        // build's execution.
-        // @OutputOnly
-        finishTime?: string,
-        // Describes where to find the source files to build.
-        source?: Source,
-        // Special options for this build.
-        options?: BuildOptions,
-        // Customer-readable message about the current status.
-        // @OutputOnly
-        statusDetail?: string,
-        // Status of the build.
-        // @OutputOnly
-        status?: string,
-        // Amount of time that this build should be allowed to run, to second
-        // granularity. If this amount of time elapses, work on the build will cease
-        // and the build status will be TIMEOUT.
-        // 
-        // Default time is ten minutes.
-        timeout?: string,
-        // Secrets to decrypt using Cloud KMS.
-        secrets?: Secret[],        
-        // Google Cloud Storage bucket where logs should be written (see
-        // [Bucket Name
-        // Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
-        // Logs file names will be of the format `${logs_bucket}/log-${build_id}.txt`.
-        logsBucket?: string,
-        // Results of the build.
-        // @OutputOnly
-        results?: Results,
-        // Describes the operations to be performed on the workspace.
-        steps?: BuildStep[],        
-        // The ID of the BuildTrigger that triggered this build, if it was
-        // triggered automatically.
-        // @OutputOnly
-        buildTriggerId?: string,
-        // Tags for annotation of a Build. These are not docker tags.
-        tags?: string[],        
-        // Unique identifier of the build.
-        // @OutputOnly
-        id?: string,
-        // Substitutions data for Build resource.
-        substitutions?: any,
-        // Time at which execution of the build was started.
-        // @OutputOnly
-        startTime?: string,
-        // Time at which the request to create the build was received.
-        // @OutputOnly
-        createTime?: string,
-        // A permanent fixed identifier for source.
-        // @OutputOnly
-        sourceProvenance?: SourceProvenance,
-    }
-    
-    interface CancelBuildRequest {
-    }
-    
-    interface ListBuildsResponse {
-        // Token to receive the next page of results.
-        nextPageToken?: string,
-        // Builds will be sorted by create_time, descending.
-        builds?: Build[],        
-    }
-    
-    interface ListOperationsResponse {
-        // A list of operations that matches the specified filter in the request.
-        operations?: Operation[],        
-        // The standard List next-page token.
-        nextPageToken?: string,
-    }
-    
-    interface TriggersResource {
-        // Creates a new BuildTrigger.
-        // 
-        // This API is experimental.
-        create (request: {        
-            // ID of the project for which to configure automatic builds.
-            projectId: string,
-        }) : gapi.client.Request<BuildTrigger>;        
-        
-        // Deletes an BuildTrigger by its project ID and trigger ID.
-        // 
-        // This API is experimental.
-        delete (request: {        
-            // ID of the BuildTrigger to delete.
-            triggerId: string,
-            // ID of the project that owns the trigger.
-            projectId: string,
-        }) : gapi.client.Request<Empty>;        
-        
-        // Updates an BuildTrigger by its project ID and trigger ID.
-        // 
-        // This API is experimental.
-        patch (request: {        
-            // ID of the BuildTrigger to update.
-            triggerId: string,
-            // ID of the project that owns the trigger.
-            projectId: string,
-        }) : gapi.client.Request<BuildTrigger>;        
-        
-        // Lists existing BuildTrigger.
-        // 
-        // This API is experimental.
-        list (request: {        
-            // ID of the project for which to list BuildTriggers.
-            projectId: string,
-        }) : gapi.client.Request<ListBuildTriggersResponse>;        
-        
-        // Gets information about a BuildTrigger.
-        // 
-        // This API is experimental.
-        get (request: {        
-            // ID of the BuildTrigger to get.
-            triggerId: string,
-            // ID of the project that owns the trigger.
-            projectId: string,
-        }) : gapi.client.Request<BuildTrigger>;        
-        
-    }
-    
-    
-    interface BuildsResource {
-        // Lists previously requested builds.
-        // 
-        // Previously requested builds may still be in-progress, or may have finished
-        // successfully or unsuccessfully.
-        list (request: {        
-            // Token to provide to skip to a particular spot in the list.
-            pageToken?: string,
-            // Number of results to return in the list.
-            pageSize?: number,
-            // ID of the project.
-            projectId: string,
-            // The raw filter text to constrain the results.
-            filter?: string,
-        }) : gapi.client.Request<ListBuildsResponse>;        
-        
-        // Returns information about a previously requested build.
-        // 
-        // The Build that is returned includes its status (e.g., success or failure,
-        // or in-progress), and timing information.
-        get (request: {        
-            // ID of the project.
-            projectId: string,
-            // ID of the build.
-            id: string,
-        }) : gapi.client.Request<Build>;        
-        
-        // Starts a build with the specified configuration.
-        // 
-        // The long-running Operation returned by this method will include the ID of
-        // the build, which can be passed to GetBuild to determine its status (e.g.,
-        // success or failure).
-        create (request: {        
-            // ID of the project.
-            projectId: string,
-        }) : gapi.client.Request<Operation>;        
-        
-        // Cancels a requested build in progress.
-        cancel (request: {        
-            // ID of the project.
-            projectId: string,
-            // ID of the build.
-            id: string,
-        }) : gapi.client.Request<Build>;        
-        
-    }
-    
-    
-    interface ProjectsResource {
-        triggers: TriggersResource,
-        builds: BuildsResource,
-    }
-    
-    
     interface OperationsResource {
         // Gets the latest state of a long-running operation.  Clients can use this
         // method to poll the operation result at intervals as recommended by the API
         // service.
         get (request: {        
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
             // The name of the operation resource.
             name: string,
         }) : gapi.client.Request<Operation>;        
@@ -458,14 +380,40 @@ declare module gapi.client.cloudbuild {
         // collection id, however overriding users must ensure the name binding
         // is the parent resource, without the operations collection id.
         list (request: {        
-            // The standard list page size.
-            pageSize?: number,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
             // The standard list filter.
             filter?: string,
             // The standard list page token.
             pageToken?: string,
             // The name of the operation's parent resource.
             name: string,
+            // The standard list page size.
+            pageSize?: number,
         }) : gapi.client.Request<ListOperationsResponse>;        
         
         // Starts asynchronous cancellation on a long-running operation.  The server
@@ -479,17 +427,381 @@ declare module gapi.client.cloudbuild {
         // an Operation.error value with a google.rpc.Status.code of 1,
         // corresponding to `Code.CANCELLED`.
         cancel (request: {        
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
             // The name of the operation resource to be cancelled.
             name: string,
         }) : gapi.client.Request<Empty>;        
         
     }
     
+    
+    interface TriggersResource {
+        // Creates a new BuildTrigger.
+        // 
+        // This API is experimental.
+        create (request: {        
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // ID of the project for which to configure automatic builds.
+            projectId: string,
+        }) : gapi.client.Request<BuildTrigger>;        
+        
+        // Deletes an BuildTrigger by its project ID and trigger ID.
+        // 
+        // This API is experimental.
+        delete (request: {        
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // ID of the BuildTrigger to delete.
+            triggerId: string,
+            // ID of the project that owns the trigger.
+            projectId: string,
+        }) : gapi.client.Request<Empty>;        
+        
+        // Updates an BuildTrigger by its project ID and trigger ID.
+        // 
+        // This API is experimental.
+        patch (request: {        
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // ID of the BuildTrigger to update.
+            triggerId: string,
+            // ID of the project that owns the trigger.
+            projectId: string,
+        }) : gapi.client.Request<BuildTrigger>;        
+        
+        // Lists existing BuildTrigger.
+        // 
+        // This API is experimental.
+        list (request: {        
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // ID of the project for which to list BuildTriggers.
+            projectId: string,
+        }) : gapi.client.Request<ListBuildTriggersResponse>;        
+        
+        // Gets information about a BuildTrigger.
+        // 
+        // This API is experimental.
+        get (request: {        
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // ID of the BuildTrigger to get.
+            triggerId: string,
+            // ID of the project that owns the trigger.
+            projectId: string,
+        }) : gapi.client.Request<BuildTrigger>;        
+        
+    }
+    
+    
+    interface BuildsResource {
+        // Starts a build with the specified configuration.
+        // 
+        // The long-running Operation returned by this method will include the ID of
+        // the build, which can be passed to GetBuild to determine its status (e.g.,
+        // success or failure).
+        create (request: {        
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // ID of the project.
+            projectId: string,
+        }) : gapi.client.Request<Operation>;        
+        
+        // Cancels a requested build in progress.
+        cancel (request: {        
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // ID of the project.
+            projectId: string,
+            // ID of the build.
+            id: string,
+        }) : gapi.client.Request<Build>;        
+        
+        // Lists previously requested builds.
+        // 
+        // Previously requested builds may still be in-progress, or may have finished
+        // successfully or unsuccessfully.
+        list (request: {        
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // Token to provide to skip to a particular spot in the list.
+            pageToken?: string,
+            // Number of results to return in the list.
+            pageSize?: number,
+            // ID of the project.
+            projectId: string,
+            // The raw filter text to constrain the results.
+            filter?: string,
+        }) : gapi.client.Request<ListBuildsResponse>;        
+        
+        // Returns information about a previously requested build.
+        // 
+        // The Build that is returned includes its status (e.g., success or failure,
+        // or in-progress), and timing information.
+        get (request: {        
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // ID of the project.
+            projectId: string,
+            // ID of the build.
+            id: string,
+        }) : gapi.client.Request<Build>;        
+        
+    }
+    
+    
+    interface ProjectsResource {
+        triggers: TriggersResource,
+        builds: BuildsResource,
+    }
+    
 }
 
 declare module gapi.client.cloudbuild {
-    var projects: gapi.client.cloudbuild.ProjectsResource; 
-    
     var operations: gapi.client.cloudbuild.OperationsResource; 
+    
+    var projects: gapi.client.cloudbuild.ProjectsResource; 
     
 }

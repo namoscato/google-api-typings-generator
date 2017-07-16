@@ -42,6 +42,15 @@ Don't forget to authenticate your client before sending any request to resources
 // declare client_id registered in Google Developers Console
 var client_id = '',
     scope = [     
+        // View guardians for students in your Google Classroom classes
+        'https://www.googleapis.com/auth/classroom.guardianlinks.students.readonly',
+    
+        // Manage your Google Classroom classes
+        'https://www.googleapis.com/auth/classroom.courses',
+    
+        // View your Google Classroom classes
+        'https://www.googleapis.com/auth/classroom.courses.readonly',
+    
         // View your Google Classroom class rosters
         'https://www.googleapis.com/auth/classroom.rosters.readonly',
     
@@ -54,14 +63,14 @@ var client_id = '',
         // View your course work and grades in Google Classroom
         'https://www.googleapis.com/auth/classroom.student-submissions.me.readonly',
     
-        // View your Google Classroom guardians
-        'https://www.googleapis.com/auth/classroom.guardianlinks.me.readonly',
+        // Manage course work and grades for students in the Google Classroom classes you teach and view the course work and grades for classes you administer
+        'https://www.googleapis.com/auth/classroom.coursework.students',
     
         // View course work and grades for students in the Google Classroom classes you teach or administer
         'https://www.googleapis.com/auth/classroom.coursework.students.readonly',
     
-        // Manage course work and grades for students in the Google Classroom classes you teach and view the course work and grades for classes you administer
-        'https://www.googleapis.com/auth/classroom.coursework.students',
+        // View your Google Classroom guardians
+        'https://www.googleapis.com/auth/classroom.guardianlinks.me.readonly',
     
         // View your course work and grades in Google Classroom
         'https://www.googleapis.com/auth/classroom.coursework.me.readonly',
@@ -77,15 +86,6 @@ var client_id = '',
     
         // View course work and grades for students in the Google Classroom classes you teach or administer
         'https://www.googleapis.com/auth/classroom.student-submissions.students.readonly',
-    
-        // View guardians for students in your Google Classroom classes
-        'https://www.googleapis.com/auth/classroom.guardianlinks.students.readonly',
-    
-        // Manage your Google Classroom classes
-        'https://www.googleapis.com/auth/classroom.courses',
-    
-        // View your Google Classroom classes
-        'https://www.googleapis.com/auth/classroom.courses.readonly',
     ],
     immediate = true;
 // ...

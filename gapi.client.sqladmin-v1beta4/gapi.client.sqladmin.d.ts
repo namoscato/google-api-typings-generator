@@ -606,6 +606,20 @@ declare module gapi.client.sqladmin {
     interface BackupRunsResource {
         // Deletes the backup taken by a backup run.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the Backup Run to delete. To find a Backup Run ID, use the list method.
             id: string,
             // Cloud SQL instance ID. This does not include the project ID.
@@ -616,6 +630,20 @@ declare module gapi.client.sqladmin {
         
         // Retrieves a resource containing information about a backup run.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of this Backup Run.
             id: string,
             // Cloud SQL instance ID. This does not include the project ID.
@@ -626,6 +654,20 @@ declare module gapi.client.sqladmin {
         
         // Creates a new backup run on demand. This method is applicable only to Second Generation instances.
         insert (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Cloud SQL instance ID. This does not include the project ID.
             instance: string,
             // Project ID of the project that contains the instance.
@@ -634,6 +676,20 @@ declare module gapi.client.sqladmin {
         
         // Lists all backup runs associated with a given instance and configuration in the reverse chronological order of the enqueued time.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Cloud SQL instance ID. This does not include the project ID.
             instance: string,
             // Maximum number of backup runs per response.
@@ -650,6 +706,20 @@ declare module gapi.client.sqladmin {
     interface DatabasesResource {
         // Deletes a database from a Cloud SQL instance.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the database to be deleted in the instance.
             database: string,
             // Database instance ID. This does not include the project ID.
@@ -660,6 +730,20 @@ declare module gapi.client.sqladmin {
         
         // Retrieves a resource containing information about a database inside a Cloud SQL instance.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the database in the instance.
             database: string,
             // Database instance ID. This does not include the project ID.
@@ -670,6 +754,20 @@ declare module gapi.client.sqladmin {
         
         // Inserts a resource containing information about a database inside a Cloud SQL instance.
         insert (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Database instance ID. This does not include the project ID.
             instance: string,
             // Project ID of the project that contains the instance.
@@ -678,6 +776,20 @@ declare module gapi.client.sqladmin {
         
         // Lists databases in the specified Cloud SQL instance.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Cloud SQL instance ID. This does not include the project ID.
             instance: string,
             // Project ID of the project for which to list Cloud SQL instances.
@@ -686,6 +798,20 @@ declare module gapi.client.sqladmin {
         
         // Updates a resource containing information about a database inside a Cloud SQL instance. This method supports patch semantics.
         patch (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the database to be updated in the instance.
             database: string,
             // Database instance ID. This does not include the project ID.
@@ -696,6 +822,20 @@ declare module gapi.client.sqladmin {
         
         // Updates a resource containing information about a database inside a Cloud SQL instance.
         update (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Name of the database to be updated in the instance.
             database: string,
             // Database instance ID. This does not include the project ID.
@@ -710,6 +850,20 @@ declare module gapi.client.sqladmin {
     interface FlagsResource {
         // List all available database flags for Google Cloud SQL instances.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Database version for flag retrieval. Flags are specific to the database version.
             databaseVersion?: string,
         }) : gapi.client.Request<FlagsListResponse>;        
@@ -720,6 +874,20 @@ declare module gapi.client.sqladmin {
     interface InstancesResource {
         // Creates a Cloud SQL instance as a clone of the source instance. The API is not ready for Second Generation instances yet.
         clone (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the Cloud SQL instance to be cloned (source). This does not include the project ID.
             instance: string,
             // Project ID of the source as well as the clone Cloud SQL instance.
@@ -728,6 +896,20 @@ declare module gapi.client.sqladmin {
         
         // Deletes a Cloud SQL instance.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Cloud SQL instance ID. This does not include the project ID.
             instance: string,
             // Project ID of the project that contains the instance to be deleted.
@@ -736,6 +918,20 @@ declare module gapi.client.sqladmin {
         
         // Exports data from a Cloud SQL instance to a Google Cloud Storage bucket as a MySQL dump file.
         export (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Cloud SQL instance ID. This does not include the project ID.
             instance: string,
             // Project ID of the project that contains the instance to be exported.
@@ -744,6 +940,20 @@ declare module gapi.client.sqladmin {
         
         // Failover the instance to its failover replica instance.
         failover (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Cloud SQL instance ID. This does not include the project ID.
             instance: string,
             // ID of the project that contains the read replica.
@@ -752,6 +962,20 @@ declare module gapi.client.sqladmin {
         
         // Retrieves a resource containing information about a Cloud SQL instance.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Database instance ID. This does not include the project ID.
             instance: string,
             // Project ID of the project that contains the instance.
@@ -760,6 +984,20 @@ declare module gapi.client.sqladmin {
         
         // Imports data into a Cloud SQL instance from a MySQL dump file in Google Cloud Storage.
         import (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Cloud SQL instance ID. This does not include the project ID.
             instance: string,
             // Project ID of the project that contains the instance.
@@ -768,12 +1006,40 @@ declare module gapi.client.sqladmin {
         
         // Creates a new Cloud SQL instance.
         insert (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID of the project to which the newly created Cloud SQL instances should belong.
             project: string,
         }) : gapi.client.Request<Operation>;        
         
         // Lists instances under a given project in the alphabetical order of the instance name.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // An expression for filtering the results of the request, such as by name or label.
             filter?: string,
             // The maximum number of results to return per response.
@@ -786,6 +1052,20 @@ declare module gapi.client.sqladmin {
         
         // Updates settings of a Cloud SQL instance. Caution: This is not a partial update, so you must include values for all the settings that you want to retain. For partial updates, use patch.. This method supports patch semantics.
         patch (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Cloud SQL instance ID. This does not include the project ID.
             instance: string,
             // Project ID of the project that contains the instance.
@@ -794,6 +1074,20 @@ declare module gapi.client.sqladmin {
         
         // Promotes the read replica instance to be a stand-alone Cloud SQL instance.
         promoteReplica (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Cloud SQL read replica instance name.
             instance: string,
             // ID of the project that contains the read replica.
@@ -802,6 +1096,20 @@ declare module gapi.client.sqladmin {
         
         // Deletes all client certificates and generates a new server SSL certificate for the instance. The changes will not take effect until the instance is restarted. Existing instances without a server certificate will need to call this once to set a server certificate.
         resetSslConfig (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Cloud SQL instance ID. This does not include the project ID.
             instance: string,
             // Project ID of the project that contains the instance.
@@ -810,6 +1118,20 @@ declare module gapi.client.sqladmin {
         
         // Restarts a Cloud SQL instance.
         restart (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Cloud SQL instance ID. This does not include the project ID.
             instance: string,
             // Project ID of the project that contains the instance to be restarted.
@@ -818,6 +1140,20 @@ declare module gapi.client.sqladmin {
         
         // Restores a backup of a Cloud SQL instance.
         restoreBackup (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Cloud SQL instance ID. This does not include the project ID.
             instance: string,
             // Project ID of the project that contains the instance.
@@ -826,6 +1162,20 @@ declare module gapi.client.sqladmin {
         
         // Starts the replication in the read replica instance.
         startReplica (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Cloud SQL read replica instance name.
             instance: string,
             // ID of the project that contains the read replica.
@@ -834,6 +1184,20 @@ declare module gapi.client.sqladmin {
         
         // Stops the replication in the read replica instance.
         stopReplica (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Cloud SQL read replica instance name.
             instance: string,
             // ID of the project that contains the read replica.
@@ -842,6 +1206,20 @@ declare module gapi.client.sqladmin {
         
         // Truncate MySQL general and slow query log tables
         truncateLog (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Cloud SQL instance ID. This does not include the project ID.
             instance: string,
             // Project ID of the Cloud SQL project.
@@ -850,6 +1228,20 @@ declare module gapi.client.sqladmin {
         
         // Updates settings of a Cloud SQL instance. Caution: This is not a partial update, so you must include values for all the settings that you want to retain. For partial updates, use patch.
         update (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Cloud SQL instance ID. This does not include the project ID.
             instance: string,
             // Project ID of the project that contains the instance.
@@ -862,6 +1254,20 @@ declare module gapi.client.sqladmin {
     interface OperationsResource {
         // Retrieves an instance operation that has been performed on an instance.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Instance operation ID.
             operation: string,
             // Project ID of the project that contains the instance.
@@ -870,6 +1276,20 @@ declare module gapi.client.sqladmin {
         
         // Lists all instance operations that have been performed on the given Cloud SQL instance in the reverse chronological order of the start time.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Cloud SQL instance ID. This does not include the project ID.
             instance: string,
             // Maximum number of operations per response.
@@ -886,6 +1306,20 @@ declare module gapi.client.sqladmin {
     interface SslCertsResource {
         // Generates a short-lived X509 certificate containing the provided public key and signed by a private key specific to the target instance. Users may use the certificate to authenticate as themselves when connecting to the database.
         createEphemeral (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Cloud SQL instance ID. This does not include the project ID.
             instance: string,
             // Project ID of the Cloud SQL project.
@@ -894,6 +1328,20 @@ declare module gapi.client.sqladmin {
         
         // Deletes the SSL certificate. The change will not take effect until the instance is restarted.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Cloud SQL instance ID. This does not include the project ID.
             instance: string,
             // Project ID of the project that contains the instance to be deleted.
@@ -904,6 +1352,20 @@ declare module gapi.client.sqladmin {
         
         // Retrieves a particular SSL certificate. Does not include the private key (required for usage). The private key must be saved from the response to initial creation.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Cloud SQL instance ID. This does not include the project ID.
             instance: string,
             // Project ID of the project that contains the instance.
@@ -914,6 +1376,20 @@ declare module gapi.client.sqladmin {
         
         // Creates an SSL certificate and returns it along with the private key and server certificate authority. The new certificate will not be usable until the instance is restarted.
         insert (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Cloud SQL instance ID. This does not include the project ID.
             instance: string,
             // Project ID of the project to which the newly created Cloud SQL instances should belong.
@@ -922,6 +1398,20 @@ declare module gapi.client.sqladmin {
         
         // Lists all of the current SSL certificates for the instance.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Cloud SQL instance ID. This does not include the project ID.
             instance: string,
             // Project ID of the project for which to list Cloud SQL instances.
@@ -934,6 +1424,20 @@ declare module gapi.client.sqladmin {
     interface TiersResource {
         // Lists all available service tiers for Google Cloud SQL, for example D1, D2. For related information, see Pricing.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Project ID of the project for which to list tiers.
             project: string,
         }) : gapi.client.Request<TiersListResponse>;        
@@ -944,6 +1448,20 @@ declare module gapi.client.sqladmin {
     interface UsersResource {
         // Deletes a user from a Cloud SQL instance.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Host of the user in the instance.
             host: string,
             // Database instance ID. This does not include the project ID.
@@ -956,6 +1474,20 @@ declare module gapi.client.sqladmin {
         
         // Creates a new user in a Cloud SQL instance.
         insert (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Database instance ID. This does not include the project ID.
             instance: string,
             // Project ID of the project that contains the instance.
@@ -964,6 +1496,20 @@ declare module gapi.client.sqladmin {
         
         // Lists users in the specified Cloud SQL instance.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Database instance ID. This does not include the project ID.
             instance: string,
             // Project ID of the project that contains the instance.
@@ -972,6 +1518,20 @@ declare module gapi.client.sqladmin {
         
         // Updates an existing user in a Cloud SQL instance.
         update (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Host of the user in the instance.
             host: string,
             // Database instance ID. This does not include the project ID.

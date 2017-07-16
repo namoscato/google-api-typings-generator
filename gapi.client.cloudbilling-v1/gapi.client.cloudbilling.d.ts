@@ -93,6 +93,32 @@ declare module gapi.client.cloudbilling {
         // disable billing, you should always call this method with the name of an
         // *open* billing account.
         updateBillingInfo (request: {        
+            // OAuth access token.
+            access_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Data format for response.
+            alt?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
             // The resource name of the project associated with the billing information
             // that you want to update. For example, `projects/tokyo-rain-123`.
             name: string,
@@ -103,6 +129,32 @@ declare module gapi.client.cloudbilling {
         // project](https://cloud.google.com/docs/permissions-overview#h.bgs0oxofvnoo
         // ).
         getBillingInfo (request: {        
+            // OAuth access token.
+            access_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Data format for response.
+            alt?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
             // The resource name of the project for which billing information is
             // retrieved. For example, `projects/tokyo-rain-123`.
             name: string,
@@ -116,6 +168,32 @@ declare module gapi.client.cloudbilling {
         // authenticated user must be an [owner of the billing
         // account](https://support.google.com/cloud/answer/4430947).
         list (request: {        
+            // OAuth access token.
+            access_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Data format for response.
+            alt?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
             // Requested page size. The maximum page size is 100; this is also the
             // default.
             pageSize?: number,
@@ -136,6 +214,32 @@ declare module gapi.client.cloudbilling {
         // must be an [owner of the billing
         // account](https://support.google.com/cloud/answer/4430947).
         get (request: {        
+            // OAuth access token.
+            access_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Data format for response.
+            alt?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
             // The resource name of the billing account to retrieve. For example,
             // `billingAccounts/012345-567890-ABCDEF`.
             name: string,
@@ -144,6 +248,32 @@ declare module gapi.client.cloudbilling {
         // Lists the billing accounts that the current authenticated user
         // [owns](https://support.google.com/cloud/answer/4430947).
         list (request: {        
+            // OAuth access token.
+            access_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Data format for response.
+            alt?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
             // Requested page size. The maximum page size is 100; this is also the
             // default.
             pageSize?: number,

@@ -6,30 +6,20 @@
 
 declare module gapi.client.manufacturers {
     
-    interface Capacity {
-        // The unit of the capacity, i.e., MB, GB, or TB.
-        unit?: string,
-        // The numeric value of the capacity.
-        value?: string,
-    }
-    
-    interface ListProductsResponse {
-        // List of the products.
-        products?: Product[],        
-        // The token for the retrieval of the next page of product statuses.
-        nextPageToken?: string,
-    }
-    
     interface ProductDetail {
+        // A short section name that can be reused between multiple product details.
+        sectionName?: string,
         // The name of the attribute.
         attributeName?: string,
         // The value of the attribute.
         attributeValue?: string,
-        // A short section name that can be reused between multiple product details.
-        sectionName?: string,
     }
     
     interface Issue {
+        // If present, the attribute that triggered the issue. For more information
+        // about attributes, see
+        // https://support.google.com/manufacturers/answer/6124116.
+        attribute?: string,
         // The timestamp when this issue appeared.
         timestamp?: string,
         // The severity of the issue.
@@ -39,35 +29,28 @@ declare module gapi.client.manufacturers {
         // The server-generated type of the issue, for example,
         // “INCORRECT_TEXT_FORMATTING”, “IMAGE_NOT_SERVEABLE”, etc.
         type?: string,
-        // If present, the attribute that triggered the issue. For more information
-        // about attributes, see
-        // https://support.google.com/manufacturers/answer/6124116.
-        attribute?: string,
     }
     
     interface FeatureDescription {
+        // A detailed description of the feature.
+        text?: string,
         // An optional image describing the feature.
         image?: Image,
         // A short description of the feature.
         headline?: string,
-        // A detailed description of the feature.
-        text?: string,
     }
     
     interface Empty {
     }
     
     interface Price {
-        // The currency in which the price is denoted.
-        currency?: string,
         // The numeric value of the price.
         amount?: string,
+        // The currency in which the price is denoted.
+        currency?: string,
     }
     
     interface Image {
-        // The type of the image, i.e., crawled or uploaded.
-        // @OutputOnly
-        type?: string,
         // The URL of the image. For crawled images, this is the provided URL. For
         // uploaded images, this is a serving URL from Google if the image has been
         // processed successfully.
@@ -75,9 +58,15 @@ declare module gapi.client.manufacturers {
         // The status of the image.
         // @OutputOnly
         status?: string,
+        // The type of the image, i.e., crawled or uploaded.
+        // @OutputOnly
+        type?: string,
     }
     
     interface Attributes {
+        // The canonical name of the product. For more information, see
+        // https://support.google.com/manufacturers/answer/6124116#productname.
+        productName?: string,
         // The size type of the product. For more information, see
         // https://support.google.com/manufacturers/answer/6124116#sizetype.
         sizeType?: string,
@@ -172,9 +161,6 @@ declare module gapi.client.manufacturers {
         // The color of the product. For more information, see
         // https://support.google.com/manufacturers/answer/6124116#color.
         color?: string,
-        // The canonical name of the product. For more information, see
-        // https://support.google.com/manufacturers/answer/6124116#productname.
-        productName?: string,
     }
     
     interface Count {
@@ -185,13 +171,41 @@ declare module gapi.client.manufacturers {
     }
     
     interface Product {
-        // A server-generated list of issues associated with the product.
+        // Parent ID in the format `accounts/{account_id}`.
+        // 
+        // `account_id` - The ID of the Manufacturer Center account.
         // @OutputOnly
-        issues?: Issue[],        
+        parent?: string,
+        // Attributes of the product provided manually via the Manufacturer Center UI.
+        // @OutputOnly
+        manuallyProvidedAttributes?: Attributes,
+        // The content language of the product as a two-letter ISO 639-1 language code
+        // (for example, en).
+        // @OutputOnly
+        contentLanguage?: string,
+        // The target country of the product as a CLDR territory code (for example,
+        // US).
+        // @OutputOnly
+        targetCountry?: string,
+        // Name in the format `{target_country}:{content_language}:{product_id}`.
+        // 
+        // `target_country`   - The target country of the product as a CLDR territory
+        //                      code (for example, US).
+        // 
+        // `content_language` - The content language of the product as a two-letter
+        //                      ISO 639-1 language code (for example, en).
+        // 
+        // `product_id`     -   The ID of the product. For more information, see
+        //                      https://support.google.com/manufacturers/answer/6124116#id.
+        // @OutputOnly
+        name?: string,
         // Names of the attributes of the product deleted manually via the
         // Manufacturer Center UI.
         // @OutputOnly
         manuallyDeletedAttributes?: string[],        
+        // A server-generated list of issues associated with the product.
+        // @OutputOnly
+        issues?: Issue[],        
         // Final attributes of the product. The final attributes are obtained by
         // overriding the uploaded attributes with the manually provided and deleted
         // attributes. Google systems only process, evaluate, review, and/or use final
@@ -205,39 +219,51 @@ declare module gapi.client.manufacturers {
         // Attributes of the product uploaded via the Manufacturer Center API or via
         // feeds.
         uploadedAttributes?: Attributes,
-        // Parent ID in the format `accounts/{account_id}`.
-        // 
-        // `account_id` - The ID of the Manufacturer Center account.
-        // @OutputOnly
-        parent?: string,
-        // Attributes of the product provided manually via the Manufacturer Center UI.
-        // @OutputOnly
-        manuallyProvidedAttributes?: Attributes,
-        // The target country of the product as a CLDR territory code (for example,
-        // US).
-        // @OutputOnly
-        targetCountry?: string,
-        // The content language of the product as a two-letter ISO 639-1 language code
-        // (for example, en).
-        // @OutputOnly
-        contentLanguage?: string,
-        // Name in the format `{target_country}:{content_language}:{product_id}`.
-        // 
-        // `target_country`   - The target country of the product as a CLDR territory
-        //                      code (for example, US).
-        // 
-        // `content_language` - The content language of the product as a two-letter
-        //                      ISO 639-1 language code (for example, en).
-        // 
-        // `product_id`     -   The ID of the product. For more information, see
-        //                      https://support.google.com/manufacturers/answer/6124116#id.
-        // @OutputOnly
-        name?: string,
+    }
+    
+    interface Capacity {
+        // The unit of the capacity, i.e., MB, GB, or TB.
+        unit?: string,
+        // The numeric value of the capacity.
+        value?: string,
+    }
+    
+    interface ListProductsResponse {
+        // The token for the retrieval of the next page of product statuses.
+        nextPageToken?: string,
+        // List of the products.
+        products?: Product[],        
     }
     
     interface ProductsResource {
         // Deletes the product from a Manufacturer Center account.
         delete (request: {        
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
             // Name in the format `{target_country}:{content_language}:{product_id}`.
             // 
             // `target_country`   - The target country of the product as a CLDR territory
@@ -262,6 +288,32 @@ declare module gapi.client.manufacturers {
         // changes are visible. While some issues may be available once the product
         // has been processed, other issues may take days to appear.
         get (request: {        
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
             // Parent ID in the format `accounts/{account_id}`.
             // 
             // `account_id` - The ID of the Manufacturer Center account.
@@ -281,6 +333,34 @@ declare module gapi.client.manufacturers {
         
         // Lists all the products in a Manufacturer Center account.
         list (request: {        
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // The token returned by the previous request.
+            pageToken?: string,
             // Maximum number of product statuses to return in the response, used for
             // paging.
             pageSize?: number,
@@ -288,8 +368,6 @@ declare module gapi.client.manufacturers {
             // 
             // `account_id` - The ID of the Manufacturer Center account.
             parent: string,
-            // The token returned by the previous request.
-            pageToken?: string,
         }) : gapi.client.Request<ListProductsResponse>;        
         
         // Inserts or updates the product in a Manufacturer Center account.
@@ -305,6 +383,36 @@ declare module gapi.client.manufacturers {
         // retrieved. Until then, new products will be unavailable, and retrieval
         // of updated products will return the original state of the product.
         update (request: {        
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // Parent ID in the format `accounts/{account_id}`.
+            // 
+            // `account_id` - The ID of the Manufacturer Center account.
+            parent: string,
             // Name in the format `{target_country}:{content_language}:{product_id}`.
             // 
             // `target_country`   - The target country of the product as a CLDR territory
@@ -316,10 +424,6 @@ declare module gapi.client.manufacturers {
             // `product_id`     -   The ID of the product. For more information, see
             //                      https://support.google.com/manufacturers/answer/6124116#id.
             name: string,
-            // Parent ID in the format `accounts/{account_id}`.
-            // 
-            // `account_id` - The ID of the Manufacturer Center account.
-            parent: string,
         }) : gapi.client.Request<Product>;        
         
     }

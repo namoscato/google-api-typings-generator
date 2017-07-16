@@ -588,6 +588,20 @@ declare module gapi.client.androidenterprise {
     interface DevicesResource {
         // Retrieves the details of a device.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the device.
             deviceId: string,
             // The ID of the enterprise.
@@ -598,6 +612,20 @@ declare module gapi.client.androidenterprise {
         
         // Retrieves whether a device's access to Google services is enabled or disabled. The device state takes effect only if enforcing EMM policies on Android devices is enabled in the Google Admin Console. Otherwise, the device state is ignored and all devices are allowed access to Google services. This is only supported for Google-managed users.
         getState (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the device.
             deviceId: string,
             // The ID of the enterprise.
@@ -608,6 +636,20 @@ declare module gapi.client.androidenterprise {
         
         // Retrieves the IDs of all of a user's devices.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
             // The ID of the user.
@@ -616,6 +658,20 @@ declare module gapi.client.androidenterprise {
         
         // Sets whether a device's access to Google services is enabled or disabled. The device state takes effect only if enforcing EMM policies on Android devices is enabled in the Google Admin Console. Otherwise, the device state is ignored and all devices are allowed access to Google services. This is only supported for Google-managed users.
         setState (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the device.
             deviceId: string,
             // The ID of the enterprise.
@@ -630,12 +686,40 @@ declare module gapi.client.androidenterprise {
     interface EnterprisesResource {
         // Acknowledges notifications that were received from Enterprises.PullNotificationSet to prevent subsequent calls from returning the same notifications.
         acknowledgeNotificationSet (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The notification set ID as returned by Enterprises.PullNotificationSet. This must be provided.
             notificationSetId?: string,
         }) : gapi.client.Request<void>;        
         
         // Completes the signup flow, by specifying the Completion token and Enterprise token. This request must not be called multiple times for a given Enterprise Token.
         completeSignup (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The Completion token initially returned by GenerateSignupUrl.
             completionToken?: string,
             // The Enterprise token appended to the Callback URL.
@@ -644,24 +728,80 @@ declare module gapi.client.androidenterprise {
         
         // Returns a unique token to access an embeddable UI. To generate a web UI, pass the generated token into the managed Google Play javascript API. Each token may only be used to start one UI session. See the javascript API documentation for further information.
         createWebToken (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
         }) : gapi.client.Request<AdministratorWebToken>;        
         
         // Deletes the binding between the EMM and enterprise. This is now deprecated. Use this method only to unenroll customers that were previously enrolled with the insert call, then enroll them again with the enroll call.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
         }) : gapi.client.Request<void>;        
         
         // Enrolls an enterprise with the calling EMM.
         enroll (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The token provided by the enterprise to register the EMM.
             token: string,
         }) : gapi.client.Request<Enterprise>;        
         
         // Generates a sign-up URL.
         generateSignupUrl (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The callback URL to which the Admin will be redirected after successfully creating an enterprise. Before redirecting there the system will add a single query parameter to this URL named "enterpriseToken" which will contain an opaque token to be used for the CompleteSignup request.
             // Beware that this means that the URL will be parsed, the parameter added and then a new URL formatted, i.e. there may be some minor formatting changes and, more importantly, the URL must be well-formed so that it can be parsed.
             callbackUrl?: string,
@@ -669,6 +809,20 @@ declare module gapi.client.androidenterprise {
         
         // Retrieves the name and domain of an enterprise.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
         }) : gapi.client.Request<Enterprise>;        
@@ -681,6 +835,20 @@ declare module gapi.client.androidenterprise {
         // 
         // Once the service account is bound to the enterprise, it can be managed using the serviceAccountKeys resource.
         getServiceAccount (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
             // The type of credential to return with the service account. Required.
@@ -689,18 +857,60 @@ declare module gapi.client.androidenterprise {
         
         // Returns the store layout for the enterprise. If the store layout has not been set, returns "basic" as the store layout type and no homepage.
         getStoreLayout (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
         }) : gapi.client.Request<StoreLayout>;        
         
         // Establishes the binding between the EMM and an enterprise. This is now deprecated; use enroll instead.
         insert (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The token provided by the enterprise to register the EMM.
             token: string,
         }) : gapi.client.Request<Enterprise>;        
         
         // Looks up an enterprise by domain name. This is only supported for enterprises created via the Google-initiated creation flow. Lookup of the id is not needed for enterprises created via the EMM-initiated flow since the EMM learns the enterprise ID in the callback specified in the Enterprises.generateSignupUrl call.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The exact primary domain name of the enterprise to look up.
             domain: string,
         }) : gapi.client.Request<EnterprisesListResponse>;        
@@ -711,6 +921,20 @@ declare module gapi.client.androidenterprise {
         // Multiple requests might be performed concurrently to retrieve notifications, in which case the pending notifications (if any) will be split among each caller, if any are pending.
         // If no notifications are present, an empty notification list is returned. Subsequent requests may return more notifications once they become available.
         pullNotificationSet (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The request mode for pulling notifications.
             // Specifying waitForNotifications will cause the request to block and wait until one or more notifications are present, or return an empty notification list if no notifications are present after some time.
             // Speciying returnImmediately will cause the request to immediately return the pending notifications, or an empty list if no notifications are present.
@@ -720,24 +944,80 @@ declare module gapi.client.androidenterprise {
         
         // Sends a test push notification to validate the EMM integration with the Google Cloud Pub/Sub service for this enterprise.
         sendTestPushNotification (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
         }) : gapi.client.Request<EnterprisesSendTestPushNotificationResponse>;        
         
         // Sets the account that will be used to authenticate to the API as the enterprise.
         setAccount (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
         }) : gapi.client.Request<EnterpriseAccount>;        
         
         // Sets the store layout for the enterprise. By default, storeLayoutType is set to "basic" and the basic store layout is enabled. The basic layout only contains apps approved by the admin, and that have been added to the available product set for a user (using the  setAvailableProductSet call). Apps on the page are sorted in order of their product ID value. If you create a custom store layout (by setting storeLayoutType = "custom" and setting a homepage), the basic store layout is disabled.
         setStoreLayout (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
         }) : gapi.client.Request<StoreLayout>;        
         
         // Unenrolls an enterprise from the calling EMM.
         unenroll (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
         }) : gapi.client.Request<void>;        
@@ -748,6 +1028,20 @@ declare module gapi.client.androidenterprise {
     interface EntitlementsResource {
         // Removes an entitlement to an app for a user.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
             // The ID of the entitlement (a product ID), e.g. "app:com.google.android.gm".
@@ -758,6 +1052,20 @@ declare module gapi.client.androidenterprise {
         
         // Retrieves details of an entitlement.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
             // The ID of the entitlement (a product ID), e.g. "app:com.google.android.gm".
@@ -768,6 +1076,20 @@ declare module gapi.client.androidenterprise {
         
         // Lists all entitlements for the specified user. Only the ID is set.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
             // The ID of the user.
@@ -776,6 +1098,20 @@ declare module gapi.client.androidenterprise {
         
         // Adds or updates an entitlement to an app for a user. This method supports patch semantics.
         patch (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
             // The ID of the entitlement (a product ID), e.g. "app:com.google.android.gm".
@@ -788,6 +1124,20 @@ declare module gapi.client.androidenterprise {
         
         // Adds or updates an entitlement to an app for a user.
         update (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
             // The ID of the entitlement (a product ID), e.g. "app:com.google.android.gm".
@@ -804,6 +1154,20 @@ declare module gapi.client.androidenterprise {
     interface GrouplicensesResource {
         // Retrieves details of an enterprise's group license for a product.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
             // The ID of the product the group license is for, e.g. "app:com.google.android.gm".
@@ -812,6 +1176,20 @@ declare module gapi.client.androidenterprise {
         
         // Retrieves IDs of all products for which the enterprise has a group license.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
         }) : gapi.client.Request<GroupLicensesListResponse>;        
@@ -822,6 +1200,20 @@ declare module gapi.client.androidenterprise {
     interface GrouplicenseusersResource {
         // Retrieves the IDs of the users who have been granted entitlements under the license.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
             // The ID of the product the group license is for, e.g. "app:com.google.android.gm".
@@ -834,6 +1226,20 @@ declare module gapi.client.androidenterprise {
     interface InstallsResource {
         // Requests to remove an app from a device. A call to get or list will still show the app as installed on the device until it is actually removed.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The Android ID of the device.
             deviceId: string,
             // The ID of the enterprise.
@@ -846,6 +1252,20 @@ declare module gapi.client.androidenterprise {
         
         // Retrieves details of an installation of an app on a device.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The Android ID of the device.
             deviceId: string,
             // The ID of the enterprise.
@@ -858,6 +1278,20 @@ declare module gapi.client.androidenterprise {
         
         // Retrieves the details of all apps installed on the specified device.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The Android ID of the device.
             deviceId: string,
             // The ID of the enterprise.
@@ -868,6 +1302,20 @@ declare module gapi.client.androidenterprise {
         
         // Requests to install the latest version of an app to a device. If the app is already installed, then it is updated to the latest version if necessary. This method supports patch semantics.
         patch (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The Android ID of the device.
             deviceId: string,
             // The ID of the enterprise.
@@ -880,6 +1328,20 @@ declare module gapi.client.androidenterprise {
         
         // Requests to install the latest version of an app to a device. If the app is already installed, then it is updated to the latest version if necessary.
         update (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The Android ID of the device.
             deviceId: string,
             // The ID of the enterprise.
@@ -896,6 +1358,20 @@ declare module gapi.client.androidenterprise {
     interface ManagedconfigurationsfordeviceResource {
         // Removes a per-device managed configuration for an app for the specified device.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The Android ID of the device.
             deviceId: string,
             // The ID of the enterprise.
@@ -908,6 +1384,20 @@ declare module gapi.client.androidenterprise {
         
         // Retrieves details of a per-device managed configuration.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The Android ID of the device.
             deviceId: string,
             // The ID of the enterprise.
@@ -920,6 +1410,20 @@ declare module gapi.client.androidenterprise {
         
         // Lists all the per-device managed configurations for the specified device. Only the ID is set.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The Android ID of the device.
             deviceId: string,
             // The ID of the enterprise.
@@ -930,6 +1434,20 @@ declare module gapi.client.androidenterprise {
         
         // Adds or updates a per-device managed configuration for an app for the specified device. This method supports patch semantics.
         patch (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The Android ID of the device.
             deviceId: string,
             // The ID of the enterprise.
@@ -942,6 +1460,20 @@ declare module gapi.client.androidenterprise {
         
         // Adds or updates a per-device managed configuration for an app for the specified device.
         update (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The Android ID of the device.
             deviceId: string,
             // The ID of the enterprise.
@@ -958,6 +1490,20 @@ declare module gapi.client.androidenterprise {
     interface ManagedconfigurationsforuserResource {
         // Removes a per-user managed configuration for an app for the specified user.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
             // The ID of the managed configuration (a product ID), e.g. "app:com.google.android.gm".
@@ -968,6 +1514,20 @@ declare module gapi.client.androidenterprise {
         
         // Retrieves details of a per-user managed configuration for an app for the specified user.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
             // The ID of the managed configuration (a product ID), e.g. "app:com.google.android.gm".
@@ -978,6 +1538,20 @@ declare module gapi.client.androidenterprise {
         
         // Lists all the per-user managed configurations for the specified user. Only the ID is set.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
             // The ID of the user.
@@ -986,6 +1560,20 @@ declare module gapi.client.androidenterprise {
         
         // Adds or updates a per-user managed configuration for an app for the specified user. This method supports patch semantics.
         patch (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
             // The ID of the managed configuration (a product ID), e.g. "app:com.google.android.gm".
@@ -996,6 +1584,20 @@ declare module gapi.client.androidenterprise {
         
         // Adds or updates a per-user managed configuration for an app for the specified user.
         update (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
             // The ID of the managed configuration (a product ID), e.g. "app:com.google.android.gm".
@@ -1010,6 +1612,20 @@ declare module gapi.client.androidenterprise {
     interface PermissionsResource {
         // Retrieves details of an Android app permission for display to an enterprise admin.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The BCP47 tag for the user's preferred language (e.g. "en-US", "de")
             language?: string,
             // The ID of the permission.
@@ -1024,6 +1640,20 @@ declare module gapi.client.androidenterprise {
         // 
         // To learn how to use managed Google Play to design and create a store layout to display approved products to your users, see Store Layout Design.
         approve (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
             // The ID of the product.
@@ -1034,6 +1664,20 @@ declare module gapi.client.androidenterprise {
         // 
         // Admins should accept the displayed permissions by interacting with a separate UI element in the EMM console, which in turn should trigger the use of this URL as the approvalUrlInfo.approvalUrl property in a Products.approve call to approve the product. This URL can only be used to display permissions for up to 1 day.
         generateApprovalUrl (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
             // The BCP 47 language code used for permission names and descriptions in the returned iframe, for instance "en-US".
@@ -1044,6 +1688,20 @@ declare module gapi.client.androidenterprise {
         
         // Retrieves details of a product for display to an enterprise admin.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
             // The BCP47 tag for the user's preferred language (e.g. "en-US", "de").
@@ -1054,6 +1712,20 @@ declare module gapi.client.androidenterprise {
         
         // Retrieves the schema that defines the configurable properties for this product. All products have a schema, but this schema may be empty if no managed configurations have been defined. This schema can be used to populate a UI that allows an admin to configure the product. To apply a managed configuration based on the schema obtained using this API, see Managed Configurations through Play.
         getAppRestrictionsSchema (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
             // The BCP47 tag for the user's preferred language (e.g. "en-US", "de").
@@ -1064,6 +1736,20 @@ declare module gapi.client.androidenterprise {
         
         // Retrieves the Android app permissions required by this app.
         getPermissions (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
             // The ID of the product.
@@ -1072,6 +1758,20 @@ declare module gapi.client.androidenterprise {
         
         // Finds approved products that match a query, or all approved products if there is no query.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // Specifies whether to search among all products (false) or among only products that have been approved (true). Only "true" is supported, and should be specified.
             approved?: boolean,
             // The ID of the enterprise.
@@ -1088,6 +1788,20 @@ declare module gapi.client.androidenterprise {
         
         // Unapproves the specified product (and the relevant app permissions, if any)
         unapprove (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
             // The ID of the product.
@@ -1100,6 +1814,20 @@ declare module gapi.client.androidenterprise {
     interface ServiceaccountkeysResource {
         // Removes and invalidates the specified credentials for the service account associated with this enterprise. The calling service account must have been retrieved by calling Enterprises.GetServiceAccount and must have been set as the enterprise service account by calling Enterprises.SetAccount.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
             // The ID of the key.
@@ -1110,12 +1838,40 @@ declare module gapi.client.androidenterprise {
         // 
         // Only the type of the key should be populated in the resource to be inserted.
         insert (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
         }) : gapi.client.Request<ServiceAccountKey>;        
         
         // Lists all active credentials for the service account associated with this enterprise. Only the ID and key type are returned. The calling service account must have been retrieved by calling Enterprises.GetServiceAccount and must have been set as the enterprise service account by calling Enterprises.SetAccount.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
         }) : gapi.client.Request<ServiceAccountKeysListResponse>;        
@@ -1126,6 +1882,20 @@ declare module gapi.client.androidenterprise {
     interface StorelayoutclustersResource {
         // Deletes a cluster.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the cluster.
             clusterId: string,
             // The ID of the enterprise.
@@ -1136,6 +1906,20 @@ declare module gapi.client.androidenterprise {
         
         // Retrieves details of a cluster.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the cluster.
             clusterId: string,
             // The ID of the enterprise.
@@ -1146,6 +1930,20 @@ declare module gapi.client.androidenterprise {
         
         // Inserts a new cluster in a page.
         insert (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
             // The ID of the page.
@@ -1154,6 +1952,20 @@ declare module gapi.client.androidenterprise {
         
         // Retrieves the details of all clusters on the specified page.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
             // The ID of the page.
@@ -1162,6 +1974,20 @@ declare module gapi.client.androidenterprise {
         
         // Updates a cluster. This method supports patch semantics.
         patch (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the cluster.
             clusterId: string,
             // The ID of the enterprise.
@@ -1172,6 +1998,20 @@ declare module gapi.client.androidenterprise {
         
         // Updates a cluster.
         update (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the cluster.
             clusterId: string,
             // The ID of the enterprise.
@@ -1186,6 +2026,20 @@ declare module gapi.client.androidenterprise {
     interface StorelayoutpagesResource {
         // Deletes a store page.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
             // The ID of the page.
@@ -1194,6 +2048,20 @@ declare module gapi.client.androidenterprise {
         
         // Retrieves details of a store page.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
             // The ID of the page.
@@ -1202,18 +2070,60 @@ declare module gapi.client.androidenterprise {
         
         // Inserts a new store page.
         insert (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
         }) : gapi.client.Request<StorePage>;        
         
         // Retrieves the details of all pages in the store.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
         }) : gapi.client.Request<StoreLayoutPagesListResponse>;        
         
         // Updates the content of a store page. This method supports patch semantics.
         patch (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
             // The ID of the page.
@@ -1222,6 +2132,20 @@ declare module gapi.client.androidenterprise {
         
         // Updates the content of a store page.
         update (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
             // The ID of the page.
@@ -1234,6 +2158,20 @@ declare module gapi.client.androidenterprise {
     interface UsersResource {
         // Deleted an EMM-managed user.
         delete (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
             // The ID of the user.
@@ -1244,6 +2182,20 @@ declare module gapi.client.androidenterprise {
         // 
         // This call only works with EMM-managed accounts.
         generateAuthenticationToken (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
             // The ID of the user.
@@ -1254,6 +2206,20 @@ declare module gapi.client.androidenterprise {
         // 
         // This call only works with Google managed accounts.
         generateToken (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
             // The ID of the user.
@@ -1262,6 +2228,20 @@ declare module gapi.client.androidenterprise {
         
         // Retrieves a user's details.
         get (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
             // The ID of the user.
@@ -1270,6 +2250,20 @@ declare module gapi.client.androidenterprise {
         
         // Retrieves the set of products a user is entitled to access.
         getAvailableProductSet (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
             // The ID of the user.
@@ -1281,12 +2275,40 @@ declare module gapi.client.androidenterprise {
         // The Users resource passed in the body of the request should include an accountIdentifier and an accountType.
         // If a corresponding user already exists with the same account identifier, the user will be updated with the resource. In this case only the displayName field can be changed.
         insert (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
         }) : gapi.client.Request<User>;        
         
         // Looks up a user by primary email address. This is only supported for Google-managed users. Lookup of the id is not needed for EMM-managed users because the id is already returned in the result of the Users.insert call.
         list (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The exact primary email address of the user to look up.
             email: string,
             // The ID of the enterprise.
@@ -1297,6 +2319,20 @@ declare module gapi.client.androidenterprise {
         // 
         // Can be used with EMM-managed users only (not Google managed users). Pass the new details in the Users resource in the request body. Only the displayName field can be changed. Other fields must either be unset or have the currently active value. This method supports patch semantics.
         patch (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
             // The ID of the user.
@@ -1305,6 +2341,20 @@ declare module gapi.client.androidenterprise {
         
         // Revokes a previously generated token (activation code) for the user.
         revokeToken (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
             // The ID of the user.
@@ -1313,6 +2363,20 @@ declare module gapi.client.androidenterprise {
         
         // Modifies the set of products that a user is entitled to access (referred to as whitelisted products). Only products that are approved or products that were previously approved (products with revoked approval) can be whitelisted.
         setAvailableProductSet (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
             // The ID of the user.
@@ -1323,6 +2387,20 @@ declare module gapi.client.androidenterprise {
         // 
         // Can be used with EMM-managed users only (not Google managed users). Pass the new details in the Users resource in the request body. Only the displayName field can be changed. Other fields must either be unset or have the currently active value.
         update (request: {        
+            // Data format for the response.
+            alt?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+            quotaUser?: string,
+            // IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            userIp?: string,
             // The ID of the enterprise.
             enterpriseId: string,
             // The ID of the user.

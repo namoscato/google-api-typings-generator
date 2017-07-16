@@ -6,6 +6,27 @@
 
 declare module gapi.client.cloudresourcemanager {
     
+    interface TestIamPermissionsResponse {
+        // A subset of `TestPermissionsRequest.permissions` that the caller is
+        // allowed.
+        permissions?: string[],        
+    }
+    
+    interface GetIamPolicyRequest {
+    }
+    
+    interface UndeleteFolderRequest {
+    }
+    
+    interface AuditLogConfig {
+        // Specifies the identities that do not cause logging for this type of
+        // permission.
+        // Follows the same format of Binding.members.
+        exemptedMembers?: string[],        
+        // The log type that this config enables.
+        logType?: string,
+    }
+    
     interface TestIamPermissionsRequest {
         // The set of permissions to check for the `resource`. Permissions with
         // wildcards (such as '*' or 'storage.*') are not allowed. For more
@@ -33,6 +54,11 @@ declare module gapi.client.cloudresourcemanager {
     }
     
     interface Policy {
+        // Specifies cloud audit logging configuration for this policy.
+        auditConfigs?: AuditConfig[],        
+        // Associates a list of `members` to a `role`.
+        // `bindings` with no members will result in an error.
+        bindings?: Binding[],        
         // `etag` is used for optimistic concurrency control as a way to help
         // prevent simultaneous updates of a policy from overwriting each other.
         // It is strongly suggested that systems make use of the `etag` in the
@@ -46,11 +72,16 @@ declare module gapi.client.cloudresourcemanager {
         etag?: string,
         // Version of the `Policy`. The default version is 0.
         version?: number,
-        // Specifies cloud audit logging configuration for this policy.
-        auditConfigs?: AuditConfig[],        
-        // Associates a list of `members` to a `role`.
-        // `bindings` with no members will result in an error.
-        bindings?: Binding[],        
+    }
+    
+    interface AuditConfig {
+        // Specifies a service that will be enabled for audit logging.
+        // For example, `storage.googleapis.com`, `cloudsql.googleapis.com`.
+        // `allServices` is a special value that covers all services.
+        service?: string,
+        // The configuration for logging of each type of permission.
+        // Next ID: 4
+        auditLogConfigs?: AuditLogConfig[],        
     }
     
     interface Operation {
@@ -80,24 +111,14 @@ declare module gapi.client.cloudresourcemanager {
         done?: boolean,
     }
     
-    interface AuditConfig {
-        // Specifies a service that will be enabled for audit logging.
-        // For example, `storage.googleapis.com`, `cloudsql.googleapis.com`.
-        // `allServices` is a special value that covers all services.
-        service?: string,
-        // The configuration for logging of each type of permission.
-        // Next ID: 4
-        auditLogConfigs?: AuditLogConfig[],        
-    }
-    
     interface ListFoldersResponse {
+        // A possibly paginated list of Folders that are direct descendants of
+        // the specified parent resource.
+        folders?: Folder[],        
         // A pagination token returned from a previous call to `ListFolders`
         // that indicates from where listing should continue.
         // This field is optional.
         nextPageToken?: string,
-        // A possibly paginated list of Folders that are direct descendants of
-        // the specified parent resource.
-        folders?: Folder[],        
     }
     
     interface MoveFolderRequest {
@@ -108,17 +129,17 @@ declare module gapi.client.cloudresourcemanager {
     }
     
     interface SetIamPolicyRequest {
-        // REQUIRED: The complete policy to be applied to the `resource`. The size of
-        // the policy is limited to a few 10s of KB. An empty policy is a
-        // valid policy but certain Cloud Platform services (such as Projects)
-        // might reject them.
-        policy?: Policy,
         // OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only
         // the fields in the mask will be modified. If no mask is provided, the
         // following default mask is used:
         // paths: "bindings, etag"
         // This field is only used by Cloud IAM.
         updateMask?: string,
+        // REQUIRED: The complete policy to be applied to the `resource`. The size of
+        // the policy is limited to a few 10s of KB. An empty policy is a
+        // valid policy but certain Cloud Platform services (such as Projects)
+        // might reject them.
+        policy?: Policy,
     }
     
     interface SearchFoldersResponse {
@@ -203,6 +224,11 @@ declare module gapi.client.cloudresourcemanager {
     }
     
     interface Folder {
+        // The Folder’s parent's resource name.
+        // Updates to the folder's parent must be performed via [MoveFolders].
+        parent?: string,
+        // Output only. Timestamp when the Folder was created. Assigned by the server.
+        createTime?: string,
         // Output only.  The lifecycle state of the folder.
         // Updates to the lifecycle_state must be performed via
         // [DeleteFolder] and [UndeleteFolder].
@@ -218,74 +244,52 @@ declare module gapi.client.cloudresourcemanager {
         // than 30 characters. This is captured by the regular expression:
         // [\p{L}\p{N}]({\p{L}\p{N}_- ]{0,28}[\p{L}\p{N}])?.
         displayName?: string,
-        // The Folder’s parent's resource name.
-        // Updates to the folder's parent must be performed via [MoveFolders].
-        parent?: string,
-        // Output only. Timestamp when the Folder was created. Assigned by the server.
-        createTime?: string,
     }
     
     interface ProjectCreationStatus {
-        // True if the project creation process is complete.
-        ready?: boolean,
         // True if the project can be retrieved using GetProject. No other operations
         // on the project are guaranteed to work until the project creation is
         // complete.
         gettable?: boolean,
         // Creation time of the project creation workflow.
         createTime?: string,
-    }
-    
-    interface TestIamPermissionsResponse {
-        // A subset of `TestPermissionsRequest.permissions` that the caller is
-        // allowed.
-        permissions?: string[],        
-    }
-    
-    interface GetIamPolicyRequest {
-    }
-    
-    interface UndeleteFolderRequest {
-    }
-    
-    interface AuditLogConfig {
-        // Specifies the identities that do not cause logging for this type of
-        // permission.
-        // Follows the same format of Binding.members.
-        exemptedMembers?: string[],        
-        // The log type that this config enables.
-        logType?: string,
+        // True if the project creation process is complete.
+        ready?: boolean,
     }
     
     interface FoldersResource {
-        // Moves a Folder under a new resource parent.
-        // Returns an Operation which can be used to track the progress of the
-        // folder move workflow.
-        // Upon success the Operation.response field will be populated with the
-        // moved Folder.
-        // Upon failure, a FolderOperationError categorizing the failure cause will
-        // be returned - if the failure occurs synchronously then the
-        // FolderOperationError will be returned via the Status.details field
-        // and if it occurs asynchronously then the FolderOperation will be returned
-        // via the the Operation.error field.
-        // In addition, the Operation.metadata field will be populated with a
-        // FolderOperation message as an aid to stateless clients.
-        // Folder moves will be rejected if they violate either the naming, height
-        // or fanout constraints described in the [CreateFolder] documentation.
-        // The caller must have `resourcemanager.folders.move` permission on the
-        // folder's current and proposed new parent.
-        move (request: {        
-            // The resource name of the Folder to move.
-            // Must be of the form folders/{folder_id}
-            name: string,
-        }) : gapi.client.Request<Operation>;        
-        
         // Returns permissions that a caller has on the specified Folder.
         // The `resource` field should be the Folder's resource name,
         // e.g. "folders/1234".
         // 
         // There are no permissions required for making this API call.
         testIamPermissions (request: {        
+            // OAuth access token.
+            access_token?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // JSONP
+            callback?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // Data format for response.
+            alt?: string,
             // REQUIRED: The resource for which the policy detail is being requested.
             // See the operation documentation for the appropriate value for this field.
             resource: string,
@@ -299,6 +303,32 @@ declare module gapi.client.cloudresourcemanager {
         // The caller must have `resourcemanager.folders.delete` permission on the
         // identified folder.
         delete (request: {        
+            // OAuth access token.
+            access_token?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // JSONP
+            callback?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // Data format for response.
+            alt?: string,
             // the resource name of the Folder to be deleted.
             // Must be of the form `folders/{folder_id}`.
             name: string,
@@ -312,13 +342,32 @@ declare module gapi.client.cloudresourcemanager {
         // The caller must have `resourcemanager.folders.list` permission on the
         // identified parent.
         list (request: {        
-            // A pagination token returned from a previous call to `ListFolders`
-            // that indicates where this listing should continue from.
-            // This field is optional.
-            pageToken?: string,
-            // The maximum number of Folders to return in the response.
-            // This field is optional.
-            pageSize?: number,
+            // OAuth access token.
+            access_token?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // JSONP
+            callback?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // Data format for response.
+            alt?: string,
             // The resource name of the Organization or Folder whose Folders are
             // being listed.
             // Must be of the form `folders/{folder_id}` or `organizations/{org_id}`.
@@ -328,18 +377,14 @@ declare module gapi.client.cloudresourcemanager {
             // Controls whether Folders in the [DELETE_REQUESTED} state should
             // be returned.
             showDeleted?: boolean,
+            // A pagination token returned from a previous call to `ListFolders`
+            // that indicates where this listing should continue from.
+            // This field is optional.
+            pageToken?: string,
+            // The maximum number of Folders to return in the response.
+            // This field is optional.
+            pageSize?: number,
         }) : gapi.client.Request<ListFoldersResponse>;        
-        
-        // Sets the access control policy on a Folder, replacing any existing policy.
-        // The `resource` field should be the Folder's resource name, e.g.
-        // "folders/1234".
-        // The caller must have `resourcemanager.folders.setIamPolicy` permission
-        // on the identified folder.
-        setIamPolicy (request: {        
-            // REQUIRED: The resource for which the policy is being specified.
-            // See the operation documentation for the appropriate value for this field.
-            resource: string,
-        }) : gapi.client.Request<Policy>;        
         
         // Creates a Folder in the resource hierarchy.
         // Returns an Operation which can be used to track the progress of the
@@ -368,10 +413,73 @@ declare module gapi.client.cloudresourcemanager {
         // The caller must have `resourcemanager.folders.create` permission on the
         // identified parent.
         create (request: {        
+            // OAuth access token.
+            access_token?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // JSONP
+            callback?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // Data format for response.
+            alt?: string,
             // The resource name of the new Folder's parent.
             // Must be of the form `folders/{folder_id}` or `organizations/{org_id}`.
             parent?: string,
         }) : gapi.client.Request<Operation>;        
+        
+        // Sets the access control policy on a Folder, replacing any existing policy.
+        // The `resource` field should be the Folder's resource name, e.g.
+        // "folders/1234".
+        // The caller must have `resourcemanager.folders.setIamPolicy` permission
+        // on the identified folder.
+        setIamPolicy (request: {        
+            // OAuth access token.
+            access_token?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // JSONP
+            callback?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // Data format for response.
+            alt?: string,
+            // REQUIRED: The resource for which the policy is being specified.
+            // See the operation documentation for the appropriate value for this field.
+            resource: string,
+        }) : gapi.client.Request<Policy>;        
         
         // Gets the access control policy for a Folder. The returned policy may be
         // empty if no such policy or resource exists. The `resource` field should
@@ -379,6 +487,32 @@ declare module gapi.client.cloudresourcemanager {
         // The caller must have `resourcemanager.folders.getIamPolicy` permission
         // on the identified folder.
         getIamPolicy (request: {        
+            // OAuth access token.
+            access_token?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // JSONP
+            callback?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // Data format for response.
+            alt?: string,
             // REQUIRED: The resource for which the policy is being requested.
             // See the operation documentation for the appropriate value for this field.
             resource: string,
@@ -391,32 +525,33 @@ declare module gapi.client.cloudresourcemanager {
         // This will only return folders on which the caller has the
         // permission `resourcemanager.folders.get`.
         search (request: {        
+            // OAuth access token.
+            access_token?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // JSONP
+            callback?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // Data format for response.
+            alt?: string,
         }) : gapi.client.Request<SearchFoldersResponse>;        
-        
-        // Cancels the deletion request for a Folder. This method may only be
-        // called on a Folder in the [DELETE_REQUESTED] state.
-        // In order to succeed, the Folder's parent must be in the [ACTIVE] state.
-        // In addition, reintroducing the folder into the tree must not violate
-        // folder naming, height and fanout constraints described in the
-        // [CreateFolder] documentation.
-        // The caller must have `resourcemanager.folders.undelete` permission on the
-        // identified folder.
-        undelete (request: {        
-            // The resource name of the Folder to undelete.
-            // Must be of the form `folders/{folder_id}`.
-            name: string,
-        }) : gapi.client.Request<Folder>;        
-        
-        // Retrieves a Folder identified by the supplied resource name.
-        // Valid Folder resource names have the format `folders/{folder_id}`
-        // (for example, `folders/1234`).
-        // The caller must have `resourcemanager.folders.get` permission on the
-        // identified folder.
-        get (request: {        
-            // The resource name of the Folder to retrieve.
-            // Must be of the form `folders/{folder_id}`.
-            name: string,
-        }) : gapi.client.Request<Folder>;        
         
         // Updates a Folder, changing its display_name.
         // Changes to the folder display_name will be rejected if they violate either
@@ -433,6 +568,32 @@ declare module gapi.client.cloudresourcemanager {
         // PreconditionFailure explaining this violation will be returned
         // in the Status.details field.
         patch (request: {        
+            // OAuth access token.
+            access_token?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // JSONP
+            callback?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // Data format for response.
+            alt?: string,
             // Fields to be updated.
             // Only the `display_name` can be updated.
             updateMask?: string,
@@ -440,6 +601,131 @@ declare module gapi.client.cloudresourcemanager {
             // Its format is `folders/{folder_id}`, for example: "folders/1234".
             name: string,
         }) : gapi.client.Request<Folder>;        
+        
+        // Retrieves a Folder identified by the supplied resource name.
+        // Valid Folder resource names have the format `folders/{folder_id}`
+        // (for example, `folders/1234`).
+        // The caller must have `resourcemanager.folders.get` permission on the
+        // identified folder.
+        get (request: {        
+            // OAuth access token.
+            access_token?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // JSONP
+            callback?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // Data format for response.
+            alt?: string,
+            // The resource name of the Folder to retrieve.
+            // Must be of the form `folders/{folder_id}`.
+            name: string,
+        }) : gapi.client.Request<Folder>;        
+        
+        // Cancels the deletion request for a Folder. This method may only be
+        // called on a Folder in the [DELETE_REQUESTED] state.
+        // In order to succeed, the Folder's parent must be in the [ACTIVE] state.
+        // In addition, reintroducing the folder into the tree must not violate
+        // folder naming, height and fanout constraints described in the
+        // [CreateFolder] documentation.
+        // The caller must have `resourcemanager.folders.undelete` permission on the
+        // identified folder.
+        undelete (request: {        
+            // OAuth access token.
+            access_token?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // JSONP
+            callback?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // Data format for response.
+            alt?: string,
+            // The resource name of the Folder to undelete.
+            // Must be of the form `folders/{folder_id}`.
+            name: string,
+        }) : gapi.client.Request<Folder>;        
+        
+        // Moves a Folder under a new resource parent.
+        // Returns an Operation which can be used to track the progress of the
+        // folder move workflow.
+        // Upon success the Operation.response field will be populated with the
+        // moved Folder.
+        // Upon failure, a FolderOperationError categorizing the failure cause will
+        // be returned - if the failure occurs synchronously then the
+        // FolderOperationError will be returned via the Status.details field
+        // and if it occurs asynchronously then the FolderOperation will be returned
+        // via the the Operation.error field.
+        // In addition, the Operation.metadata field will be populated with a
+        // FolderOperation message as an aid to stateless clients.
+        // Folder moves will be rejected if they violate either the naming, height
+        // or fanout constraints described in the [CreateFolder] documentation.
+        // The caller must have `resourcemanager.folders.move` permission on the
+        // folder's current and proposed new parent.
+        move (request: {        
+            // OAuth access token.
+            access_token?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // JSONP
+            callback?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // Data format for response.
+            alt?: string,
+            // The resource name of the Folder to move.
+            // Must be of the form folders/{folder_id}
+            name: string,
+        }) : gapi.client.Request<Operation>;        
         
     }
     

@@ -6,6 +6,244 @@
 
 declare module gapi.client.storagetransfer {
     
+    interface ListOperationsResponse {
+        // The standard List next-page token.
+        nextPageToken?: string,
+        // A list of operations that matches the specified filter in the request.
+        operations?: Operation[],        
+    }
+    
+    interface GoogleServiceAccount {
+        // Required.
+        accountEmail?: string,
+    }
+    
+    interface TimeOfDay {
+        // Hours of day in 24 hour format. Should be from 0 to 23. An API may choose
+        // to allow the value "24:00:00" for scenarios like business closing time.
+        hours?: number,
+        // Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999.
+        nanos?: number,
+        // Seconds of minutes of the time. Must normally be from 0 to 59. An API may
+        // allow the value 60 if it allows leap-seconds.
+        seconds?: number,
+        // Minutes of hour of day. Must be from 0 to 59.
+        minutes?: number,
+    }
+    
+    interface ErrorLogEntry {
+        // A list of messages that carry the error details.
+        errorDetails?: string[],        
+        // A URL that refers to the target (a data source, a data sink,
+        // or an object) with which the error is associated.
+        // Required.
+        url?: string,
+    }
+    
+    interface TransferJob {
+        // A description provided by the user for the job. Its max length is 1024
+        // bytes when Unicode-encoded.
+        description?: string,
+        // This field cannot be changed by user requests.
+        creationTime?: string,
+        // Transfer specification.
+        // Required.
+        transferSpec?: TransferSpec,
+        // Status of the job. This value MUST be specified for
+        // `CreateTransferJobRequests`.
+        // 
+        // NOTE: The effect of the new job status takes place during a subsequent job
+        // run. For example, if you change the job status from `ENABLED` to
+        // `DISABLED`, and an operation spawned by the transfer is running, the status
+        // change would not affect the current operation.
+        status?: string,
+        // Schedule specification.
+        // Required.
+        schedule?: Schedule,
+        // This field cannot be changed by user requests.
+        deletionTime?: string,
+        // A globally unique name assigned by Storage Transfer Service when the
+        // job is created. This field should be left empty in requests to create a new
+        // transfer job; otherwise, the requests result in an `INVALID_ARGUMENT`
+        // error.
+        name?: string,
+        // The ID of the Google Cloud Platform Console project that owns the job.
+        // Required.
+        projectId?: string,
+        // This field cannot be changed by user requests.
+        lastModificationTime?: string,
+    }
+    
+    interface Schedule {
+        // The last day the recurring transfer will be run. If `scheduleEndDate`
+        // is the same as `scheduleStartDate`, the transfer will be executed only
+        // once.
+        scheduleEndDate?: Date,
+        // The time in UTC at which the transfer will be scheduled to start in a day.
+        // Transfers may start later than this time. If not specified, recurring and
+        // one-time transfers that are scheduled to run today will run immediately;
+        // recurring transfers that are scheduled to run on a future date will start
+        // at approximately midnight UTC on that date. Note that when configuring a
+        // transfer with the Cloud Platform Console, the transfer's start time in a
+        // day is specified in your local timezone.
+        startTimeOfDay?: TimeOfDay,
+        // The first day the recurring transfer is scheduled to run. If
+        // `scheduleStartDate` is in the past, the transfer will run for the first
+        // time on the following day.
+        // Required.
+        scheduleStartDate?: Date,
+    }
+    
+    interface Date {
+        // Day of month. Must be from 1 to 31 and valid for the year and month, or 0
+        // if specifying a year/month where the day is not significant.
+        day?: number,
+        // Year of date. Must be from 1 to 9999, or 0 if specifying a date without
+        // a year.
+        year?: number,
+        // Month of year. Must be from 1 to 12.
+        month?: number,
+    }
+    
+    interface TransferOperation {
+        // Summarizes errors encountered with sample error log entries.
+        errorBreakdowns?: ErrorSummary[],        
+        // A globally unique ID assigned by the system.
+        name?: string,
+        // The ID of the Google Cloud Platform Console project that owns the operation.
+        // Required.
+        projectId?: string,
+        // End time of this transfer execution.
+        endTime?: string,
+        // Start time of this transfer execution.
+        startTime?: string,
+        // The name of the transfer job that triggers this transfer operation.
+        transferJobName?: string,
+        // Transfer specification.
+        // Required.
+        transferSpec?: TransferSpec,
+        // Status of the transfer operation.
+        status?: string,
+        // Information about the progress of the transfer operation.
+        counters?: TransferCounters,
+    }
+    
+    interface AwsS3Data {
+        // S3 Bucket name (see
+        // [Creating a bucket](http://docs.aws.amazon.com/AmazonS3/latest/dev/create-bucket-get-location-example.html)).
+        // Required.
+        bucketName?: string,
+        // AWS access key used to sign the API requests to the AWS S3 bucket.
+        // Permissions on the bucket must be granted to the access ID of the
+        // AWS access key.
+        // Required.
+        awsAccessKey?: AwsAccessKey,
+    }
+    
+    interface Empty {
+    }
+    
+    interface AwsAccessKey {
+        // AWS access key ID.
+        // Required.
+        accessKeyId?: string,
+        // AWS secret access key. This field is not returned in RPC responses.
+        // Required.
+        secretAccessKey?: string,
+    }
+    
+    interface PauseTransferOperationRequest {
+    }
+    
+    interface TransferCounters {
+        // Bytes in the data source that failed during the transfer.
+        bytesFromSourceFailed?: string,
+        // Objects in the data source that failed during the transfer.
+        objectsFromSourceFailed?: string,
+        // Objects that are copied to the data sink.
+        objectsCopiedToSink?: string,
+        // Bytes found only in the data sink that are scheduled to be deleted.
+        bytesFoundOnlyFromSink?: string,
+        // Objects that are deleted from the data source.
+        objectsDeletedFromSource?: string,
+        // Bytes that are copied to the data sink.
+        bytesCopiedToSink?: string,
+        // Bytes found in the data source that are scheduled to be transferred,
+        // which will be copied, excluded based on conditions, or skipped due to
+        // failures.
+        bytesFoundFromSource?: string,
+        // Objects in the data source that are not transferred because they already
+        // exist in the data sink.
+        objectsFromSourceSkippedBySync?: string,
+        // Bytes that are deleted from the data source.
+        bytesDeletedFromSource?: string,
+        // Objects found in the data source that are scheduled to be transferred,
+        // which will be copied, excluded based on conditions, or skipped due to
+        // failures.
+        objectsFoundFromSource?: string,
+        // Objects that failed to be deleted from the data sink.
+        objectsFailedToDeleteFromSink?: string,
+        // Objects that are deleted from the data sink.
+        objectsDeletedFromSink?: string,
+        // Objects found only in the data sink that are scheduled to be deleted.
+        objectsFoundOnlyFromSink?: string,
+        // Bytes in the data source that are not transferred because they already
+        // exist in the data sink.
+        bytesFromSourceSkippedBySync?: string,
+        // Bytes that are deleted from the data sink.
+        bytesDeletedFromSink?: string,
+        // Bytes that failed to be deleted from the data sink.
+        bytesFailedToDeleteFromSink?: string,
+    }
+    
+    interface ErrorSummary {
+        // Required.
+        errorCode?: string,
+        // Count of this type of error.
+        // Required.
+        errorCount?: string,
+        // Error samples.
+        errorLogEntries?: ErrorLogEntry[],        
+    }
+    
+    interface HttpData {
+        // The URL that points to the file that stores the object list entries.
+        // This file must allow public access.  Currently, only URLs with HTTP and
+        // HTTPS schemes are supported.
+        // Required.
+        listUrl?: string,
+    }
+    
+    interface GcsData {
+        // Google Cloud Storage bucket name (see
+        // [Bucket Name Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
+        // Required.
+        bucketName?: string,
+    }
+    
+    interface ListTransferJobsResponse {
+        // The list next page token.
+        nextPageToken?: string,
+        // A list of transfer jobs.
+        transferJobs?: TransferJob[],        
+    }
+    
+    interface UpdateTransferJobRequest {
+        // The ID of the Google Cloud Platform Console project that owns the job.
+        // Required.
+        projectId?: string,
+        // The field mask of the fields in `transferJob` that are to be updated in
+        // this request.  Fields in `transferJob` that can be updated are:
+        // `description`, `transferSpec`, and `status`.  To update the `transferSpec`
+        // of the job, a complete transfer specification has to be provided. An
+        // incomplete specification which misses any required fields will be rejected
+        // with the error `INVALID_ARGUMENT`.
+        updateTransferJobFieldMask?: string,
+        // The job to update.
+        // Required.
+        transferJob?: TransferJob,
+    }
+    
     interface ObjectConditions {
         // If `includePrefixes` is specified, objects that satisfy the object
         // conditions must have names that start with one of the `includePrefixes`
@@ -81,6 +319,19 @@ declare module gapi.client.storagetransfer {
         done?: boolean,
     }
     
+    interface TransferOptions {
+        // Whether objects should be deleted from the source after they are
+        // transferred to the sink.  Note that this option and
+        // `deleteObjectsUniqueInSink` are mutually exclusive.
+        deleteObjectsFromSourceAfterTransfer?: boolean,
+        // Whether objects that exist only in the sink should be deleted.  Note that
+        // this option and `deleteObjectsFromSourceAfterTransfer` are mutually
+        // exclusive.
+        deleteObjectsUniqueInSink?: boolean,
+        // Whether overwriting objects that already exist in the sink is allowed.
+        overwriteObjectsAlreadyExistingInSink?: boolean,
+    }
+    
     interface TransferSpec {
         // An AWS S3 data source.
         awsS3DataSource?: AwsS3Data,
@@ -100,20 +351,12 @@ declare module gapi.client.storagetransfer {
         transferOptions?: TransferOptions,
     }
     
-    interface TransferOptions {
-        // Whether objects that exist only in the sink should be deleted.  Note that
-        // this option and `deleteObjectsFromSourceAfterTransfer` are mutually
-        // exclusive.
-        deleteObjectsUniqueInSink?: boolean,
-        // Whether overwriting objects that already exist in the sink is allowed.
-        overwriteObjectsAlreadyExistingInSink?: boolean,
-        // Whether objects should be deleted from the source after they are
-        // transferred to the sink.  Note that this option and
-        // `deleteObjectsUniqueInSink` are mutually exclusive.
-        deleteObjectsFromSourceAfterTransfer?: boolean,
+    interface ResumeTransferOperationRequest {
     }
     
     interface Status {
+        // The status code, which should be an enum value of google.rpc.Code.
+        code?: number,
         // A developer-facing error message, which should be in English. Any
         // user-facing error message should be localized and sent in the
         // google.rpc.Status.details field, or localized by the client.
@@ -121,249 +364,6 @@ declare module gapi.client.storagetransfer {
         // A list of messages that carry the error details.  There is a common set of
         // message types for APIs to use.
         details?: any[],        
-        // The status code, which should be an enum value of google.rpc.Code.
-        code?: number,
-    }
-    
-    interface ResumeTransferOperationRequest {
-    }
-    
-    interface ListOperationsResponse {
-        // The standard List next-page token.
-        nextPageToken?: string,
-        // A list of operations that matches the specified filter in the request.
-        operations?: Operation[],        
-    }
-    
-    interface GoogleServiceAccount {
-        // Required.
-        accountEmail?: string,
-    }
-    
-    interface TimeOfDay {
-        // Hours of day in 24 hour format. Should be from 0 to 23. An API may choose
-        // to allow the value "24:00:00" for scenarios like business closing time.
-        hours?: number,
-        // Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999.
-        nanos?: number,
-        // Seconds of minutes of the time. Must normally be from 0 to 59. An API may
-        // allow the value 60 if it allows leap-seconds.
-        seconds?: number,
-        // Minutes of hour of day. Must be from 0 to 59.
-        minutes?: number,
-    }
-    
-    interface ErrorLogEntry {
-        // A list of messages that carry the error details.
-        errorDetails?: string[],        
-        // A URL that refers to the target (a data source, a data sink,
-        // or an object) with which the error is associated.
-        // Required.
-        url?: string,
-    }
-    
-    interface TransferJob {
-        // This field cannot be changed by user requests.
-        creationTime?: string,
-        // Transfer specification.
-        // Required.
-        transferSpec?: TransferSpec,
-        // Status of the job. This value MUST be specified for
-        // `CreateTransferJobRequests`.
-        // 
-        // NOTE: The effect of the new job status takes place during a subsequent job
-        // run. For example, if you change the job status from `ENABLED` to
-        // `DISABLED`, and an operation spawned by the transfer is running, the status
-        // change would not affect the current operation.
-        status?: string,
-        // Schedule specification.
-        // Required.
-        schedule?: Schedule,
-        // This field cannot be changed by user requests.
-        deletionTime?: string,
-        // A globally unique name assigned by Storage Transfer Service when the
-        // job is created. This field should be left empty in requests to create a new
-        // transfer job; otherwise, the requests result in an `INVALID_ARGUMENT`
-        // error.
-        name?: string,
-        // This field cannot be changed by user requests.
-        lastModificationTime?: string,
-        // The ID of the Google Cloud Platform Console project that owns the job.
-        // Required.
-        projectId?: string,
-        // A description provided by the user for the job. Its max length is 1024
-        // bytes when Unicode-encoded.
-        description?: string,
-    }
-    
-    interface Schedule {
-        // The last day the recurring transfer will be run. If `scheduleEndDate`
-        // is the same as `scheduleStartDate`, the transfer will be executed only
-        // once.
-        scheduleEndDate?: Date,
-        // The time in UTC at which the transfer will be scheduled to start in a day.
-        // Transfers may start later than this time. If not specified, recurring and
-        // one-time transfers that are scheduled to run today will run immediately;
-        // recurring transfers that are scheduled to run on a future date will start
-        // at approximately midnight UTC on that date. Note that when configuring a
-        // transfer with the Cloud Platform Console, the transfer's start time in a
-        // day is specified in your local timezone.
-        startTimeOfDay?: TimeOfDay,
-        // The first day the recurring transfer is scheduled to run. If
-        // `scheduleStartDate` is in the past, the transfer will run for the first
-        // time on the following day.
-        // Required.
-        scheduleStartDate?: Date,
-    }
-    
-    interface Date {
-        // Month of year. Must be from 1 to 12.
-        month?: number,
-        // Day of month. Must be from 1 to 31 and valid for the year and month, or 0
-        // if specifying a year/month where the day is not significant.
-        day?: number,
-        // Year of date. Must be from 1 to 9999, or 0 if specifying a date without
-        // a year.
-        year?: number,
-    }
-    
-    interface TransferOperation {
-        // Transfer specification.
-        // Required.
-        transferSpec?: TransferSpec,
-        // Status of the transfer operation.
-        status?: string,
-        // Information about the progress of the transfer operation.
-        counters?: TransferCounters,
-        // Summarizes errors encountered with sample error log entries.
-        errorBreakdowns?: ErrorSummary[],        
-        // A globally unique ID assigned by the system.
-        name?: string,
-        // The ID of the Google Cloud Platform Console project that owns the operation.
-        // Required.
-        projectId?: string,
-        // End time of this transfer execution.
-        endTime?: string,
-        // Start time of this transfer execution.
-        startTime?: string,
-        // The name of the transfer job that triggers this transfer operation.
-        transferJobName?: string,
-    }
-    
-    interface AwsS3Data {
-        // S3 Bucket name (see
-        // [Creating a bucket](http://docs.aws.amazon.com/AmazonS3/latest/dev/create-bucket-get-location-example.html)).
-        // Required.
-        bucketName?: string,
-        // AWS access key used to sign the API requests to the AWS S3 bucket.
-        // Permissions on the bucket must be granted to the access ID of the
-        // AWS access key.
-        // Required.
-        awsAccessKey?: AwsAccessKey,
-    }
-    
-    interface AwsAccessKey {
-        // AWS secret access key. This field is not returned in RPC responses.
-        // Required.
-        secretAccessKey?: string,
-        // AWS access key ID.
-        // Required.
-        accessKeyId?: string,
-    }
-    
-    interface Empty {
-    }
-    
-    interface PauseTransferOperationRequest {
-    }
-    
-    interface TransferCounters {
-        // Bytes in the data source that failed during the transfer.
-        bytesFromSourceFailed?: string,
-        // Objects that are copied to the data sink.
-        objectsCopiedToSink?: string,
-        // Objects in the data source that failed during the transfer.
-        objectsFromSourceFailed?: string,
-        // Bytes found only in the data sink that are scheduled to be deleted.
-        bytesFoundOnlyFromSink?: string,
-        // Objects that are deleted from the data source.
-        objectsDeletedFromSource?: string,
-        // Bytes that are copied to the data sink.
-        bytesCopiedToSink?: string,
-        // Bytes found in the data source that are scheduled to be transferred,
-        // which will be copied, excluded based on conditions, or skipped due to
-        // failures.
-        bytesFoundFromSource?: string,
-        // Objects in the data source that are not transferred because they already
-        // exist in the data sink.
-        objectsFromSourceSkippedBySync?: string,
-        // Objects found in the data source that are scheduled to be transferred,
-        // which will be copied, excluded based on conditions, or skipped due to
-        // failures.
-        objectsFoundFromSource?: string,
-        // Bytes that are deleted from the data source.
-        bytesDeletedFromSource?: string,
-        // Objects that failed to be deleted from the data sink.
-        objectsFailedToDeleteFromSink?: string,
-        // Objects found only in the data sink that are scheduled to be deleted.
-        objectsFoundOnlyFromSink?: string,
-        // Objects that are deleted from the data sink.
-        objectsDeletedFromSink?: string,
-        // Bytes in the data source that are not transferred because they already
-        // exist in the data sink.
-        bytesFromSourceSkippedBySync?: string,
-        // Bytes that are deleted from the data sink.
-        bytesDeletedFromSink?: string,
-        // Bytes that failed to be deleted from the data sink.
-        bytesFailedToDeleteFromSink?: string,
-    }
-    
-    interface ErrorSummary {
-        // Required.
-        errorCode?: string,
-        // Count of this type of error.
-        // Required.
-        errorCount?: string,
-        // Error samples.
-        errorLogEntries?: ErrorLogEntry[],        
-    }
-    
-    interface HttpData {
-        // The URL that points to the file that stores the object list entries.
-        // This file must allow public access.  Currently, only URLs with HTTP and
-        // HTTPS schemes are supported.
-        // Required.
-        listUrl?: string,
-    }
-    
-    interface GcsData {
-        // Google Cloud Storage bucket name (see
-        // [Bucket Name Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
-        // Required.
-        bucketName?: string,
-    }
-    
-    interface ListTransferJobsResponse {
-        // The list next page token.
-        nextPageToken?: string,
-        // A list of transfer jobs.
-        transferJobs?: TransferJob[],        
-    }
-    
-    interface UpdateTransferJobRequest {
-        // The job to update.
-        // Required.
-        transferJob?: TransferJob,
-        // The ID of the Google Cloud Platform Console project that owns the job.
-        // Required.
-        projectId?: string,
-        // The field mask of the fields in `transferJob` that are to be updated in
-        // this request.  Fields in `transferJob` that can be updated are:
-        // `description`, `transferSpec`, and `status`.  To update the `transferSpec`
-        // of the job, a complete transfer specification has to be provided. An
-        // incomplete specification which misses any required fields will be rejected
-        // with the error `INVALID_ARGUMENT`.
-        updateTransferJobFieldMask?: string,
     }
     
     interface GoogleServiceAccountsResource {
@@ -376,6 +376,32 @@ declare module gapi.client.storagetransfer {
         // account is created and owned by Storage Transfer Service and can
         // only be used by Storage Transfer Service.
         get (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // OAuth access token.
+            access_token?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
             // The ID of the Google Cloud Platform Console project that the Google service
             // account is associated with.
             // Required.
@@ -386,8 +412,67 @@ declare module gapi.client.storagetransfer {
     
     
     interface TransferOperationsResource {
+        // Pauses a transfer operation.
+        pause (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // OAuth access token.
+            access_token?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // The name of the transfer operation.
+            // Required.
+            name: string,
+        }) : gapi.client.Request<Empty>;        
+        
         // This method is not supported and the server returns `UNIMPLEMENTED`.
         delete (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // OAuth access token.
+            access_token?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
             // The name of the operation resource to be deleted.
             name: string,
         }) : gapi.client.Request<Empty>;        
@@ -403,18 +488,70 @@ declare module gapi.client.storagetransfer {
         // collection id, however overriding users must ensure the name binding
         // is the parent resource, without the operations collection id.
         list (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // OAuth access token.
+            access_token?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // The list page size. The max allowed value is 256.
+            pageSize?: number,
             // A list of query parameters specified as JSON text in the form of {\"project_id\" : \"my_project_id\", \"job_names\" : [\"jobid1\", \"jobid2\",...], \"operation_names\" : [\"opid1\", \"opid2\",...], \"transfer_statuses\":[\"status1\", \"status2\",...]}. Since `job_names`, `operation_names`, and `transfer_statuses` support multiple values, they must be specified with array notation. `job_names`, `operation_names`, and `transfer_statuses` are optional.
             filter?: string,
             // The list page token.
             pageToken?: string,
             // The value `transferOperations`.
             name: string,
-            // The list page size. The max allowed value is 256.
-            pageSize?: number,
         }) : gapi.client.Request<ListOperationsResponse>;        
         
         // Resumes a transfer operation that is paused.
         resume (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // OAuth access token.
+            access_token?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
             // The name of the transfer operation.
             // Required.
             name: string,
@@ -422,6 +559,32 @@ declare module gapi.client.storagetransfer {
         
         // Cancels a transfer. Use the get method to check whether the cancellation succeeded or whether the operation completed despite cancellation.
         cancel (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // OAuth access token.
+            access_token?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
             // The name of the operation resource to be cancelled.
             name: string,
         }) : gapi.client.Request<Empty>;        
@@ -430,27 +593,72 @@ declare module gapi.client.storagetransfer {
         // method to poll the operation result at intervals as recommended by the API
         // service.
         get (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // OAuth access token.
+            access_token?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
             // The name of the operation resource.
             name: string,
         }) : gapi.client.Request<Operation>;        
-        
-        // Pauses a transfer operation.
-        pause (request: {        
-            // The name of the transfer operation.
-            // Required.
-            name: string,
-        }) : gapi.client.Request<Empty>;        
         
     }
     
     
     interface TransferJobsResource {
-        // Creates a transfer job that runs periodically.
-        create (request: {        
-        }) : gapi.client.Request<TransferJob>;        
-        
         // Lists transfer jobs.
         list (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // OAuth access token.
+            access_token?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // The list page token.
+            pageToken?: string,
+            // The list page size. The max allowed value is 256.
+            pageSize?: number,
             // A list of query parameters specified as JSON text in the form of
             // {"project_id":"my_project_id",
             // "job_names":["jobid1","jobid2",...],
@@ -460,14 +668,36 @@ declare module gapi.client.storagetransfer {
             // and `job_statuses` are optional.  The valid values for `job_statuses` are
             // case-insensitive: `ENABLED`, `DISABLED`, and `DELETED`.
             filter?: string,
-            // The list page token.
-            pageToken?: string,
-            // The list page size. The max allowed value is 256.
-            pageSize?: number,
         }) : gapi.client.Request<ListTransferJobsResponse>;        
         
         // Gets a transfer job.
         get (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // OAuth access token.
+            access_token?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
             // The ID of the Google Cloud Platform Console project that owns the job.
             // Required.
             projectId?: string,
@@ -480,9 +710,65 @@ declare module gapi.client.storagetransfer {
         // transfer operations that are running already. Updating the scheduling
         // of a job is not allowed.
         patch (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // OAuth access token.
+            access_token?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
             // The name of job to update.
             // Required.
             jobName: string,
+        }) : gapi.client.Request<TransferJob>;        
+        
+        // Creates a transfer job that runs periodically.
+        create (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // OAuth access token.
+            access_token?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
         }) : gapi.client.Request<TransferJob>;        
         
     }

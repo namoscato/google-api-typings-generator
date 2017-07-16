@@ -42,14 +42,14 @@ Don't forget to authenticate your client before sending any request to resources
 // declare client_id registered in Google Developers Console
 var client_id = '',
     scope = [     
-        // View and manage your data across Google Cloud Platform services
-        'https://www.googleapis.com/auth/cloud-platform',
-    
         // Manage your Google API service configuration
         'https://www.googleapis.com/auth/service.management',
     
         // View your data across Google Cloud Platform services
         'https://www.googleapis.com/auth/cloud-platform.read-only',
+    
+        // View and manage your data across Google Cloud Platform services
+        'https://www.googleapis.com/auth/cloud-platform',
     ],
     immediate = true;
 // ...
@@ -66,9 +66,9 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Google Service User API resources:
 
 ```typescript
-gapi.client.services.<method name>({ /* method parameters */ })
+gapi.client.projects.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.projects.<method name>({ /* method parameters */ })
+gapi.client.services.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

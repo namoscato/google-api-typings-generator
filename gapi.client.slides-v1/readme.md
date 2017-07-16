@@ -42,8 +42,14 @@ Don't forget to authenticate your client before sending any request to resources
 // declare client_id registered in Google Developers Console
 var client_id = '',
     scope = [     
+        // View and manage your Google Slides presentations
+        'https://www.googleapis.com/auth/presentations',
+    
         // View your Google Slides presentations
         'https://www.googleapis.com/auth/presentations.readonly',
+    
+        // View the files in your Google Drive
+        'https://www.googleapis.com/auth/drive.readonly',
     
         // View your Google Spreadsheets
         'https://www.googleapis.com/auth/spreadsheets.readonly',
@@ -51,14 +57,8 @@ var client_id = '',
         // View and manage the files in your Google Drive
         'https://www.googleapis.com/auth/drive',
     
-        // View the files in your Google Drive
-        'https://www.googleapis.com/auth/drive.readonly',
-    
         // View and manage your spreadsheets in Google Drive
         'https://www.googleapis.com/auth/spreadsheets',
-    
-        // View and manage your Google Slides presentations
-        'https://www.googleapis.com/auth/presentations',
     ],
     immediate = true;
 // ...

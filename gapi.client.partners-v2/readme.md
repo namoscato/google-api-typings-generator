@@ -41,6 +41,12 @@ gapi.client.load('partners', 'v2', () => {
 After that you can use Google Partners API resources:
 
 ```typescript
+gapi.client.users.<method name>({ /* method parameters */ })
+    .then(response => { /* handling response */ });
+
+gapi.client.companies.<method name>({ /* method parameters */ })
+    .then(response => { /* handling response */ });
+
 gapi.client.userEvents.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
@@ -56,18 +62,12 @@ gapi.client.leads.<method name>({ /* method parameters */ })
 gapi.client.offers.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.userStates.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
 gapi.client.analytics.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
+gapi.client.userStates.<method name>({ /* method parameters */ })
+    .then(response => { /* handling response */ });
+
 gapi.client.v2.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.users.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.companies.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

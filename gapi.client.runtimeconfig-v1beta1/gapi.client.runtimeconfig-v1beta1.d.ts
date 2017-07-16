@@ -6,30 +6,9 @@
 
 declare module gapi.client.runtimeconfig {
     
-    interface EndCondition {
-        // The cardinality of the `EndCondition`.
-        cardinality?: Cardinality,
-    }
-    
-    interface TestIamPermissionsResponse {
-        // A subset of `TestPermissionsRequest.permissions` that the caller is
-        // allowed.
-        permissions?: string[],        
-    }
-    
-    interface ListVariablesResponse {
-        // A list of variables and their values. The order of returned variable
-        // objects is arbitrary.
-        variables?: Variable[],        
-        // This token allows you to get the next page of results for list requests.
-        // If the number of results is larger than `pageSize`, use the `nextPageToken`
-        // as a value for the query parameter `pageToken` in the next list request.
-        // Subsequent list requests will have their own `nextPageToken` to continue
-        // paging through the results
-        nextPageToken?: string,
-    }
-    
     interface RuntimeConfig {
+        // An optional description of the RuntimeConfig object.
+        description?: string,
         // The resource name of a runtime config. The name must have the format:
         // 
         //     projects/[PROJECT_ID]/configs/[CONFIG_NAME]
@@ -42,8 +21,6 @@ declare module gapi.client.runtimeconfig {
         // the name adheres to this format. After you create the resource, you cannot
         // change the resource's name.
         name?: string,
-        // An optional description of the RuntimeConfig object.
-        description?: string,
     }
     
     interface WatchVariableRequest {
@@ -67,21 +44,15 @@ declare module gapi.client.runtimeconfig {
         waiters?: Waiter[],        
     }
     
+    interface TestIamPermissionsRequest {
+        // The set of permissions to check for the `resource`. Permissions with
+        // wildcards (such as '*' or 'storage.*') are not allowed. For more
+        // information see
+        // [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
+        permissions?: string[],        
+    }
+    
     interface Waiter {
-        // [Output Only] If the waiter ended due to a failure or timeout, this value
-        // will be set.
-        error?: Status,
-        // [Optional] The failure condition of this waiter. If this condition is met,
-        // `done` will be set to `true` and the `error` code will be set to `ABORTED`.
-        // The failure condition takes precedence over the success condition. If both
-        // conditions are met, a failure will be indicated. This value is optional; if
-        // no failure condition is set, the only failure scenario will be a timeout.
-        failure?: EndCondition,
-        // [Required] The success condition. If this condition is met, `done` will be
-        // set to `true` and the `error` value will remain unset. The failure condition
-        // takes precedence over the success condition. If both conditions are met, a
-        // failure will be indicated.
-        success?: EndCondition,
         // [Output Only] If the value is `false`, it means the waiter is still waiting
         // for one of its conditions to be met.
         // 
@@ -108,21 +79,42 @@ declare module gapi.client.runtimeconfig {
         // 
         // After you create a Waiter resource, you cannot change the resource name.
         name?: string,
+        // [Output Only] If the waiter ended due to a failure or timeout, this value
+        // will be set.
+        error?: Status,
+        // [Optional] The failure condition of this waiter. If this condition is met,
+        // `done` will be set to `true` and the `error` code will be set to `ABORTED`.
+        // The failure condition takes precedence over the success condition. If both
+        // conditions are met, a failure will be indicated. This value is optional; if
+        // no failure condition is set, the only failure scenario will be a timeout.
+        failure?: EndCondition,
+        // [Required] The success condition. If this condition is met, `done` will be
+        // set to `true` and the `error` value will remain unset. The failure condition
+        // takes precedence over the success condition. If both conditions are met, a
+        // failure will be indicated.
+        success?: EndCondition,
     }
     
-    interface TestIamPermissionsRequest {
-        // The set of permissions to check for the `resource`. Permissions with
-        // wildcards (such as '*' or 'storage.*') are not allowed. For more
-        // information see
-        // [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
-        permissions?: string[],        
+    interface Policy {
+        // Associates a list of `members` to a `role`.
+        // `bindings` with no members will result in an error.
+        bindings?: Binding[],        
+        // `etag` is used for optimistic concurrency control as a way to help
+        // prevent simultaneous updates of a policy from overwriting each other.
+        // It is strongly suggested that systems make use of the `etag` in the
+        // read-modify-write cycle to perform policy updates in order to avoid race
+        // conditions: An `etag` is returned in the response to `getIamPolicy`, and
+        // systems are expected to put that etag in the request to `setIamPolicy` to
+        // ensure that their change will be applied to the same version of the policy.
+        // 
+        // If no `etag` is provided in the call to `setIamPolicy`, then the existing
+        // policy is overwritten blindly.
+        etag?: string,
+        // Version of the `Policy`. The default version is 0.
+        version?: number,
     }
     
     interface Variable {
-        // The binary value of the variable. The length of the value must be less
-        // than 4096 bytes. Empty values are also accepted. The value must be
-        // base64 encoded. Only one of `value` or `text` can be set.
-        value?: string,
         // [Ouput only] The current state of the variable. The variable state indicates
         // the outcome of the `variables().watch` call and is visible through the
         // `get` and `list` calls.
@@ -150,28 +142,20 @@ declare module gapi.client.runtimeconfig {
         // than 4096 bytes. Empty values are also accepted. For example,
         // `text: "my text value"`. The string must be valid UTF-8.
         text?: string,
-    }
-    
-    interface Policy {
-        // `etag` is used for optimistic concurrency control as a way to help
-        // prevent simultaneous updates of a policy from overwriting each other.
-        // It is strongly suggested that systems make use of the `etag` in the
-        // read-modify-write cycle to perform policy updates in order to avoid race
-        // conditions: An `etag` is returned in the response to `getIamPolicy`, and
-        // systems are expected to put that etag in the request to `setIamPolicy` to
-        // ensure that their change will be applied to the same version of the policy.
-        // 
-        // If no `etag` is provided in the call to `setIamPolicy`, then the existing
-        // policy is overwritten blindly.
-        etag?: string,
-        // Version of the `Policy`. The default version is 0.
-        version?: number,
-        // Associates a list of `members` to a `role`.
-        // `bindings` with no members will result in an error.
-        bindings?: Binding[],        
+        // The binary value of the variable. The length of the value must be less
+        // than 4096 bytes. Empty values are also accepted. The value must be
+        // base64 encoded. Only one of `value` or `text` can be set.
+        value?: string,
     }
     
     interface Operation {
+        // The error result of the operation in case of failure or cancellation.
+        error?: Status,
+        // Service-specific metadata associated with the operation.  It typically
+        // contains progress information and common metadata such as create time.
+        // Some services might not provide such metadata.  Any method that returns a
+        // long-running operation should document the metadata type, if any.
+        metadata?: any,
         // If the value is `false`, it means the operation is still in progress.
         // If true, the operation is completed, and either `error` or `response` is
         // available.
@@ -189,13 +173,6 @@ declare module gapi.client.runtimeconfig {
         // originally returns it. If you use the default HTTP mapping, the
         // `name` should have the format of `operations/some/unique/name`.
         name?: string,
-        // The error result of the operation in case of failure or cancellation.
-        error?: Status,
-        // Service-specific metadata associated with the operation.  It typically
-        // contains progress information and common metadata such as create time.
-        // Some services might not provide such metadata.  Any method that returns a
-        // long-running operation should document the metadata type, if any.
-        metadata?: any,
     }
     
     interface SetIamPolicyRequest {
@@ -207,6 +184,8 @@ declare module gapi.client.runtimeconfig {
     }
     
     interface Status {
+        // The status code, which should be an enum value of google.rpc.Code.
+        code?: number,
         // A developer-facing error message, which should be in English. Any
         // user-facing error message should be localized and sent in the
         // google.rpc.Status.details field, or localized by the client.
@@ -214,8 +193,6 @@ declare module gapi.client.runtimeconfig {
         // A list of messages that carry the error details.  There will be a
         // common set of message types for APIs to use.
         details?: any[],        
-        // The status code, which should be an enum value of google.rpc.Code.
-        code?: number,
     }
     
     interface Binding {
@@ -262,24 +239,222 @@ declare module gapi.client.runtimeconfig {
     }
     
     interface ListConfigsResponse {
+        // A list of the configurations in the project. The order of returned
+        // objects is arbitrary; that is, it is not ordered in any particular way.
+        configs?: RuntimeConfig[],        
         // This token allows you to get the next page of results for list requests.
         // If the number of results is larger than `pageSize`, use the `nextPageToken`
         // as a value for the query parameter `pageToken` in the next list request.
         // Subsequent list requests will have their own `nextPageToken` to continue
         // paging through the results
         nextPageToken?: string,
-        // A list of the configurations in the project. The order of returned
-        // objects is arbitrary; that is, it is not ordered in any particular way.
-        configs?: RuntimeConfig[],        
+    }
+    
+    interface EndCondition {
+        // The cardinality of the `EndCondition`.
+        cardinality?: Cardinality,
+    }
+    
+    interface TestIamPermissionsResponse {
+        // A subset of `TestPermissionsRequest.permissions` that the caller is
+        // allowed.
+        permissions?: string[],        
+    }
+    
+    interface ListVariablesResponse {
+        // A list of variables and their values. The order of returned variable
+        // objects is arbitrary.
+        variables?: Variable[],        
+        // This token allows you to get the next page of results for list requests.
+        // If the number of results is larger than `pageSize`, use the `nextPageToken`
+        // as a value for the query parameter `pageToken` in the next list request.
+        // Subsequent list requests will have their own `nextPageToken` to continue
+        // paging through the results
+        nextPageToken?: string,
     }
     
     interface WaitersResource {
+        // Returns permissions that a caller has on the specified resource.
+        // If the resource does not exist, this will return an empty set of
+        // permissions, not a NOT_FOUND error.
+        // 
+        // Note: This operation is designed to be used for building permission-aware
+        // UIs and command-line tools, not for authorization checking. This operation
+        // may "fail open" without warning.
+        testIamPermissions (request: {        
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // REQUIRED: The resource for which the policy detail is being requested.
+            // See the operation documentation for the appropriate value for this field.
+            resource: string,
+        }) : gapi.client.Request<TestIamPermissionsResponse>;        
+        
+        // Deletes the waiter with the specified name.
+        delete (request: {        
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // The Waiter resource to delete, in the format:
+            // 
+            //  `projects/[PROJECT_ID]/configs/[CONFIG_NAME]/waiters/[WAITER_NAME]`
+            name: string,
+        }) : gapi.client.Request<Empty>;        
+        
+        // Gets information about a single waiter.
+        get (request: {        
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // The fully-qualified name of the Waiter resource object to retrieve, in the
+            // format:
+            // 
+            // `projects/[PROJECT_ID]/configs/[CONFIG_NAME]/waiters/[WAITER_NAME]`
+            name: string,
+        }) : gapi.client.Request<Waiter>;        
+        
+        // List waiters within the given configuration.
+        list (request: {        
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Specifies a page token to use. Set `pageToken` to a `nextPageToken`
+            // returned by a previous list request to get the next page of results.
+            pageToken?: string,
+            // Specifies the number of results to return per page. If there are fewer
+            // elements than the specified number, returns all elements.
+            pageSize?: number,
+            // The path to the configuration for which you want to get a list of waiters.
+            // The configuration must exist beforehand; the path must by in the format:
+            // 
+            // `projects/[PROJECT_ID]/configs/[CONFIG_NAME]`
+            parent: string,
+        }) : gapi.client.Request<ListWaitersResponse>;        
+        
         // Creates a Waiter resource. This operation returns a long-running Operation
         // resource which can be polled for completion. However, a waiter with the
         // given name will exist (and can be retrieved) prior to the operation
         // completing. If the operation fails, the failed Waiter resource will
         // still exist and must be deleted prior to subsequent creation attempts.
         create (request: {        
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
             // An optional but recommended unique `request_id`. If the server
             // receives two `create()` requests  with the same
             // `request_id`, then the second request will be ignored and the
@@ -298,51 +473,6 @@ declare module gapi.client.runtimeconfig {
             parent: string,
         }) : gapi.client.Request<Operation>;        
         
-        // Returns permissions that a caller has on the specified resource.
-        // If the resource does not exist, this will return an empty set of
-        // permissions, not a NOT_FOUND error.
-        // 
-        // Note: This operation is designed to be used for building permission-aware
-        // UIs and command-line tools, not for authorization checking. This operation
-        // may "fail open" without warning.
-        testIamPermissions (request: {        
-            // REQUIRED: The resource for which the policy detail is being requested.
-            // See the operation documentation for the appropriate value for this field.
-            resource: string,
-        }) : gapi.client.Request<TestIamPermissionsResponse>;        
-        
-        // Deletes the waiter with the specified name.
-        delete (request: {        
-            // The Waiter resource to delete, in the format:
-            // 
-            //  `projects/[PROJECT_ID]/configs/[CONFIG_NAME]/waiters/[WAITER_NAME]`
-            name: string,
-        }) : gapi.client.Request<Empty>;        
-        
-        // Gets information about a single waiter.
-        get (request: {        
-            // The fully-qualified name of the Waiter resource object to retrieve, in the
-            // format:
-            // 
-            // `projects/[PROJECT_ID]/configs/[CONFIG_NAME]/waiters/[WAITER_NAME]`
-            name: string,
-        }) : gapi.client.Request<Waiter>;        
-        
-        // List waiters within the given configuration.
-        list (request: {        
-            // The path to the configuration for which you want to get a list of waiters.
-            // The configuration must exist beforehand; the path must by in the format:
-            // 
-            // `projects/[PROJECT_ID]/configs/[CONFIG_NAME]`
-            parent: string,
-            // Specifies a page token to use. Set `pageToken` to a `nextPageToken`
-            // returned by a previous list request to get the next page of results.
-            pageToken?: string,
-            // Specifies the number of results to return per page. If there are fewer
-            // elements than the specified number, returns all elements.
-            pageSize?: number,
-        }) : gapi.client.Request<ListWaitersResponse>;        
-        
     }
     
     
@@ -355,6 +485,32 @@ declare module gapi.client.runtimeconfig {
         // UIs and command-line tools, not for authorization checking. This operation
         // may "fail open" without warning.
         testIamPermissions (request: {        
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
             // REQUIRED: The resource for which the policy detail is being requested.
             // See the operation documentation for the appropriate value for this field.
             resource: string,
@@ -364,6 +520,32 @@ declare module gapi.client.runtimeconfig {
         // method to poll the operation result at intervals as recommended by the API
         // service.
         get (request: {        
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
             // The name of the operation resource.
             name: string,
         }) : gapi.client.Request<Operation>;        
@@ -372,8 +554,114 @@ declare module gapi.client.runtimeconfig {
     
     
     interface VariablesResource {
+        // Gets information about a single variable.
+        get (request: {        
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // The name of the variable to return, in the format:
+            // 
+            // `projects/[PROJECT_ID]/configs/[CONFIG_NAME]/variables/[VARIBLE_NAME]`
+            name: string,
+        }) : gapi.client.Request<Variable>;        
+        
+        // Watches a specific variable and waits for a change in the variable's value.
+        // When there is a change, this method returns the new value or times out.
+        // 
+        // If a variable is deleted while being watched, the `variableState` state is
+        // set to `DELETED` and the method returns the last known variable `value`.
+        // 
+        // If you set the deadline for watching to a larger value than internal timeout
+        // (60 seconds), the current variable value is returned and the `variableState`
+        // will be `VARIABLE_STATE_UNSPECIFIED`.
+        // 
+        // To learn more about creating a watcher, read the
+        // [Watching a Variable for Changes](/deployment-manager/runtime-configurator/watching-a-variable)
+        // documentation.
+        watch (request: {        
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // The name of the variable to watch, in the format:
+            // 
+            // `projects/[PROJECT_ID]/configs/[CONFIG_NAME]`
+            name: string,
+        }) : gapi.client.Request<Variable>;        
+        
         // Updates an existing variable with a new value.
         update (request: {        
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
             // The name of the variable to update, in the format:
             // 
             // `projects/[PROJECT_ID]/configs/[CONFIG_NAME]/variables/[VARIABLE_NAME]`
@@ -388,6 +676,32 @@ declare module gapi.client.runtimeconfig {
         // UIs and command-line tools, not for authorization checking. This operation
         // may "fail open" without warning.
         testIamPermissions (request: {        
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
             // REQUIRED: The resource for which the policy detail is being requested.
             // See the operation documentation for the appropriate value for this field.
             resource: string,
@@ -400,6 +714,32 @@ declare module gapi.client.runtimeconfig {
         // prefix are deleted. You must set a `recursive` to true if you delete
         // variables by prefix.
         delete (request: {        
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
             // Set to `true` to recursively delete multiple variables with the same
             // prefix.
             recursive?: boolean,
@@ -414,6 +754,36 @@ declare module gapi.client.runtimeconfig {
         // true, in which case only variables that user has IAM permission to GetVariable
         // will be returned.
         list (request: {        
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Filters variables by matching the specified filter. For example:
+            // 
+            // `projects/example-project/config/[CONFIG_NAME]/variables/example-variable`.
+            filter?: string,
             // The flag indicates whether the user wants to return values of variables.
             // If true, then only those variables that user has IAM GetVariable permission
             // will be returned along with their values.
@@ -429,10 +799,6 @@ declare module gapi.client.runtimeconfig {
             // 
             // `projects/[PROJECT_ID]/configs/[CONFIG_NAME]`
             parent: string,
-            // Filters variables by matching the specified filter. For example:
-            // 
-            // `projects/example-project/config/[CONFIG_NAME]/variables/example-variable`.
-            filter?: string,
         }) : gapi.client.Request<ListVariablesResponse>;        
         
         // Creates a variable within the given configuration. You cannot create
@@ -443,6 +809,32 @@ declare module gapi.client.runtimeconfig {
         // [Setting and Getting Data](/deployment-manager/runtime-configurator/set-and-get-variables)
         // documentation.
         create (request: {        
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
             // An optional but recommended unique `request_id`. If the server
             // receives two `create()` requests  with the same
             // `request_id`, then the second request will be ignored and the
@@ -461,40 +853,72 @@ declare module gapi.client.runtimeconfig {
             parent: string,
         }) : gapi.client.Request<Variable>;        
         
-        // Watches a specific variable and waits for a change in the variable's value.
-        // When there is a change, this method returns the new value or times out.
-        // 
-        // If a variable is deleted while being watched, the `variableState` state is
-        // set to `DELETED` and the method returns the last known variable `value`.
-        // 
-        // If you set the deadline for watching to a larger value than internal timeout
-        // (60 seconds), the current variable value is returned and the `variableState`
-        // will be `VARIABLE_STATE_UNSPECIFIED`.
-        // 
-        // To learn more about creating a watcher, read the
-        // [Watching a Variable for Changes](/deployment-manager/runtime-configurator/watching-a-variable)
-        // documentation.
-        watch (request: {        
-            // The name of the variable to watch, in the format:
-            // 
-            // `projects/[PROJECT_ID]/configs/[CONFIG_NAME]`
-            name: string,
-        }) : gapi.client.Request<Variable>;        
-        
-        // Gets information about a single variable.
-        get (request: {        
-            // The name of the variable to return, in the format:
-            // 
-            // `projects/[PROJECT_ID]/configs/[CONFIG_NAME]/variables/[VARIBLE_NAME]`
-            name: string,
-        }) : gapi.client.Request<Variable>;        
-        
     }
     
     
     interface ConfigsResource {
+        // Gets information about a RuntimeConfig resource.
+        get (request: {        
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // The name of the RuntimeConfig resource to retrieve, in the format:
+            // 
+            // `projects/[PROJECT_ID]/configs/[CONFIG_NAME]`
+            name: string,
+        }) : gapi.client.Request<RuntimeConfig>;        
+        
         // Updates a RuntimeConfig resource. The configuration must exist beforehand.
         update (request: {        
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
             // The name of the RuntimeConfig resource to update, in the format:
             // 
             // `projects/[PROJECT_ID]/configs/[CONFIG_NAME]`
@@ -509,6 +933,32 @@ declare module gapi.client.runtimeconfig {
         // UIs and command-line tools, not for authorization checking. This operation
         // may "fail open" without warning.
         testIamPermissions (request: {        
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
             // REQUIRED: The resource for which the policy detail is being requested.
             // See the operation documentation for the appropriate value for this field.
             resource: string,
@@ -516,6 +966,32 @@ declare module gapi.client.runtimeconfig {
         
         // Deletes a RuntimeConfig resource.
         delete (request: {        
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
             // The RuntimeConfig resource to delete, in the format:
             // 
             // `projects/[PROJECT_ID]/configs/[CONFIG_NAME]`
@@ -524,20 +1000,106 @@ declare module gapi.client.runtimeconfig {
         
         // Lists all the RuntimeConfig resources within project.
         list (request: {        
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Specifies the number of results to return per page. If there are fewer
+            // elements than the specified number, returns all elements.
+            pageSize?: number,
             // The [project ID](https://support.google.com/cloud/answer/6158840?hl=en&ref_topic=6158848)
             // for this request, in the format `projects/[PROJECT_ID]`.
             parent: string,
             // Specifies a page token to use. Set `pageToken` to a `nextPageToken`
             // returned by a previous list request to get the next page of results.
             pageToken?: string,
-            // Specifies the number of results to return per page. If there are fewer
-            // elements than the specified number, returns all elements.
-            pageSize?: number,
         }) : gapi.client.Request<ListConfigsResponse>;        
+        
+        // Sets the access control policy on the specified resource. Replaces any
+        // existing policy.
+        setIamPolicy (request: {        
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // REQUIRED: The resource for which the policy is being specified.
+            // See the operation documentation for the appropriate value for this field.
+            resource: string,
+        }) : gapi.client.Request<Policy>;        
         
         // Creates a new RuntimeConfig resource. The configuration name must be
         // unique within project.
         create (request: {        
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
             // An optional but recommended unique `request_id`. If the server
             // receives two `create()` requests  with the same
             // `request_id`, then the second request will be ignored and the
@@ -554,30 +1116,40 @@ declare module gapi.client.runtimeconfig {
             parent: string,
         }) : gapi.client.Request<RuntimeConfig>;        
         
-        // Sets the access control policy on the specified resource. Replaces any
-        // existing policy.
-        setIamPolicy (request: {        
-            // REQUIRED: The resource for which the policy is being specified.
-            // See the operation documentation for the appropriate value for this field.
-            resource: string,
-        }) : gapi.client.Request<Policy>;        
-        
         // Gets the access control policy for a resource.
         // Returns an empty policy if the resource exists and does not have a policy
         // set.
         getIamPolicy (request: {        
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
             // REQUIRED: The resource for which the policy is being requested.
             // See the operation documentation for the appropriate value for this field.
             resource: string,
         }) : gapi.client.Request<Policy>;        
-        
-        // Gets information about a RuntimeConfig resource.
-        get (request: {        
-            // The name of the RuntimeConfig resource to retrieve, in the format:
-            // 
-            // `projects/[PROJECT_ID]/configs/[CONFIG_NAME]`
-            name: string,
-        }) : gapi.client.Request<RuntimeConfig>;        
         
         waiters: WaitersResource,
         operations: OperationsResource,

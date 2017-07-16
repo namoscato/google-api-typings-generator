@@ -49,8 +49,6 @@ declare module gapi.client.cloudkms {
     }
     
     interface Rule {
-        // Required
-        action?: string,
         // If one or more 'not_in' clauses are specified, the rule matches
         // if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
         // The format for in and not_in entries is the same as for members in a
@@ -70,6 +68,8 @@ declare module gapi.client.cloudkms {
         // (e.g., 'storage.buckets.list'). A value of '*' matches all permissions,
         // and a verb part of '*' (e.g., 'storage.buckets.*') matches all verbs.
         permissions?: string[],        
+        // Required
+        action?: string,
     }
     
     interface LogConfig {
@@ -82,17 +82,17 @@ declare module gapi.client.cloudkms {
     }
     
     interface SetIamPolicyRequest {
-        // REQUIRED: The complete policy to be applied to the `resource`. The size of
-        // the policy is limited to a few 10s of KB. An empty policy is a
-        // valid policy but certain Cloud Platform services (such as Projects)
-        // might reject them.
-        policy?: Policy,
         // OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only
         // the fields in the mask will be modified. If no mask is provided, the
         // following default mask is used:
         // paths: "bindings, etag"
         // This field is only used by Cloud IAM.
         updateMask?: string,
+        // REQUIRED: The complete policy to be applied to the `resource`. The size of
+        // the policy is limited to a few 10s of KB. An empty policy is a
+        // valid policy but certain Cloud Platform services (such as Projects)
+        // might reject them.
+        policy?: Policy,
     }
     
     interface DecryptRequest {
@@ -105,6 +105,10 @@ declare module gapi.client.cloudkms {
     }
     
     interface Location {
+        // Cross-service attributes for the location. For example
+        // 
+        //     {"cloud.googleapis.com/region": "us-east1"}
+        labels?: any,
         // Resource name for the location, which may vary between implementations.
         // For example: `"projects/example-project/locations/us-east1"`
         name?: string,
@@ -113,10 +117,6 @@ declare module gapi.client.cloudkms {
         // Service-specific metadata. For example the available capacity at the given
         // location.
         metadata?: any,
-        // Cross-service attributes for the location. For example
-        // 
-        //     {"cloud.googleapis.com/region": "us-east1"}
-        labels?: any,
     }
     
     interface ListCryptoKeysResponse {
@@ -130,6 +130,11 @@ declare module gapi.client.cloudkms {
     }
     
     interface Condition {
+        // DEPRECATED. Use 'values' instead.
+        value?: string,
+        // Trusted attributes supplied by any service that owns resources and uses
+        // the IAM system for access control.
+        sys?: string,
         // The objects of the condition. This is mutually exclusive with 'value'.
         values?: string[],        
         // Trusted attributes supplied by the IAM system.
@@ -138,11 +143,6 @@ declare module gapi.client.cloudkms {
         op?: string,
         // Trusted attributes discharged by the service.
         svc?: string,
-        // Trusted attributes supplied by any service that owns resources and uses
-        // the IAM system for access control.
-        sys?: string,
-        // DEPRECATED. Use 'values' instead.
-        value?: string,
     }
     
     interface CounterOptions {
@@ -174,14 +174,41 @@ declare module gapi.client.cloudkms {
         permissions?: string[],        
     }
     
+    interface KeyRing {
+        // Output only. The resource name for the KeyRing in the format
+        // `projects/*/locations/*/keyRings/*`.
+        name?: string,
+        // Output only. The time at which this KeyRing was created.
+        createTime?: string,
+    }
+    
     interface EncryptResponse {
-        // The encrypted data.
-        ciphertext?: string,
         // The resource name of the CryptoKeyVersion used in encryption.
         name?: string,
+        // The encrypted data.
+        ciphertext?: string,
+    }
+    
+    interface ListLocationsResponse {
+        // The standard List next-page token.
+        nextPageToken?: string,
+        // A list of locations that matches the specified filter in the request.
+        locations?: Location[],        
     }
     
     interface Policy {
+        // 
+        iamOwned?: boolean,
+        // If more than one rule is specified, the rules are applied in the following
+        // manner:
+        // - All matching LOG rules are always applied.
+        // - If any DENY/DENY_WITH_LOG rule matches, permission is denied.
+        //   Logging will be applied if one or more matching rule requires logging.
+        // - Otherwise, if any ALLOW/ALLOW_WITH_LOG rule matches, permission is
+        //   granted.
+        //   Logging will be applied if one or more matching rule requires logging.
+        // - Otherwise, if no rule applies, permission is denied.
+        rules?: Rule[],        
         // Version of the `Policy`. The default version is 0.
         version?: number,
         // Specifies cloud audit logging configuration for this policy.
@@ -200,41 +227,14 @@ declare module gapi.client.cloudkms {
         // If no `etag` is provided in the call to `setIamPolicy`, then the existing
         // policy is overwritten blindly.
         etag?: string,
-        // 
-        iamOwned?: boolean,
-        // If more than one rule is specified, the rules are applied in the following
-        // manner:
-        // - All matching LOG rules are always applied.
-        // - If any DENY/DENY_WITH_LOG rule matches, permission is denied.
-        //   Logging will be applied if one or more matching rule requires logging.
-        // - Otherwise, if any ALLOW/ALLOW_WITH_LOG rule matches, permission is
-        //   granted.
-        //   Logging will be applied if one or more matching rule requires logging.
-        // - Otherwise, if no rule applies, permission is denied.
-        rules?: Rule[],        
     }
     
-    interface ListLocationsResponse {
-        // The standard List next-page token.
-        nextPageToken?: string,
-        // A list of locations that matches the specified filter in the request.
-        locations?: Location[],        
-    }
-    
-    interface KeyRing {
-        // Output only. The resource name for the KeyRing in the format
-        // `projects/*/locations/*/keyRings/*`.
-        name?: string,
-        // Output only. The time at which this KeyRing was created.
-        createTime?: string,
+    interface RestoreCryptoKeyVersionRequest {
     }
     
     interface UpdateCryptoKeyPrimaryVersionRequest {
         // The id of the child CryptoKeyVersion to use as primary.
         cryptoKeyVersionId?: string,
-    }
-    
-    interface RestoreCryptoKeyVersionRequest {
     }
     
     interface ListKeyRingsResponse {
@@ -263,6 +263,13 @@ declare module gapi.client.cloudkms {
     }
     
     interface CryptoKeyVersion {
+        // Output only. The time at which this CryptoKeyVersion was created.
+        createTime?: string,
+        // The current state of the CryptoKeyVersion.
+        state?: string,
+        // Output only. The resource name for this CryptoKeyVersion in the format
+        // `projects/*/locations/*/keyRings/*/cryptoKeys/*/cryptoKeyVersions/*`.
+        name?: string,
         // Output only. The time this CryptoKeyVersion's key material was
         // destroyed. Only present if state is
         // DESTROYED.
@@ -271,13 +278,6 @@ declare module gapi.client.cloudkms {
         // for destruction. Only present if state is
         // DESTROY_SCHEDULED.
         destroyTime?: string,
-        // Output only. The time at which this CryptoKeyVersion was created.
-        createTime?: string,
-        // The current state of the CryptoKeyVersion.
-        state?: string,
-        // Output only. The resource name for this CryptoKeyVersion in the format
-        // `projects/*/locations/*/keyRings/*/cryptoKeys/*/cryptoKeyVersions/*`.
-        name?: string,
     }
     
     interface CloudAuditOptions {
@@ -286,6 +286,12 @@ declare module gapi.client.cloudkms {
     }
     
     interface Binding {
+        // The condition that is associated with this binding.
+        // NOTE: an unsatisfied condition will not allow user access via current
+        // binding. Different bindings, including their conditions, are examined
+        // independently.
+        // This field is GOOGLE_INTERNAL.
+        condition?: Expr,
         // Specifies the identities requesting access for a Cloud Platform resource.
         // `members` can have the following values:
         // 
@@ -315,12 +321,6 @@ declare module gapi.client.cloudkms {
         // For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
         // Required
         role?: string,
-        // The condition that is associated with this binding.
-        // NOTE: an unsatisfied condition will not allow user access via current
-        // binding. Different bindings, including their conditions, are examined
-        // independently.
-        // This field is GOOGLE_INTERNAL.
-        condition?: Expr,
     }
     
     interface Expr {
@@ -364,20 +364,119 @@ declare module gapi.client.cloudkms {
     }
     
     interface CryptoKeyVersionsResource {
+        // Update a CryptoKeyVersion's metadata.
+        // 
+        // state may be changed between
+        // ENABLED and
+        // DISABLED using this
+        // method. See DestroyCryptoKeyVersion and RestoreCryptoKeyVersion to
+        // move between other states.
+        patch (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Required list of fields to be updated in this request.
+            updateMask?: string,
+            // Output only. The resource name for this CryptoKeyVersion in the format
+            // `projects/*/locations/*/keyRings/*/cryptoKeys/*/cryptoKeyVersions/*`.
+            name: string,
+        }) : gapi.client.Request<CryptoKeyVersion>;        
+        
+        // Returns metadata for a given CryptoKeyVersion.
+        get (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // The name of the CryptoKeyVersion to get.
+            name: string,
+        }) : gapi.client.Request<CryptoKeyVersion>;        
+        
         // Lists CryptoKeyVersions.
         list (request: {        
-            // Required. The resource name of the CryptoKey to list, in the format
-            // `projects/*/locations/*/keyRings/*/cryptoKeys/*`.
-            parent: string,
-            // Optional pagination token, returned earlier via
-            // ListCryptoKeyVersionsResponse.next_page_token.
-            pageToken?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
             // Optional limit on the number of CryptoKeyVersions to
             // include in the response. Further CryptoKeyVersions can
             // subsequently be obtained by including the
             // ListCryptoKeyVersionsResponse.next_page_token in a subsequent request.
             // If unspecified, the server will pick an appropriate default.
             pageSize?: number,
+            // Required. The resource name of the CryptoKey to list, in the format
+            // `projects/*/locations/*/keyRings/*/cryptoKeys/*`.
+            parent: string,
+            // Optional pagination token, returned earlier via
+            // ListCryptoKeyVersionsResponse.next_page_token.
+            pageToken?: string,
         }) : gapi.client.Request<ListCryptoKeyVersionsResponse>;        
         
         // Schedule a CryptoKeyVersion for destruction.
@@ -393,6 +492,32 @@ declare module gapi.client.cloudkms {
         // Before the destroy_time is reached,
         // RestoreCryptoKeyVersion may be called to reverse the process.
         destroy (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
             // The resource name of the CryptoKeyVersion to destroy.
             name: string,
         }) : gapi.client.Request<CryptoKeyVersion>;        
@@ -403,6 +528,32 @@ declare module gapi.client.cloudkms {
         // state will be set to
         // ENABLED.
         create (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
             // Required. The name of the CryptoKey associated with
             // the CryptoKeyVersions.
             parent: string,
@@ -416,28 +567,33 @@ declare module gapi.client.cloudkms {
         // will be set to DISABLED,
         // and destroy_time will be cleared.
         restore (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
             // The resource name of the CryptoKeyVersion to restore.
-            name: string,
-        }) : gapi.client.Request<CryptoKeyVersion>;        
-        
-        // Update a CryptoKeyVersion's metadata.
-        // 
-        // state may be changed between
-        // ENABLED and
-        // DISABLED using this
-        // method. See DestroyCryptoKeyVersion and RestoreCryptoKeyVersion to
-        // move between other states.
-        patch (request: {        
-            // Required list of fields to be updated in this request.
-            updateMask?: string,
-            // Output only. The resource name for this CryptoKeyVersion in the format
-            // `projects/*/locations/*/keyRings/*/cryptoKeys/*/cryptoKeyVersions/*`.
-            name: string,
-        }) : gapi.client.Request<CryptoKeyVersion>;        
-        
-        // Returns metadata for a given CryptoKeyVersion.
-        get (request: {        
-            // The name of the CryptoKeyVersion to get.
             name: string,
         }) : gapi.client.Request<CryptoKeyVersion>;        
         
@@ -445,37 +601,6 @@ declare module gapi.client.cloudkms {
     
     
     interface CryptoKeysResource {
-        // Update the version of a CryptoKey that will be used in Encrypt
-        updatePrimaryVersion (request: {        
-            // The resource name of the CryptoKey to update.
-            name: string,
-        }) : gapi.client.Request<CryptoKey>;        
-        
-        // Gets the access control policy for a resource.
-        // Returns an empty policy if the resource exists and does not have a policy
-        // set.
-        getIamPolicy (request: {        
-            // REQUIRED: The resource for which the policy is being requested.
-            // See the operation documentation for the appropriate value for this field.
-            resource: string,
-        }) : gapi.client.Request<Policy>;        
-        
-        // Update a CryptoKey.
-        patch (request: {        
-            // Required list of fields to be updated in this request.
-            updateMask?: string,
-            // Output only. The resource name for this CryptoKey in the format
-            // `projects/*/locations/*/keyRings/*/cryptoKeys/*`.
-            name: string,
-        }) : gapi.client.Request<CryptoKey>;        
-        
-        // Returns metadata for a given CryptoKey, as well as its
-        // primary CryptoKeyVersion.
-        get (request: {        
-            // The name of the CryptoKey to get.
-            name: string,
-        }) : gapi.client.Request<CryptoKey>;        
-        
         // Returns permissions that a caller has on the specified resource.
         // If the resource does not exist, this will return an empty set of
         // permissions, not a NOT_FOUND error.
@@ -484,6 +609,32 @@ declare module gapi.client.cloudkms {
         // UIs and command-line tools, not for authorization checking. This operation
         // may "fail open" without warning.
         testIamPermissions (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
             // REQUIRED: The resource for which the policy detail is being requested.
             // See the operation documentation for the appropriate value for this field.
             resource: string,
@@ -491,6 +642,32 @@ declare module gapi.client.cloudkms {
         
         // Decrypts data that was protected by Encrypt.
         decrypt (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
             // Required. The resource name of the CryptoKey to use for decryption.
             // The server will choose the appropriate version.
             name: string,
@@ -498,6 +675,35 @@ declare module gapi.client.cloudkms {
         
         // Lists CryptoKeys.
         list (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Optional pagination token, returned earlier via
+            // ListCryptoKeysResponse.next_page_token.
+            pageToken?: string,
             // Optional limit on the number of CryptoKeys to include in the
             // response.  Further CryptoKeys can subsequently be obtained by
             // including the ListCryptoKeysResponse.next_page_token in a subsequent
@@ -506,13 +712,36 @@ declare module gapi.client.cloudkms {
             // Required. The resource name of the KeyRing to list, in the format
             // `projects/*/locations/*/keyRings/*`.
             parent: string,
-            // Optional pagination token, returned earlier via
-            // ListCryptoKeysResponse.next_page_token.
-            pageToken?: string,
         }) : gapi.client.Request<ListCryptoKeysResponse>;        
         
         // Encrypts data, so that it can only be recovered by a call to Decrypt.
         encrypt (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
             // Required. The resource name of the CryptoKey or CryptoKeyVersion
             // to use for encryption.
             // 
@@ -525,68 +754,279 @@ declare module gapi.client.cloudkms {
         // 
         // CryptoKey.purpose is required.
         create (request: {        
-            // Required. It must be unique within a KeyRing and match the regular
-            // expression `[a-zA-Z0-9_-]{1,63}`
-            cryptoKeyId?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
             // Required. The name of the KeyRing associated with the
             // CryptoKeys.
             parent: string,
+            // Required. It must be unique within a KeyRing and match the regular
+            // expression `[a-zA-Z0-9_-]{1,63}`
+            cryptoKeyId?: string,
         }) : gapi.client.Request<CryptoKey>;        
         
         // Sets the access control policy on the specified resource. Replaces any
         // existing policy.
         setIamPolicy (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
             // REQUIRED: The resource for which the policy is being specified.
             // See the operation documentation for the appropriate value for this field.
             resource: string,
         }) : gapi.client.Request<Policy>;        
+        
+        // Update the version of a CryptoKey that will be used in Encrypt
+        updatePrimaryVersion (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // The resource name of the CryptoKey to update.
+            name: string,
+        }) : gapi.client.Request<CryptoKey>;        
+        
+        // Gets the access control policy for a resource.
+        // Returns an empty policy if the resource exists and does not have a policy
+        // set.
+        getIamPolicy (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // REQUIRED: The resource for which the policy is being requested.
+            // See the operation documentation for the appropriate value for this field.
+            resource: string,
+        }) : gapi.client.Request<Policy>;        
+        
+        // Update a CryptoKey.
+        patch (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Required list of fields to be updated in this request.
+            updateMask?: string,
+            // Output only. The resource name for this CryptoKey in the format
+            // `projects/*/locations/*/keyRings/*/cryptoKeys/*`.
+            name: string,
+        }) : gapi.client.Request<CryptoKey>;        
+        
+        // Returns metadata for a given CryptoKey, as well as its
+        // primary CryptoKeyVersion.
+        get (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // The name of the CryptoKey to get.
+            name: string,
+        }) : gapi.client.Request<CryptoKey>;        
         
         cryptoKeyVersions: CryptoKeyVersionsResource,
     }
     
     
     interface KeyRingsResource {
-        // Returns permissions that a caller has on the specified resource.
-        // If the resource does not exist, this will return an empty set of
-        // permissions, not a NOT_FOUND error.
-        // 
-        // Note: This operation is designed to be used for building permission-aware
-        // UIs and command-line tools, not for authorization checking. This operation
-        // may "fail open" without warning.
-        testIamPermissions (request: {        
-            // REQUIRED: The resource for which the policy detail is being requested.
-            // See the operation documentation for the appropriate value for this field.
-            resource: string,
-        }) : gapi.client.Request<TestIamPermissionsResponse>;        
-        
-        // Lists KeyRings.
-        list (request: {        
-            // Optional pagination token, returned earlier via
-            // ListKeyRingsResponse.next_page_token.
-            pageToken?: string,
-            // Optional limit on the number of KeyRings to include in the
-            // response.  Further KeyRings can subsequently be obtained by
-            // including the ListKeyRingsResponse.next_page_token in a subsequent
-            // request.  If unspecified, the server will pick an appropriate default.
-            pageSize?: number,
+        // Create a new KeyRing in a given Project and Location.
+        create (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
             // Required. The resource name of the location associated with the
             // KeyRings, in the format `projects/*/locations/*`.
             parent: string,
-        }) : gapi.client.Request<ListKeyRingsResponse>;        
-        
-        // Create a new KeyRing in a given Project and Location.
-        create (request: {        
             // Required. It must be unique within a location and match the regular
             // expression `[a-zA-Z0-9_-]{1,63}`
             keyRingId?: string,
-            // Required. The resource name of the location associated with the
-            // KeyRings, in the format `projects/*/locations/*`.
-            parent: string,
         }) : gapi.client.Request<KeyRing>;        
         
         // Sets the access control policy on the specified resource. Replaces any
         // existing policy.
         setIamPolicy (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
             // REQUIRED: The resource for which the policy is being specified.
             // See the operation documentation for the appropriate value for this field.
             resource: string,
@@ -596,6 +1036,32 @@ declare module gapi.client.cloudkms {
         // Returns an empty policy if the resource exists and does not have a policy
         // set.
         getIamPolicy (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
             // REQUIRED: The resource for which the policy is being requested.
             // See the operation documentation for the appropriate value for this field.
             resource: string,
@@ -603,9 +1069,115 @@ declare module gapi.client.cloudkms {
         
         // Returns metadata for a given KeyRing.
         get (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
             // The name of the KeyRing to get.
             name: string,
         }) : gapi.client.Request<KeyRing>;        
+        
+        // Returns permissions that a caller has on the specified resource.
+        // If the resource does not exist, this will return an empty set of
+        // permissions, not a NOT_FOUND error.
+        // 
+        // Note: This operation is designed to be used for building permission-aware
+        // UIs and command-line tools, not for authorization checking. This operation
+        // may "fail open" without warning.
+        testIamPermissions (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // REQUIRED: The resource for which the policy detail is being requested.
+            // See the operation documentation for the appropriate value for this field.
+            resource: string,
+        }) : gapi.client.Request<TestIamPermissionsResponse>;        
+        
+        // Lists KeyRings.
+        list (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Required. The resource name of the location associated with the
+            // KeyRings, in the format `projects/*/locations/*`.
+            parent: string,
+            // Optional pagination token, returned earlier via
+            // ListKeyRingsResponse.next_page_token.
+            pageToken?: string,
+            // Optional limit on the number of KeyRings to include in the
+            // response.  Further KeyRings can subsequently be obtained by
+            // including the ListKeyRingsResponse.next_page_token in a subsequent
+            // request.  If unspecified, the server will pick an appropriate default.
+            pageSize?: number,
+        }) : gapi.client.Request<ListKeyRingsResponse>;        
         
         cryptoKeys: CryptoKeysResource,
     }
@@ -614,12 +1186,64 @@ declare module gapi.client.cloudkms {
     interface LocationsResource {
         // Get information about a location.
         get (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
             // Resource name for the location.
             name: string,
         }) : gapi.client.Request<Location>;        
         
         // Lists information about the supported locations for this service.
         list (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
             // The standard list filter.
             filter?: string,
             // The standard list page token.

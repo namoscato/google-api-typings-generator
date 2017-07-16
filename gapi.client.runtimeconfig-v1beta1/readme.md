@@ -42,11 +42,11 @@ Don't forget to authenticate your client before sending any request to resources
 // declare client_id registered in Google Developers Console
 var client_id = '',
     scope = [     
-        // View and manage your data across Google Cloud Platform services
-        'https://www.googleapis.com/auth/cloud-platform',
-    
         // Manage your Google Cloud Platform services' runtime configuration
         'https://www.googleapis.com/auth/cloudruntimeconfig',
+    
+        // View and manage your data across Google Cloud Platform services
+        'https://www.googleapis.com/auth/cloud-platform',
     ],
     immediate = true;
 // ...

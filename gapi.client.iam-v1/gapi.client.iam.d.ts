@@ -6,33 +6,17 @@
 
 declare module gapi.client.iam {
     
-    interface CreateServiceAccountRequest {
-        // The ServiceAccount resource to create.
-        // Currently, only the following values are user assignable:
-        // `display_name` .
-        serviceAccount?: ServiceAccount,
-        // Required. The account id that is used to generate the service account
-        // email address and a stable unique id. It is unique within a project,
-        // must be 6-30 characters long, and match the regular expression
-        // `[a-z]([-a-z0-9]*[a-z0-9])` to comply with RFC1035.
-        accountId?: string,
-    }
-    
-    interface ListServiceAccountsResponse {
-        // To retrieve the next page of results, set
-        // ListServiceAccountsRequest.page_token
-        // to this value.
-        nextPageToken?: string,
-        // The list of matching service accounts.
-        accounts?: ServiceAccount[],        
-    }
-    
     interface QueryGrantableRolesResponse {
         // To retrieve the next page of results, set
         // `QueryGrantableRolesRequest.page_token` to this value.
         nextPageToken?: string,
         // The list of matching roles.
         roles?: Role[],        
+    }
+    
+    interface SignBlobRequest {
+        // The bytes to sign.
+        bytesToSign?: string,
     }
     
     interface Role {
@@ -49,11 +33,6 @@ declare module gapi.client.iam {
         name?: string,
         // Optional.  A human-readable description for the role.
         description?: string,
-    }
-    
-    interface SignBlobRequest {
-        // The bytes to sign.
-        bytesToSign?: string,
     }
     
     interface SetIamPolicyRequest {
@@ -114,20 +93,6 @@ declare module gapi.client.iam {
     }
     
     interface ServiceAccount {
-        // The resource name of the service account in the following format:
-        // `projects/{PROJECT_ID}/serviceAccounts/{SERVICE_ACCOUNT_EMAIL}`.
-        // 
-        // Requests using `-` as a wildcard for the project will infer the project
-        // from the `account` and the `account` value can be the `email` address or
-        // the `unique_id` of the service account.
-        // 
-        // In responses the resource name will always be in the format
-        // `projects/{PROJECT_ID}/serviceAccounts/{SERVICE_ACCOUNT_EMAIL}`.
-        name?: string,
-        // @OutputOnly The email address of the service account.
-        email?: string,
-        // @OutputOnly The id of the project that owns the service account.
-        projectId?: string,
         // @OutputOnly. The OAuth2 client id for the service account.
         // This is used in conjunction with the OAuth2 clientconfig API to make
         // three legged OAuth2 (3LO) flows to access the data of Google users.
@@ -139,6 +104,20 @@ declare module gapi.client.iam {
         displayName?: string,
         // Used to perform a consistent read-modify-write.
         etag?: string,
+        // @OutputOnly The email address of the service account.
+        email?: string,
+        // The resource name of the service account in the following format:
+        // `projects/{PROJECT_ID}/serviceAccounts/{SERVICE_ACCOUNT_EMAIL}`.
+        // 
+        // Requests using `-` as a wildcard for the project will infer the project
+        // from the `account` and the `account` value can be the `email` address or
+        // the `unique_id` of the service account.
+        // 
+        // In responses the resource name will always be in the format
+        // `projects/{PROJECT_ID}/serviceAccounts/{SERVICE_ACCOUNT_EMAIL}`.
+        name?: string,
+        // @OutputOnly The id of the project that owns the service account.
+        projectId?: string,
     }
     
     interface ListServiceAccountKeysResponse {
@@ -153,8 +132,13 @@ declare module gapi.client.iam {
     }
     
     interface ServiceAccountKey {
-        // The key can be used after this timestamp.
-        validAfterTime?: string,
+        // The resource name of the service account key in the following format
+        // `projects/{PROJECT_ID}/serviceAccounts/{SERVICE_ACCOUNT_EMAIL}/keys/{key}`.
+        name?: string,
+        // The key can be used before this timestamp.
+        validBeforeTime?: string,
+        // Specifies the algorithm (and possibly key size) for the key.
+        keyAlgorithm?: string,
         // The output format for the private key.
         // Only provided in `CreateServiceAccountKey` responses, not
         // in `GetServiceAccountKey` or `ListServiceAccountKey` responses.
@@ -162,6 +146,8 @@ declare module gapi.client.iam {
         // Google never exposes system-managed private keys, and never retains
         // user-managed private keys.
         privateKeyType?: string,
+        // The key can be used after this timestamp.
+        validAfterTime?: string,
         // The private key data. Only provided in `CreateServiceAccountKey`
         // responses. Make sure to keep the private key data secure because it
         // allows for the assertion of the service account identity.
@@ -172,13 +158,6 @@ declare module gapi.client.iam {
         privateKeyData?: string,
         // The public key data. Only provided in `GetServiceAccountKey` responses.
         publicKeyData?: string,
-        // The resource name of the service account key in the following format
-        // `projects/{PROJECT_ID}/serviceAccounts/{SERVICE_ACCOUNT_EMAIL}/keys/{key}`.
-        name?: string,
-        // The key can be used before this timestamp.
-        validBeforeTime?: string,
-        // Specifies the algorithm (and possibly key size) for the key.
-        keyAlgorithm?: string,
     }
     
     interface CreateServiceAccountKeyRequest {
@@ -201,10 +180,10 @@ declare module gapi.client.iam {
     }
     
     interface SignBlobResponse {
-        // The id of the key used to sign the blob.
-        keyId?: string,
         // The signed blob.
         signature?: string,
+        // The id of the key used to sign the blob.
+        keyId?: string,
     }
     
     interface TestIamPermissionsRequest {
@@ -213,11 +192,6 @@ declare module gapi.client.iam {
         // information see
         // [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
         permissions?: string[],        
-    }
-    
-    interface SignJwtRequest {
-        // The JWT payload to sign, a JSON JWT Claim set.
-        payload?: string,
     }
     
     interface Policy {
@@ -239,15 +213,17 @@ declare module gapi.client.iam {
         bindings?: Binding[],        
     }
     
+    interface SignJwtRequest {
+        // The JWT payload to sign, a JSON JWT Claim set.
+        payload?: string,
+    }
+    
     interface AuditData {
         // Policy delta between the original policy and the newly set policy.
         policyDelta?: PolicyDelta,
     }
     
     interface BindingDelta {
-        // The action that was performed on a Binding.
-        // Required
-        action?: string,
         // A single identity requesting access for a Cloud Platform resource.
         // Follows the same format of Binding.members.
         // Required
@@ -256,6 +232,9 @@ declare module gapi.client.iam {
         // For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
         // Required
         role?: string,
+        // The action that was performed on a Binding.
+        // Required
+        action?: string,
     }
     
     interface PolicyDelta {
@@ -263,30 +242,57 @@ declare module gapi.client.iam {
         bindingDeltas?: BindingDelta[],        
     }
     
-    interface RolesResource {
-        // Queries roles that can be granted on a particular resource.
-        // A role is grantable if it can be used as the role in a binding for a policy
-        // for that resource.
-        queryGrantableRoles (request: {        
-        }) : gapi.client.Request<QueryGrantableRolesResponse>;        
-        
+    interface CreateServiceAccountRequest {
+        // Required. The account id that is used to generate the service account
+        // email address and a stable unique id. It is unique within a project,
+        // must be 6-30 characters long, and match the regular expression
+        // `[a-z]([-a-z0-9]*[a-z0-9])` to comply with RFC1035.
+        accountId?: string,
+        // The ServiceAccount resource to create.
+        // Currently, only the following values are user assignable:
+        // `display_name` .
+        serviceAccount?: ServiceAccount,
     }
     
+    interface ListServiceAccountsResponse {
+        // To retrieve the next page of results, set
+        // ListServiceAccountsRequest.page_token
+        // to this value.
+        nextPageToken?: string,
+        // The list of matching service accounts.
+        accounts?: ServiceAccount[],        
+    }
     
     interface KeysResource {
-        // Deletes a ServiceAccountKey.
-        delete (request: {        
-            // The resource name of the service account key in the following format:
-            // `projects/{PROJECT_ID}/serviceAccounts/{SERVICE_ACCOUNT_EMAIL}/keys/{key}`.
-            // Using `-` as a wildcard for the project will infer the project from
-            // the account. The `account` value can be the `email` address or the
-            // `unique_id` of the service account.
-            name: string,
-        }) : gapi.client.Request<Empty>;        
-        
         // Gets the ServiceAccountKey
         // by key id.
         get (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
             // The output format of the public key requested.
             // X509_PEM is the default output format.
             publicKeyType?: string,
@@ -301,10 +307,32 @@ declare module gapi.client.iam {
         
         // Lists ServiceAccountKeys.
         list (request: {        
-            // Filters the types of keys the user wants to include in the list
-            // response. Duplicate key types are not allowed. If no key type
-            // is provided, all keys are returned.
-            keyTypes?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
             // The resource name of the service account in the following format:
             // `projects/{PROJECT_ID}/serviceAccounts/{SERVICE_ACCOUNT_EMAIL}`.
             // 
@@ -312,11 +340,41 @@ declare module gapi.client.iam {
             // the account. The `account` value can be the `email` address or the
             // `unique_id` of the service account.
             name: string,
+            // Filters the types of keys the user wants to include in the list
+            // response. Duplicate key types are not allowed. If no key type
+            // is provided, all keys are returned.
+            keyTypes?: string,
         }) : gapi.client.Request<ListServiceAccountKeysResponse>;        
         
         // Creates a ServiceAccountKey
         // and returns it.
         create (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
             // The resource name of the service account in the following format:
             // `projects/{PROJECT_ID}/serviceAccounts/{SERVICE_ACCOUNT_EMAIL}`.
             // Using `-` as a wildcard for the project will infer the project from
@@ -325,6 +383,42 @@ declare module gapi.client.iam {
             name: string,
         }) : gapi.client.Request<ServiceAccountKey>;        
         
+        // Deletes a ServiceAccountKey.
+        delete (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // The resource name of the service account key in the following format:
+            // `projects/{PROJECT_ID}/serviceAccounts/{SERVICE_ACCOUNT_EMAIL}/keys/{key}`.
+            // Using `-` as a wildcard for the project will infer the project from
+            // the account. The `account` value can be the `email` address or the
+            // `unique_id` of the service account.
+            name: string,
+        }) : gapi.client.Request<Empty>;        
+        
     }
     
     
@@ -332,6 +426,32 @@ declare module gapi.client.iam {
         // Returns the IAM access control policy for a
         // ServiceAccount.
         getIamPolicy (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
             // REQUIRED: The resource for which the policy is being requested.
             // See the operation documentation for the appropriate value for this field.
             resource: string,
@@ -339,6 +459,32 @@ declare module gapi.client.iam {
         
         // Gets a ServiceAccount.
         get (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
             // The resource name of the service account in the following format:
             // `projects/{PROJECT_ID}/serviceAccounts/{SERVICE_ACCOUNT_EMAIL}`.
             // Using `-` as a wildcard for the project will infer the project from
@@ -353,6 +499,32 @@ declare module gapi.client.iam {
         // `display_name` .
         // The `etag` is mandatory.
         update (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
             // The resource name of the service account in the following format:
             // `projects/{PROJECT_ID}/serviceAccounts/{SERVICE_ACCOUNT_EMAIL}`.
             // 
@@ -368,6 +540,32 @@ declare module gapi.client.iam {
         // Tests the specified permissions against the IAM access control policy
         // for a ServiceAccount.
         testIamPermissions (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
             // REQUIRED: The resource for which the policy detail is being requested.
             // See the operation documentation for the appropriate value for this field.
             resource: string,
@@ -375,6 +573,32 @@ declare module gapi.client.iam {
         
         // Deletes a ServiceAccount.
         delete (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
             // The resource name of the service account in the following format:
             // `projects/{PROJECT_ID}/serviceAccounts/{SERVICE_ACCOUNT_EMAIL}`.
             // Using `-` as a wildcard for the project will infer the project from
@@ -385,6 +609,32 @@ declare module gapi.client.iam {
         
         // Signs a blob using a service account's system-managed private key.
         signBlob (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
             // The resource name of the service account in the following format:
             // `projects/{PROJECT_ID}/serviceAccounts/{SERVICE_ACCOUNT_EMAIL}`.
             // Using `-` as a wildcard for the project will infer the project from
@@ -395,6 +645,32 @@ declare module gapi.client.iam {
         
         // Lists ServiceAccounts for a project.
         list (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
             // Optional pagination token returned in an earlier
             // ListServiceAccountsResponse.next_page_token.
             pageToken?: string,
@@ -411,18 +687,36 @@ declare module gapi.client.iam {
         // Sets the IAM access control policy for a
         // ServiceAccount.
         setIamPolicy (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
             // REQUIRED: The resource for which the policy is being specified.
             // See the operation documentation for the appropriate value for this field.
             resource: string,
         }) : gapi.client.Request<Policy>;        
-        
-        // Creates a ServiceAccount
-        // and returns it.
-        create (request: {        
-            // Required. The resource name of the project associated with the service
-            // accounts, such as `projects/my-project-123`.
-            name: string,
-        }) : gapi.client.Request<ServiceAccount>;        
         
         // Signs a JWT using a service account's system-managed private key.
         // 
@@ -430,6 +724,32 @@ declare module gapi.client.iam {
         // an expiry time of one hour by default. If you request an expiry time of
         // more than one hour, the request will fail.
         signJwt (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
             // The resource name of the service account in the following format:
             // `projects/{PROJECT_ID}/serviceAccounts/{SERVICE_ACCOUNT_EMAIL}`.
             // Using `-` as a wildcard for the project will infer the project from
@@ -437,6 +757,40 @@ declare module gapi.client.iam {
             // `unique_id` of the service account.
             name: string,
         }) : gapi.client.Request<SignJwtResponse>;        
+        
+        // Creates a ServiceAccount
+        // and returns it.
+        create (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Required. The resource name of the project associated with the service
+            // accounts, such as `projects/my-project-123`.
+            name: string,
+        }) : gapi.client.Request<ServiceAccount>;        
         
         keys: KeysResource,
     }
@@ -446,11 +800,47 @@ declare module gapi.client.iam {
         serviceAccounts: ServiceAccountsResource,
     }
     
+    
+    interface RolesResource {
+        // Queries roles that can be granted on a particular resource.
+        // A role is grantable if it can be used as the role in a binding for a policy
+        // for that resource.
+        queryGrantableRoles (request: {        
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // OAuth access token.
+            access_token?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+        }) : gapi.client.Request<QueryGrantableRolesResponse>;        
+        
+    }
+    
 }
 
 declare module gapi.client.iam {
-    var roles: gapi.client.iam.RolesResource; 
-    
     var projects: gapi.client.iam.ProjectsResource; 
+    
+    var roles: gapi.client.iam.RolesResource; 
     
 }

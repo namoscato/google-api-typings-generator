@@ -60,9 +60,9 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Google Ad Experience Report API resources:
 
 ```typescript
-gapi.client.violatingSites.<method name>({ /* method parameters */ })
+gapi.client.sites.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.sites.<method name>({ /* method parameters */ })
+gapi.client.violatingSites.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

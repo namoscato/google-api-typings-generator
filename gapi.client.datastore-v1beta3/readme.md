@@ -43,11 +43,11 @@ Don't forget to authenticate your client before sending any request to resources
 // declare client_id registered in Google Developers Console
 var client_id = '',
     scope = [     
-        // View and manage your Google Cloud Datastore data
-        'https://www.googleapis.com/auth/datastore',
-    
         // View and manage your data across Google Cloud Platform services
         'https://www.googleapis.com/auth/cloud-platform',
+    
+        // View and manage your Google Cloud Datastore data
+        'https://www.googleapis.com/auth/datastore',
     ],
     immediate = true;
 // ...

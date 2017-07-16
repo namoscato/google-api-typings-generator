@@ -60,9 +60,9 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Google Identity and Access Management (IAM) API resources:
 
 ```typescript
-gapi.client.roles.<method name>({ /* method parameters */ })
+gapi.client.projects.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 
-gapi.client.projects.<method name>({ /* method parameters */ })
+gapi.client.roles.<method name>({ /* method parameters */ })
     .then(response => { /* handling response */ });
 ```

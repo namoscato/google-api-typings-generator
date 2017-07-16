@@ -6,19 +6,7 @@
 
 declare module gapi.client.cloudtrace {
     
-    interface Traces {
-        // List of traces.
-        traces?: Trace[],        
-    }
-    
     interface TraceSpan {
-        // Identifier for the span. Must be a 64-bit integer other than 0 and
-        // unique within a trace.
-        spanId?: string,
-        // ID of the parent span, if any. Optional.
-        parentSpanId?: string,
-        // End time of the span in nanoseconds from the UNIX epoch.
-        endTime?: string,
         // Start time of the span in nanoseconds from the UNIX epoch.
         startTime?: string,
         // Distinguishes between spans generated in a particular context. For example,
@@ -67,6 +55,13 @@ declare module gapi.client.cloudtrace {
         // to use a consistent name, which makes it easier to correlate
         // cross-trace spans.
         name?: string,
+        // Identifier for the span. Must be a 64-bit integer other than 0 and
+        // unique within a trace.
+        spanId?: string,
+        // ID of the parent span, if any. Optional.
+        parentSpanId?: string,
+        // End time of the span in nanoseconds from the UNIX epoch.
+        endTime?: string,
     }
     
     interface Empty {
@@ -91,9 +86,40 @@ declare module gapi.client.cloudtrace {
         traceId?: string,
     }
     
+    interface Traces {
+        // List of traces.
+        traces?: Trace[],        
+    }
+    
     interface TracesResource {
         // Gets a single trace by its ID.
         get (request: {        
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // OAuth access token.
+            access_token?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
             // ID of the Cloud project where the trace data is stored.
             projectId: string,
             // ID of the trace to return.
@@ -102,6 +128,32 @@ declare module gapi.client.cloudtrace {
         
         // Returns of a list of traces that match the specified filter conditions.
         list (request: {        
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // OAuth access token.
+            access_token?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
             // Field used to sort the returned traces. Optional.
             // Can be one of the following:
             // 
@@ -177,6 +229,32 @@ declare module gapi.client.cloudtrace {
         // and any new fields provided are merged with the existing trace data. If the
         // ID does not match, a new trace is created.
         patchTraces (request: {        
+            // V1 error format.
+            $.xgafv?: string,
+            // JSONP
+            callback?: string,
+            // Data format for response.
+            alt?: string,
+            // OAuth access token.
+            access_token?: string,
+            // API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+            key?: string,
+            // Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            quotaUser?: string,
+            // Pretty-print response.
+            pp?: boolean,
+            // OAuth bearer token.
+            bearer_token?: string,
+            // OAuth 2.0 token for the current user.
+            oauth_token?: string,
+            // Upload protocol for media (e.g. "raw", "multipart").
+            upload_protocol?: string,
+            // Returns response with indentations and line breaks.
+            prettyPrint?: boolean,
+            // Selector specifying which fields to include in a partial response.
+            fields?: string,
+            // Legacy upload protocol for media (e.g. "media", "multipart").
+            uploadType?: string,
             // ID of the Cloud project where the trace data is stored.
             projectId: string,
         }) : gapi.client.Request<Empty>;        
