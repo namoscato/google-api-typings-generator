@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://developers.google.
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Google+ Domains API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Google+ Domains API:
-```
-typings install gapi.client.plusDomains --save 
+npm install @types/gapi.client.plusDomains-v1 --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('plusDomains', 'v1', () => {
     // now we can use gapi.client.plusDomains
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -86,22 +77,105 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use Google+ Domains API resources:
 
-```typescript
-gapi.client.activities.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.audiences.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.circles.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.comments.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.media.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.people.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Get an activity.  
+*/
+await gapi.client.activities.get({ activityId: "activityId",  }); 
+    
+/* 
+Create a new activity for the authenticated user.  
+*/
+await gapi.client.activities.insert({ userId: "userId",  }); 
+    
+/* 
+List all of the activities in the specified collection for a particular user.  
+*/
+await gapi.client.activities.list({ collection: "collection", userId: "userId",  }); 
+    
+/* 
+List all of the audiences to which a user can share.  
+*/
+await gapi.client.audiences.list({ userId: "userId",  }); 
+    
+/* 
+Add a person to a circle. Google+ limits certain circle operations, including the number of circle adds. Learn More.  
+*/
+await gapi.client.circles.addPeople({ circleId: "circleId",  }); 
+    
+/* 
+Get a circle.  
+*/
+await gapi.client.circles.get({ circleId: "circleId",  }); 
+    
+/* 
+Create a new circle for the authenticated user.  
+*/
+await gapi.client.circles.insert({ userId: "userId",  }); 
+    
+/* 
+List all of the circles for a user.  
+*/
+await gapi.client.circles.list({ userId: "userId",  }); 
+    
+/* 
+Update a circle's description. This method supports patch semantics.  
+*/
+await gapi.client.circles.patch({ circleId: "circleId",  }); 
+    
+/* 
+Delete a circle.  
+*/
+await gapi.client.circles.remove({ circleId: "circleId",  }); 
+    
+/* 
+Remove a person from a circle.  
+*/
+await gapi.client.circles.removePeople({ circleId: "circleId",  }); 
+    
+/* 
+Update a circle's description.  
+*/
+await gapi.client.circles.update({ circleId: "circleId",  }); 
+    
+/* 
+Get a comment.  
+*/
+await gapi.client.comments.get({ commentId: "commentId",  }); 
+    
+/* 
+Create a new comment in reply to an activity.  
+*/
+await gapi.client.comments.insert({ activityId: "activityId",  }); 
+    
+/* 
+List all of the comments for an activity.  
+*/
+await gapi.client.comments.list({ activityId: "activityId",  }); 
+    
+/* 
+Add a new media item to an album. The current upload size limitations are 36MB for a photo and 1GB for a video. Uploads do not count against quota if photos are less than 2048 pixels on their longest side or videos are less than 15 minutes in length.  
+*/
+await gapi.client.media.insert({ collection: "collection", userId: "userId",  }); 
+    
+/* 
+Get a person's profile.  
+*/
+await gapi.client.people.get({ userId: "userId",  }); 
+    
+/* 
+List all of the people in the specified collection.  
+*/
+await gapi.client.people.list({ collection: "collection", userId: "userId",  }); 
+    
+/* 
+List all of the people in the specified collection for a particular activity.  
+*/
+await gapi.client.people.listByActivity({ activityId: "activityId", collection: "collection",  }); 
+    
+/* 
+List all of the people who are members of a circle.  
+*/
+await gapi.client.people.listByCircle({ circleId: "circleId",  });
 ```

@@ -5,19 +5,9 @@ For detailed description please check [documentation](https://cloud.google.com/e
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Stackdriver Error Reporting API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Stackdriver Error Reporting API:
-```
-typings install gapi.client.clouderrorreporting --save 
+npm install @types/gapi.client.clouderrorreporting-v1beta1 --save-dev
 ```
 
 ## Usage
@@ -35,7 +25,8 @@ Then load api client wrapper:
 gapi.client.load('clouderrorreporting', 'v1beta1', () => {
     // now we can use gapi.client.clouderrorreporting
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -60,7 +51,10 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use Stackdriver Error Reporting API resources:
 
-```typescript
-gapi.client.projects.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Deletes all error events of a given project.  
+*/
+await gapi.client.projects.deleteEvents({ projectName: "projectName",  });
 ```

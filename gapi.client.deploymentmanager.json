@@ -1,7 +1,0 @@
-{
-    "versions": {
-        "2": "https://guthub.com/bolisov/typings-gapi/typings/gapi.client.deploymentmanager-v2",
-        "undefined": "https://guthub.com/bolisov/typings-gapi/typings/gapi.client.deploymentmanager-alpha",
-        "2-beta": "https://guthub.com/bolisov/typings-gapi/typings/gapi.client.deploymentmanager-v2beta"
-    }
-}

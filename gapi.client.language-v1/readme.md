@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://cloud.google.com/n
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Google Cloud Natural Language API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Google Cloud Natural Language API:
-```
-typings install gapi.client.language --save 
+npm install @types/gapi.client.language-v1 --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('language', 'v1', () => {
     // now we can use gapi.client.language
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -44,6 +35,9 @@ var client_id = '',
     scope = [     
         // View and manage your data across Google Cloud Platform services
         'https://www.googleapis.com/auth/cloud-platform',
+    
+        // Apply machine learning models to reveal the structure and meaning of text
+        'https://www.googleapis.com/auth/cloud-language',
     ],
     immediate = true;
 // ...
@@ -59,7 +53,30 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use Google Cloud Natural Language API resources:
 
-```typescript
-gapi.client.documents.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Finds named entities (currently proper names and common nouns) in the text
+along with entity types, salience, mentions for each entity, and
+other properties.  
+*/
+await gapi.client.documents.analyzeEntities({  }); 
+    
+/* 
+Analyzes the syntax of the text and provides sentence boundaries and
+tokenization along with part of speech tags, dependency trees, and other
+properties.  
+*/
+await gapi.client.documents.analyzeSyntax({  }); 
+    
+/* 
+Analyzes the sentiment of the provided text.  
+*/
+await gapi.client.documents.analyzeSentiment({  }); 
+    
+/* 
+A convenience method that provides all the features that analyzeSentiment,
+analyzeEntities, and analyzeSyntax provide in one call.  
+*/
+await gapi.client.documents.annotateText({  });
 ```

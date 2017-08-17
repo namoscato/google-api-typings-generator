@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://developers.google.
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Replica Pool API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Replica Pool API:
-```
-typings install gapi.client.replicapool --save 
+npm install @types/gapi.client.replicapool-v1beta1 --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('replicapool', 'v1beta1', () => {
     // now we can use gapi.client.replicapool
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -74,10 +65,55 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use Replica Pool API resources:
 
-```typescript
-gapi.client.pools.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.replicas.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Deletes a replica pool.  
+*/
+await gapi.client.pools.delete({ poolName: "poolName", projectName: "projectName", zone: "zone",  }); 
+    
+/* 
+Gets information about a single replica pool.  
+*/
+await gapi.client.pools.get({ poolName: "poolName", projectName: "projectName", zone: "zone",  }); 
+    
+/* 
+Inserts a new replica pool.  
+*/
+await gapi.client.pools.insert({ projectName: "projectName", zone: "zone",  }); 
+    
+/* 
+List all replica pools.  
+*/
+await gapi.client.pools.list({ projectName: "projectName", zone: "zone",  }); 
+    
+/* 
+Resize a pool. This is an asynchronous operation, and multiple overlapping resize requests can be made. Replica Pools will use the information from the last resize request.  
+*/
+await gapi.client.pools.resize({ poolName: "poolName", projectName: "projectName", zone: "zone",  }); 
+    
+/* 
+Update the template used by the pool.  
+*/
+await gapi.client.pools.updatetemplate({ poolName: "poolName", projectName: "projectName", zone: "zone",  }); 
+    
+/* 
+Deletes a replica from the pool.  
+*/
+await gapi.client.replicas.delete({ poolName: "poolName", projectName: "projectName", replicaName: "replicaName", zone: "zone",  }); 
+    
+/* 
+Gets information about a specific replica.  
+*/
+await gapi.client.replicas.get({ poolName: "poolName", projectName: "projectName", replicaName: "replicaName", zone: "zone",  }); 
+    
+/* 
+Lists all replicas in a pool.  
+*/
+await gapi.client.replicas.list({ poolName: "poolName", projectName: "projectName", zone: "zone",  }); 
+    
+/* 
+Restarts a replica in a pool.  
+*/
+await gapi.client.replicas.restart({ poolName: "poolName", projectName: "projectName", replicaName: "replicaName", zone: "zone",  });
 ```

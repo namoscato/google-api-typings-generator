@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://developers.google.
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Google Play Game Services Publishing API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Google Play Game Services Publishing API:
-```
-typings install gapi.client.gamesConfiguration --save 
+npm install @types/gapi.client.gamesConfiguration-v1configuration --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('gamesConfiguration', 'v1configuration', () => {
     // now we can use gapi.client.gamesConfiguration
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -59,13 +50,70 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use Google Play Game Services Publishing API resources:
 
-```typescript
-gapi.client.achievementConfigurations.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.imageConfigurations.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.leaderboardConfigurations.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Delete the achievement configuration with the given ID.  
+*/
+await gapi.client.achievementConfigurations.delete({ achievementId: "achievementId",  }); 
+    
+/* 
+Retrieves the metadata of the achievement configuration with the given ID.  
+*/
+await gapi.client.achievementConfigurations.get({ achievementId: "achievementId",  }); 
+    
+/* 
+Insert a new achievement configuration in this application.  
+*/
+await gapi.client.achievementConfigurations.insert({ applicationId: "applicationId",  }); 
+    
+/* 
+Returns a list of the achievement configurations in this application.  
+*/
+await gapi.client.achievementConfigurations.list({ applicationId: "applicationId",  }); 
+    
+/* 
+Update the metadata of the achievement configuration with the given ID. This method supports patch semantics.  
+*/
+await gapi.client.achievementConfigurations.patch({ achievementId: "achievementId",  }); 
+    
+/* 
+Update the metadata of the achievement configuration with the given ID.  
+*/
+await gapi.client.achievementConfigurations.update({ achievementId: "achievementId",  }); 
+    
+/* 
+Uploads an image for a resource with the given ID and image type.  
+*/
+await gapi.client.imageConfigurations.upload({ imageType: "imageType", resourceId: "resourceId",  }); 
+    
+/* 
+Delete the leaderboard configuration with the given ID.  
+*/
+await gapi.client.leaderboardConfigurations.delete({ leaderboardId: "leaderboardId",  }); 
+    
+/* 
+Retrieves the metadata of the leaderboard configuration with the given ID.  
+*/
+await gapi.client.leaderboardConfigurations.get({ leaderboardId: "leaderboardId",  }); 
+    
+/* 
+Insert a new leaderboard configuration in this application.  
+*/
+await gapi.client.leaderboardConfigurations.insert({ applicationId: "applicationId",  }); 
+    
+/* 
+Returns a list of the leaderboard configurations in this application.  
+*/
+await gapi.client.leaderboardConfigurations.list({ applicationId: "applicationId",  }); 
+    
+/* 
+Update the metadata of the leaderboard configuration with the given ID. This method supports patch semantics.  
+*/
+await gapi.client.leaderboardConfigurations.patch({ leaderboardId: "leaderboardId",  }); 
+    
+/* 
+Update the metadata of the leaderboard configuration with the given ID.  
+*/
+await gapi.client.leaderboardConfigurations.update({ leaderboardId: "leaderboardId",  });
 ```

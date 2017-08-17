@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://cloud.google.com/k
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Google Cloud Key Management Service (KMS) API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Google Cloud Key Management Service (KMS) API:
-```
-typings install gapi.client.cloudkms --save 
+npm install @types/gapi.client.cloudkms-v1 --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('cloudkms', 'v1', () => {
     // now we can use gapi.client.cloudkms
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -60,6 +51,4 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Google Cloud Key Management Service (KMS) API resources:
 
 ```typescript
-gapi.client.projects.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
 ```

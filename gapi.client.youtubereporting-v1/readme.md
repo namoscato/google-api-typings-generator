@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://developers.google.
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for YouTube Reporting API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for YouTube Reporting API:
-```
-typings install gapi.client.youtubereporting --save 
+npm install @types/gapi.client.youtubereporting-v1 --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('youtubereporting', 'v1', () => {
     // now we can use gapi.client.youtubereporting
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -62,13 +53,36 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use YouTube Reporting API resources:
 
-```typescript
-gapi.client.media.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.jobs.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.reportTypes.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Method for media download. Download is supported
+on the URI `/v1/media/{+name}?alt=media`.  
+*/
+await gapi.client.media.download({ resourceName: "resourceName",  }); 
+    
+/* 
+Deletes a job.  
+*/
+await gapi.client.jobs.delete({ jobId: "jobId",  }); 
+    
+/* 
+Gets a job.  
+*/
+await gapi.client.jobs.get({ jobId: "jobId",  }); 
+    
+/* 
+Lists jobs.  
+*/
+await gapi.client.jobs.list({  }); 
+    
+/* 
+Creates a job and returns it.  
+*/
+await gapi.client.jobs.create({  }); 
+    
+/* 
+Lists report types.  
+*/
+await gapi.client.reportTypes.list({  });
 ```

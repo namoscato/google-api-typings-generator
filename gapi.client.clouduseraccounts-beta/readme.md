@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://cloud.google.com/c
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Cloud User Accounts API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Cloud User Accounts API:
-```
-typings install gapi.client.clouduseraccounts --save 
+npm install @types/gapi.client.clouduseraccounts-beta --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('clouduseraccounts', 'beta', () => {
     // now we can use gapi.client.clouduseraccounts
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -68,16 +59,90 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use Cloud User Accounts API resources:
 
-```typescript
-gapi.client.globalAccountsOperations.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.groups.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.linux.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.users.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Deletes the specified operation resource.  
+*/
+await gapi.client.globalAccountsOperations.delete({ operation: "operation", project: "project",  }); 
+    
+/* 
+Retrieves the specified operation resource.  
+*/
+await gapi.client.globalAccountsOperations.get({ operation: "operation", project: "project",  }); 
+    
+/* 
+Retrieves the list of operation resources contained within the specified project.  
+*/
+await gapi.client.globalAccountsOperations.list({ project: "project",  }); 
+    
+/* 
+Adds users to the specified group.  
+*/
+await gapi.client.groups.addMember({ groupName: "groupName", project: "project",  }); 
+    
+/* 
+Deletes the specified Group resource.  
+*/
+await gapi.client.groups.delete({ groupName: "groupName", project: "project",  }); 
+    
+/* 
+Returns the specified Group resource.  
+*/
+await gapi.client.groups.get({ groupName: "groupName", project: "project",  }); 
+    
+/* 
+Creates a Group resource in the specified project using the data included in the request.  
+*/
+await gapi.client.groups.insert({ project: "project",  }); 
+    
+/* 
+Retrieves the list of groups contained within the specified project.  
+*/
+await gapi.client.groups.list({ project: "project",  }); 
+    
+/* 
+Removes users from the specified group.  
+*/
+await gapi.client.groups.removeMember({ groupName: "groupName", project: "project",  }); 
+    
+/* 
+Returns a list of authorized public keys for a specific user account.  
+*/
+await gapi.client.linux.getAuthorizedKeysView({ instance: "instance", project: "project", user: "user", zone: "zone",  }); 
+    
+/* 
+Retrieves a list of user accounts for an instance within a specific project.  
+*/
+await gapi.client.linux.getLinuxAccountViews({ instance: "instance", project: "project", zone: "zone",  }); 
+    
+/* 
+Adds a public key to the specified User resource with the data included in the request.  
+*/
+await gapi.client.users.addPublicKey({ project: "project", user: "user",  }); 
+    
+/* 
+Deletes the specified User resource.  
+*/
+await gapi.client.users.delete({ project: "project", user: "user",  }); 
+    
+/* 
+Returns the specified User resource.  
+*/
+await gapi.client.users.get({ project: "project", user: "user",  }); 
+    
+/* 
+Creates a User resource in the specified project using the data included in the request.  
+*/
+await gapi.client.users.insert({ project: "project",  }); 
+    
+/* 
+Retrieves a list of users contained within the specified project.  
+*/
+await gapi.client.users.list({ project: "project",  }); 
+    
+/* 
+Removes the specified public key from the user.  
+*/
+await gapi.client.users.removePublicKey({ fingerprint: "fingerprint", project: "project", user: "user",  });
 ```

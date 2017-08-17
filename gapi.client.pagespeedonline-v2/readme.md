@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://developers.google.
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for PageSpeed Insights API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for PageSpeed Insights API:
-```
-typings install gapi.client.pagespeedonline --save 
+npm install @types/gapi.client.pagespeedonline-v2 --save-dev
 ```
 
 ## Usage
@@ -34,13 +24,17 @@ Then load api client wrapper:
 gapi.client.load('pagespeedonline', 'v2', () => {
     // now we can use gapi.client.pagespeedonline
     // ... 
-});```
+});
+```
 
 
 
 After that you can use PageSpeed Insights API resources:
 
-```typescript
-gapi.client.pagespeedapi.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Runs PageSpeed analysis on the page at the specified URL, and returns PageSpeed scores, a list of suggestions to make that page faster, and other information.  
+*/
+await gapi.client.pagespeedapi.runpagespeed({ url: "url",  });
 ```

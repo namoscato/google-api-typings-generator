@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://cloud.google.com/v
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Google Cloud Video Intelligence API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Google Cloud Video Intelligence API:
-```
-typings install gapi.client.videointelligence --save 
+npm install @types/gapi.client.videointelligence-v1beta1 --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('videointelligence', 'v1beta1', () => {
     // now we can use gapi.client.videointelligence
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -59,7 +50,13 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use Google Cloud Video Intelligence API resources:
 
-```typescript
-gapi.client.videos.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Performs asynchronous video annotation. Progress and results can be
+retrieved through the `google.longrunning.Operations` interface.
+`Operation.metadata` contains `AnnotateVideoProgress` (progress).
+`Operation.response` contains `AnnotateVideoResponse` (results).  
+*/
+await gapi.client.videos.annotate({  });
 ```

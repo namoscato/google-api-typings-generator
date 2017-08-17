@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://developers.google.
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Ad Exchange Buyer API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Ad Exchange Buyer API:
-```
-typings install gapi.client.adexchangebuyer --save 
+npm install @types/gapi.client.adexchangebuyer-v1.2 --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('adexchangebuyer', 'v1.2', () => {
     // now we can use gapi.client.adexchangebuyer
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -59,10 +50,40 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use Ad Exchange Buyer API resources:
 
-```typescript
-gapi.client.accounts.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.creatives.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Gets one account by ID.  
+*/
+await gapi.client.accounts.get({ id: 1,  }); 
+    
+/* 
+Retrieves the authenticated user's list of accounts.  
+*/
+await gapi.client.accounts.list({  }); 
+    
+/* 
+Updates an existing account. This method supports patch semantics.  
+*/
+await gapi.client.accounts.patch({ id: 1,  }); 
+    
+/* 
+Updates an existing account.  
+*/
+await gapi.client.accounts.update({ id: 1,  }); 
+    
+/* 
+Gets the status for a single creative. A creative will be available 30-40 minutes after submission.  
+*/
+await gapi.client.creatives.get({ accountId: 1, buyerCreativeId: "buyerCreativeId",  }); 
+    
+/* 
+Submit a new creative.  
+*/
+await gapi.client.creatives.insert({  }); 
+    
+/* 
+Retrieves a list of the authenticated user's active creatives. A creative will be available 30-40 minutes after submission.  
+*/
+await gapi.client.creatives.list({  });
 ```

@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://developers.google.
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Google Civic Information API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Google Civic Information API:
-```
-typings install gapi.client.civicinfo --save 
+npm install @types/gapi.client.civicinfo-v2 --save-dev
 ```
 
 ## Usage
@@ -34,19 +24,37 @@ Then load api client wrapper:
 gapi.client.load('civicinfo', 'v2', () => {
     // now we can use gapi.client.civicinfo
     // ... 
-});```
+});
+```
 
 
 
 After that you can use Google Civic Information API resources:
 
-```typescript
-gapi.client.divisions.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.elections.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.representatives.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Searches for political divisions by their natural name or OCD ID.  
+*/
+await gapi.client.divisions.search({  }); 
+    
+/* 
+List of available elections to query.  
+*/
+await gapi.client.elections.electionQuery({  }); 
+    
+/* 
+Looks up information relevant to a voter based on the voter's registered address.  
+*/
+await gapi.client.elections.voterInfoQuery({ address: "address",  }); 
+    
+/* 
+Looks up political geography and representative information for a single address.  
+*/
+await gapi.client.representatives.representativeInfoByAddress({  }); 
+    
+/* 
+Looks up representative information for a single geographic division.  
+*/
+await gapi.client.representatives.representativeInfoByDivision({ ocdId: "ocdId",  });
 ```

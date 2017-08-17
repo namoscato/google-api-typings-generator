@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://cloud.google.com/d
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Google Dataflow API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Google Dataflow API:
-```
-typings install gapi.client.dataflow --save 
+npm install @types/gapi.client.dataflow-v1b3 --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('dataflow', 'v1b3', () => {
     // now we can use gapi.client.dataflow
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -42,9 +33,6 @@ Don't forget to authenticate your client before sending any request to resources
 // declare client_id registered in Google Developers Console
 var client_id = '',
     scope = [     
-        // View your Google Compute Engine resources
-        'https://www.googleapis.com/auth/compute.readonly',
-    
         // View and manage your Google Compute Engine resources
         'https://www.googleapis.com/auth/compute',
     
@@ -53,6 +41,9 @@ var client_id = '',
     
         // View your email address
         'https://www.googleapis.com/auth/userinfo.email',
+    
+        // View your Google Compute Engine resources
+        'https://www.googleapis.com/auth/compute.readonly',
     ],
     immediate = true;
 // ...
@@ -68,7 +59,10 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use Google Dataflow API resources:
 
-```typescript
-gapi.client.projects.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Send a worker_message to the service.  
+*/
+await gapi.client.projects.workerMessages({ projectId: "projectId",  });
 ```

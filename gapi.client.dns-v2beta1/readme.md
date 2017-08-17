@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://developers.google.
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Google Cloud DNS API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Google Cloud DNS API:
-```
-typings install gapi.client.dns --save 
+npm install @types/gapi.client.dns-v2beta1 --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('dns', 'v2beta1', () => {
     // now we can use gapi.client.dns
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -68,22 +59,80 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use Google Cloud DNS API resources:
 
-```typescript
-gapi.client.changes.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.dnsKeys.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.managedZoneOperations.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.managedZones.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.projects.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.resourceRecordSets.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Atomically update the ResourceRecordSet collection.  
+*/
+await gapi.client.changes.create({ managedZone: "managedZone", project: "project",  }); 
+    
+/* 
+Fetch the representation of an existing Change.  
+*/
+await gapi.client.changes.get({ changeId: "changeId", managedZone: "managedZone", project: "project",  }); 
+    
+/* 
+Enumerate Changes to a ResourceRecordSet collection.  
+*/
+await gapi.client.changes.list({ managedZone: "managedZone", project: "project",  }); 
+    
+/* 
+Fetch the representation of an existing DnsKey.  
+*/
+await gapi.client.dnsKeys.get({ dnsKeyId: "dnsKeyId", managedZone: "managedZone", project: "project",  }); 
+    
+/* 
+Enumerate DnsKeys to a ResourceRecordSet collection.  
+*/
+await gapi.client.dnsKeys.list({ managedZone: "managedZone", project: "project",  }); 
+    
+/* 
+Fetch the representation of an existing Operation.  
+*/
+await gapi.client.managedZoneOperations.get({ managedZone: "managedZone", operation: "operation", project: "project",  }); 
+    
+/* 
+Enumerate Operations for the given ManagedZone.  
+*/
+await gapi.client.managedZoneOperations.list({ managedZone: "managedZone", project: "project",  }); 
+    
+/* 
+Create a new ManagedZone.  
+*/
+await gapi.client.managedZones.create({ project: "project",  }); 
+    
+/* 
+Delete a previously created ManagedZone.  
+*/
+await gapi.client.managedZones.delete({ managedZone: "managedZone", project: "project",  }); 
+    
+/* 
+Fetch the representation of an existing ManagedZone.  
+*/
+await gapi.client.managedZones.get({ managedZone: "managedZone", project: "project",  }); 
+    
+/* 
+Enumerate ManagedZones that have been created but not yet deleted.  
+*/
+await gapi.client.managedZones.list({ project: "project",  }); 
+    
+/* 
+Update an existing ManagedZone. This method supports patch semantics.  
+*/
+await gapi.client.managedZones.patch({ managedZone: "managedZone", project: "project",  }); 
+    
+/* 
+Update an existing ManagedZone.  
+*/
+await gapi.client.managedZones.update({ managedZone: "managedZone", project: "project",  }); 
+    
+/* 
+Fetch the representation of an existing Project.  
+*/
+await gapi.client.projects.get({ project: "project",  }); 
+    
+/* 
+Enumerate ResourceRecordSets that have been created but not yet deleted.  
+*/
+await gapi.client.resourceRecordSets.list({ managedZone: "managedZone", project: "project",  });
 ```

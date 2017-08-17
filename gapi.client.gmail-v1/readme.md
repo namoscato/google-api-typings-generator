@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://developers.google.
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Gmail API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Gmail API:
-```
-typings install gapi.client.gmail --save 
+npm install @types/gapi.client.gmail-v1 --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('gmail', 'v1', () => {
     // now we can use gapi.client.gmail
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -86,7 +77,20 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use Gmail API resources:
 
-```typescript
-gapi.client.users.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Gets the current user's Gmail profile.  
+*/
+await gapi.client.users.getProfile({ userId: "userId",  }); 
+    
+/* 
+Stop receiving push notifications for the given user mailbox.  
+*/
+await gapi.client.users.stop({ userId: "userId",  }); 
+    
+/* 
+Set up or update a push notification watch on the given user mailbox.  
+*/
+await gapi.client.users.watch({ userId: "userId",  });
 ```

@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://developers.google.
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Ad Exchange Seller API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Ad Exchange Seller API:
-```
-typings install gapi.client.adexchangeseller --save 
+npm install @types/gapi.client.adexchangeseller-v1 --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('adexchangeseller', 'v1', () => {
     // now we can use gapi.client.adexchangeseller
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -62,19 +53,40 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use Ad Exchange Seller API resources:
 
-```typescript
-gapi.client.adclients.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.adunits.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.customchannels.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.reports.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.urlchannels.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+List all ad clients in this Ad Exchange account.  
+*/
+await gapi.client.adclients.list({  }); 
+    
+/* 
+Gets the specified ad unit in the specified ad client.  
+*/
+await gapi.client.adunits.get({ adClientId: "adClientId", adUnitId: "adUnitId",  }); 
+    
+/* 
+List all ad units in the specified ad client for this Ad Exchange account.  
+*/
+await gapi.client.adunits.list({ adClientId: "adClientId",  }); 
+    
+/* 
+Get the specified custom channel from the specified ad client.  
+*/
+await gapi.client.customchannels.get({ adClientId: "adClientId", customChannelId: "customChannelId",  }); 
+    
+/* 
+List all custom channels in the specified ad client for this Ad Exchange account.  
+*/
+await gapi.client.customchannels.list({ adClientId: "adClientId",  }); 
+    
+/* 
+Generate an Ad Exchange report based on the report request sent in the query parameters. Returns the result as JSON; to retrieve output in CSV format specify "alt=csv" as a query parameter.  
+*/
+await gapi.client.reports.generate({ endDate: "endDate", startDate: "startDate",  }); 
+    
+/* 
+List all URL channels in the specified ad client for this Ad Exchange account.  
+*/
+await gapi.client.urlchannels.list({ adClientId: "adClientId",  });
 ```

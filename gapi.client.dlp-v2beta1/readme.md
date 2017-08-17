@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://cloud.google.com/d
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for DLP API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for DLP API:
-```
-typings install gapi.client.dlp --save 
+npm install @types/gapi.client.dlp-v2beta1 --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('dlp', 'v2beta1', () => {
     // now we can use gapi.client.dlp
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -59,13 +50,22 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use DLP API resources:
 
-```typescript
-gapi.client.inspect.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.rootCategories.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.content.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Returns the list of root categories of sensitive information.  
+*/
+await gapi.client.rootCategories.list({  }); 
+    
+/* 
+Finds potentially sensitive info in a list of strings.
+This method has limits on input size, processing time, and output size.  
+*/
+await gapi.client.content.inspect({  }); 
+    
+/* 
+Redacts potentially sensitive info from a list of strings.
+This method has limits on input size, processing time, and output size.  
+*/
+await gapi.client.content.redact({  });
 ```

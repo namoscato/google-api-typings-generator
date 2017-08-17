@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://developers.google.
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Fitness:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Fitness:
-```
-typings install gapi.client.fitness --save 
+npm install @types/gapi.client.fitness-v1 --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('fitness', 'v1', () => {
     // now we can use gapi.client.fitness
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -111,6 +102,4 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Fitness resources:
 
 ```typescript
-gapi.client.users.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
 ```

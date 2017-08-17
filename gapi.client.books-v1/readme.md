@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://developers.google.
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Books API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Books API:
-```
-typings install gapi.client.books --save 
+npm install @types/gapi.client.books-v1 --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('books', 'v1', () => {
     // now we can use gapi.client.books
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -59,40 +50,120 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use Books API resources:
 
-```typescript
-gapi.client.bookshelves.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.cloudloading.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.dictionary.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.layers.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.myconfig.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.mylibrary.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.notification.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.onboarding.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.personalizedstream.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.promooffer.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.series.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.volumes.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Retrieves metadata for a specific bookshelf for the specified user.  
+*/
+await gapi.client.bookshelves.get({ shelf: "shelf", userId: "userId",  }); 
+    
+/* 
+Retrieves a list of public bookshelves for the specified user.  
+*/
+await gapi.client.bookshelves.list({ userId: "userId",  }); 
+    
+/* 
+  
+*/
+await gapi.client.cloudloading.addBook({  }); 
+    
+/* 
+Remove the book and its contents  
+*/
+await gapi.client.cloudloading.deleteBook({ volumeId: "volumeId",  }); 
+    
+/* 
+  
+*/
+await gapi.client.cloudloading.updateBook({  }); 
+    
+/* 
+Returns a list of offline dictionary metadata available  
+*/
+await gapi.client.dictionary.listOfflineMetadata({ cpksver: "cpksver",  }); 
+    
+/* 
+Gets the layer summary for a volume.  
+*/
+await gapi.client.layers.get({ summaryId: "summaryId", volumeId: "volumeId",  }); 
+    
+/* 
+List the layer summaries for a volume.  
+*/
+await gapi.client.layers.list({ volumeId: "volumeId",  }); 
+    
+/* 
+Gets the current settings for the user.  
+*/
+await gapi.client.myconfig.getUserSettings({  }); 
+    
+/* 
+Release downloaded content access restriction.  
+*/
+await gapi.client.myconfig.releaseDownloadAccess({ cpksver: "cpksver", volumeIds: "volumeIds",  }); 
+    
+/* 
+Request concurrent and download access restrictions.  
+*/
+await gapi.client.myconfig.requestAccess({ cpksver: "cpksver", nonce: "nonce", source: "source", volumeId: "volumeId",  }); 
+    
+/* 
+Request downloaded content access for specified volumes on the My eBooks shelf.  
+*/
+await gapi.client.myconfig.syncVolumeLicenses({ cpksver: "cpksver", nonce: "nonce", source: "source",  }); 
+    
+/* 
+Sets the settings for the user. If a sub-object is specified, it will overwrite the existing sub-object stored in the server. Unspecified sub-objects will retain the existing value.  
+*/
+await gapi.client.myconfig.updateUserSettings({  }); 
+    
+/* 
+Returns notification details for a given notification id.  
+*/
+await gapi.client.notification.get({ notification_id: "notification_id",  }); 
+    
+/* 
+List categories for onboarding experience.  
+*/
+await gapi.client.onboarding.listCategories({  }); 
+    
+/* 
+List available volumes under categories for onboarding experience.  
+*/
+await gapi.client.onboarding.listCategoryVolumes({  }); 
+    
+/* 
+Returns a stream of personalized book clusters  
+*/
+await gapi.client.personalizedstream.get({  }); 
+    
+/* 
+  
+*/
+await gapi.client.promooffer.accept({  }); 
+    
+/* 
+  
+*/
+await gapi.client.promooffer.dismiss({  }); 
+    
+/* 
+Returns a list of promo offers available to the user  
+*/
+await gapi.client.promooffer.get({  }); 
+    
+/* 
+Returns Series metadata for the given series ids.  
+*/
+await gapi.client.series.get({ series_id: "series_id",  }); 
+    
+/* 
+Gets volume information for a single volume.  
+*/
+await gapi.client.volumes.get({ volumeId: "volumeId",  }); 
+    
+/* 
+Performs a book search.  
+*/
+await gapi.client.volumes.list({ q: "q",  });
 ```

@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://cloud.google.com/a
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Google App Engine Admin API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Google App Engine Admin API:
-```
-typings install gapi.client.appengine --save 
+npm install @types/gapi.client.appengine-v1 --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('appengine', 'v1', () => {
     // now we can use gapi.client.appengine
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -65,7 +56,29 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use Google App Engine Admin API resources:
 
-```typescript
-gapi.client.apps.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Updates the specified Application resource. You can update the following fields:
+auth_domain - Google authentication domain for controlling user access to the application.
+default_cookie_expiration - Cookie expiration policy for the application.  
+*/
+await gapi.client.apps.patch({ appsId: "appsId",  }); 
+    
+/* 
+Gets information about an application.  
+*/
+await gapi.client.apps.get({ appsId: "appsId",  }); 
+    
+/* 
+Creates an App Engine application for a Google Cloud Platform project. Required fields:
+id - The ID of the target Cloud Platform project.
+location - The region (https://cloud.google.com/appengine/docs/locations) where you want the App Engine application located.For more information about App Engine applications, see Managing Projects, Applications, and Billing (https://cloud.google.com/appengine/docs/python/console/).  
+*/
+await gapi.client.apps.create({  }); 
+    
+/* 
+Recreates the required App Engine features for the specified App Engine application, for example a Cloud Storage bucket or App Engine service account. Use this method if you receive an error message about a missing feature, for example, Error retrieving the App Engine service account.  
+*/
+await gapi.client.apps.repair({ appsId: "appsId",  });
 ```

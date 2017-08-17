@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://cloud.google.com/a
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Google App Engine Admin API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Google App Engine Admin API:
-```
-typings install gapi.client.appengine --save 
+npm install @types/gapi.client.appengine-v1alpha --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('appengine', 'v1alpha', () => {
     // now we can use gapi.client.appengine
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -66,6 +57,4 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Google App Engine Admin API resources:
 
 ```typescript
-gapi.client.apps.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
 ```

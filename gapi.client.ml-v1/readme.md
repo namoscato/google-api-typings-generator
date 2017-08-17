@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://cloud.google.com/m
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Google Cloud Machine Learning Engine:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Google Cloud Machine Learning Engine:
-```
-typings install gapi.client.ml --save 
+npm install @types/gapi.client.ml-v1 --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('ml', 'v1', () => {
     // now we can use gapi.client.ml
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -59,7 +50,20 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use Google Cloud Machine Learning Engine resources:
 
-```typescript
-gapi.client.projects.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Get the service account information associated with your project. You need
+this information in order to grant the service account persmissions for
+the Google Cloud Storage location where you put your model training code
+for training the model with Google Cloud Machine Learning.  
+*/
+await gapi.client.projects.getConfig({ name: "name",  }); 
+    
+/* 
+Performs prediction on the data in the request.
+
+**** REMOVE FROM GENERATED DOCUMENTATION  
+*/
+await gapi.client.projects.predict({ name: "name",  });
 ```

@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://cloud.google.com/i
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Google Identity and Access Management (IAM) API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Google Identity and Access Management (IAM) API:
-```
-typings install gapi.client.iam --save 
+npm install @types/gapi.client.iam-v1 --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('iam', 'v1', () => {
     // now we can use gapi.client.iam
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -59,10 +50,28 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use Google Identity and Access Management (IAM) API resources:
 
-```typescript
-gapi.client.projects.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.roles.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Lists the permissions testable on a resource.
+A permission is testable if it can be tested for an identity on a resource.  
+*/
+await gapi.client.permissions.queryTestablePermissions({  }); 
+    
+/* 
+Queries roles that can be granted on a particular resource.
+A role is grantable if it can be used as the role in a binding for a policy
+for that resource.  
+*/
+await gapi.client.roles.queryGrantableRoles({  }); 
+    
+/* 
+Gets a Role definition.  
+*/
+await gapi.client.roles.get({ name: "name",  }); 
+    
+/* 
+Lists the Roles defined on a resource.  
+*/
+await gapi.client.roles.list({  });
 ```

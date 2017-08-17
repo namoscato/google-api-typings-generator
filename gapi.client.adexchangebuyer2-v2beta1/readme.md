@@ -1,22 +1,12 @@
 # Typescript typings for Ad Exchange Buyer API II
 Accesses the latest features for managing Ad Exchange accounts, Real-Time Bidding configurations and auction metrics, and Marketplace programmatic deals.
-For detailed description please check [documentation](https://developers.google.com/ad-exchange/buyer-rest/guides/client-access/).
+For detailed description please check [documentation](https://developers.google.com/ad-exchange/buyer-rest/reference/rest/).
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Ad Exchange Buyer API II:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Ad Exchange Buyer API II:
-```
-typings install gapi.client.adexchangebuyer2 --save 
+npm install @types/gapi.client.adexchangebuyer2-v2beta1 --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('adexchangebuyer2', 'v2beta1', () => {
     // now we can use gapi.client.adexchangebuyer2
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -60,6 +51,4 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Ad Exchange Buyer API II resources:
 
 ```typescript
-gapi.client.accounts.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
 ```

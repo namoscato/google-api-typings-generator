@@ -2,10 +2,7 @@
 
 # usage
 Install client library:
-'''
-typings install gapi.client
-'
-Install api library:
-'''
-typings install gapi.client.gmail
-'
+
+```
+npm install @types/gapi.client --save-dev
+```

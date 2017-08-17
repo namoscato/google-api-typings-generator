@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://developers.google.
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Admin Reports API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Admin Reports API:
-```
-typings install gapi.client.admin --save 
+npm install @types/gapi.client.admin-reports_v1 --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('admin', 'reports_v1', () => {
     // now we can use gapi.client.admin
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -62,16 +53,30 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use Admin Reports API resources:
 
-```typescript
-gapi.client.activities.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.channels.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.customerUsageReports.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.userUsageReport.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Retrieves a list of activities for a specific customer and application.  
+*/
+await gapi.client.activities.list({ applicationName: "applicationName", userKey: "userKey",  }); 
+    
+/* 
+Push changes to activities  
+*/
+await gapi.client.activities.watch({ applicationName: "applicationName", userKey: "userKey",  }); 
+    
+/* 
+Stop watching resources through this channel  
+*/
+await gapi.client.channels.stop({  }); 
+    
+/* 
+Retrieves a report which is a collection of properties / statistics for a specific customer.  
+*/
+await gapi.client.customerUsageReports.get({ date: "date",  }); 
+    
+/* 
+Retrieves a report which is a collection of properties / statistics for a set of users.  
+*/
+await gapi.client.userUsageReport.get({ date: "date", userKey: "userKey",  });
 ```

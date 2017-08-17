@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://developers.google.
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Google Analytics Reporting API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Google Analytics Reporting API:
-```
-typings install gapi.client.analyticsreporting --save 
+npm install @types/gapi.client.analyticsreporting-v4 --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('analyticsreporting', 'v4', () => {
     // now we can use gapi.client.analyticsreporting
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -42,11 +33,11 @@ Don't forget to authenticate your client before sending any request to resources
 // declare client_id registered in Google Developers Console
 var client_id = '',
     scope = [     
-        // View your Google Analytics data
-        'https://www.googleapis.com/auth/analytics.readonly',
-    
         // View and manage your Google Analytics data
         'https://www.googleapis.com/auth/analytics',
+    
+        // View your Google Analytics data
+        'https://www.googleapis.com/auth/analytics.readonly',
     ],
     immediate = true;
 // ...
@@ -62,7 +53,10 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use Google Analytics Reporting API resources:
 
-```typescript
-gapi.client.reports.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Returns the Analytics data.  
+*/
+await gapi.client.reports.batchGet({  });
 ```

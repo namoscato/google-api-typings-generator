@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://developers.google.
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Google Compute Engine Instance Groups API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Google Compute Engine Instance Groups API:
-```
-typings install gapi.client.resourceviews --save 
+npm install @types/gapi.client.resourceviews-v1beta2 --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('resourceviews', 'v1beta2', () => {
     // now we can use gapi.client.resourceviews
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -74,10 +65,60 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use Google Compute Engine Instance Groups API resources:
 
-```typescript
-gapi.client.zoneOperations.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.zoneViews.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Retrieves the specified zone-specific operation resource.  
+*/
+await gapi.client.zoneOperations.get({ operation: "operation", project: "project", zone: "zone",  }); 
+    
+/* 
+Retrieves the list of operation resources contained within the specified zone.  
+*/
+await gapi.client.zoneOperations.list({ project: "project", zone: "zone",  }); 
+    
+/* 
+Add resources to the view.  
+*/
+await gapi.client.zoneViews.addResources({ project: "project", resourceView: "resourceView", zone: "zone",  }); 
+    
+/* 
+Delete a resource view.  
+*/
+await gapi.client.zoneViews.delete({ project: "project", resourceView: "resourceView", zone: "zone",  }); 
+    
+/* 
+Get the information of a zonal resource view.  
+*/
+await gapi.client.zoneViews.get({ project: "project", resourceView: "resourceView", zone: "zone",  }); 
+    
+/* 
+Get the service information of a resource view or a resource.  
+*/
+await gapi.client.zoneViews.getService({ project: "project", resourceView: "resourceView", zone: "zone",  }); 
+    
+/* 
+Create a resource view.  
+*/
+await gapi.client.zoneViews.insert({ project: "project", zone: "zone",  }); 
+    
+/* 
+List resource views.  
+*/
+await gapi.client.zoneViews.list({ project: "project", zone: "zone",  }); 
+    
+/* 
+List the resources of the resource view.  
+*/
+await gapi.client.zoneViews.listResources({ project: "project", resourceView: "resourceView", zone: "zone",  }); 
+    
+/* 
+Remove resources from the view.  
+*/
+await gapi.client.zoneViews.removeResources({ project: "project", resourceView: "resourceView", zone: "zone",  }); 
+    
+/* 
+Update the service information of a resource view or a resource.  
+*/
+await gapi.client.zoneViews.setService({ project: "project", resourceView: "resourceView", zone: "zone",  });
 ```

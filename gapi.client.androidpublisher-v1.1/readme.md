@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://developers.google.
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Google Play Developer API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Google Play Developer API:
-```
-typings install gapi.client.androidpublisher --save 
+npm install @types/gapi.client.androidpublisher-v1.1 --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('androidpublisher', 'v1.1', () => {
     // now we can use gapi.client.androidpublisher
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -59,10 +50,20 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use Google Play Developer API resources:
 
-```typescript
-gapi.client.inapppurchases.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.purchases.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Checks the purchase and consumption status of an inapp item.  
+*/
+await gapi.client.inapppurchases.get({ packageName: "packageName", productId: "productId", token: "token",  }); 
+    
+/* 
+Cancels a user's subscription purchase. The subscription remains valid until its expiration time.  
+*/
+await gapi.client.purchases.cancel({ packageName: "packageName", subscriptionId: "subscriptionId", token: "token",  }); 
+    
+/* 
+Checks whether a user's subscription purchase is valid and returns its expiry time.  
+*/
+await gapi.client.purchases.get({ packageName: "packageName", subscriptionId: "subscriptionId", token: "token",  });
 ```

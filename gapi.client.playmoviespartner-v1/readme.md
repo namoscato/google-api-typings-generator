@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://developers.google.
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Google Play Movies Partner API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Google Play Movies Partner API:
-```
-typings install gapi.client.playmoviespartner --save 
+npm install @types/gapi.client.playmoviespartner-v1 --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('playmoviespartner', 'v1', () => {
     // now we can use gapi.client.playmoviespartner
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -60,6 +51,4 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Google Play Movies Partner API resources:
 
 ```typescript
-gapi.client.accounts.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
 ```

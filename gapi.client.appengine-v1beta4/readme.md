@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://cloud.google.com/a
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Google App Engine Admin API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Google App Engine Admin API:
-```
-typings install gapi.client.appengine --save 
+npm install @types/gapi.client.appengine-v1beta4 --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('appengine', 'v1beta4', () => {
     // now we can use gapi.client.appengine
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -42,14 +33,14 @@ Don't forget to authenticate your client before sending any request to resources
 // declare client_id registered in Google Developers Console
 var client_id = '',
     scope = [     
-        // View and manage your data across Google Cloud Platform services
-        'https://www.googleapis.com/auth/cloud-platform',
-    
         // View and manage your applications deployed on Google App Engine
         'https://www.googleapis.com/auth/appengine.admin',
     
         // View your data across Google Cloud Platform services
         'https://www.googleapis.com/auth/cloud-platform.read-only',
+    
+        // View and manage your data across Google Cloud Platform services
+        'https://www.googleapis.com/auth/cloud-platform',
     ],
     immediate = true;
 // ...
@@ -65,7 +56,24 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use Google App Engine Admin API resources:
 
-```typescript
-gapi.client.apps.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Updates the specified Application resource. You can update the following fields:
+auth_domain (https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1beta4/apps#Application.FIELDS.auth_domain)
+default_cookie_expiration (https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1beta4/apps#Application.FIELDS.default_cookie_expiration)  
+*/
+await gapi.client.apps.patch({ appsId: "appsId",  }); 
+    
+/* 
+Gets information about an application.  
+*/
+await gapi.client.apps.get({ appsId: "appsId",  }); 
+    
+/* 
+Creates an App Engine application for a Google Cloud Platform project. Required fields:
+id - The ID of the target Cloud Platform project.
+location - The region (https://cloud.google.com/appengine/docs/locations) where you want the App Engine application located.For more information about App Engine applications, see Managing Projects, Applications, and Billing (https://cloud.google.com/appengine/docs/python/console/).  
+*/
+await gapi.client.apps.create({  });
 ```

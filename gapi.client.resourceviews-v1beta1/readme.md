@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://developers.google.
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Resource Views API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Resource Views API:
-```
-typings install gapi.client.resourceviews --save 
+npm install @types/gapi.client.resourceviews-v1beta1 --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('resourceviews', 'v1beta1', () => {
     // now we can use gapi.client.resourceviews
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -74,10 +65,75 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use Resource Views API resources:
 
-```typescript
-gapi.client.regionViews.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.zoneViews.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Add resources to the view.  
+*/
+await gapi.client.regionViews.addresources({ projectName: "projectName", region: "region", resourceViewName: "resourceViewName",  }); 
+    
+/* 
+Delete a resource view.  
+*/
+await gapi.client.regionViews.delete({ projectName: "projectName", region: "region", resourceViewName: "resourceViewName",  }); 
+    
+/* 
+Get the information of a resource view.  
+*/
+await gapi.client.regionViews.get({ projectName: "projectName", region: "region", resourceViewName: "resourceViewName",  }); 
+    
+/* 
+Create a resource view.  
+*/
+await gapi.client.regionViews.insert({ projectName: "projectName", region: "region",  }); 
+    
+/* 
+List resource views.  
+*/
+await gapi.client.regionViews.list({ projectName: "projectName", region: "region",  }); 
+    
+/* 
+List the resources in the view.  
+*/
+await gapi.client.regionViews.listresources({ projectName: "projectName", region: "region", resourceViewName: "resourceViewName",  }); 
+    
+/* 
+Remove resources from the view.  
+*/
+await gapi.client.regionViews.removeresources({ projectName: "projectName", region: "region", resourceViewName: "resourceViewName",  }); 
+    
+/* 
+Add resources to the view.  
+*/
+await gapi.client.zoneViews.addresources({ projectName: "projectName", resourceViewName: "resourceViewName", zone: "zone",  }); 
+    
+/* 
+Delete a resource view.  
+*/
+await gapi.client.zoneViews.delete({ projectName: "projectName", resourceViewName: "resourceViewName", zone: "zone",  }); 
+    
+/* 
+Get the information of a zonal resource view.  
+*/
+await gapi.client.zoneViews.get({ projectName: "projectName", resourceViewName: "resourceViewName", zone: "zone",  }); 
+    
+/* 
+Create a resource view.  
+*/
+await gapi.client.zoneViews.insert({ projectName: "projectName", zone: "zone",  }); 
+    
+/* 
+List resource views.  
+*/
+await gapi.client.zoneViews.list({ projectName: "projectName", zone: "zone",  }); 
+    
+/* 
+List the resources of the resource view.  
+*/
+await gapi.client.zoneViews.listresources({ projectName: "projectName", resourceViewName: "resourceViewName", zone: "zone",  }); 
+    
+/* 
+Remove resources from the view.  
+*/
+await gapi.client.zoneViews.removeresources({ projectName: "projectName", resourceViewName: "resourceViewName", zone: "zone",  });
 ```

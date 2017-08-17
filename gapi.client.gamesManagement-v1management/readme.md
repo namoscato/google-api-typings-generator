@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://developers.google.
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Google Play Game Services Management API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Google Play Game Services Management API:
-```
-typings install gapi.client.gamesManagement --save 
+npm install @types/gapi.client.gamesManagement-v1management --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('gamesManagement', 'v1management', () => {
     // now we can use gapi.client.gamesManagement
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -62,28 +53,140 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use Google Play Game Services Management API resources:
 
-```typescript
-gapi.client.achievements.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.applications.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.events.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.players.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.quests.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.rooms.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.scores.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.turnBasedMatches.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Resets the achievement with the given ID for the currently authenticated player. This method is only accessible to whitelisted tester accounts for your application.  
+*/
+await gapi.client.achievements.reset({ achievementId: "achievementId",  }); 
+    
+/* 
+Resets all achievements for the currently authenticated player for your application. This method is only accessible to whitelisted tester accounts for your application.  
+*/
+await gapi.client.achievements.resetAll({  }); 
+    
+/* 
+Resets all draft achievements for all players. This method is only available to user accounts for your developer console.  
+*/
+await gapi.client.achievements.resetAllForAllPlayers({  }); 
+    
+/* 
+Resets the achievement with the given ID for all players. This method is only available to user accounts for your developer console. Only draft achievements can be reset.  
+*/
+await gapi.client.achievements.resetForAllPlayers({ achievementId: "achievementId",  }); 
+    
+/* 
+Resets achievements with the given IDs for all players. This method is only available to user accounts for your developer console. Only draft achievements may be reset.  
+*/
+await gapi.client.achievements.resetMultipleForAllPlayers({  }); 
+    
+/* 
+Get the list of players hidden from the given application. This method is only available to user accounts for your developer console.  
+*/
+await gapi.client.applications.listHidden({ applicationId: "applicationId",  }); 
+    
+/* 
+Resets all player progress on the event with the given ID for the currently authenticated player. This method is only accessible to whitelisted tester accounts for your application. All quests for this player that use the event will also be reset.  
+*/
+await gapi.client.events.reset({ eventId: "eventId",  }); 
+    
+/* 
+Resets all player progress on all events for the currently authenticated player. This method is only accessible to whitelisted tester accounts for your application. All quests for this player will also be reset.  
+*/
+await gapi.client.events.resetAll({  }); 
+    
+/* 
+Resets all draft events for all players. This method is only available to user accounts for your developer console. All quests that use any of these events will also be reset.  
+*/
+await gapi.client.events.resetAllForAllPlayers({  }); 
+    
+/* 
+Resets the event with the given ID for all players. This method is only available to user accounts for your developer console. Only draft events can be reset. All quests that use the event will also be reset.  
+*/
+await gapi.client.events.resetForAllPlayers({ eventId: "eventId",  }); 
+    
+/* 
+Resets events with the given IDs for all players. This method is only available to user accounts for your developer console. Only draft events may be reset. All quests that use any of the events will also be reset.  
+*/
+await gapi.client.events.resetMultipleForAllPlayers({  }); 
+    
+/* 
+Hide the given player's leaderboard scores from the given application. This method is only available to user accounts for your developer console.  
+*/
+await gapi.client.players.hide({ applicationId: "applicationId", playerId: "playerId",  }); 
+    
+/* 
+Unhide the given player's leaderboard scores from the given application. This method is only available to user accounts for your developer console.  
+*/
+await gapi.client.players.unhide({ applicationId: "applicationId", playerId: "playerId",  }); 
+    
+/* 
+Resets all player progress on the quest with the given ID for the currently authenticated player. This method is only accessible to whitelisted tester accounts for your application.  
+*/
+await gapi.client.quests.reset({ questId: "questId",  }); 
+    
+/* 
+Resets all player progress on all quests for the currently authenticated player. This method is only accessible to whitelisted tester accounts for your application.  
+*/
+await gapi.client.quests.resetAll({  }); 
+    
+/* 
+Resets all draft quests for all players. This method is only available to user accounts for your developer console.  
+*/
+await gapi.client.quests.resetAllForAllPlayers({  }); 
+    
+/* 
+Resets all player progress on the quest with the given ID for all players. This method is only available to user accounts for your developer console. Only draft quests can be reset.  
+*/
+await gapi.client.quests.resetForAllPlayers({ questId: "questId",  }); 
+    
+/* 
+Resets quests with the given IDs for all players. This method is only available to user accounts for your developer console. Only draft quests may be reset.  
+*/
+await gapi.client.quests.resetMultipleForAllPlayers({  }); 
+    
+/* 
+Reset all rooms for the currently authenticated player for your application. This method is only accessible to whitelisted tester accounts for your application.  
+*/
+await gapi.client.rooms.reset({  }); 
+    
+/* 
+Deletes rooms where the only room participants are from whitelisted tester accounts for your application. This method is only available to user accounts for your developer console.  
+*/
+await gapi.client.rooms.resetForAllPlayers({  }); 
+    
+/* 
+Resets scores for the leaderboard with the given ID for the currently authenticated player. This method is only accessible to whitelisted tester accounts for your application.  
+*/
+await gapi.client.scores.reset({ leaderboardId: "leaderboardId",  }); 
+    
+/* 
+Resets all scores for all leaderboards for the currently authenticated players. This method is only accessible to whitelisted tester accounts for your application.  
+*/
+await gapi.client.scores.resetAll({  }); 
+    
+/* 
+Resets scores for all draft leaderboards for all players. This method is only available to user accounts for your developer console.  
+*/
+await gapi.client.scores.resetAllForAllPlayers({  }); 
+    
+/* 
+Resets scores for the leaderboard with the given ID for all players. This method is only available to user accounts for your developer console. Only draft leaderboards can be reset.  
+*/
+await gapi.client.scores.resetForAllPlayers({ leaderboardId: "leaderboardId",  }); 
+    
+/* 
+Resets scores for the leaderboards with the given IDs for all players. This method is only available to user accounts for your developer console. Only draft leaderboards may be reset.  
+*/
+await gapi.client.scores.resetMultipleForAllPlayers({  }); 
+    
+/* 
+Reset all turn-based match data for a user. This method is only accessible to whitelisted tester accounts for your application.  
+*/
+await gapi.client.turnBasedMatches.reset({  }); 
+    
+/* 
+Deletes turn-based matches where the only match participants are from whitelisted tester accounts for your application. This method is only available to user accounts for your developer console.  
+*/
+await gapi.client.turnBasedMatches.resetForAllPlayers({  });
 ```

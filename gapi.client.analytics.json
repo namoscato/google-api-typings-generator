@@ -1,6 +1,0 @@
-{
-    "versions": {
-        "3": "https://guthub.com/bolisov/typings-gapi/typings/gapi.client.analytics-v3",
-        "2.4": "https://guthub.com/bolisov/typings-gapi/typings/gapi.client.analytics-v2.4"
-    }
-}

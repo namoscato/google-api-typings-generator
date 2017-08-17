@@ -1,6 +1,0 @@
-{
-    "versions": {
-        "2": "https://guthub.com/bolisov/typings-gapi/typings/gapi.client.blogger-v2",
-        "3": "https://guthub.com/bolisov/typings-gapi/typings/gapi.client.blogger-v3"
-    }
-}

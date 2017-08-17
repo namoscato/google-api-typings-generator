@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://developers.google.
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Google Ad Experience Report API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Google Ad Experience Report API:
-```
-typings install gapi.client.adexperiencereport --save 
+npm install @types/gapi.client.adexperiencereport-v1 --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('adexperiencereport', 'v1', () => {
     // now we can use gapi.client.adexperiencereport
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -59,10 +50,15 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use Google Ad Experience Report API resources:
 
-```typescript
-gapi.client.sites.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.violatingSites.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Gets a summary of the ad experience rating of a site.  
+*/
+await gapi.client.sites.get({ name: "name",  }); 
+    
+/* 
+Lists sites with Ad Experience Report statuses of "Failing" or "Warning".  
+*/
+await gapi.client.violatingSites.list({  });
 ```

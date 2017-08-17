@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://developers.google.
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Google Identity Toolkit API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Google Identity Toolkit API:
-```
-typings install gapi.client.identitytoolkit --save 
+npm install @types/gapi.client.identitytoolkit-v3 --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('identitytoolkit', 'v3', () => {
     // now we can use gapi.client.identitytoolkit
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -62,7 +53,90 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use Google Identity Toolkit API resources:
 
-```typescript
-gapi.client.relyingparty.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Creates the URI used by the IdP to authenticate the user.  
+*/
+await gapi.client.relyingparty.createAuthUri({  }); 
+    
+/* 
+Delete user account.  
+*/
+await gapi.client.relyingparty.deleteAccount({  }); 
+    
+/* 
+Batch download user accounts.  
+*/
+await gapi.client.relyingparty.downloadAccount({  }); 
+    
+/* 
+Returns the account info.  
+*/
+await gapi.client.relyingparty.getAccountInfo({  }); 
+    
+/* 
+Get a code for user action confirmation.  
+*/
+await gapi.client.relyingparty.getOobConfirmationCode({  }); 
+    
+/* 
+Get project configuration.  
+*/
+await gapi.client.relyingparty.getProjectConfig({  }); 
+    
+/* 
+Get token signing public key.  
+*/
+await gapi.client.relyingparty.getPublicKeys({  }); 
+    
+/* 
+Get recaptcha secure param.  
+*/
+await gapi.client.relyingparty.getRecaptchaParam({  }); 
+    
+/* 
+Reset password for a user.  
+*/
+await gapi.client.relyingparty.resetPassword({  }); 
+    
+/* 
+Set account info for a user.  
+*/
+await gapi.client.relyingparty.setAccountInfo({  }); 
+    
+/* 
+Set project configuration.  
+*/
+await gapi.client.relyingparty.setProjectConfig({  }); 
+    
+/* 
+Sign out user.  
+*/
+await gapi.client.relyingparty.signOutUser({  }); 
+    
+/* 
+Signup new user.  
+*/
+await gapi.client.relyingparty.signupNewUser({  }); 
+    
+/* 
+Batch upload existing user accounts.  
+*/
+await gapi.client.relyingparty.uploadAccount({  }); 
+    
+/* 
+Verifies the assertion returned by the IdP.  
+*/
+await gapi.client.relyingparty.verifyAssertion({  }); 
+    
+/* 
+Verifies the developer asserted ID token.  
+*/
+await gapi.client.relyingparty.verifyCustomToken({  }); 
+    
+/* 
+Verifies the user entered password.  
+*/
+await gapi.client.relyingparty.verifyPassword({  });
 ```

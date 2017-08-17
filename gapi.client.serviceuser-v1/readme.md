@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://cloud.google.com/s
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Google Service User API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Google Service User API:
-```
-typings install gapi.client.serviceuser --save 
+npm install @types/gapi.client.serviceuser-v1 --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('serviceuser', 'v1', () => {
     // now we can use gapi.client.serviceuser
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -65,10 +56,14 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use Google Service User API resources:
 
-```typescript
-gapi.client.projects.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Search available services.
 
-gapi.client.services.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+When no filter is specified, returns all accessible services. For
+authenticated users, also returns all services the calling user has
+"servicemanagement.services.bind" permission for.  
+*/
+await gapi.client.services.search({  });
 ```

@@ -4,19 +4,9 @@ For detailed description please check [documentation](http://developers.google.c
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for QPX Express API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for QPX Express API:
-```
-typings install gapi.client.qpxExpress --save 
+npm install @types/gapi.client.qpxExpress-v1 --save-dev
 ```
 
 ## Usage
@@ -34,13 +24,17 @@ Then load api client wrapper:
 gapi.client.load('qpxExpress', 'v1', () => {
     // now we can use gapi.client.qpxExpress
     // ... 
-});```
+});
+```
 
 
 
 After that you can use QPX Express API resources:
 
-```typescript
-gapi.client.trips.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Returns a list of flights.  
+*/
+await gapi.client.trips.search({  });
 ```

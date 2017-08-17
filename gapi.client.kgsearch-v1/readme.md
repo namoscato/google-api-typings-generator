@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://developers.google.
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Knowledge Graph Search API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Knowledge Graph Search API:
-```
-typings install gapi.client.kgsearch --save 
+npm install @types/gapi.client.kgsearch-v1 --save-dev
 ```
 
 ## Usage
@@ -34,13 +24,19 @@ Then load api client wrapper:
 gapi.client.load('kgsearch', 'v1', () => {
     // now we can use gapi.client.kgsearch
     // ... 
-});```
+});
+```
 
 
 
 After that you can use Knowledge Graph Search API resources:
 
-```typescript
-gapi.client.entities.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Searches Knowledge Graph for entities that match the constraints.
+A list of matched entities will be returned in response, which will be in
+JSON-LD format and compatible with http://schema.org  
+*/
+await gapi.client.entities.search({  });
 ```

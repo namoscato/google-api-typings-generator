@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://developers.google.
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Google+ API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Google+ API:
-```
-typings install gapi.client.plus --save 
+npm install @types/gapi.client.plus-v1 --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('plus', 'v1', () => {
     // now we can use gapi.client.plus
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -68,13 +59,50 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use Google+ API resources:
 
-```typescript
-gapi.client.activities.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.comments.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.people.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Get an activity.  
+*/
+await gapi.client.activities.get({ activityId: "activityId",  }); 
+    
+/* 
+List all of the activities in the specified collection for a particular user.  
+*/
+await gapi.client.activities.list({ collection: "collection", userId: "userId",  }); 
+    
+/* 
+Search public activities.  
+*/
+await gapi.client.activities.search({ query: "query",  }); 
+    
+/* 
+Get a comment.  
+*/
+await gapi.client.comments.get({ commentId: "commentId",  }); 
+    
+/* 
+List all of the comments for an activity.  
+*/
+await gapi.client.comments.list({ activityId: "activityId",  }); 
+    
+/* 
+Get a person's profile. If your app uses scope https://www.googleapis.com/auth/plus.login, this method is guaranteed to return ageRange and language.  
+*/
+await gapi.client.people.get({ userId: "userId",  }); 
+    
+/* 
+List all of the people in the specified collection.  
+*/
+await gapi.client.people.list({ collection: "collection", userId: "userId",  }); 
+    
+/* 
+List all of the people in the specified collection for a particular activity.  
+*/
+await gapi.client.people.listByActivity({ activityId: "activityId", collection: "collection",  }); 
+    
+/* 
+Search all public profiles.  
+*/
+await gapi.client.people.search({ query: "query",  });
 ```

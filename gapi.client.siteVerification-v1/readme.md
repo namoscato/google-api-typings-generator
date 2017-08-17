@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://developers.google.
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Google Site Verification API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Google Site Verification API:
-```
-typings install gapi.client.siteVerification --save 
+npm install @types/gapi.client.siteVerification-v1 --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('siteVerification', 'v1', () => {
     // now we can use gapi.client.siteVerification
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -62,7 +53,40 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use Google Site Verification API resources:
 
-```typescript
-gapi.client.webResource.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Relinquish ownership of a website or domain.  
+*/
+await gapi.client.webResource.delete({ id: "id",  }); 
+    
+/* 
+Get the most current data for a website or domain.  
+*/
+await gapi.client.webResource.get({ id: "id",  }); 
+    
+/* 
+Get a verification token for placing on a website or domain.  
+*/
+await gapi.client.webResource.getToken({  }); 
+    
+/* 
+Attempt verification of a website or domain.  
+*/
+await gapi.client.webResource.insert({ verificationMethod: "verificationMethod",  }); 
+    
+/* 
+Get the list of your verified websites and domains.  
+*/
+await gapi.client.webResource.list({  }); 
+    
+/* 
+Modify the list of owners for your website or domain. This method supports patch semantics.  
+*/
+await gapi.client.webResource.patch({ id: "id",  }); 
+    
+/* 
+Modify the list of owners for your website or domain.  
+*/
+await gapi.client.webResource.update({ id: "id",  });
 ```

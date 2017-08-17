@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://cloud.google.com/b
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for BigQuery Data Transfer Service API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for BigQuery Data Transfer Service API:
-```
-typings install gapi.client.bigquerydatatransfer --save 
+npm install @types/gapi.client.bigquerydatatransfer-v1 --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('bigquerydatatransfer', 'v1', () => {
     // now we can use gapi.client.bigquerydatatransfer
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -65,7 +56,18 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use BigQuery Data Transfer Service API resources:
 
-```typescript
-gapi.client.projects.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Returns true if data transfer is enabled for a project.  
+*/
+await gapi.client.projects.isEnabled({ name: "name",  }); 
+    
+/* 
+Enables or disables data transfer for a project. This
+method requires the additional scope of
+'https://www.googleapis.com/auth/cloudplatformprojects'
+to manage the cloud project permissions.  
+*/
+await gapi.client.projects.setEnabled({ name: "name",  });
 ```

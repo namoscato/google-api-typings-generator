@@ -1,6 +1,0 @@
-{
-    "versions": {
-        "2.7": "https://guthub.com/bolisov/typings-gapi/typings/gapi.client.dfareporting-v2.7",
-        "2.8": "https://guthub.com/bolisov/typings-gapi/typings/gapi.client.dfareporting-v2.8"
-    }
-}

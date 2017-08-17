@@ -5,19 +5,9 @@ For detailed description please check [documentation](https://cloud.google.com/d
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Google Cloud Datastore API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Google Cloud Datastore API:
-```
-typings install gapi.client.datastore --save 
+npm install @types/gapi.client.datastore-v1beta3 --save-dev
 ```
 
 ## Usage
@@ -35,7 +25,8 @@ Then load api client wrapper:
 gapi.client.load('datastore', 'v1beta3', () => {
     // now we can use gapi.client.datastore
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -43,11 +34,11 @@ Don't forget to authenticate your client before sending any request to resources
 // declare client_id registered in Google Developers Console
 var client_id = '',
     scope = [     
-        // View and manage your data across Google Cloud Platform services
-        'https://www.googleapis.com/auth/cloud-platform',
-    
         // View and manage your Google Cloud Datastore data
         'https://www.googleapis.com/auth/datastore',
+    
+        // View and manage your data across Google Cloud Platform services
+        'https://www.googleapis.com/auth/cloud-platform',
     ],
     immediate = true;
 // ...
@@ -63,7 +54,37 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use Google Cloud Datastore API resources:
 
-```typescript
-gapi.client.projects.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Begins a new transaction.  
+*/
+await gapi.client.projects.beginTransaction({ projectId: "projectId",  }); 
+    
+/* 
+Commits a transaction, optionally creating, deleting or modifying some
+entities.  
+*/
+await gapi.client.projects.commit({ projectId: "projectId",  }); 
+    
+/* 
+Queries for entities.  
+*/
+await gapi.client.projects.runQuery({ projectId: "projectId",  }); 
+    
+/* 
+Rolls back a transaction.  
+*/
+await gapi.client.projects.rollback({ projectId: "projectId",  }); 
+    
+/* 
+Looks up entities by key.  
+*/
+await gapi.client.projects.lookup({ projectId: "projectId",  }); 
+    
+/* 
+Allocates IDs for the given keys, which is useful for referencing an entity
+before it is inserted.  
+*/
+await gapi.client.projects.allocateIds({ projectId: "projectId",  });
 ```

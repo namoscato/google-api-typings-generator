@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://developers.google.
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for TaskQueue API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for TaskQueue API:
-```
-typings install gapi.client.taskqueue --save 
+npm install @types/gapi.client.taskqueue-v1beta2 --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('taskqueue', 'v1beta2', () => {
     // now we can use gapi.client.taskqueue
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -62,10 +53,45 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use TaskQueue API resources:
 
-```typescript
-gapi.client.taskqueues.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.tasks.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Get detailed information about a TaskQueue.  
+*/
+await gapi.client.taskqueues.get({ project: "project", taskqueue: "taskqueue",  }); 
+    
+/* 
+Delete a task from a TaskQueue.  
+*/
+await gapi.client.tasks.delete({ project: "project", task: "task", taskqueue: "taskqueue",  }); 
+    
+/* 
+Get a particular task from a TaskQueue.  
+*/
+await gapi.client.tasks.get({ project: "project", task: "task", taskqueue: "taskqueue",  }); 
+    
+/* 
+Insert a new task in a TaskQueue  
+*/
+await gapi.client.tasks.insert({ project: "project", taskqueue: "taskqueue",  }); 
+    
+/* 
+Lease 1 or more tasks from a TaskQueue.  
+*/
+await gapi.client.tasks.lease({ leaseSecs: 1, numTasks: 1, project: "project", taskqueue: "taskqueue",  }); 
+    
+/* 
+List Tasks in a TaskQueue  
+*/
+await gapi.client.tasks.list({ project: "project", taskqueue: "taskqueue",  }); 
+    
+/* 
+Update tasks that are leased out of a TaskQueue. This method supports patch semantics.  
+*/
+await gapi.client.tasks.patch({ newLeaseSeconds: 1, project: "project", task: "task", taskqueue: "taskqueue",  }); 
+    
+/* 
+Update tasks that are leased out of a TaskQueue.  
+*/
+await gapi.client.tasks.update({ newLeaseSeconds: 1, project: "project", task: "task", taskqueue: "taskqueue",  });
 ```

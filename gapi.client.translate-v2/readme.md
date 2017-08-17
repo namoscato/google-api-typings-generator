@@ -5,19 +5,9 @@ For detailed description please check [documentation](https://code.google.com/ap
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Google Cloud Translation API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Google Cloud Translation API:
-```
-typings install gapi.client.translate --save 
+npm install @types/gapi.client.translate-v2 --save-dev
 ```
 
 ## Usage
@@ -35,7 +25,8 @@ Then load api client wrapper:
 gapi.client.load('translate', 'v2', () => {
     // now we can use gapi.client.translate
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -43,11 +34,11 @@ Don't forget to authenticate your client before sending any request to resources
 // declare client_id registered in Google Developers Console
 var client_id = '',
     scope = [     
-        // Translate text from one language to another using Google Translate
-        'https://www.googleapis.com/auth/cloud-translation',
-    
         // View and manage your data across Google Cloud Platform services
         'https://www.googleapis.com/auth/cloud-platform',
+    
+        // Translate text from one language to another using Google Translate
+        'https://www.googleapis.com/auth/cloud-translation',
     ],
     immediate = true;
 // ...
@@ -63,13 +54,30 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use Google Cloud Translation API resources:
 
-```typescript
-gapi.client.translations.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.detections.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.languages.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Translates input text, returning translated text.  
+*/
+await gapi.client.translations.list({ q: "q", target: "target",  }); 
+    
+/* 
+Translates input text, returning translated text.  
+*/
+await gapi.client.translations.translate({  }); 
+    
+/* 
+Detects the language of text within a request.  
+*/
+await gapi.client.detections.detect({  }); 
+    
+/* 
+Detects the language of text within a request.  
+*/
+await gapi.client.detections.list({ q: "q",  }); 
+    
+/* 
+Returns a list of supported languages for translation.  
+*/
+await gapi.client.languages.list({  });
 ```

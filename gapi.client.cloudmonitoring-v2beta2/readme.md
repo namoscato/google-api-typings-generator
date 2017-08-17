@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://cloud.google.com/m
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Cloud Monitoring API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Cloud Monitoring API:
-```
-typings install gapi.client.cloudmonitoring --save 
+npm install @types/gapi.client.cloudmonitoring-v2beta2 --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('cloudmonitoring', 'v2beta2', () => {
     // now we can use gapi.client.cloudmonitoring
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -62,13 +53,35 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use Cloud Monitoring API resources:
 
-```typescript
-gapi.client.metricDescriptors.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.timeseries.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.timeseriesDescriptors.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Create a new metric.  
+*/
+await gapi.client.metricDescriptors.create({ project: "project",  }); 
+    
+/* 
+Delete an existing metric.  
+*/
+await gapi.client.metricDescriptors.delete({ metric: "metric", project: "project",  }); 
+    
+/* 
+List metric descriptors that match the query. If the query is not set, then all of the metric descriptors will be returned. Large responses will be paginated, use the nextPageToken returned in the response to request subsequent pages of results by setting the pageToken query parameter to the value of the nextPageToken.  
+*/
+await gapi.client.metricDescriptors.list({ project: "project",  }); 
+    
+/* 
+List the data points of the time series that match the metric and labels values and that have data points in the interval. Large responses are paginated; use the nextPageToken returned in the response to request subsequent pages of results by setting the pageToken query parameter to the value of the nextPageToken.  
+*/
+await gapi.client.timeseries.list({ metric: "metric", project: "project", youngest: "youngest",  }); 
+    
+/* 
+Put data points to one or more time series for one or more metrics. If a time series does not exist, a new time series will be created. It is not allowed to write a time series point that is older than the existing youngest point of that time series. Points that are older than the existing youngest point of that time series will be discarded silently. Therefore, users should make sure that points of a time series are written sequentially in the order of their end time.  
+*/
+await gapi.client.timeseries.write({ project: "project",  }); 
+    
+/* 
+List the descriptors of the time series that match the metric and labels values and that have data points in the interval. Large responses are paginated; use the nextPageToken returned in the response to request subsequent pages of results by setting the pageToken query parameter to the value of the nextPageToken.  
+*/
+await gapi.client.timeseriesDescriptors.list({ metric: "metric", project: "project", youngest: "youngest",  });
 ```

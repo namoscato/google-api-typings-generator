@@ -5,19 +5,9 @@ For detailed description please check [documentation](http://cloud.google.com/de
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Stackdriver Debugger API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Stackdriver Debugger API:
-```
-typings install gapi.client.clouddebugger --save 
+npm install @types/gapi.client.clouddebugger-v2 --save-dev
 ```
 
 ## Usage
@@ -35,7 +25,8 @@ Then load api client wrapper:
 gapi.client.load('clouddebugger', 'v2', () => {
     // now we can use gapi.client.clouddebugger
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -43,11 +34,11 @@ Don't forget to authenticate your client before sending any request to resources
 // declare client_id registered in Google Developers Console
 var client_id = '',
     scope = [     
-        // View and manage your data across Google Cloud Platform services
-        'https://www.googleapis.com/auth/cloud-platform',
-    
         // Manage cloud debugger
         'https://www.googleapis.com/auth/cloud_debugger',
+    
+        // View and manage your data across Google Cloud Platform services
+        'https://www.googleapis.com/auth/cloud-platform',
     ],
     immediate = true;
 // ...
@@ -64,9 +55,4 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 After that you can use Stackdriver Debugger API resources:
 
 ```typescript
-gapi.client.debugger.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.controller.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
 ```

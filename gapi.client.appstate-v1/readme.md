@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://developers.google.
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Google App State API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Google App State API:
-```
-typings install gapi.client.appstate --save 
+npm install @types/gapi.client.appstate-v1 --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('appstate', 'v1', () => {
     // now we can use gapi.client.appstate
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -59,7 +50,30 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use Google App State API resources:
 
-```typescript
-gapi.client.states.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Clears (sets to empty) the data for the passed key if and only if the passed version matches the currently stored version. This method results in a conflict error on version mismatch.  
+*/
+await gapi.client.states.clear({ stateKey: 1,  }); 
+    
+/* 
+Deletes a key and the data associated with it. The key is removed and no longer counts against the key quota. Note that since this method is not safe in the face of concurrent modifications, it should only be used for development and testing purposes. Invoking this method in shipping code can result in data loss and data corruption.  
+*/
+await gapi.client.states.delete({ stateKey: 1,  }); 
+    
+/* 
+Retrieves the data corresponding to the passed key. If the key does not exist on the server, an HTTP 404 will be returned.  
+*/
+await gapi.client.states.get({ stateKey: 1,  }); 
+    
+/* 
+Lists all the states keys, and optionally the state data.  
+*/
+await gapi.client.states.list({  }); 
+    
+/* 
+Update the data associated with the input key if and only if the passed version matches the currently stored version. This method is safe in the face of concurrent writes. Maximum per-key size is 128KB.  
+*/
+await gapi.client.states.update({ stateKey: 1,  });
 ```

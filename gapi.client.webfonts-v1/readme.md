@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://developers.google.
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Google Fonts Developer API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Google Fonts Developer API:
-```
-typings install gapi.client.webfonts --save 
+npm install @types/gapi.client.webfonts-v1 --save-dev
 ```
 
 ## Usage
@@ -34,13 +24,17 @@ Then load api client wrapper:
 gapi.client.load('webfonts', 'v1', () => {
     // now we can use gapi.client.webfonts
     // ... 
-});```
+});
+```
 
 
 
 After that you can use Google Fonts Developer API resources:
 
-```typescript
-gapi.client.webfonts.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Retrieves the list of fonts currently served by the Google Fonts Developer API  
+*/
+await gapi.client.webfonts.list({  });
 ```

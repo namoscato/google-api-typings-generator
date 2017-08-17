@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://developers.google.
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Search Console API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Search Console API:
-```
-typings install gapi.client.webmasters --save 
+npm install @types/gapi.client.webmasters-v3 --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('webmasters', 'v3', () => {
     // now we can use gapi.client.webmasters
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -62,19 +53,72 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use Search Console API resources:
 
-```typescript
-gapi.client.searchanalytics.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Query your data with filters and parameters that you define. Returns zero or more rows grouped by the row keys that you define. You must define a date range of one or more days.
 
-gapi.client.sitemaps.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.sites.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.urlcrawlerrorscounts.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.urlcrawlerrorssamples.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+When date is one of the group by values, any days without data are omitted from the result list. If you need to know which days have data, issue a broad date range query grouped by date for any metric, and see which day rows are returned.  
+*/
+await gapi.client.searchanalytics.query({ siteUrl: "siteUrl",  }); 
+    
+/* 
+Deletes a sitemap from this site.  
+*/
+await gapi.client.sitemaps.delete({ feedpath: "feedpath", siteUrl: "siteUrl",  }); 
+    
+/* 
+Retrieves information about a specific sitemap.  
+*/
+await gapi.client.sitemaps.get({ feedpath: "feedpath", siteUrl: "siteUrl",  }); 
+    
+/* 
+Lists the sitemaps-entries submitted for this site, or included in the sitemap index file (if sitemapIndex is specified in the request).  
+*/
+await gapi.client.sitemaps.list({ siteUrl: "siteUrl",  }); 
+    
+/* 
+Submits a sitemap for a site.  
+*/
+await gapi.client.sitemaps.submit({ feedpath: "feedpath", siteUrl: "siteUrl",  }); 
+    
+/* 
+Adds a site to the set of the user's sites in Search Console.  
+*/
+await gapi.client.sites.add({ siteUrl: "siteUrl",  }); 
+    
+/* 
+Removes a site from the set of the user's Search Console sites.  
+*/
+await gapi.client.sites.delete({ siteUrl: "siteUrl",  }); 
+    
+/* 
+Retrieves information about specific site.  
+*/
+await gapi.client.sites.get({ siteUrl: "siteUrl",  }); 
+    
+/* 
+Lists the user's Search Console sites.  
+*/
+await gapi.client.sites.list({  }); 
+    
+/* 
+Retrieves a time series of the number of URL crawl errors per error category and platform.  
+*/
+await gapi.client.urlcrawlerrorscounts.query({ siteUrl: "siteUrl",  }); 
+    
+/* 
+Retrieves details about crawl errors for a site's sample URL.  
+*/
+await gapi.client.urlcrawlerrorssamples.get({ category: "category", platform: "platform", siteUrl: "siteUrl", url: "url",  }); 
+    
+/* 
+Lists a site's sample URLs for the specified crawl error category and platform.  
+*/
+await gapi.client.urlcrawlerrorssamples.list({ category: "category", platform: "platform", siteUrl: "siteUrl",  }); 
+    
+/* 
+Marks the provided site's sample URL as fixed, and removes it from the samples list.  
+*/
+await gapi.client.urlcrawlerrorssamples.markAsFixed({ category: "category", platform: "platform", siteUrl: "siteUrl", url: "url",  });
 ```

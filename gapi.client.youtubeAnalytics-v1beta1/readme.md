@@ -4,19 +4,9 @@ For detailed description please check [documentation](http://developers.google.c
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for YouTube Analytics API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for YouTube Analytics API:
-```
-typings install gapi.client.youtubeAnalytics --save 
+npm install @types/gapi.client.youtubeAnalytics-v1beta1 --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('youtubeAnalytics', 'v1beta1', () => {
     // now we can use gapi.client.youtubeAnalytics
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -71,13 +62,45 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use YouTube Analytics API resources:
 
-```typescript
-gapi.client.groupItems.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.groups.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.reports.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Removes an item from a group.  
+*/
+await gapi.client.groupItems.delete({ id: "id",  }); 
+    
+/* 
+Creates a group item.  
+*/
+await gapi.client.groupItems.insert({  }); 
+    
+/* 
+Returns a collection of group items that match the API request parameters.  
+*/
+await gapi.client.groupItems.list({ groupId: "groupId",  }); 
+    
+/* 
+Deletes a group.  
+*/
+await gapi.client.groups.delete({ id: "id",  }); 
+    
+/* 
+Creates a group.  
+*/
+await gapi.client.groups.insert({  }); 
+    
+/* 
+Returns a collection of groups that match the API request parameters. For example, you can retrieve all groups that the authenticated user owns, or you can retrieve one or more groups by their unique IDs.  
+*/
+await gapi.client.groups.list({  }); 
+    
+/* 
+Modifies a group. For example, you could change a group's title.  
+*/
+await gapi.client.groups.update({  }); 
+    
+/* 
+Retrieve your YouTube Analytics reports.  
+*/
+await gapi.client.reports.query({ end-date: "end-date", ids: "ids", metrics: "metrics", start-date: "start-date",  });
 ```

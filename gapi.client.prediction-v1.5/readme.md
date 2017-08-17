@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://developers.google.
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Prediction API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Prediction API:
-```
-typings install gapi.client.prediction --save 
+npm install @types/gapi.client.prediction-v1.5 --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('prediction', 'v1.5', () => {
     // now we can use gapi.client.prediction
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -68,10 +59,45 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use Prediction API resources:
 
-```typescript
-gapi.client.hostedmodels.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.trainedmodels.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Submit input and request an output against a hosted model.  
+*/
+await gapi.client.hostedmodels.predict({ hostedModelName: "hostedModelName",  }); 
+    
+/* 
+Get analysis of the model and the data the model was trained on.  
+*/
+await gapi.client.trainedmodels.analyze({ id: "id",  }); 
+    
+/* 
+Delete a trained model.  
+*/
+await gapi.client.trainedmodels.delete({ id: "id",  }); 
+    
+/* 
+Check training status of your model.  
+*/
+await gapi.client.trainedmodels.get({ id: "id",  }); 
+    
+/* 
+Begin training your model.  
+*/
+await gapi.client.trainedmodels.insert({  }); 
+    
+/* 
+List available models.  
+*/
+await gapi.client.trainedmodels.list({  }); 
+    
+/* 
+Submit model id and request a prediction.  
+*/
+await gapi.client.trainedmodels.predict({ id: "id",  }); 
+    
+/* 
+Add new data to a trained model.  
+*/
+await gapi.client.trainedmodels.update({ id: "id",  });
 ```

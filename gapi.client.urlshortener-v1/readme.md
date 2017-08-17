@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://developers.google.
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for URL Shortener API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for URL Shortener API:
-```
-typings install gapi.client.urlshortener --save 
+npm install @types/gapi.client.urlshortener-v1 --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('urlshortener', 'v1', () => {
     // now we can use gapi.client.urlshortener
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -59,7 +50,20 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use URL Shortener API resources:
 
-```typescript
-gapi.client.url.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Expands a short URL or gets creation time and analytics.  
+*/
+await gapi.client.url.get({ shortUrl: "shortUrl",  }); 
+    
+/* 
+Creates a new short URL.  
+*/
+await gapi.client.url.insert({  }); 
+    
+/* 
+Retrieves a list of URLs shortened by a user.  
+*/
+await gapi.client.url.list({  });
 ```

@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://cloud.google.com/l
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Stackdriver Logging API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Stackdriver Logging API:
-```
-typings install gapi.client.logging --save 
+npm install @types/gapi.client.logging-v2beta1 --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('logging', 'v2beta1', () => {
     // now we can use gapi.client.logging
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -71,19 +62,20 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use Stackdriver Logging API resources:
 
-```typescript
-gapi.client.entries.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.projects.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.billingAccounts.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.monitoredResourceDescriptors.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.organizations.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Lists the descriptors for monitored resource types used by Stackdriver Logging.  
+*/
+await gapi.client.monitoredResourceDescriptors.list({  }); 
+    
+/* 
+Lists log entries. Use this method to retrieve log entries from Stackdriver Logging. For ways to export log entries, see Exporting Logs.  
+*/
+await gapi.client.entries.list({  }); 
+    
+/* 
+Writes log entries to Stackdriver Logging.  
+*/
+await gapi.client.entries.write({  });
 ```

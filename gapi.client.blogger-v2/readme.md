@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://developers.google.
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Blogger API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Blogger API:
-```
-typings install gapi.client.blogger --save 
+npm install @types/gapi.client.blogger-v2 --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('blogger', 'v2', () => {
     // now we can use gapi.client.blogger
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -59,19 +50,45 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use Blogger API resources:
 
-```typescript
-gapi.client.blogs.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.comments.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.pages.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.posts.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.users.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Gets one blog by id.  
+*/
+await gapi.client.blogs.get({ blogId: "blogId",  }); 
+    
+/* 
+Gets one comment by id.  
+*/
+await gapi.client.comments.get({ blogId: "blogId", commentId: "commentId", postId: "postId",  }); 
+    
+/* 
+Retrieves the comments for a blog, possibly filtered.  
+*/
+await gapi.client.comments.list({ blogId: "blogId", postId: "postId",  }); 
+    
+/* 
+Gets one blog page by id.  
+*/
+await gapi.client.pages.get({ blogId: "blogId", pageId: "pageId",  }); 
+    
+/* 
+Retrieves pages for a blog, possibly filtered.  
+*/
+await gapi.client.pages.list({ blogId: "blogId",  }); 
+    
+/* 
+Get a post by id.  
+*/
+await gapi.client.posts.get({ blogId: "blogId", postId: "postId",  }); 
+    
+/* 
+Retrieves a list of posts, possibly filtered.  
+*/
+await gapi.client.posts.list({ blogId: "blogId",  }); 
+    
+/* 
+Gets one user by id.  
+*/
+await gapi.client.users.get({ userId: "userId",  });
 ```

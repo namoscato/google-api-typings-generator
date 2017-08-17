@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://developers.google.
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Admin Data Transfer API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Admin Data Transfer API:
-```
-typings install gapi.client.admin --save 
+npm install @types/gapi.client.admin-datatransfer_v1 --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('admin', 'datatransfer_v1', () => {
     // now we can use gapi.client.admin
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -62,10 +53,30 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use Admin Data Transfer API resources:
 
-```typescript
-gapi.client.applications.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.transfers.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Retrieves information about an application for the given application ID.  
+*/
+await gapi.client.applications.get({ applicationId: "applicationId",  }); 
+    
+/* 
+Lists the applications available for data transfer for a customer.  
+*/
+await gapi.client.applications.list({  }); 
+    
+/* 
+Retrieves a data transfer request by its resource ID.  
+*/
+await gapi.client.transfers.get({ dataTransferId: "dataTransferId",  }); 
+    
+/* 
+Inserts a data transfer request.  
+*/
+await gapi.client.transfers.insert({  }); 
+    
+/* 
+Lists the transfers for a customer by source user, destination user, or status.  
+*/
+await gapi.client.transfers.list({  });
 ```

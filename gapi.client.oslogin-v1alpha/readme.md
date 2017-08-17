@@ -1,22 +1,12 @@
 # Typescript typings for Google Cloud OS Login API
-A Google Cloud API for managing OS login configuration for Directory API users.
-For detailed description please check [documentation](https://developers.google.com/apis-explorer/#p/oslogin/v1alpha/).
+Manages OS login configuration for Directory API users.
+For detailed description please check [documentation](https://cloud.google.com/compute/docs/oslogin/rest/).
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Google Cloud OS Login API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Google Cloud OS Login API:
-```
-typings install gapi.client.oslogin --save 
+npm install @types/gapi.client.oslogin-v1alpha --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('oslogin', 'v1alpha', () => {
     // now we can use gapi.client.oslogin
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -62,7 +53,18 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use Google Cloud OS Login API resources:
 
-```typescript
-gapi.client.users.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Adds an SSH public key and returns the profile information. Default POSIX
+account information is set when no username and UID exist as part of the
+login profile.  
+*/
+await gapi.client.users.importSshPublicKey({ parent: "parent",  }); 
+    
+/* 
+Retrieves the profile information used for logging in to a virtual machine
+on Google Compute Engine.  
+*/
+await gapi.client.users.getLoginProfile({ name: "name",  });
 ```

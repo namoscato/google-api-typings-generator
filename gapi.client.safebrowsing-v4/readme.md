@@ -1,22 +1,12 @@
 # Typescript typings for Google Safe Browsing API
-The Safe Browsing API is an experimental API that allows client applications to check URLs against Google's constantly-updated blacklists of suspected phishing and malware pages. Your client application can use the API to download an encrypted table for local, client-side lookups of URLs.
+Enables client applications to check web resources (most commonly URLs) against Google-generated lists of unsafe web resources.
 For detailed description please check [documentation](https://developers.google.com/safe-browsing/).
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Google Safe Browsing API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Google Safe Browsing API:
-```
-typings install gapi.client.safebrowsing --save 
+npm install @types/gapi.client.safebrowsing-v4 --save-dev
 ```
 
 ## Usage
@@ -34,28 +24,43 @@ Then load api client wrapper:
 gapi.client.load('safebrowsing', 'v4', () => {
     // now we can use gapi.client.safebrowsing
     // ... 
-});```
+});
+```
 
 
 
 After that you can use Google Safe Browsing API resources:
 
-```typescript
-gapi.client.fullHashes.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.encodedUpdates.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.threatListUpdates.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.encodedFullHashes.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.threatLists.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.threatMatches.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Fetches the most recent threat list updates. A client can request updates
+for multiple lists at once.  
+*/
+await gapi.client.threatListUpdates.fetch({  }); 
+    
+/* 
+  
+*/
+await gapi.client.encodedFullHashes.get({ encodedRequest: "encodedRequest",  }); 
+    
+/* 
+Lists the Safe Browsing threat lists available for download.  
+*/
+await gapi.client.threatLists.list({  }); 
+    
+/* 
+Finds the threat entries that match the Safe Browsing lists.  
+*/
+await gapi.client.threatMatches.find({  }); 
+    
+/* 
+Finds the full hashes that match the requested hash prefixes.  
+*/
+await gapi.client.fullHashes.find({  }); 
+    
+/* 
+  
+*/
+await gapi.client.encodedUpdates.get({ encodedRequest: "encodedRequest",  });
 ```

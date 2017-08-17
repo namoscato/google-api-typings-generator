@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://developers.google.
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Groups Migration API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Groups Migration API:
-```
-typings install gapi.client.groupsmigration --save 
+npm install @types/gapi.client.groupsmigration-v1 --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('groupsmigration', 'v1', () => {
     // now we can use gapi.client.groupsmigration
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -59,7 +50,10 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use Groups Migration API resources:
 
-```typescript
-gapi.client.archive.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Inserts a new mail into the archive of the Google group.  
+*/
+await gapi.client.archive.insert({ groupId: "groupId",  });
 ```

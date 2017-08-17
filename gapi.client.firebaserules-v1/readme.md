@@ -5,19 +5,9 @@ For detailed description please check [documentation](https://firebase.google.co
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Firebase Rules API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Firebase Rules API:
-```
-typings install gapi.client.firebaserules --save 
+npm install @types/gapi.client.firebaserules-v1 --save-dev
 ```
 
 ## Usage
@@ -35,7 +25,8 @@ Then load api client wrapper:
 gapi.client.load('firebaserules', 'v1', () => {
     // now we can use gapi.client.firebaserules
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -66,7 +57,31 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use Firebase Rules API resources:
 
-```typescript
-gapi.client.projects.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Test `Source` for syntactic and semantic correctness. Issues present, if
+any, will be returned to the caller with a description, severity, and
+source location.
+
+The test method may be executed with `Source` or a `Ruleset` name.
+Passing `Source` is useful for unit testing new rules. Passing a `Ruleset`
+name is useful for regression testing an existing rule.
+
+The following is an example of `Source` that permits users to upload images
+to a bucket bearing their user id and matching the correct metadata:
+
+_*Example*_
+
+    // Users are allowed to subscribe and unsubscribe to the blog.
+    service firebase.storage {
+      match /users/{userId}/images/{imageName} {
+          allow write: if userId == request.auth.uid
+              && (imageName.matches('*.png$')
+              || imageName.matches('*.jpg$'))
+              && resource.mimeType.matches('^image/')
+      }
+    }  
+*/
+await gapi.client.projects.test({ name: "name",  });
 ```

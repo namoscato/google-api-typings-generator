@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://developers.google.
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Enterprise License Manager API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Enterprise License Manager API:
-```
-typings install gapi.client.licensing --save 
+npm install @types/gapi.client.licensing-v1 --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('licensing', 'v1', () => {
     // now we can use gapi.client.licensing
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -59,7 +50,40 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use Enterprise License Manager API resources:
 
-```typescript
-gapi.client.licenseAssignments.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Revoke License.  
+*/
+await gapi.client.licenseAssignments.delete({ productId: "productId", skuId: "skuId", userId: "userId",  }); 
+    
+/* 
+Get license assignment of a particular product and sku for a user  
+*/
+await gapi.client.licenseAssignments.get({ productId: "productId", skuId: "skuId", userId: "userId",  }); 
+    
+/* 
+Assign License.  
+*/
+await gapi.client.licenseAssignments.insert({ productId: "productId", skuId: "skuId",  }); 
+    
+/* 
+List license assignments for given product of the customer.  
+*/
+await gapi.client.licenseAssignments.listForProduct({ customerId: "customerId", productId: "productId",  }); 
+    
+/* 
+List license assignments for given product and sku of the customer.  
+*/
+await gapi.client.licenseAssignments.listForProductAndSku({ customerId: "customerId", productId: "productId", skuId: "skuId",  }); 
+    
+/* 
+Assign License. This method supports patch semantics.  
+*/
+await gapi.client.licenseAssignments.patch({ productId: "productId", skuId: "skuId", userId: "userId",  }); 
+    
+/* 
+Assign License.  
+*/
+await gapi.client.licenseAssignments.update({ productId: "productId", skuId: "skuId", userId: "userId",  });
 ```

@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://developers.google.
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Tasks API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Tasks API:
-```
-typings install gapi.client.tasks --save 
+npm install @types/gapi.client.tasks-v1 --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('tasks', 'v1', () => {
     // now we can use gapi.client.tasks
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -62,10 +53,75 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use Tasks API resources:
 
-```typescript
-gapi.client.tasklists.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.tasks.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Deletes the authenticated user's specified task list.  
+*/
+await gapi.client.tasklists.delete({ tasklist: "tasklist",  }); 
+    
+/* 
+Returns the authenticated user's specified task list.  
+*/
+await gapi.client.tasklists.get({ tasklist: "tasklist",  }); 
+    
+/* 
+Creates a new task list and adds it to the authenticated user's task lists.  
+*/
+await gapi.client.tasklists.insert({  }); 
+    
+/* 
+Returns all the authenticated user's task lists.  
+*/
+await gapi.client.tasklists.list({  }); 
+    
+/* 
+Updates the authenticated user's specified task list. This method supports patch semantics.  
+*/
+await gapi.client.tasklists.patch({ tasklist: "tasklist",  }); 
+    
+/* 
+Updates the authenticated user's specified task list.  
+*/
+await gapi.client.tasklists.update({ tasklist: "tasklist",  }); 
+    
+/* 
+Clears all completed tasks from the specified task list. The affected tasks will be marked as 'hidden' and no longer be returned by default when retrieving all tasks for a task list.  
+*/
+await gapi.client.tasks.clear({ tasklist: "tasklist",  }); 
+    
+/* 
+Deletes the specified task from the task list.  
+*/
+await gapi.client.tasks.delete({ task: "task", tasklist: "tasklist",  }); 
+    
+/* 
+Returns the specified task.  
+*/
+await gapi.client.tasks.get({ task: "task", tasklist: "tasklist",  }); 
+    
+/* 
+Creates a new task on the specified task list.  
+*/
+await gapi.client.tasks.insert({ tasklist: "tasklist",  }); 
+    
+/* 
+Returns all tasks in the specified task list.  
+*/
+await gapi.client.tasks.list({ tasklist: "tasklist",  }); 
+    
+/* 
+Moves the specified task to another position in the task list. This can include putting it as a child task under a new parent and/or move it to a different position among its sibling tasks.  
+*/
+await gapi.client.tasks.move({ task: "task", tasklist: "tasklist",  }); 
+    
+/* 
+Updates the specified task. This method supports patch semantics.  
+*/
+await gapi.client.tasks.patch({ task: "task", tasklist: "tasklist",  }); 
+    
+/* 
+Updates the specified task.  
+*/
+await gapi.client.tasks.update({ task: "task", tasklist: "tasklist",  });
 ```

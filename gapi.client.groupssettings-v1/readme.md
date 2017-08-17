@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://developers.google.
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Groups Settings API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Groups Settings API:
-```
-typings install gapi.client.groupssettings --save 
+npm install @types/gapi.client.groupssettings-v1 --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('groupssettings', 'v1', () => {
     // now we can use gapi.client.groupssettings
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -59,7 +50,20 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use Groups Settings API resources:
 
-```typescript
-gapi.client.groups.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Gets one resource by id.  
+*/
+await gapi.client.groups.get({ groupUniqueId: "groupUniqueId",  }); 
+    
+/* 
+Updates an existing resource. This method supports patch semantics.  
+*/
+await gapi.client.groups.patch({ groupUniqueId: "groupUniqueId",  }); 
+    
+/* 
+Updates an existing resource.  
+*/
+await gapi.client.groups.update({ groupUniqueId: "groupUniqueId",  });
 ```

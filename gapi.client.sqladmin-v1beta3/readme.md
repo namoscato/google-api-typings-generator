@@ -4,19 +4,9 @@ For detailed description please check [documentation](https://cloud.google.com/s
 
 ## Installing
 
-First you need to install *typings*:
+Install typings for Cloud SQL Administration API:
 ```
-npm install typings --save 
-```
-
-Then install typings for *Google API client*:
-```
-typings install gapi.client --save 
-```
-
-And finally install typings for Cloud SQL Administration API:
-```
-typings install gapi.client.sqladmin --save 
+npm install @types/gapi.client.sqladmin-v1beta3 --save-dev
 ```
 
 ## Usage
@@ -34,7 +24,8 @@ Then load api client wrapper:
 gapi.client.load('sqladmin', 'v1beta3', () => {
     // now we can use gapi.client.sqladmin
     // ... 
-});```
+});
+```
 
 Don't forget to authenticate your client before sending any request to resources:
 ```typescript
@@ -62,22 +53,125 @@ gapi.auth.authorize({ client_id: client_id, scope: scope, immediate: immediate }
 
 After that you can use Cloud SQL Administration API resources:
 
-```typescript
-gapi.client.backupRuns.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.flags.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.instances.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.operations.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.sslCerts.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
-
-gapi.client.tiers.<method name>({ /* method parameters */ })
-    .then(response => { /* handling response */ });
+```typescript 
+    
+/* 
+Retrieves information about a specified backup run for a Cloud SQL instance.  
+*/
+await gapi.client.backupRuns.get({ backupConfiguration: "backupConfiguration", dueTime: "dueTime", instance: "instance", project: "project",  }); 
+    
+/* 
+Lists all backup runs associated with a Cloud SQL instance.  
+*/
+await gapi.client.backupRuns.list({ backupConfiguration: "backupConfiguration", instance: "instance", project: "project",  }); 
+    
+/* 
+Lists all database flags that can be set for Google Cloud SQL instances.  
+*/
+await gapi.client.flags.list({  }); 
+    
+/* 
+Creates a Cloud SQL instance as a clone of a source instance.  
+*/
+await gapi.client.instances.clone({ project: "project",  }); 
+    
+/* 
+Deletes a Cloud SQL instance.  
+*/
+await gapi.client.instances.delete({ instance: "instance", project: "project",  }); 
+    
+/* 
+Exports data from a Cloud SQL instance to a Google Cloud Storage bucket as a MySQL dump file.  
+*/
+await gapi.client.instances.export({ instance: "instance", project: "project",  }); 
+    
+/* 
+Retrieves information about a Cloud SQL instance.  
+*/
+await gapi.client.instances.get({ instance: "instance", project: "project",  }); 
+    
+/* 
+Imports data into a Cloud SQL instance from a MySQL dump file stored in a Google Cloud Storage bucket.  
+*/
+await gapi.client.instances.import({ instance: "instance", project: "project",  }); 
+    
+/* 
+Creates a new Cloud SQL instance.  
+*/
+await gapi.client.instances.insert({ project: "project",  }); 
+    
+/* 
+Lists instances for a given project, in alphabetical order by instance name.  
+*/
+await gapi.client.instances.list({ project: "project",  }); 
+    
+/* 
+Updates the settings of a Cloud SQL instance. This method supports patch semantics.  
+*/
+await gapi.client.instances.patch({ instance: "instance", project: "project",  }); 
+    
+/* 
+Promotes the read replica instance to be a stand-alone Cloud SQL instance.  
+*/
+await gapi.client.instances.promoteReplica({ instance: "instance", project: "project",  }); 
+    
+/* 
+Deletes all client certificates and generates a new server SSL certificate for a Cloud SQL instance.  
+*/
+await gapi.client.instances.resetSslConfig({ instance: "instance", project: "project",  }); 
+    
+/* 
+Restarts a Cloud SQL instance.  
+*/
+await gapi.client.instances.restart({ instance: "instance", project: "project",  }); 
+    
+/* 
+Restores a backup of a Cloud SQL instance.  
+*/
+await gapi.client.instances.restoreBackup({ backupConfiguration: "backupConfiguration", dueTime: "dueTime", instance: "instance", project: "project",  }); 
+    
+/* 
+Sets the password for the root user of the specified Cloud SQL instance.  
+*/
+await gapi.client.instances.setRootPassword({ instance: "instance", project: "project",  }); 
+    
+/* 
+Updates the settings of a Cloud SQL instance.  
+*/
+await gapi.client.instances.update({ instance: "instance", project: "project",  }); 
+    
+/* 
+Retrieves information about a specific operation that was performed on a Cloud SQL instance.  
+*/
+await gapi.client.operations.get({ instance: "instance", operation: "operation", project: "project",  }); 
+    
+/* 
+Lists all operations that have been performed on a Cloud SQL instance.  
+*/
+await gapi.client.operations.list({ instance: "instance", project: "project",  }); 
+    
+/* 
+Deletes an SSL certificate from a Cloud SQL instance.  
+*/
+await gapi.client.sslCerts.delete({ instance: "instance", project: "project", sha1Fingerprint: "sha1Fingerprint",  }); 
+    
+/* 
+Retrieves an SSL certificate as specified by its SHA-1 fingerprint.  
+*/
+await gapi.client.sslCerts.get({ instance: "instance", project: "project", sha1Fingerprint: "sha1Fingerprint",  }); 
+    
+/* 
+Creates an SSL certificate and returns the certificate, the associated private key, and the server certificate authority.  
+*/
+await gapi.client.sslCerts.insert({ instance: "instance", project: "project",  }); 
+    
+/* 
+Lists all of the current SSL certificates defined for a Cloud SQL instance.  
+*/
+await gapi.client.sslCerts.list({ instance: "instance", project: "project",  }); 
+    
+/* 
+Lists service tiers that can be used to create Google Cloud SQL instances.  
+*/
+await gapi.client.tiers.list({ project: "project",  });
 ```
