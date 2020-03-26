@@ -161,7 +161,7 @@ class TypescriptTextWriter implements TypescriptTextWriter {
 
   interface(name: string, context: TypescriptWriterCallback) {
     // this.writer.writeLine();
-    this.braces(`interface ${name}`, context);
+    this.braces(`interface${name}`, context);
   }
 
   anonymousType(context: TypescriptWriterCallback) {

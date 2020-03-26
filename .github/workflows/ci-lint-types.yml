@@ -1,6 +1,6 @@
 name: CI Lint Types
 
-on: [pull_request]
+on: [push]
 
 jobs:
   lint:
@@ -19,6 +19,15 @@ jobs:
     - name: Generate types
       run: npm start
     - name: Lint types
+      id: lint
       run: npm run lint
       env:
         GAPI_MAX_PARALLEL: 3
+    - name: Upload types
+      uses: actions/upload-artifact@v1
+      if: failure()
+      env:
+        FAILED_TYPE: ${{ steps.lint.outputs.failed_type }}
+      with:
+        name: $FAILED_TYPE
+        path: types/$FAILED_TYPE
