@@ -28,7 +28,6 @@ jobs:
       if: failure()
       env:
         FAILED_TYPE: ${{ steps.lint.outputs.failed_type }}
-      run: echo "$FAILED_TYPE"
       with:
         name: ${{ env.FAILED_TYPE }}
         path: types/${{ env.FAILED_TYPE }}
