@@ -34,7 +34,7 @@ runAll([scripts.shift()], options) // run first synchronously to install TypeScr
       const failedType = results.find(result => result.code === 1);
 
       if (failedType) {
-        console.log(`::set-output name=failed_type::${basename(failedType.name)}`)
+        console.log(`::set-env name=FAILED_TYPE::${basename(failedType.name)}`)
       }
     }
     process.exit(1);

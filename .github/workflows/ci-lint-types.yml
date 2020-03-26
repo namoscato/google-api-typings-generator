@@ -23,11 +23,12 @@ jobs:
       run: npm run lint
       env:
         GAPI_MAX_PARALLEL: 3
-    - name: Upload types
+    - name: Copy discovery service response JSON
+      if: failure()
+      run: cp .tmp/${{ env.FAILED_TYPE }} types/${{ env.FAILED_TYPE }}
+    - name: Upload failed type
       uses: actions/upload-artifact@v1
       if: failure()
-      env:
-        FAILED_TYPE: ${{ steps.lint.outputs.failed_type }}
       with:
         name: ${{ env.FAILED_TYPE }}
         path: types/${{ env.FAILED_TYPE }}
